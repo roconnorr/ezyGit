@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "@types/lodash": "^4.14.138",
+    "@types/node": "^12.7.5",
     "@types/react": "^16.9.2",
     "cross-env": "^6.0.0",
     "electron-is-dev": "^1.0.1",
@@ -35,6 +36,7 @@
     "reactjs-popup": "^1.5.0",
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^0.88.1",
+    "simple-git": "^1.126.0",
     "tslint": "^5.20.0"
   },
   "homepage": "./",

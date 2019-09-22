@@ -1,6 +1,7 @@
 import React, { Component } from "react"; // let's also import Component
 import { Button, Input } from "semantic-ui-react";
 import Popup from "reactjs-popup";
+import SearchExampleStandard from "./Search";
 
 // the clock's state has one field: The current time, based upon the
 // JavaScript class Date
@@ -34,8 +35,13 @@ export class PopOver extends Component<{}, PopOverState> {
   // render will know everything!
   render() {
     return (
-      <Popup trigger={<Button> Open Modal </Button>} modal closeOnDocumentClick>
-        <Input />
+      <Popup
+        trigger={<Button> Open Modal </Button>}
+        modal
+        closeOnDocumentClick
+        position="top center"
+      >
+        <SearchExampleStandard />
       </Popup>
     );
   }

@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import "./App.css";
-import { Button } from "semantic-ui-react";
+import { Button, Label } from "semantic-ui-react";
 import { PopOver } from "./PopOver";
+import { status } from "./git/git";
 
 class App extends Component {
   render() {
@@ -9,6 +10,8 @@ class App extends Component {
       <div className="App">
         <Button variant="contained">Test asd</Button>
         <PopOver />
+        {/* <Label>{status("")}</Label> */}
+        <Label>Branch: {status("").current}</Label>
       </div>
     );
   }
