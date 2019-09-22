@@ -1,85 +1,65 @@
 {
-  "name": "ezygit",
-  "productName": "ezygit",
-  "version": "1.0.0",
-  "description": "My Electron application description",
-  "main": "./.webpack/main",
-  "scripts": {
-    "start": "electron-forge start",
-    "package": "electron-forge package",
-    "make": "electron-forge make",
-    "publish": "electron-forge publish",
-    "lint": "echo \"No linting configured\""
+  "name": "my-app",
+  "description": "Electron + Create React App + Electron Builder",
+  "version": "0.1.0",
+  "private": true,
+  "author": {
+    "name": "Your Name",
+    "email": "your.email@domain.com",
+    "url": "https://your-website.com"
   },
-  "keywords": [],
-  "author": "scott",
-  "license": "MIT",
-  "config": {
-    "forge": {
-      "plugins": [
-        [
-          "@electron-forge/plugin-webpack",
-          {
-            "mainConfig": "./webpack.main.config.js",
-            "renderer": {
-              "config": "./webpack.renderer.config.js",
-              "entryPoints": [
-                {
-                  "html": "./src/index.html",
-                  "js": "./src/app.tsx",
-                  "name": "main_window"
-                }
-              ]
-            },
-            "loggerPort": "9001"
-          }
-        ]
-      ],
-      "packagerConfig": {},
-      "makers": [
-        {
-          "name": "@electron-forge/maker-squirrel",
-          "config": {
-            "name": "ezygit"
-          }
-        },
-        {
-          "name": "@electron-forge/maker-zip",
-          "platforms": [
-            "darwin"
-          ]
-        },
-        {
-          "name": "@electron-forge/maker-deb",
-          "config": {}
-        },
-        {
-          "name": "@electron-forge/maker-rpm",
-          "config": {}
-        }
-      ]
+  "build": {
+    "appId": "com.my-website.my-app",
+    "productName": "MyApp",
+    "copyright": "Copyright © 2019 ${author}",
+    "mac": {
+      "category": "public.app-category.utilities"
+    },
+    "files": [
+      "build/**/*",
+      "node_modules/**/*"
+    ],
+    "directories": {
+      "buildResources": "assets"
     }
   },
   "dependencies": {
-    "@babel/preset-react": "^7.0.0",
-    "@babel/preset-typescript": "^7.6.0",
-    "@electron-forge/plugin-webpack": "^6.0.0-beta.45",
     "@material-ui/core": "^4.4.2",
-    "electron-squirrel-startup": "^1.0.0",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "typescript": "^3.6.3"
+    "cross-env": "^6.0.0",
+    "electron-is-dev": "^1.0.1",
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3",
+    "react-scripts": "^3.1.2",
+    "reactjs-popup": "^1.5.0"
   },
+  "homepage": "./",
+  "main": "public/electron.js",
+  "scripts": {
+    "start": "rescripts start",
+    "build": "rescripts build",
+    "test": "rescripts test",
+    "eject": "react-scripts eject",
+    "electron-dev": "concurrently \"cross-env BROWSER=none npm start\" \"wait-on http://localhost:3000 && electron .\"",
+    "postinstall": "electron-builder install-app-deps",
+    "preelectron-pack": "npm build",
+    "electron-pack": "electron-build -mw"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
   "devDependencies": {
-    "@babel/core": "^7.6.0",
-    "@babel/preset-env": "^7.6.0",
-    "@electron-forge/cli": "^6.0.0-beta.33",
-    "@electron-forge/maker-deb": "^6.0.0-beta.33",
-    "@electron-forge/maker-rpm": "^6.0.0-beta.33",
-    "@electron-forge/maker-squirrel": "^6.0.0-beta.33",
-    "@electron-forge/maker-zip": "^6.0.0-beta.33",
-    "babel-loader": "^8.0.6",
-    "electron": "6.0.10",
-    "webpack": "^4.40.2"
+    "@rescripts/cli": "^0.0.10",
+    "@rescripts/rescript-env": "^0.0.5",
+    "concurrently": "^4.1.0",
+    "electron": "^4.0.6",
+    "electron-builder": "^20.38.5",
+    "typescript": "^3.3.3333",
+    "wait-on": "^3.2.0"
   }
 }
