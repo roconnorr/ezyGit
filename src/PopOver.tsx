@@ -1,5 +1,5 @@
 import React, { Component } from "react"; // let's also import Component
-import { Button, Input } from "@material-ui/core";
+import { Button, Input } from "semantic-ui-react";
 import Popup from "reactjs-popup";
 
 // the clock's state has one field: The current time, based upon the
