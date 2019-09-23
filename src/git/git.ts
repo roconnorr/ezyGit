@@ -11,7 +11,7 @@ async function cloneRepo(repo: string, user: string, pass: string) {
     .catch((err: any) => console.error("failed: ", err));
 }
 
-async function status(workingDir: string): Promise<StatusResult> {
+async function getStatus(workingDir: string): Promise<StatusResult> {
   const git = require("simple-git/promise");
   let statusSummary: StatusResult;
 
@@ -24,4 +24,4 @@ async function status(workingDir: string): Promise<StatusResult> {
   return statusSummary;
 }
 
-export { cloneRepo, status };
+export { cloneRepo, getStatus };
