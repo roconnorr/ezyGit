@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import { SearchBar } from "./components/Pallet/SearchBar";
 import { NavBar } from "./components/NavBar/NavBar";
+import { history } from "./git/git";
 
 interface IState {
   isLoaded: boolean;
@@ -14,7 +15,9 @@ class App extends Component<IProps, IState> {
     this.state = { isLoaded: false };
   }
 
-  async componentDidMount() {}
+  async componentDidMount() {
+    history();
+  }
 
   render() {
     const { isLoaded } = this.state;
