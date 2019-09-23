@@ -11,17 +11,16 @@ async function cloneRepo(repo: string, user: string, pass: string) {
     .catch((err: any) => console.error("failed: ", err));
 }
 
-async function getStatus(workingDir: string): Promise<StatusResult> {
-  const git = require("simple-git/promise");
-  let statusSummary: StatusResult;
-
-  //   try {
-  statusSummary = await git(workingDir).status();
-  //   } catch (e) {
-  //     // handle the error
-  //   }
-  console.log(statusSummary);
-  return statusSummary;
+async function getStatus(): Promise<StatusResult> {
+  return await git.status();
 }
 
-export { cloneRepo, getStatus };
+async function stashChanges(): Promise<string> {
+  return await git.stash();
+}
+
+async function popChanges(): Promise<string> {
+  return await git.stash(["pop"]);
+}
+
+export { cloneRepo, getStatus, stashChanges, popChanges };

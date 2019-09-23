@@ -4,6 +4,7 @@ import { Button, Label, Dimmer, Loader } from "semantic-ui-react";
 import { PopOver } from "./PopOver";
 import { getStatus } from "./git/git";
 import { StatusResult } from "simple-git/promise";
+import Header from "./components/header";
 
 interface IState {
   isLoaded: boolean;
@@ -19,26 +20,25 @@ class App extends Component<IProps, IState> {
 
   async componentDidMount() {
     this.setState({ isLoaded: false });
-    const status = await getStatus("");
+    const status = await getStatus();
+
+    console.log(status);
     this.setState({ isLoaded: true, gitStatus: status });
   }
 
   render() {
-    const isLoaded = this.state.isLoaded;
-
-    console.log(this.state);
-
+    const { isLoaded, gitStatus } = this.state;
     return (
       <div className="App">
-        <Button variant="contained">Test asd</Button>
-        <PopOver />
         {isLoaded ? (
-          <Label>Branch: {this.state.gitStatus!.current}</Label>
+          Header(gitStatus!)
         ) : (
           <Dimmer inverted active>
             <Loader />
           </Dimmer>
         )}
+        <Button variant="contained">Test asd</Button>
+        <PopOver />
       </div>
     );
   }
