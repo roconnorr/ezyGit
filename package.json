@@ -24,19 +24,20 @@
     }
   },
   "dependencies": {
+    "@blueprintjs/core": "^3.18.1",
+    "@blueprintjs/docs-theme": "^3.3.0",
+    "@blueprintjs/select": "^3.10.0",
     "@types/lodash": "^4.14.138",
     "@types/node": "^12.7.5",
+    "@types/nodegit": "^0.24.10",
     "@types/react": "^16.9.2",
     "cross-env": "^6.0.0",
     "electron-is-dev": "^1.0.1",
     "lodash": "^4.17.15",
-    "react": "^16.8.3",
-    "react-dom": "^16.8.3",
+    "nodegit": "^0.26.1",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
     "react-scripts": "^3.1.2",
-    "reactjs-popup": "^1.5.0",
-    "semantic-ui-css": "^2.4.1",
-    "semantic-ui-react": "^0.88.1",
-    "simple-git": "^1.126.0",
     "tslint": "^5.20.0"
   },
   "homepage": "./",
@@ -46,9 +47,9 @@
     "build": "rescripts build",
     "test": "rescripts test",
     "eject": "react-scripts eject",
-    "electron-dev": "concurrently \"cross-env BROWSER=none npm start\" \"wait-on http://localhost:3000 && electron .\"",
+    "electron-dev": "concurrently \"cross-env BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electron .\"",
     "postinstall": "electron-builder install-app-deps",
-    "preelectron-pack": "npm build",
+    "preelectron-pack": "yarn build",
     "electron-pack": "electron-build -mw"
   },
   "eslintConfig": {
