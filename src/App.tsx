@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import { SearchBar } from "./components/Pallet/SearchBar";
+import { NavBar } from "./components/NavBar/NavBar";
 
 interface IState {
   isLoaded: boolean;
@@ -19,6 +20,7 @@ class App extends Component<IProps, IState> {
     const { isLoaded } = this.state;
     return (
       <div className="App">
+        <NavBar />
         <SearchBar />
       </div>
     );
