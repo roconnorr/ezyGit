@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
-import { OmnibarExample } from "./components/OmniBar/OmniBar";
+import { SearchBar } from "./components/Pallet/SearchBar";
 
 interface IState {
   isLoaded: boolean;
@@ -19,7 +19,7 @@ class App extends Component<IProps, IState> {
     const { isLoaded } = this.state;
     return (
       <div className="App">
-        <OmnibarExample />
+        <SearchBar />
       </div>
     );
   }
