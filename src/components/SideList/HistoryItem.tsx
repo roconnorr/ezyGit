@@ -12,7 +12,10 @@ const HistoryItem = ({ data, index, style }: IHistoryItem): any => {
   const author = item.author;
   const date = new Date(author.timestamp * 1000 + author.timezoneOffset * 1000);
   return (
-    <div className={index % 2 ? "ListItemOdd" : "ListItemEven"} style={style}>
+    <div
+      className={index % 2 ? "historyItemEven" : "historyItemOdd"}
+      style={style}
+    >
       <div className="historyItemContent">{item.message}</div>
       <div className="historyItemContent" style={{}}>
         <span style={{ width: "50%", display: "inline-block" }}>
