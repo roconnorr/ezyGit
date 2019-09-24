@@ -7,6 +7,7 @@ import {
   NavbarGroup,
   NavbarHeading
 } from "@blueprintjs/core";
+import { SearchBar } from "../Pallet/SearchBar";
 
 interface INavBarProps {
   branch: string;
@@ -21,6 +22,7 @@ const NavBar = (props: INavBarProps) => {
         <NavbarHeading>ezyGit</NavbarHeading>
         <NavbarDivider />
         <NavbarHeading>Current: {branch ? branch : "Loading..."}</NavbarHeading>
+        <SearchBar />
       </NavbarGroup>
     </Navbar>
   );

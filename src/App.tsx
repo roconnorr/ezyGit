@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import "./App.css";
 import { SearchBar } from "./components/Pallet/SearchBar";
 import { NavBar } from "./components/NavBar/NavBar";
-import { Label, Colors } from "@blueprintjs/core";
 import { CommitDescriptionWithOid } from "isomorphic-git";
 import { getGitLog, getCurrentBranch } from "./git/git";
+import { Example } from "./components/SideList/List";
 
 interface IState {
   isLoaded: boolean;
@@ -31,13 +31,14 @@ class App extends Component<IProps, IState> {
     return (
       <div className="App bp3-dark">
         <NavBar branch={gitCurrentBranch!} />
-        <SearchBar />
 
         {/* Make a wrapping flex box
           https://css-tricks.com/snippets/css/a-guide-to-flexbox/
         */}
         <div className="container">
-          <div className="sideBar">Side bar goes here</div>
+          <div className="sideBar">
+            <Example />
+          </div>
           <div className="mainContent">Main content here</div>
         </div>
       </div>

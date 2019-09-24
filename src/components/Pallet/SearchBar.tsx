@@ -136,7 +136,7 @@ export class SearchBar extends React.PureComponent {
     return (
       <div>
         <span>
-          <Button text="Click to show Omnibar" onClick={this.handleClick} />
+          <Button text="Show Omnibar" onClick={this.handleClick} />
         </span>
 
         <FilmOmnibar
