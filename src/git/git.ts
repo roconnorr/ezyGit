@@ -6,7 +6,7 @@ var diff = require("diff-lines");
 git.plugins.set("fs", fs);
 
 const getGitLog = async (): Promise<Array<CommitDescriptionWithOid>> => {
-  return await git.log({ dir: "./", depth: 10 });
+  return await git.log({ dir: "./", depth: -1 });
 };
 
 const getCurrentBranch = async (): Promise<string | undefined> => {
