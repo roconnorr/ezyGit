@@ -6,7 +6,7 @@ var diff = require("diff-lines");
 git.plugins.set("fs", fs);
 
 const getGitLog = async (): Promise<Array<CommitDescriptionWithOid>> => {
-  return await git.log({ dir: "./", depth: -1 });
+  return await git.log({ dir: "./", depth: 1000 });
 };
 
 const getCurrentBranch = async (): Promise<string | undefined> => {
@@ -69,7 +69,7 @@ const compareChanges = async (): Promise<Array<string>> => {
       };
     }
   });
-
+  // Make this an array of objects
   const oidA = results![0].A;
 
   const { object: blobA } = await git.readObject({

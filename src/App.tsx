@@ -6,6 +6,7 @@ import { getGitLog, getCurrentBranch, compareChanges } from "./git/git";
 import { SideList } from "./components/SideList/SideList";
 import { Intent, Spinner } from "@blueprintjs/core";
 import { getEditor } from "./components/Editor/Editor";
+import { DiffViewer } from "./components/Editor/DiffViewer";
 
 interface IState {
   isLoaded: boolean;
@@ -44,7 +45,7 @@ class App extends Component<IProps, IState> {
     const { isLoaded, gitLog, gitCurrentBranch, gitDiff } = this.state;
 
     const options = {
-      selectOnLineNumbers: true,
+      selectOnLineNumbers: false,
       automaticLayout: true,
       readOnly: true
     };
@@ -64,7 +65,9 @@ class App extends Component<IProps, IState> {
             )}
           </div>
           <div className="mainContent">
-            {getEditor(options, gitDiff[1], gitDiff[0])}
+            {/* {getEditor(options, gitDiff[1], gitDiff[0])} */}
+
+            {DiffViewer(gitDiff[1], gitDiff[0])}
           </div>
         </div>
       </div>
