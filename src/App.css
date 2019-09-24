@@ -41,3 +41,12 @@
   display: flex; /* or inline-flex */
   flex-direction: row;
 }
+
+.sideBar {
+  width: calc(20%);
+  background-color: gray;
+}
+.mainContent {
+  width: calc(80%);
+  background-color: aqua;
+}

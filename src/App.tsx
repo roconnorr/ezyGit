@@ -29,18 +29,16 @@ class App extends Component<IProps, IState> {
   render() {
     const { isLoaded, gitLog, gitCurrentBranch } = this.state;
     return (
-      <div className="App">
+      <div className="App bp3-dark">
         <NavBar branch={gitCurrentBranch!} />
         <SearchBar />
 
         {/* Make a wrapping flex box
           https://css-tricks.com/snippets/css/a-guide-to-flexbox/
         */}
-        <div className="container" style={{ color: Colors.BLACK }}>
-          Side bar goes here
-        </div>
-        <div className="container" style={{ color: Colors.GOLD1 }}>
-          Main content here
+        <div className="container">
+          <div className="sideBar">Side bar goes here</div>
+          <div className="mainContent">Main content here</div>
         </div>
       </div>
     );
