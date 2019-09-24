@@ -29,16 +29,16 @@
     "@blueprintjs/select": "^3.10.0",
     "@types/lodash": "^4.14.138",
     "@types/node": "^12.7.5",
-    "@types/nodegit": "^0.24.10",
     "@types/react": "^16.9.2",
     "cross-env": "^6.0.0",
     "electron-is-dev": "^1.0.1",
     "electron-rebuild": "^1.8.6",
+    "isomorphic-git": "^0.67.2",
     "lodash": "^4.17.15",
-    "nodegit": "^0.26.1",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-scripts": "^3.1.2",
+    "request": "^2.88.0",
     "tslint": "^5.20.0"
   },
   "homepage": "./",
@@ -51,7 +51,8 @@
     "electron-dev": "concurrently \"cross-env BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electron .\"",
     "postinstall": "electron-builder install-app-deps",
     "preelectron-pack": "yarn build",
-    "electron-pack": "electron-build -mw"
+    "electron-pack": "electron-build -mw",
+    "rebuild": "electron-rebuild -f -b"
   },
   "eslintConfig": {
     "extends": "react-app"
