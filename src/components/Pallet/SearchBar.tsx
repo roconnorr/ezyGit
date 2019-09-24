@@ -122,7 +122,7 @@ export class SearchBar extends React.PureComponent {
       <Hotkeys>
         <Hotkey
           global={true}
-          combo="shift + o"
+          combo="ctrl + p"
           label="Show Omnibar"
           onKeyDown={this.handleToggle}
           // prevent typing "O" in omnibar input

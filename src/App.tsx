@@ -4,11 +4,12 @@ import { SearchBar } from "./components/Pallet/SearchBar";
 import { NavBar } from "./components/NavBar/NavBar";
 import { Label, Colors } from "@blueprintjs/core";
 import { CommitDescriptionWithOid } from "isomorphic-git";
-import { getGitLog } from "./git/git";
+import { getGitLog, getCurrentBranch } from "./git/git";
 
 interface IState {
   isLoaded: boolean;
   gitLog: Array<CommitDescriptionWithOid> | null;
+  gitCurrentBranch: string | undefined;
 }
 interface IProps {}
 // https://isomorphic-git.org/docs/en/log
@@ -16,19 +17,21 @@ interface IProps {}
 class App extends Component<IProps, IState> {
   constructor(props: IProps) {
     super(props);
-    this.state = { isLoaded: false, gitLog: null };
+    this.state = { isLoaded: false, gitLog: null, gitCurrentBranch: undefined };
   }
 
   async componentDidMount() {
-    const temp = await getGitLog();
-    this.setState({ gitLog: temp, isLoaded: true });
+    const gitLog = await getGitLog();
+    const gitCurrentBranch = await getCurrentBranch();
+    this.setState({ gitLog, isLoaded: true, gitCurrentBranch });
   }
 
   render() {
-    const { isLoaded } = this.state;
+    const { isLoaded, gitLog, gitCurrentBranch } = this.state;
     return (
       <div className="App">
-        <NavBar />
+        <NavBar branch={gitCurrentBranch!} />
+        <SearchBar />
 
         {/* Make a wrapping flex box
           https://css-tricks.com/snippets/css/a-guide-to-flexbox/
