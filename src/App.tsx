@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import "./App.css";
-import { SearchBar } from "./components/Pallet/SearchBar";
 import { NavBar } from "./components/NavBar/NavBar";
 import { CommitDescriptionWithOid } from "isomorphic-git";
 import { getGitLog, getCurrentBranch } from "./git/git";
-import { Example } from "./components/SideList/List";
+import { SideList } from "./components/SideList/SideList";
+import { Intent, Spinner } from "@blueprintjs/core";
 
 interface IState {
   isLoaded: boolean;
@@ -37,7 +37,11 @@ class App extends Component<IProps, IState> {
         */}
         <div className="container">
           <div className="sideBar">
-            <Example />
+            {isLoaded ? (
+              <SideList data={gitLog!} />
+            ) : (
+              <Spinner intent={Intent.PRIMARY} size={Spinner.SIZE_STANDARD} />
+            )}
           </div>
           <div className="mainContent">Main content here</div>
         </div>

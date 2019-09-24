@@ -17,23 +17,29 @@
 }
 
 .sideBar {
-  width: calc(20%);
+  width: calc(30%);
 }
 .mainContent {
-  width: calc(80%);
+  width: calc(70%);
 }
 
 .List {
   border: 1px solid #d9dddd;
 }
 
-.ListItemEven,
-.ListItemOdd {
+.historyItemEven,
+.historyItemOdd {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  flex: 1;
 }
 
 .ListItemEven {
-  background-color: #0f88da;
+  background-color: #394b59;
+}
+
+.historyItemContent {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
