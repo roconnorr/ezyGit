@@ -22,7 +22,7 @@ interface fileDiff {
   B: string;
 }
 
-const compareChanges = async (): Promise<string> => {
+const compareChanges = async (): Promise<Array<string>> => {
   // Use git log to get the SHA-1 object ids of the previous two commits
   const commits = await git.log({ dir: process.cwd(), depth: 2 });
   const oids = commits.map(commit => commit.oid);
@@ -86,7 +86,7 @@ const compareChanges = async (): Promise<string> => {
   });
 
   console.log(diff(blobA, blobB, { n_surrounding: 4 }));
-
-  return diff(blobA, blobB, { n_surrounding: 4 });
+  return [blobA.toString(), blobB.toString()];
+  // return diff(blobA, blobB, { n_surrounding: 4 });
 };
 export { getGitLog, getCurrentBranch, compareChanges };
