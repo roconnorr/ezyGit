@@ -5,7 +5,7 @@ import { CommitDescriptionWithOid } from "isomorphic-git";
 import { getGitLog, getCurrentBranch, compareChanges } from "./git/git";
 import { SideList } from "./components/SideList/SideList";
 import { Intent, Spinner } from "@blueprintjs/core";
-import { MonacoDiffEditor } from "react-monaco-editor";
+import { getEditor } from "./components/Editor/Editor";
 
 interface IState {
   isLoaded: boolean;
@@ -40,11 +40,6 @@ class App extends Component<IProps, IState> {
     this.setState({ gitDiff: temp });
   }
 
-  editorDidMount(editor: any, monaco: any) {
-    console.log("editorDidMount", editor);
-    editor.focus();
-  }
-
   render() {
     const { isLoaded, gitLog, gitCurrentBranch, gitDiff } = this.state;
 
@@ -69,15 +64,7 @@ class App extends Component<IProps, IState> {
             )}
           </div>
           <div className="mainContent">
-            <MonacoDiffEditor
-              language="javascript"
-              theme="vs-dark"
-              original={gitDiff[1]}
-              value={gitDiff[0]}
-              options={options}
-              onChange={(value: any, e: any) => {}}
-              editorDidMount={this.editorDidMount.bind(this)}
-            />
+            {getEditor(options, gitDiff[1], gitDiff[0])}
           </div>
         </div>
       </div>
