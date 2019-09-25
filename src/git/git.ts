@@ -1,7 +1,6 @@
 import * as git from "isomorphic-git";
 import { CommitDescriptionWithOid } from "isomorphic-git";
 const fs = require("fs");
-var diff = require("diff-lines");
 
 git.plugins.set("fs", fs);
 
@@ -102,9 +101,6 @@ const compareChanges = async (): Promise<Array<fileChanges>> => {
   if (results == null) {
     console.error("FAILED TO COMMIT");
   }
-
-  // console.log(diff(blobA, blobB, { n_surrounding: 4 }));
   return await getChanges(results!);
-  // return diff(blobA, blobB, { n_surrounding: 4 });
 };
 export { getGitLog, getCurrentBranch, compareChanges };

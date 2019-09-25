@@ -12,6 +12,7 @@ import { SideList } from "./components/SideList/SideList";
 import { Intent, Spinner } from "@blueprintjs/core";
 import { getEditor } from "./components/Editor/Editor";
 import { DiffViewer } from "./components/Editor/DiffViewer";
+import { MainContentList } from "./components/Diff/MainContentList";
 
 interface IState {
   isLoaded: boolean;
@@ -57,7 +58,6 @@ class App extends Component<IProps, IState> {
     return (
       <div className="App bp3-dark">
         <NavBar branch={gitCurrentBranch!} />
-
         {/* Make a wrapping flex box
           https://css-tricks.com/snippets/css/a-guide-to-flexbox/
         */}
@@ -72,7 +72,9 @@ class App extends Component<IProps, IState> {
           <div className="mainContent">
             {/* {getEditor(options, gitDiff[1], gitDiff[0])} */}
 
-            {gitDiff.map(diff => DiffViewer(diff.newState, diff.originalState))}
+            {/* {gitDiff.map(diff => DiffViewer(diff.newState, diff.originalState))} */}
+
+            <MainContentList data={gitDiff} />
           </div>
         </div>
       </div>
