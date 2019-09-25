@@ -26,23 +26,29 @@ export interface fileChanges {
   newState: string;
 }
 
-async function getChanges(diff: Array<fileDiff>): Promise<Array<fileChanges>> {
+async function getChanges(diff: Array<fileDiff>): Promise<any> {
   const files = diff.map(async (diff: fileDiff) => {
-    const { object: blobA } = await git.readObject({
-      dir: "./",
-      oid: diff.A,
-      encoding: "utf8"
-    });
+    console.log(diff);
 
-    const { object: blobB } = await git.readObject({
-      dir: "./",
-      oid: diff.B,
-      encoding: "utf8"
-    });
+    if (diff.A !== undefined) {
+      var { object: blobA } = await git.readObject({
+        dir: "./",
+        oid: diff.A,
+        encoding: "utf8"
+      });
+    }
+
+    if (diff.B !== undefined) {
+      var { object: blobB } = await git.readObject({
+        dir: "./",
+        oid: diff.B,
+        encoding: "utf8"
+      });
+    }
 
     return {
-      originalState: blobA.toString(),
-      newState: blobB.toString()
+      originalState: blobA ? blobA.toString() : "",
+      newState: blobB ? blobB.toString() : ""
     };
   });
   // Make this an array of objects
@@ -87,7 +93,9 @@ const compareChanges = async (): Promise<Array<fileChanges>> => {
       await B.populateHash();
 
       // Skip pairs where the oids are the same
-      if (A.oid === B.oid) return;
+      if (A.oid === B.oid) {
+        return;
+      }
 
       // Otherwise return the oids
       return {
@@ -98,8 +106,13 @@ const compareChanges = async (): Promise<Array<fileChanges>> => {
     }
   });
 
-  if (results == null) {
-    console.error("FAILED TO COMMIT");
+  if (results == undefined || !results.length) {
+    return [
+      {
+        originalState: "string",
+        newState: "string"
+      }
+    ];
   }
   return await getChanges(results!);
 };

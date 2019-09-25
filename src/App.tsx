@@ -10,8 +10,6 @@ import {
 } from "./git/git";
 import { SideList } from "./components/SideList/SideList";
 import { Intent, Spinner } from "@blueprintjs/core";
-import { getEditor } from "./components/Editor/Editor";
-import { DiffViewer } from "./components/Editor/DiffViewer";
 import { MainContentList } from "./components/Diff/MainContentList";
 
 interface IState {
@@ -50,11 +48,6 @@ class App extends Component<IProps, IState> {
   render() {
     const { isLoaded, gitLog, gitCurrentBranch, gitDiff } = this.state;
 
-    const options = {
-      selectOnLineNumbers: false,
-      automaticLayout: true,
-      readOnly: true
-    };
     return (
       <div className="App bp3-dark">
         <NavBar branch={gitCurrentBranch!} />
@@ -70,10 +63,6 @@ class App extends Component<IProps, IState> {
             )}
           </div>
           <div className="mainContent">
-            {/* {getEditor(options, gitDiff[1], gitDiff[0])} */}
-
-            {/* {gitDiff.map(diff => DiffViewer(diff.newState, diff.originalState))} */}
-
             <MainContentList data={gitDiff} />
           </div>
         </div>
