@@ -22,7 +22,36 @@ interface fileDiff {
   B: string;
 }
 
-const compareChanges = async (): Promise<Array<string>> => {
+export interface fileChanges {
+  originalState: string;
+  newState: string;
+}
+
+async function getChanges(diff: Array<fileDiff>): Promise<Array<fileChanges>> {
+  const files = diff.map(async (diff: fileDiff) => {
+    const { object: blobA } = await git.readObject({
+      dir: "./",
+      oid: diff.A,
+      encoding: "utf8"
+    });
+
+    const { object: blobB } = await git.readObject({
+      dir: "./",
+      oid: diff.B,
+      encoding: "utf8"
+    });
+
+    return {
+      originalState: blobA.toString(),
+      newState: blobB.toString()
+    };
+  });
+  // Make this an array of objects
+
+  return await Promise.all(files);
+}
+
+const compareChanges = async (): Promise<Array<fileChanges>> => {
   // Use git log to get the SHA-1 object ids of the previous two commits
   const commits = await git.log({ dir: process.cwd(), depth: 2 });
   const oids = commits.map(commit => commit.oid);
@@ -69,24 +98,13 @@ const compareChanges = async (): Promise<Array<string>> => {
       };
     }
   });
-  // Make this an array of objects
-  const oidA = results![0].A;
 
-  const { object: blobA } = await git.readObject({
-    dir: "./",
-    oid: oidA,
-    encoding: "utf8"
-  });
+  if (results == null) {
+    console.error("FAILED TO COMMIT");
+  }
 
-  const oidB = results![0].B;
-  const { object: blobB } = await git.readObject({
-    dir: "./",
-    oid: oidB,
-    encoding: "utf8"
-  });
-
-  console.log(diff(blobA, blobB, { n_surrounding: 4 }));
-  return [blobA.toString(), blobB.toString()];
+  // console.log(diff(blobA, blobB, { n_surrounding: 4 }));
+  return await getChanges(results!);
   // return diff(blobA, blobB, { n_surrounding: 4 });
 };
 export { getGitLog, getCurrentBranch, compareChanges };

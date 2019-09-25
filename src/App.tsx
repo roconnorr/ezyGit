@@ -2,7 +2,12 @@ import React, { Component } from "react";
 import "./App.css";
 import { NavBar } from "./components/NavBar/NavBar";
 import { CommitDescriptionWithOid } from "isomorphic-git";
-import { getGitLog, getCurrentBranch, compareChanges } from "./git/git";
+import {
+  getGitLog,
+  getCurrentBranch,
+  compareChanges,
+  fileChanges
+} from "./git/git";
 import { SideList } from "./components/SideList/SideList";
 import { Intent, Spinner } from "@blueprintjs/core";
 import { getEditor } from "./components/Editor/Editor";
@@ -12,7 +17,7 @@ interface IState {
   isLoaded: boolean;
   gitLog: Array<CommitDescriptionWithOid> | null;
   gitCurrentBranch: string | undefined;
-  gitDiff: Array<string>;
+  gitDiff: Array<fileChanges>;
 }
 interface IProps {}
 // https://isomorphic-git.org/docs/en/log
@@ -24,7 +29,7 @@ class App extends Component<IProps, IState> {
       isLoaded: false,
       gitLog: null,
       gitCurrentBranch: undefined,
-      gitDiff: [""]
+      gitDiff: [{ originalState: "", newState: "" }]
     };
   }
 
@@ -67,7 +72,7 @@ class App extends Component<IProps, IState> {
           <div className="mainContent">
             {/* {getEditor(options, gitDiff[1], gitDiff[0])} */}
 
-            {DiffViewer(gitDiff[1], gitDiff[0])}
+            {gitDiff.map(diff => DiffViewer(diff.newState, diff.originalState))}
           </div>
         </div>
       </div>
