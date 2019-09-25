@@ -16,7 +16,7 @@ interface IState {
   isLoaded: boolean;
   gitLog: Array<CommitDescriptionWithOid> | null;
   gitCurrentBranch: string | undefined;
-  gitDiff: Array<fileChanges>;
+  gitDiff: Array<fileChanges> | null;
 }
 interface IProps {}
 // https://isomorphic-git.org/docs/en/log
@@ -28,7 +28,7 @@ class App extends Component<IProps, IState> {
       isLoaded: false,
       gitLog: null,
       gitCurrentBranch: undefined,
-      gitDiff: [{ originalState: "", newState: "" }]
+      gitDiff: null
     };
   }
 
@@ -63,7 +63,7 @@ class App extends Component<IProps, IState> {
             )}
           </div>
           <div className="mainContent">
-            <MainContentList data={gitDiff} />
+            {gitDiff ? <MainContentList data={gitDiff} /> : null}
           </div>
         </div>
       </div>
