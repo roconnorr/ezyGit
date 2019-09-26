@@ -24,7 +24,7 @@ class MainContentList extends React.Component<IMainContentList, {}> {
     const { data } = this.props;
 
     return (
-      <Scrollbars style={{ height: "100%", width: "100%" }}>
+      <Scrollbars>
         <ReactList
           itemRenderer={this.itemRenderer.bind(this)}
           length={data.length}
