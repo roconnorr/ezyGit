@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Label, Button, Collapse } from "@blueprintjs/core";
+import { Label, Button, Collapse, Icon } from "@blueprintjs/core";
 import { DiffViewer } from "./DiffViewer";
 import { fileChanges } from "../../git/git";
 
@@ -29,7 +29,21 @@ class FileDiffListItem extends Component<
 
     return (
       <div key={key} style={{ padding: "10px" }}>
-        <Button onClick={this.handleClick}>{gitDiff.fileName}</Button>
+        <Button className={"gitDiffCollapseButton"} onClick={this.handleClick}>
+          <span
+            style={{
+              display: "inline-block",
+              textAlign: "left"
+            }}
+          >
+            <Icon
+              icon={this.state.collapsed ? "chevron-up" : "chevron-down"}
+              iconSize={Icon.SIZE_STANDARD}
+              style={{ width: "50px" }}
+            />
+            {gitDiff.fileName}
+          </span>
+        </Button>
         <Collapse isOpen={this.state.collapsed}>
           {DiffViewer(gitDiff.newState, gitDiff.originalState)}
         </Collapse>

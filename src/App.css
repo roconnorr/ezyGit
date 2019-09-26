@@ -45,3 +45,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+.gitDiffCollapseButton {
+  width: 100%;
+}
