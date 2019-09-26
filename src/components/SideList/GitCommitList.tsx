@@ -9,7 +9,7 @@ interface ISideListProps {
 }
 
 class GitCommitList extends React.Component<ISideListProps, {}> {
-  HistoryItem(index: number, key: number | string) {
+  renderGitCommit(index: number, key: number | string) {
     const commit = this.props.data[index];
     return GitCommitListItem(index, key, commit);
   }
@@ -19,7 +19,7 @@ class GitCommitList extends React.Component<ISideListProps, {}> {
     return (
       <Scrollbars>
         <ReactList
-          itemRenderer={this.HistoryItem.bind(this)}
+          itemRenderer={this.renderGitCommit.bind(this)}
           length={data.length}
           type="uniform"
         />

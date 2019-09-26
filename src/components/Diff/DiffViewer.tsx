@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import ReactDiffViewer from "react-diff-viewer";
 
 const defaultStyles = {

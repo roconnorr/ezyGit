@@ -1,6 +1,6 @@
 import React from "react";
 import { fileChanges } from "../../git/git";
-import { DiffViewer } from "../Editor/DiffViewer";
+import { DiffViewer } from "./DiffViewer";
 import Scrollbars from "react-custom-scrollbars";
 import ReactList from "react-list";
 
@@ -11,7 +11,7 @@ interface IMainContentList {
 class MainContentList extends React.Component<IMainContentList, {}> {
   itemRenderer(index: number, key: number | string) {
     return (
-      <div key={key}>
+      <div key={key} style={{ padding: "20px" }}>
         {DiffViewer(
           this.props.data[index].newState,
           this.props.data[index].originalState
