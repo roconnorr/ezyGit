@@ -8,7 +8,7 @@ interface ISideListProps {
   data: Array<CommitDescriptionWithOid>;
 }
 
-class SideList extends React.Component<ISideListProps, {}> {
+class GitCommitList extends React.Component<ISideListProps, {}> {
   HistoryItem(index: number, key: number | string) {
     const commit = this.props.data[index];
     return GitCommitListItem(index, key, commit);
@@ -28,4 +28,4 @@ class SideList extends React.Component<ISideListProps, {}> {
   }
 }
 
-export { SideList };
+export { GitCommitList };

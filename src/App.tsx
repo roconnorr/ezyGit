@@ -8,7 +8,7 @@ import {
   compareChanges,
   fileChanges
 } from "./git/git";
-import { SideList } from "./components/SideList/SideList";
+import { GitCommitList } from "./components/SideList/GitCommitList";
 import { Intent, Spinner } from "@blueprintjs/core";
 import { MainContentList } from "./components/Diff/MainContentList";
 
@@ -57,7 +57,7 @@ class App extends Component<IProps, IState> {
         <div className="container">
           <div className="sideBar">
             {isLoaded ? (
-              <SideList data={gitLog!} />
+              <GitCommitList data={gitLog!} />
             ) : (
               <Spinner intent={Intent.PRIMARY} size={Spinner.SIZE_STANDARD} />
             )}
