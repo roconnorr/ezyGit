@@ -58,7 +58,7 @@ async function getChanges(diff: Array<fileDiff>): Promise<any> {
 
 const compareChanges = async (): Promise<Array<fileChanges>> => {
   // Use git log to get the SHA-1 object ids of the previous two commits
-  const commits = await git.log({ dir: process.cwd(), depth: 2 });
+  const commits = await git.log({ dir: process.cwd(), depth: 3 });
   const oids = commits.map(commit => commit.oid);
 
   // Make TREE objects for the first and last commits
