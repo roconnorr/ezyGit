@@ -34,7 +34,7 @@ class MainContentList extends React.Component<IMainContentList, {}> {
   };
 
   itemRenderer(props: ListRowProps) {
-    console.log(props);
+    //console.log(props);
     return (
       <CellMeasurer
         key={props.key}

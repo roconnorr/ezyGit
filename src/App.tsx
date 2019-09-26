@@ -6,7 +6,8 @@ import {
   getGitLog,
   getCurrentBranch,
   compareChanges,
-  fileChanges
+  fileChanges,
+  startWatcher
 } from "./git/git";
 import { SideList } from "./components/SideList/SideList";
 import { Intent, Spinner } from "@blueprintjs/core";
@@ -33,7 +34,7 @@ class App extends Component<IProps, IState> {
   }
 
   async componentDidMount() {
-    Promise.all([getGitLog(), getCurrentBranch()]).then(values => {
+    Promise.all([getGitLog(), getCurrentBranch(), startWatcher()]).then(values => {
       this.setState({
         gitLog: values[0],
         isLoaded: true,

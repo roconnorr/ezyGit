@@ -1,16 +1,21 @@
 import * as git from "isomorphic-git";
 import { CommitDescriptionWithOid } from "isomorphic-git";
 const fs = require("fs");
+const chokidar = require('chokidar');
+const home = ".";
+const ignored = ["/(^|[\/\\])\../", 'node_modules', '.*'];
+let watcher;
+
 
 git.plugins.set("fs", fs);
 
 const getGitLog = async (): Promise<Array<CommitDescriptionWithOid>> => {
-  return await git.log({ dir: "./", depth: 1000 });
+  return await git.log({ dir: home, depth: 1000 });
 };
 
 const getCurrentBranch = async (): Promise<string | undefined> => {
   return await git.currentBranch({
-    dir: "./",
+    dir: home,
     fullname: true
   });
 };
@@ -26,13 +31,27 @@ export interface fileChanges {
   newState: string;
 }
 
+async function startWatcher(){
+
+   watcher = chokidar.watch(home, {
+    ignored: ignored, // ignore dotfiles
+    persistent: true
+  }).on('all', (event:any, path: any) => {
+    console.log(event, path);
+    let status = git.status({ dir: home, filepath: path })
+      console.log(status)
+  });
+  console.log("Watcher started.");
+  return;
+}
+
 async function getChanges(diff: Array<fileDiff>): Promise<any> {
   const files = diff.map(async (diff: fileDiff) => {
-    console.log(diff);
+    //console.log(diff);
 
     if (diff.A !== undefined) {
       var { object: blobA } = await git.readObject({
-        dir: "./",
+        dir: home,
         oid: diff.A,
         encoding: "utf8"
       });
@@ -40,7 +59,7 @@ async function getChanges(diff: Array<fileDiff>): Promise<any> {
 
     if (diff.B !== undefined) {
       var { object: blobB } = await git.readObject({
-        dir: "./",
+        dir: home,
         oid: diff.B,
         encoding: "utf8"
       });
@@ -116,4 +135,4 @@ const compareChanges = async (): Promise<Array<fileChanges>> => {
   }
   return await getChanges(results!);
 };
-export { getGitLog, getCurrentBranch, compareChanges };
+export { getGitLog, getCurrentBranch, compareChanges, startWatcher };
