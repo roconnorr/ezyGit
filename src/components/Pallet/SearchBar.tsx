@@ -2,17 +2,13 @@ import * as React from "react";
 
 import {
   Button,
-  H5,
   Hotkey,
   Hotkeys,
   HotkeysTarget,
-  KeyCombo,
   MenuItem,
   Position,
-  Switch,
   Toaster
 } from "@blueprintjs/core";
-import { handleBooleanChange } from "@blueprintjs/docs-theme";
 import { Omnibar, ItemRenderer, ItemPredicate } from "@blueprintjs/select";
 
 interface ICommand {

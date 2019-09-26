@@ -8,6 +8,7 @@ interface IHistoryItem {
 }
 
 const HistoryItem = ({ data, index, style }: IHistoryItem): any => {
+  console.log(data[0]);
   const item = data[index];
   const author = item.author;
   const date = new Date(author.timestamp * 1000 + author.timezoneOffset * 1000);

@@ -28,8 +28,6 @@ export interface fileChanges {
 
 async function getChanges(diff: Array<fileDiff>): Promise<any> {
   const files = diff.map(async (diff: fileDiff) => {
-    console.log(diff);
-
     if (diff.A !== undefined) {
       var { object: blobA } = await git.readObject({
         dir: "./",
