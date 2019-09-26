@@ -1,8 +1,8 @@
 import React from "react";
 import { fileChanges } from "../../git/git";
-import { DiffViewer } from "./DiffViewer";
 import Scrollbars from "react-custom-scrollbars";
 import ReactList from "react-list";
+import { FileDiffListItem } from "./FileDiffListItem";
 
 interface IMainContentList {
   data: Array<fileChanges>;
@@ -10,14 +10,8 @@ interface IMainContentList {
 
 class MainContentList extends React.Component<IMainContentList, {}> {
   itemRenderer(index: number, key: number | string) {
-    return (
-      <div key={key} style={{ padding: "20px" }}>
-        {DiffViewer(
-          this.props.data[index].newState,
-          this.props.data[index].originalState
-        )}
-      </div>
-    );
+    const gitDiff = this.props.data[index];
+    return <FileDiffListItem gitDiff={gitDiff} key={key} />;
   }
 
   render() {

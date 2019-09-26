@@ -24,6 +24,7 @@ interface fileDiff {
 export interface fileChanges {
   originalState: string;
   newState: string;
+  fileName: string;
 }
 
 async function getChanges(diff: Array<fileDiff>): Promise<any> {
@@ -46,7 +47,8 @@ async function getChanges(diff: Array<fileDiff>): Promise<any> {
 
     return {
       originalState: blobA ? blobA.toString() : "",
-      newState: blobB ? blobB.toString() : ""
+      newState: blobB ? blobB.toString() : "",
+      fileName: diff.fullpath
     };
   });
   // Make this an array of objects
@@ -107,8 +109,9 @@ const compareChanges = async (): Promise<Array<fileChanges>> => {
   if (results == undefined || !results.length) {
     return [
       {
-        originalState: "string",
-        newState: "string"
+        originalState: "",
+        newState: "",
+        fileName: ""
       }
     ];
   }
