@@ -9,10 +9,10 @@ interface IMainContentList {
 }
 
 class MainContentList extends React.Component<IMainContentList, {}> {
-  itemRenderer(index: number, key: number | string) {
+  itemRenderer = (index: number, key: number | string) => {
     const gitDiff = this.props.data[index];
     return <FileDiffListItem gitDiff={gitDiff} key={key} />;
-  }
+  };
 
   render() {
     const { data } = this.props;
@@ -20,9 +20,10 @@ class MainContentList extends React.Component<IMainContentList, {}> {
     return (
       <Scrollbars>
         <ReactList
-          itemRenderer={this.itemRenderer.bind(this)}
+          itemRenderer={this.itemRenderer}
           length={data.length}
           type={"variable"}
+          threshold={500}
         />
       </Scrollbars>
     );

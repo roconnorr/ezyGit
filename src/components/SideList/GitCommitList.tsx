@@ -15,17 +15,17 @@ class GitCommitList extends React.Component<ISideListProps, {}> {
     AppToaster.show({ message: "Loading " + commitOid });
   };
 
-  renderGitCommit(index: number, key: number | string) {
+  renderGitCommit = (index: number, key: number | string) => {
     const commit = this.props.data[index];
     return GitCommitListItem(index, key, commit, this.handleListItemClick);
-  }
+  };
 
   render() {
     const { data } = this.props;
     return (
       <Scrollbars>
         <ReactList
-          itemRenderer={this.renderGitCommit.bind(this)}
+          itemRenderer={this.renderGitCommit}
           length={data.length}
           type="uniform"
         />
