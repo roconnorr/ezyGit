@@ -1,11 +1,9 @@
 import * as git from "isomorphic-git";
 import { CommitDescriptionWithOid } from "isomorphic-git";
+import {startWatcher} from "./watcher"
 import { async } from "q";
 const fs = require("fs");
-const chokidar = require('chokidar');
-const home = ".";
-const ignored = ["/(^|[\/\\])\../", 'node_modules', '.*'];
-let watcher;
+const home = "./";
 
 
 git.plugins.set("fs", fs);
@@ -38,26 +36,12 @@ async function readFile(
   encoding: string = "utf8"
 ): Promise<string> {
   const { object: blob } = await git.readObject({
-    dir: "./",
+    dir: home,
     oid,
     encoding
   });
 
   return blob.toString();
-}
-
-async function startWatcher(){
-
-   watcher = chokidar.watch(home, {
-    ignored: ignored, // ignore dotfiles
-    persistent: true
-  }).on('all', (event:any, path: any) => {
-    console.log(event, path);
-    let status = git.status({ dir: home, filepath: path })
-      console.log(status)
-  });
-  console.log("Watcher started.");
-  return;
 }
 
 async function getChanges(diff: Array<fileDiff>): Promise<any> {
@@ -144,7 +128,7 @@ const compareChanges = async (): Promise<Array<fileChanges>> => {
 };
 
 async function getGitStatus(): Promise<any> {
-  let status = await git.statusMatrix({ dir: "./", pattern: "**" });
+  let status = await git.statusMatrix({ dir: home, pattern: "**" });
 
   const FILE = 0,
     HEAD = 1,
@@ -163,6 +147,8 @@ async function getGitStatus(): Promise<any> {
     .filter(row => row[HEAD] !== row[WORKDIR])
     .map(row => row[FILE]);
 
+    startWatcher();
+
   return unstaged;
 }
 
@@ -172,9 +158,9 @@ async function getModifiedFiles(): Promise<Array<string>> {
 
 async function addAllUntrackedFiles(): Promise<any> {
   const globby = require("globby");
-  const paths = await globby(["./**", "./**/.*"], { gitignore: true });
+  const paths = await globby([home +"**", home+ "**/.*"], { gitignore: true });
   for (const filepath of paths) {
-    await git.add({ fs, dir: "./", filepath });
+    await git.add({ fs, dir: home, filepath });
   }
 }
 

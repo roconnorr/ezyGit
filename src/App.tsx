@@ -9,6 +9,7 @@ import {
   fileChanges,
   getModifiedFiles
 } from "./git/git";
+
 import { GitCommitList } from "./components/SideList/GitCommitList";
 import { Intent, Spinner } from "@blueprintjs/core";
 import { MainContentList } from "./components/Diff/MainContentList";
