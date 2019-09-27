@@ -23,7 +23,7 @@ class MainContentList extends React.Component<IMainContentList, {}> {
           itemRenderer={this.itemRenderer}
           length={data.length}
           type={"variable"}
-          threshold={500}
+          threshold={2000}
         />
       </Scrollbars>
     );
