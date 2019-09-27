@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Label, Button, Collapse, Icon } from "@blueprintjs/core";
+import { Button, Collapse, Icon } from "@blueprintjs/core";
 import { DiffViewer } from "./DiffViewer";
 import { fileChanges } from "../../git/git";
 

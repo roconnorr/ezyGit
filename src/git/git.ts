@@ -65,6 +65,7 @@ async function getChanges(diff: Array<fileDiff>): Promise<any> {
   return await Promise.all(files);
 }
 
+// This is potentially a worse implementation of the getFileStateChanges function
 const compareChanges = async (): Promise<Array<fileChanges>> => {
   // Use git log to get the SHA-1 object ids of the previous two commits
   const commits = await git.log({ dir: process.cwd(), depth: 3 });
@@ -135,15 +136,15 @@ async function getGitStatus(): Promise<any> {
     WORKDIR = 2,
     STAGE = 3;
 
-  const deleted = status
+  const deleted = await status
     .filter(row => row[WORKDIR] === 0)
     .map(row => row[FILE]);
 
-  const unstaged = status
+  const unstaged = await status
     .filter(row => row[WORKDIR] !== row[STAGE])
     .map(row => row[FILE]);
 
-  const modified = status
+  const modified = await status
     .filter(row => row[HEAD] !== row[WORKDIR])
     .map(row => row[FILE]);
 
@@ -152,8 +153,10 @@ async function getGitStatus(): Promise<any> {
   return unstaged;
 }
 
-async function getModifiedFiles(): Promise<Array<string>> {
-  return getGitStatus();
+async function getModifiedFiles(): Promise<any> {
+  const filesEdited = await getGitStatus();
+
+  return filesEdited;
 }
 
 async function addAllUntrackedFiles(): Promise<any> {
