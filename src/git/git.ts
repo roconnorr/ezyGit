@@ -28,32 +28,37 @@ export interface fileChanges {
   fileName: string;
 }
 
+async function readFile(
+  oid: string,
+  encoding: string = "utf8"
+): Promise<string> {
+  const { object: blob } = await git.readObject({
+    dir: "./",
+    oid,
+    encoding
+  });
+
+  return blob.toString();
+}
+
 async function getChanges(diff: Array<fileDiff>): Promise<any> {
   const files = diff.map(async (diff: fileDiff) => {
+    const result = {
+      originalState: "",
+      newState: "",
+      fileName: diff.fullpath
+    };
+
     if (diff.A !== undefined) {
-      var { object: blobA } = await git.readObject({
-        dir: "./",
-        oid: diff.A,
-        encoding: "utf8"
-      });
+      result.originalState = await readFile(diff.A);
     }
 
     if (diff.B !== undefined) {
-      var { object: blobB } = await git.readObject({
-        dir: "./",
-        oid: diff.B,
-        encoding: "utf8"
-      });
+      result.newState = await readFile(diff.B);
     }
 
-    return {
-      originalState: blobA ? blobA.toString() : "",
-      newState: blobB ? blobB.toString() : "",
-      fileName: diff.fullpath
-    };
+    return result;
   });
-  // Make this an array of objects
-
   return await Promise.all(files);
 }
 
