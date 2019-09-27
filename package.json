@@ -29,6 +29,7 @@
     "electron-rebuild": "^1.8.6",
     "isomorphic-git": "^0.67.2",
     "lodash": "^4.17.15",
+    "chokidar": "^3.1.1",
     "react": "^16.9.0",
     "react-custom-scrollbars": "^4.2.1",
     "react-diff-viewer": "^2.0.1",
