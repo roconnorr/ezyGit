@@ -3,7 +3,6 @@ import { parseDiff, Diff, Hunk, Decoration } from 'react-diff-view';
 import { diffLines, formatLines } from 'unidiff';
 import 'react-diff-view/style/index.css';
 import tokenize from './Tokenize';
-import { flatMap } from 'lodash';
 
 const EMPTY_HUNKS = [];
 
