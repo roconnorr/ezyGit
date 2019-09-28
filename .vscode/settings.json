@@ -2,28 +2,17 @@
   "typescript.tsdk": "./node_modules/typescript/lib",
   "search.exclude": {
     "**/dist": true,
-    "**/node_modules": true,
+    "**/node_modules": true
   },
   "files.exclude": {
     "**/.git": true,
     "**/node_modules": true,
-    "**/dist": true,
+    "**/dist": true
   },
   "editor.tabSize": 2,
-  "prettier.semi": false,
   "prettier.singleQuote": true,
   "prettier.trailingComma": "es5",
   "editor.formatOnSave": true,
   "prettier.ignorePath": ".prettierignore",
-  "tslint.ignoreDefinitionFiles": true,
-  "eslint.options": {
-    "configFile": ".eslintrc.yml",
-    "rulePaths": ["eslint-rules"]
-  },
-  "eslint.validate": [
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact"
-  ]
+  "tslint.ignoreDefinitionFiles": true
 }
