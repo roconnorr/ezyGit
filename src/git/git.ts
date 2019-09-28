@@ -80,7 +80,7 @@ const compareChanges = async (): Promise<Array<fileChanges>> => {
   // Get a list of the files that changed
   let results = await git.walkBeta1<any, Array<fileDiff>>({
     trees: [A, B],
-    map: async function ([A, B]) {
+    map: async function([A, B]) {
       // Ignore directories
       if (A.fullpath === '.') {
         return;
@@ -162,8 +162,10 @@ async function getModifiedFiles(): Promise<any> {
 }
 
 async function addAllUntrackedFiles(): Promise<any> {
-  const globby = require("globby");
-  const paths = await globby([home + "**", home + "**/.*"], { gitignore: true });
+  const globby = require('globby');
+  const paths = await globby([workingDir + '**', workingDir + '**/.*'], {
+    gitignore: true,
+  });
   for (const filepath of paths) {
     await git.add({ fs, dir: workingDir, filepath });
   }
@@ -185,7 +187,7 @@ async function getFileStateChanges(
       git.TREE({ fs, gitdir: dir, ref: commitHash1 }),
       git.TREE({ fs, gitdir: dir, ref: commitHash2 }),
     ],
-    map: async function ([A, B]) {
+    map: async function([A, B]) {
       // ignore directories
       if (A.fullpath === '.') {
         return;
@@ -228,4 +230,10 @@ async function getFileStateChanges(
   });
 }
 
-export { getGitLog, getCurrentBranch, compareChanges, getModifiedFiles, onFileChange };
+export {
+  getGitLog,
+  getCurrentBranch,
+  compareChanges,
+  getModifiedFiles,
+  onFileChange,
+};
