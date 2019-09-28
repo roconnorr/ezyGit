@@ -65,8 +65,10 @@ async function getChanges(diff: Array<fileDiff>): Promise<any> {
 
 // This is potentially a worse implementation of the getFileStateChanges function
 const compareChanges = async (): Promise<Array<fileChanges>> => {
+  testNewMethod();
+
   // Use git log to get the SHA-1 object ids of the previous two commits
-  const commits = await git.log({ dir: workingDir, depth: 3 });
+  const commits = await git.log({ dir: workingDir, depth: 2 });
   const oids = commits.map(commit => commit.oid);
 
   // Make TREE objects for the first and last commits
@@ -161,31 +163,35 @@ async function getModifiedFiles(): Promise<any> {
   return filesEdited;
 }
 
-async function addAllUntrackedFiles(): Promise<any> {
-  const globby = require('globby');
-  const paths = await globby([workingDir + '**', workingDir + '**/.*'], {
-    gitignore: true,
-  });
-  for (const filepath of paths) {
-    await git.add({ fs, dir: workingDir, filepath });
-  }
+// async function addAllUntrackedFiles(): Promise<any> {
+//   const globby = require('globby');
+//   const paths = await globby([workingDir + '**', workingDir + '**/.*'], {
+//     gitignore: true,
+//   });
+//   for (const filepath of paths) {
+//     await git.add({ fs, dir: workingDir, filepath });
+//   }
+// }
+
+async function testNewMethod() {
+  // Use git log to get the SHA-1 object ids of the previous two commits
+  const commits = await git.log({ dir: workingDir, depth: 2 });
+  const oids = commits.map(commit => commit.oid);
+
+  console.log(await getFileStateChanges(oids[0], oids[1]));
 }
 
-/**
- * To test and compare to the other solution i'm using
- * @param commitHash1
- * @param commitHash2
- * @param dir
- */
+// Im happy with this will remove the other function and move it to be
+// the same as this.
 async function getFileStateChanges(
   commitHash1: string,
   commitHash2: string,
-  dir: string
-) {
-  return git.walkBeta1({
+  onlyShowChanges: boolean = true
+): Promise<any> {
+  const results = await git.walkBeta1({
     trees: [
-      git.TREE({ fs, gitdir: dir, ref: commitHash1 }),
-      git.TREE({ fs, gitdir: dir, ref: commitHash2 }),
+      git.TREE({ fs, gitdir: workingDir + '.git', ref: commitHash1 }),
+      git.TREE({ fs, gitdir: workingDir + '.git', ref: commitHash2 }),
     ],
     map: async function([A, B]) {
       // ignore directories
@@ -207,6 +213,11 @@ async function getFileStateChanges(
 
       // determine modification type
       let type = 'equal';
+
+      if (A.oid === B.oid && onlyShowChanges) {
+        return;
+      }
+
       if (A.oid !== B.oid) {
         type = 'modify';
       }
@@ -225,9 +236,16 @@ async function getFileStateChanges(
       return {
         path: `/${A.fullpath}`,
         type: type,
+        A: A.oid,
+        B: B.oid,
       };
     },
   });
+  if (results === undefined) {
+    return undefined;
+  }
+
+  return results;
 }
 
 export {

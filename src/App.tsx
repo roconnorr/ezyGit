@@ -13,7 +13,6 @@ import {
 
 import { GitCommitList } from './components/SideList/GitCommitList';
 import { Intent, Spinner, Button } from '@blueprintjs/core';
-import { MainContentList } from './components/Diff/MainContentList';
 import { NewDiff } from './components/Diff/Diff';
 
 interface IState {
@@ -23,11 +22,10 @@ interface IState {
   gitDiff: Array<fileChanges> | null;
   gitModifiedFiles: Array<fileChanges> | null;
 }
-interface IProps { }
 // https://isomorphic-git.org/docs/en/log
 
-class App extends Component<IProps, IState> {
-  constructor(props: IProps) {
+class App extends Component<{}, IState> {
+  constructor(props: {}) {
     super(props);
     this.state = {
       isLoaded: false,
@@ -54,10 +52,10 @@ class App extends Component<IProps, IState> {
 
     //Listen for updates, break out into hooks or events?
     onFileChange(async () => {
-      console.log("Update triggered");
+      console.log('Update triggered');
       const temp = await compareChanges();
       this.setState({ gitDiff: temp });
-    })
+    });
   }
 
   render() {
@@ -73,22 +71,22 @@ class App extends Component<IProps, IState> {
             {isLoaded ? (
               <GitCommitList data={gitLog!} />
             ) : (
-                <Spinner intent={Intent.PRIMARY} size={Spinner.SIZE_STANDARD} />
-              )}
+              <Spinner intent={Intent.PRIMARY} size={Spinner.SIZE_STANDARD} />
+            )}
           </div>
           <div className="mainContent">
             {gitDiff
               ? gitDiff.map(change => {
-                return (
-                  <div>
-                    <Button>HAPPY BUTTON FILE ENDED</Button>
-                    <NewDiff
-                      originText={change.newState}
-                      changedText={change.originalState}
-                    />
-                  </div>
-                );
-              })
+                  return (
+                    <div>
+                      <Button>HAPPY BUTTON FILE ENDED</Button>
+                      <NewDiff
+                        originText={change.newState}
+                        changedText={change.originalState}
+                      />
+                    </div>
+                  );
+                })
               : null}
             ) : null}
             {/* {gitDiff ? <MainContentList data={gitDiff} /> : null} */}

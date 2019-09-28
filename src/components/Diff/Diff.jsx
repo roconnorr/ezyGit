@@ -9,7 +9,7 @@ const EMPTY_HUNKS = [];
 const renderToken = (token, defaultRender, i) => {
   switch (token.type) {
     case 'space':
-      console.log(token);
+      // console.log(token);
       return (
         <span key={i} className="space">
           {token.children &&
