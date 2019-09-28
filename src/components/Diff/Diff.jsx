@@ -1,15 +1,16 @@
-import React, { Component, useMemo } from 'react'
-import { parseDiff, Diff, Hunk } from 'react-diff-view'
-import { diffLines, formatLines } from 'unidiff'
-import 'react-diff-view/style/index.css'
-import tokenize from './Tokenize'
+import React, { Component, useMemo } from 'react';
+import { parseDiff, Diff, Hunk, Decoration } from 'react-diff-view';
+import { diffLines, formatLines } from 'unidiff';
+import 'react-diff-view/style/index.css';
+import tokenize from './Tokenize';
+import { flatMap } from 'lodash';
 
-const EMPTY_HUNKS = []
+const EMPTY_HUNKS = [];
 
 const renderToken = (token, defaultRender, i) => {
   switch (token.type) {
     case 'space':
-      console.log(token)
+      console.log(token);
       return (
         <span key={i} className="space">
           {token.children &&
@@ -17,26 +18,26 @@ const renderToken = (token, defaultRender, i) => {
               renderToken(token, defaultRender, i)
             )}
         </span>
-      )
+      );
     default:
-      return defaultRender(token, i)
+      return defaultRender(token, i);
   }
-}
+};
 
 const NewDiff = ({ originText, changedText }) => {
   const diffText = formatLines(diffLines(originText, changedText), {
     context: 3,
-  })
-  const [diff] = parseDiff(diffText, { nearbySequences: 'zip' })
-  console.log(diff)
+  });
+  const [diff] = parseDiff(diffText, { nearbySequences: 'zip' });
+  console.log(diff);
 
-  const { type, hunks } = diff
+  const { type, hunks } = diff;
 
-  const tokens = useMemo(() => tokenize(hunks), [hunks])
+  const tokens = useMemo(() => tokenize(hunks), [hunks]);
 
   return (
     <Diff
-      viewType="split"
+      viewType="unified"
       diffType={type}
       hunks={hunks || EMPTY_HUNKS}
       tokens={tokens}
@@ -44,7 +45,7 @@ const NewDiff = ({ originText, changedText }) => {
     >
       {hunks => hunks.map(hunk => <Hunk key={hunk.content} hunk={hunk} />)}
     </Diff>
-  )
-}
+  );
+};
 
-export { NewDiff }
+export { NewDiff };

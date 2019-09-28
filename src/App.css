@@ -50,14 +50,14 @@
   width: 100%;
 }
 
-.diff-gutter {
-  color: #282c34;
-}
+.diff-gutter-insert,
+.diff-gutter-delete,
 .diff-code-insert,
 .diff-code-delete {
   color: #282c34;
 }
 .diff-code,
-.diff-code-normal {
+.diff-code-normal,
+.diff-gutter {
   background-color: #394b59;
 }
