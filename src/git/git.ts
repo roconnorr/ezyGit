@@ -1,21 +1,19 @@
-import * as git from "isomorphic-git";
-import { CommitDescriptionWithOid } from "isomorphic-git";
-import {startWatcher} from "./watcher"
-import { async } from "q";
-const fs = require("fs");
-const home = "./";
+import * as git from 'isomorphic-git';
+import { CommitDescriptionWithOid } from 'isomorphic-git';
+import { startWatcher } from './watcher';
+const fs = require('fs');
+const workingDir = './';
 
-
-git.plugins.set("fs", fs);
+git.plugins.set('fs', fs);
 
 const getGitLog = async (): Promise<Array<CommitDescriptionWithOid>> => {
-  return await git.log({ dir: home, depth: 1000 });
+  return await git.log({ dir: workingDir, depth: 1000 });
 };
 
 const getCurrentBranch = async (): Promise<string | undefined> => {
   return await git.currentBranch({
-    dir: home,
-    fullname: true
+    dir: workingDir,
+    fullname: true,
   });
 };
 
@@ -33,12 +31,12 @@ export interface fileChanges {
 
 async function readFile(
   oid: string,
-  encoding: string = "utf8"
+  encoding: string = 'utf8'
 ): Promise<string> {
   const { object: blob } = await git.readObject({
-    dir: home,
+    dir: workingDir,
     oid,
-    encoding
+    encoding,
   });
 
   return blob.toString();
@@ -47,9 +45,9 @@ async function readFile(
 async function getChanges(diff: Array<fileDiff>): Promise<any> {
   const files = diff.map(async (diff: fileDiff) => {
     const result = {
-      originalState: "",
-      newState: "",
-      fileName: diff.fullpath
+      originalState: '',
+      newState: '',
+      fileName: diff.fullpath,
     };
 
     if (diff.A !== undefined) {
@@ -68,15 +66,15 @@ async function getChanges(diff: Array<fileDiff>): Promise<any> {
 // This is potentially a worse implementation of the getFileStateChanges function
 const compareChanges = async (): Promise<Array<fileChanges>> => {
   // Use git log to get the SHA-1 object ids of the previous two commits
-  const commits = await git.log({ dir: process.cwd(), depth: 3 });
+  const commits = await git.log({ dir: workingDir, depth: 3 });
   const oids = commits.map(commit => commit.oid);
 
   // Make TREE objects for the first and last commits
-  const A = git.TREE({ fs, gitdir: `${process.cwd()}/.git`, ref: oids[0] });
+  const A = git.TREE({ fs, gitdir: `${workingDir}/.git`, ref: oids[0] });
   const B = git.TREE({
     fs,
-    gitdir: `${process.cwd()}/.git`,
-    ref: oids[oids.length - 1]
+    gitdir: `${workingDir}/.git`,
+    ref: oids[oids.length - 1],
   });
 
   // Get a list of the files that changed
@@ -84,17 +82,17 @@ const compareChanges = async (): Promise<Array<fileChanges>> => {
     trees: [A, B],
     map: async function([A, B]) {
       // Ignore directories
-      if (A.fullpath === ".") {
+      if (A.fullpath === '.') {
         return;
       }
 
       await A.populateStat();
-      if (A.type === "tree") {
+      if (A.type === 'tree') {
         return;
       }
 
       await B.populateStat();
-      if (B.type === "tree") {
+      if (B.type === 'tree') {
         return;
       }
 
@@ -111,25 +109,25 @@ const compareChanges = async (): Promise<Array<fileChanges>> => {
       return {
         fullpath: A.fullpath,
         A: A.oid,
-        B: B.oid
+        B: B.oid,
       };
-    }
+    },
   });
 
   if (results == undefined || !results.length) {
     return [
       {
-        originalState: "",
-        newState: "",
-        fileName: ""
-      }
+        originalState: '',
+        newState: '',
+        fileName: '',
+      },
     ];
   }
   return await getChanges(results!);
 };
 
 async function getGitStatus(): Promise<any> {
-  let status = await git.statusMatrix({ dir: home, pattern: "**" });
+  let status = await git.statusMatrix({ dir: workingDir, pattern: '**' });
 
   const FILE = 0,
     HEAD = 1,
@@ -148,7 +146,7 @@ async function getGitStatus(): Promise<any> {
     .filter(row => row[HEAD] !== row[WORKDIR])
     .map(row => row[FILE]);
 
-    startWatcher();
+  startWatcher();
 
   return unstaged;
 }
@@ -160,10 +158,12 @@ async function getModifiedFiles(): Promise<any> {
 }
 
 async function addAllUntrackedFiles(): Promise<any> {
-  const globby = require("globby");
-  const paths = await globby([home +"**", home+ "**/.*"], { gitignore: true });
+  const globby = require('globby');
+  const paths = await globby([workingDir + '**', workingDir + '**/.*'], {
+    gitignore: true,
+  });
   for (const filepath of paths) {
-    await git.add({ fs, dir: home, filepath });
+    await git.add({ fs, dir: workingDir, filepath });
   }
 }
 
@@ -181,19 +181,19 @@ async function getFileStateChanges(
   return git.walkBeta1({
     trees: [
       git.TREE({ fs, gitdir: dir, ref: commitHash1 }),
-      git.TREE({ fs, gitdir: dir, ref: commitHash2 })
+      git.TREE({ fs, gitdir: dir, ref: commitHash2 }),
     ],
     map: async function([A, B]) {
       // ignore directories
-      if (A.fullpath === ".") {
+      if (A.fullpath === '.') {
         return;
       }
       await A.populateStat();
-      if (A.type === "tree") {
+      if (A.type === 'tree') {
         return;
       }
       await B.populateStat();
-      if (B.type === "tree") {
+      if (B.type === 'tree') {
         return;
       }
 
@@ -202,27 +202,27 @@ async function getFileStateChanges(
       await B.populateHash();
 
       // determine modification type
-      let type = "equal";
+      let type = 'equal';
       if (A.oid !== B.oid) {
-        type = "modify";
+        type = 'modify';
       }
       if (A.oid === undefined) {
-        type = "add";
+        type = 'add';
       }
       if (B.oid === undefined) {
-        type = "remove";
+        type = 'remove';
       }
       if (A.oid === undefined && B.oid === undefined) {
-        console.log("Something weird happened:");
+        console.log('Something weird happened:');
         console.log(A);
         console.log(B);
       }
 
       return {
         path: `/${A.fullpath}`,
-        type: type
+        type: type,
       };
-    }
+    },
   });
 }
 
