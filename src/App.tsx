@@ -9,6 +9,7 @@ import {
   fileChanges,
   getModifiedFiles
 } from "./git/git";
+
 import { GitCommitList } from "./components/SideList/GitCommitList";
 import { Intent, Spinner } from "@blueprintjs/core";
 import { MainContentList } from "./components/Diff/MainContentList";
@@ -18,7 +19,7 @@ interface IState {
   gitLog: Array<CommitDescriptionWithOid> | null;
   gitCurrentBranch: string | undefined;
   gitDiff: Array<fileChanges> | null;
-  gitModifiedFiles: Array<string> | null;
+  gitModifiedFiles: Array<fileChanges> | null;
 }
 interface IProps {}
 // https://isomorphic-git.org/docs/en/log
@@ -36,19 +37,18 @@ class App extends Component<IProps, IState> {
   }
 
   async componentDidMount() {
-    Promise.all([getGitLog(), getCurrentBranch(), getModifiedFiles()]).then(
-      values => {
-        this.setState({
-          gitLog: values[0],
-          isLoaded: true,
-          gitCurrentBranch: values[1],
-          gitModifiedFiles: values[2]
-        });
-      }
-    );
+    Promise.all([getGitLog(), getCurrentBranch()]).then(values => {
+      this.setState({
+        gitLog: values[0],
+        isLoaded: true,
+        gitCurrentBranch: values[1]
+      });
+    });
 
     const temp = await compareChanges();
     this.setState({ gitDiff: temp });
+
+    console.log(await getModifiedFiles());
   }
 
   render() {

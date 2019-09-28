@@ -1,17 +1,20 @@
 import * as git from "isomorphic-git";
 import { CommitDescriptionWithOid } from "isomorphic-git";
+import {startWatcher} from "./watcher"
 import { async } from "q";
 const fs = require("fs");
+const home = "./";
+
 
 git.plugins.set("fs", fs);
 
 const getGitLog = async (): Promise<Array<CommitDescriptionWithOid>> => {
-  return await git.log({ dir: "./", depth: 1000 });
+  return await git.log({ dir: home, depth: 1000 });
 };
 
 const getCurrentBranch = async (): Promise<string | undefined> => {
   return await git.currentBranch({
-    dir: "./",
+    dir: home,
     fullname: true
   });
 };
@@ -33,7 +36,7 @@ async function readFile(
   encoding: string = "utf8"
 ): Promise<string> {
   const { object: blob } = await git.readObject({
-    dir: "./",
+    dir: home,
     oid,
     encoding
   });
@@ -62,6 +65,7 @@ async function getChanges(diff: Array<fileDiff>): Promise<any> {
   return await Promise.all(files);
 }
 
+// This is potentially a worse implementation of the getFileStateChanges function
 const compareChanges = async (): Promise<Array<fileChanges>> => {
   // Use git log to get the SHA-1 object ids of the previous two commits
   const commits = await git.log({ dir: process.cwd(), depth: 3 });
@@ -125,37 +129,41 @@ const compareChanges = async (): Promise<Array<fileChanges>> => {
 };
 
 async function getGitStatus(): Promise<any> {
-  let status = await git.statusMatrix({ dir: "./", pattern: "**" });
+  let status = await git.statusMatrix({ dir: home, pattern: "**" });
 
   const FILE = 0,
     HEAD = 1,
     WORKDIR = 2,
     STAGE = 3;
 
-  const deleted = status
+  const deleted = await status
     .filter(row => row[WORKDIR] === 0)
     .map(row => row[FILE]);
 
-  const unstaged = status
+  const unstaged = await status
     .filter(row => row[WORKDIR] !== row[STAGE])
     .map(row => row[FILE]);
 
-  const modified = status
+  const modified = await status
     .filter(row => row[HEAD] !== row[WORKDIR])
     .map(row => row[FILE]);
+
+    startWatcher();
 
   return unstaged;
 }
 
-async function getModifiedFiles(): Promise<Array<string>> {
-  return getGitStatus();
+async function getModifiedFiles(): Promise<any> {
+  const filesEdited = await getGitStatus();
+
+  return filesEdited;
 }
 
 async function addAllUntrackedFiles(): Promise<any> {
   const globby = require("globby");
-  const paths = await globby(["./**", "./**/.*"], { gitignore: true });
+  const paths = await globby([home +"**", home+ "**/.*"], { gitignore: true });
   for (const filepath of paths) {
-    await git.add({ fs, dir: "./", filepath });
+    await git.add({ fs, dir: home, filepath });
   }
 }
 
