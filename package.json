@@ -24,20 +24,22 @@
     }
   },
   "dependencies": {
+    "chokidar": "^3.1.1",
     "cross-env": "^6.0.0",
     "electron-is-dev": "^1.0.1",
     "electron-rebuild": "^1.8.6",
     "isomorphic-git": "^0.67.2",
     "lodash": "^4.17.15",
-    "chokidar": "^3.1.1",
     "react": "^16.9.0",
     "react-custom-scrollbars": "^4.2.1",
+    "react-diff-view": "^2.2.0",
     "react-diff-viewer": "^2.0.1",
     "react-dom": "^16.9.0",
     "react-list": "^0.8.13",
     "react-scripts": "^3.1.2",
     "request": "^2.88.0",
-    "tslint": "^5.20.0"
+    "tslint": "^5.20.0",
+    "unidiff": "^1.0.2"
   },
   "homepage": "./",
   "main": "public/electron.js",
