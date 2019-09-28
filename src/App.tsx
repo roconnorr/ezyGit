@@ -8,6 +8,7 @@ import {
   compareChanges,
   fileChanges,
   getModifiedFiles,
+  onFileChange,
 } from './git/git';
 
 import { GitCommitList } from './components/SideList/GitCommitList';
@@ -22,7 +23,7 @@ interface IState {
   gitDiff: Array<fileChanges> | null;
   gitModifiedFiles: Array<fileChanges> | null;
 }
-interface IProps {}
+interface IProps { }
 // https://isomorphic-git.org/docs/en/log
 
 class App extends Component<IProps, IState> {
@@ -50,6 +51,13 @@ class App extends Component<IProps, IState> {
     this.setState({ gitDiff: temp });
 
     console.log(await getModifiedFiles());
+
+    //Listen for updates, break out into hooks or events?
+    onFileChange(async () => {
+      console.log("Update triggered");
+      const temp = await compareChanges();
+      this.setState({ gitDiff: temp });
+    })
   }
 
   render() {
@@ -65,22 +73,22 @@ class App extends Component<IProps, IState> {
             {isLoaded ? (
               <GitCommitList data={gitLog!} />
             ) : (
-              <Spinner intent={Intent.PRIMARY} size={Spinner.SIZE_STANDARD} />
-            )}
+                <Spinner intent={Intent.PRIMARY} size={Spinner.SIZE_STANDARD} />
+              )}
           </div>
           <div className="mainContent">
             {gitDiff
               ? gitDiff.map(change => {
-                  return (
-                    <div>
-                      <Button>HAPPY BUTTON FILE ENDED</Button>
-                      <NewDiff
-                        originText={change.newState}
-                        changedText={change.originalState}
-                      />
-                    </div>
-                  );
-                })
+                return (
+                  <div>
+                    <Button>HAPPY BUTTON FILE ENDED</Button>
+                    <NewDiff
+                      originText={change.newState}
+                      changedText={change.originalState}
+                    />
+                  </div>
+                );
+              })
               : null}
             ) : null}
             {/* {gitDiff ? <MainContentList data={gitDiff} /> : null} */}
