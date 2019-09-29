@@ -1,8 +1,8 @@
-import React from "react";
-import { fileChanges } from "../../git/git";
-import Scrollbars from "react-custom-scrollbars";
-import ReactList from "react-list";
-import { FileDiffListItem } from "./FileDiffListItem";
+import React from 'react';
+import { fileChanges } from '../../git/git';
+import Scrollbars from 'react-custom-scrollbars';
+import ReactList from 'react-list';
+import { FileDiffListItem } from './FileDiffListItem';
 
 interface IMainContentList {
   data: Array<fileChanges>;
@@ -22,7 +22,7 @@ class MainContentList extends React.Component<IMainContentList, {}> {
         <ReactList
           itemRenderer={this.itemRenderer}
           length={data.length}
-          type={"variable"}
+          type={'variable'}
           threshold={2000}
         />
       </Scrollbars>

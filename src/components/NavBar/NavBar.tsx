@@ -1,13 +1,13 @@
-import * as React from "react";
+import * as React from 'react';
 
 import {
   Alignment,
   Navbar,
   NavbarDivider,
   NavbarGroup,
-  NavbarHeading
-} from "@blueprintjs/core";
-import { SearchBar } from "../Pallet/SearchBar";
+  NavbarHeading,
+} from '@blueprintjs/core';
+import { SearchBar } from '../Pallet/SearchBar';
 
 interface INavBarProps {
   branch: string;
@@ -21,7 +21,7 @@ const NavBar = (props: INavBarProps) => {
       <NavbarGroup align={Alignment.LEFT}>
         <NavbarHeading>ezyGit</NavbarHeading>
         <NavbarDivider />
-        <NavbarHeading>Current: {branch ? branch : "Loading..."}</NavbarHeading>
+        <NavbarHeading>Current: {branch ? branch : 'Loading...'}</NavbarHeading>
         <SearchBar />
       </NavbarGroup>
     </Navbar>

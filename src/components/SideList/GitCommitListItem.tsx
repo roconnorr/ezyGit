@@ -1,5 +1,5 @@
-import React from "react";
-import { CommitDescriptionWithOid } from "isomorphic-git";
+import React from 'react';
+import { CommitDescriptionWithOid } from 'isomorphic-git';
 
 const GitCommitListItem = (
   index: number,
@@ -12,19 +12,19 @@ const GitCommitListItem = (
   return (
     <div
       key={key}
-      className={index % 2 ? "historyItemEven" : "historyItemOdd"}
+      className={index % 2 ? 'historyItemEven' : 'historyItemOdd'}
       onClick={() => onClickCallback(commit.oid)}
     >
       <div className="historyItemContent">{commit.message}</div>
       <div className="historyItemContent">
-        <span style={{ width: "50%", display: "inline-block" }}>
-          {date.toLocaleDateString("en-UK")}
+        <span style={{ width: '50%', display: 'inline-block' }}>
+          {date.toLocaleDateString('en-UK')}
         </span>
         <span
           style={{
-            textAlign: "right",
-            width: "50%",
-            display: "inline-block"
+            textAlign: 'right',
+            width: '50%',
+            display: 'inline-block',
           }}
         >
           {author.name}

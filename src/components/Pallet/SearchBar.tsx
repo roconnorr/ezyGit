@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from 'react';
 
 import {
   Button,
@@ -7,9 +7,9 @@ import {
   HotkeysTarget,
   MenuItem,
   Position,
-  Toaster
-} from "@blueprintjs/core";
-import { Omnibar, ItemRenderer, ItemPredicate } from "@blueprintjs/select";
+  Toaster,
+} from '@blueprintjs/core';
+import { Omnibar, ItemRenderer, ItemPredicate } from '@blueprintjs/select';
 
 interface ICommand {
   name: string;
@@ -57,11 +57,11 @@ const filmSelectProps = {
   itemPredicate: filterFilm,
   itemRenderer: renderFilm,
   items: [
-    { name: "pop" },
-    { name: "stash" },
-    { name: "push" },
-    { name: "pull" }
-  ]
+    { name: 'pop' },
+    { name: 'stash' },
+    { name: 'push' },
+    { name: 'pull' },
+  ],
 };
 function highlightText(text: string, query: string) {
   let lastIndex = 0;
@@ -72,7 +72,7 @@ function highlightText(text: string, query: string) {
   if (words.length === 0) {
     return [text];
   }
-  const regexp = new RegExp(words.join("|"), "gi");
+  const regexp = new RegExp(words.join('|'), 'gi');
   const tokens: React.ReactNode[] = [];
   while (true) {
     const match = regexp.exec(text);
@@ -95,7 +95,7 @@ function highlightText(text: string, query: string) {
 }
 
 function escapeRegExpChars(text: string) {
-  return text.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, "$1");
+  return text.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, '$1');
 }
 
 export interface ISearchBarState {
@@ -105,12 +105,12 @@ export interface ISearchBarState {
 @HotkeysTarget
 export class SearchBar extends React.PureComponent {
   public state: ISearchBarState = {
-    isOpen: false
+    isOpen: false,
   };
 
   private toaster!: Toaster;
   private refHandlers = {
-    toaster: (ref: Toaster) => (this.toaster = ref)
+    toaster: (ref: Toaster) => (this.toaster = ref),
   };
 
   public renderHotkeys() {
@@ -159,7 +159,7 @@ export class SearchBar extends React.PureComponent {
         <span>
           You selected <strong>{film.name}</strong>.
         </span>
-      )
+      ),
     });
   };
 

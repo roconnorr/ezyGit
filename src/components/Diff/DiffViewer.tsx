@@ -1,25 +1,25 @@
-import React from "react";
-import ReactDiffViewer from "react-diff-viewer";
+import React from 'react';
+import ReactDiffViewer from 'react-diff-viewer';
 
 const defaultStyles = {
   variables: {
-    diffViewerBackground: "#282c34",
-    addedBackground: "#e6ffed",
-    addedColor: "#24292e",
-    removedBackground: "#f2dede",
-    removedColor: "#b94a48",
-    wordAddedBackground: "#acf2bd",
-    wordRemovedBackground: "#fdb8c0",
-    addedGutterBackground: "#cdffd8",
-    removedGutterBackground: "#f2dede",
-    gutterBackground: "#282c34",
-    gutterBackgroundDark: "#282c34",
-    highlightBackground: "#fffbdd",
-    highlightGutterBackground: "#fff5b1",
-    codeFoldGutterBackground: "#282c34",
-    codeFoldBackground: "#282c34",
-    emptyLineBackground: "#282c34"
-  }
+    diffViewerBackground: '#282c34',
+    addedBackground: '#e6ffed',
+    addedColor: '#24292e',
+    removedBackground: '#f2dede',
+    removedColor: '#b94a48',
+    wordAddedBackground: '#acf2bd',
+    wordRemovedBackground: '#fdb8c0',
+    addedGutterBackground: '#cdffd8',
+    removedGutterBackground: '#f2dede',
+    gutterBackground: '#282c34',
+    gutterBackgroundDark: '#282c34',
+    highlightBackground: '#fffbdd',
+    highlightGutterBackground: '#fff5b1',
+    codeFoldGutterBackground: '#282c34',
+    codeFoldBackground: '#282c34',
+    emptyLineBackground: '#282c34',
+  },
   //   diffContainer: {}, //style object
   //   diffRemoved: {}, //style object
   //   diffAdded: {}, //style object

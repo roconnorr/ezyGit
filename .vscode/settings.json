@@ -14,5 +14,6 @@
   "prettier.trailingComma": "es5",
   "editor.formatOnSave": true,
   "prettier.ignorePath": ".prettierignore",
-  "tslint.ignoreDefinitionFiles": true
+  "tslint.ignoreDefinitionFiles": true,
+  "files.eol": "\n"
 }

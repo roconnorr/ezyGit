@@ -14,6 +14,7 @@ import {
 import { GitCommitList } from './components/SideList/GitCommitList';
 import { Intent, Spinner, Button } from '@blueprintjs/core';
 import { NewDiff } from './components/Diff/Diff';
+import { Git } from './git/newGit';
 
 interface IState {
   isLoaded: boolean;
@@ -49,6 +50,8 @@ class App extends Component<{}, IState> {
     this.setState({ gitDiff: temp });
 
     console.log(await getModifiedFiles());
+
+    let newGit = new Git('./');
 
     //Listen for updates, break out into hooks or events?
     onFileChange(async () => {

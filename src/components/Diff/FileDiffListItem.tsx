@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import { Button, Collapse, Icon } from "@blueprintjs/core";
-import { DiffViewer } from "./DiffViewer";
-import { fileChanges } from "../../git/git";
+import React, { Component } from 'react';
+import { Button, Collapse, Icon } from '@blueprintjs/core';
+import { DiffViewer } from './DiffViewer';
+import { fileChanges } from '../../git/git';
 
 interface IMainContentList {
   collapsed: boolean;
@@ -17,7 +17,7 @@ class FileDiffListItem extends Component<
   IMainContentList
 > {
   public readonly state: Readonly<IMainContentList> = {
-    collapsed: true
+    collapsed: true,
   };
 
   private handleClick = () => {
@@ -28,18 +28,18 @@ class FileDiffListItem extends Component<
     const { gitDiff, key } = this.props;
 
     return (
-      <div key={key} style={{ padding: "10px" }}>
-        <Button className={"gitDiffCollapseButton"} onClick={this.handleClick}>
+      <div key={key} style={{ padding: '10px' }}>
+        <Button className={'gitDiffCollapseButton'} onClick={this.handleClick}>
           <span
             style={{
-              display: "inline-block",
-              textAlign: "left"
+              display: 'inline-block',
+              textAlign: 'left',
             }}
           >
             <Icon
-              icon={this.state.collapsed ? "chevron-up" : "chevron-down"}
+              icon={this.state.collapsed ? 'chevron-up' : 'chevron-down'}
               iconSize={Icon.SIZE_STANDARD}
-              style={{ width: "50px" }}
+              style={{ width: '50px' }}
             />
             {gitDiff.fileName}
           </span>
