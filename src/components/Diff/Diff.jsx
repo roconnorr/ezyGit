@@ -9,7 +9,6 @@ const EMPTY_HUNKS = [];
 const renderToken = (token, defaultRender, i) => {
   switch (token.type) {
     case 'space':
-      // console.log(token);
       return (
         <span key={i} className="space">
           {token.children &&
@@ -44,7 +43,6 @@ const DiffView = ({
         onExpand={onExpandRange}
       />
     ) : null;
-    // <HunkInfo key={'decoration-' + hunk.content} hunk={hunk} />
     children.push(decorationElement);
     const events = {
       onClick: onToggleChangeSelection,
@@ -83,7 +81,6 @@ const DiffView = ({
       tokens={tokens}
       renderToken={renderToken}
     >
-      {/* {hunks => hunks.map(hunk => <Hunk key={hunk.content} hunk={hunk} />)} */}
       {hunks => hunks.reduce(renderHunk, [])}
     </Diff>
   );
