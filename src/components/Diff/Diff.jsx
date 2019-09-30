@@ -23,23 +23,54 @@ const renderToken = (token, defaultRender, i) => {
   }
 };
 
-const DiffView = ({ hunks, diffType, onExpandRange }) => {
+const DiffView = ({
+  hunks,
+  diffType,
+  onExpandRange,
+  oldSource,
+  onToggleChangeSelection,
+}) => {
   const tokens = useMemo(() => tokenize(hunks), [hunks]);
 
-  const renderHunk = (children, hunk) => {
+  const linesCount = oldSource ? oldSource.split('\n').length : 0;
+  const renderHunk = (children, hunk, i, hunks) => {
     const previousElement = children[children.length - 1];
-    const decorationElement = (
+    const decorationElement = oldSource ? (
       <UnfoldCollapsed
         key={'decoration-' + hunk.content}
         previousHunk={previousElement && previousElement.props.hunk}
         currentHunk={hunk}
-        onClick={onExpandRange}
+        linesCount={linesCount}
+        onExpand={onExpandRange}
+      />
+    ) : null;
+    // <HunkInfo key={'decoration-' + hunk.content} hunk={hunk} />
+    children.push(decorationElement);
+    const events = {
+      onClick: onToggleChangeSelection,
+    };
+
+    const hunkElement = (
+      <Hunk
+        key={'hunk-' + hunk.content}
+        hunk={hunk}
+        codeEvents={events}
+        gutterEvents={events}
       />
     );
-    children.push(decorationElement);
-
-    const hunkElement = <Hunk key={'hunk-' + hunk.content} hunk={hunk} />;
     children.push(hunkElement);
+
+    if (i === hunks.length - 1 && oldSource) {
+      const unfoldTailElement = (
+        <UnfoldCollapsed
+          key="decoration-tail"
+          previousHunk={hunk}
+          linesCount={linesCount}
+          onExpand={onExpandRange}
+        />
+      );
+      children.push(unfoldTailElement);
+    }
 
     return children;
   };
