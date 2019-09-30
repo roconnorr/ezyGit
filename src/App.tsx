@@ -13,7 +13,8 @@ import {
 
 import { GitCommitList } from './components/SideList/GitCommitList';
 import { Intent, Spinner, Button } from '@blueprintjs/core';
-import { NewDiff } from './components/Diff/Diff';
+import NewDiff from './components/Diff/Diff';
+import { getGitDifference } from './components/Diff/GetGitDifference';
 
 interface IState {
   isLoaded: boolean;
@@ -60,6 +61,7 @@ class App extends Component<{}, IState> {
 
   render() {
     const { isLoaded, gitLog, gitCurrentBranch, gitDiff } = this.state;
+
     return (
       <div className="App bp3-dark">
         <NavBar branch={gitCurrentBranch!} />
@@ -77,18 +79,23 @@ class App extends Component<{}, IState> {
           <div className="mainContent">
             {gitDiff
               ? gitDiff.map(change => {
+                  const [diff] = getGitDifference(
+                    change.newState,
+                    change.originalState
+                  );
+                  console.log(diff);
                   return (
                     <div>
                       <Button>HAPPY BUTTON FILE ENDED</Button>
                       <NewDiff
-                        originText={change.newState}
-                        changedText={change.originalState}
+                        hunks={diff.hunks}
+                        diffType={diff.type}
+                        oldSource={change.originalState}
                       />
                     </div>
                   );
                 })
               : null}
-            ) : null}
             {/* {gitDiff ? <MainContentList data={gitDiff} /> : null} */}
           </div>
         </div>

@@ -1,6 +1,5 @@
-import React, { Component, useMemo } from 'react';
-import { parseDiff, Diff, Hunk, Decoration } from 'react-diff-view';
-import { diffLines, formatLines } from 'unidiff';
+import React, { useMemo } from 'react';
+import { Diff, Hunk, withSourceExpansion } from 'react-diff-view';
 import 'react-diff-view/style/index.css';
 import tokenize from './Tokenize';
 
@@ -23,28 +22,48 @@ const renderToken = (token, defaultRender, i) => {
   }
 };
 
-const NewDiff = ({ originText, changedText }) => {
-  const diffText = formatLines(diffLines(originText, changedText), {
-    context: 3,
-  });
-  const [diff] = parseDiff(diffText, { nearbySequences: 'zip' });
-  console.log(diff);
+const UnfoldCollapsed = ({ previousHunk, currentHunk, onClick }) => {
+  const start = previousHunk
+    ? previousHunk.oldStart + previousHunk.oldLines
+    : 1;
+  const end = currentHunk.oldStart - 1;
 
-  const { type, hunks } = diff;
+  return <div onClick={() => onClick(start, end)}>Click to expand</div>;
+};
 
+const DiffView = ({ hunks, diffType, onExpandRange }) => {
   const tokens = useMemo(() => tokenize(hunks), [hunks]);
+
+  const renderHunk = (children, hunk) => {
+    const previousElement = children[children.length - 1];
+    const decorationElement = (
+      <UnfoldCollapsed
+        key={'decoration-' + hunk.content}
+        previousHunk={previousElement && previousElement.props.hunk}
+        currentHunk={hunk}
+        onClick={onExpandRange}
+      />
+    );
+    children.push(decorationElement);
+
+    const hunkElement = <Hunk key={'hunk-' + hunk.content} hunk={hunk} />;
+    children.push(hunkElement);
+
+    return children;
+  };
 
   return (
     <Diff
       viewType="unified"
-      diffType={type}
+      diffType={diffType}
       hunks={hunks || EMPTY_HUNKS}
       tokens={tokens}
       renderToken={renderToken}
     >
-      {hunks => hunks.map(hunk => <Hunk key={hunk.content} hunk={hunk} />)}
+      {/* {hunks => hunks.map(hunk => <Hunk key={hunk.content} hunk={hunk} />)} */}
+      {hunks => hunks.reduce(renderHunk, [])}
     </Diff>
   );
 };
 
-export { NewDiff };
+export default withSourceExpansion()(DiffView);
