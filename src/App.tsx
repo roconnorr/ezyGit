@@ -78,14 +78,14 @@ class App extends Component<{}, IState> {
           </div>
           <div className="mainContent">
             {gitDiff
-              ? gitDiff.map(change => {
+              ? gitDiff.map((change, index) => {
                   const [diff] = getGitDifference(
                     change.newState,
                     change.originalState
                   );
                   console.log(diff);
                   return (
-                    <div>
+                    <div key={index}>
                       <Button>HAPPY BUTTON FILE ENDED</Button>
                       <NewDiff
                         hunks={diff.hunks}
