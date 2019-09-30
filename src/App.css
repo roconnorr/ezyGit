@@ -61,3 +61,12 @@
 .diff-gutter {
   background-color: #394b59;
 }
+
+/* These rules are not being applied */
+.diff-code-delete {
+  background-color: #f1c4c7;
+}
+
+.diff-gutter-delete {
+  background-color: #e89da5;
+}

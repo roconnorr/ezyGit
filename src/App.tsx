@@ -12,9 +12,8 @@ import {
 } from './git/git';
 
 import { GitCommitList } from './components/SideList/GitCommitList';
-import { Intent, Spinner, Button } from '@blueprintjs/core';
-import NewDiff from './components/Diff/Diff';
-import { getGitDifference } from './components/Diff/GetGitDifference';
+import { Intent, Spinner } from '@blueprintjs/core';
+import { DiffViewer } from './components/Diff/DiffViewer';
 
 interface IState {
   isLoaded: boolean;
@@ -77,26 +76,7 @@ class App extends Component<{}, IState> {
             )}
           </div>
           <div className="mainContent">
-            {gitDiff
-              ? gitDiff.map((change, index) => {
-                  const [diff] = getGitDifference(
-                    change.newState,
-                    change.originalState
-                  );
-                  console.log(diff);
-                  return (
-                    <div key={index}>
-                      <Button>HAPPY BUTTON FILE ENDED</Button>
-                      <NewDiff
-                        hunks={diff.hunks}
-                        diffType={diff.type}
-                        oldSource={change.originalState}
-                      />
-                    </div>
-                  );
-                })
-              : null}
-            {/* {gitDiff ? <MainContentList data={gitDiff} /> : null} */}
+            {gitDiff ? DiffViewer(gitDiff!) : null}
           </div>
         </div>
       </div>
