@@ -60,14 +60,9 @@ enum FileWatcherEvent {
 }
 
 class FileWatcher {
-  directory: string;
-  options: chokidar.WatchOptions;
+  directory: string | undefined;
+  options: chokidar.WatchOptions | undefined;
   agent: chokidar.FSWatcher | undefined;
-
-  constructor(dir: string, options: chokidar.WatchOptions) {
-    this.directory = dir;
-    this.options = options;
-  }
 
   start() {
     if (this.agent) this.agent.close();

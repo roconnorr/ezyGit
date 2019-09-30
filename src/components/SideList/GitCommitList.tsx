@@ -22,6 +22,7 @@ class GitCommitList extends React.Component<ISideListProps, {}> {
 
   render() {
     const { data } = this.props;
+    console.log(data);
     return (
       <Scrollbars>
         <ReactList
