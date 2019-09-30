@@ -2,6 +2,7 @@ import React, { useMemo } from 'react';
 import { Diff, Hunk, withSourceExpansion } from 'react-diff-view';
 import 'react-diff-view/style/index.css';
 import tokenize from './Tokenize';
+import { UnfoldCollapsed } from './UnfoldCollapsed';
 
 const EMPTY_HUNKS = [];
 
@@ -20,15 +21,6 @@ const renderToken = (token, defaultRender, i) => {
     default:
       return defaultRender(token, i);
   }
-};
-
-const UnfoldCollapsed = ({ previousHunk, currentHunk, onClick }) => {
-  const start = previousHunk
-    ? previousHunk.oldStart + previousHunk.oldLines
-    : 1;
-  const end = currentHunk.oldStart - 1;
-
-  return <div onClick={() => onClick(start, end)}>Click to expand</div>;
 };
 
 const DiffView = ({ hunks, diffType, onExpandRange }) => {
