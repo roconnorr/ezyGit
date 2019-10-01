@@ -24,18 +24,18 @@ export default class DiffViewerListItem extends React.Component<
 
   render() {
     const { oldSource, diffType, hunks, fileName } = this.props;
-    const isOpen = this.state;
 
     return (
       <div>
         <div className="diff-item-header" onClick={this.onClickCollapse}>
-          <Icon
-            icon={isOpen ? IconNames.CHEVRON_DOWN : IconNames.CHEVRON_UP}
-            iconSize={Icon.SIZE_LARGE}
-          />
+          {this.state.isOpen ? (
+            <Icon icon={IconNames.CHEVRON_DOWN} iconSize={Icon.SIZE_LARGE} />
+          ) : (
+            <Icon icon={IconNames.CHEVRON_UP} iconSize={Icon.SIZE_LARGE} />
+          )}
           {fileName}
         </div>
-        <Collapse {...isOpen}>
+        <Collapse isOpen={this.state.isOpen}>
           <Diff hunks={hunks} diffType={diffType} oldSource={oldSource} />
         </Collapse>
       </div>
