@@ -3,6 +3,7 @@
 @import '~@blueprintjs/icons/lib/css/blueprint-icons.css';
 @import '~@blueprintjs/select/lib/css/blueprint-select.css';
 @import './styles/diff.css';
+@import './styles/diffListItem.css';
 
 .App {
   background-color: #282a36;
@@ -19,6 +20,7 @@
 .bp3-button {
   background-color: #6272a4 !important;
 }
+
 .container {
   display: flex; /* or inline-flex */
   flex-direction: row;
@@ -28,6 +30,7 @@
 .sideBar {
   width: calc(30%);
 }
+
 .mainContent {
   width: calc(70%);
 }
