@@ -2,13 +2,18 @@
 @import '~@blueprintjs/core/lib/css/blueprint.css';
 @import '~@blueprintjs/icons/lib/css/blueprint-icons.css';
 @import '~@blueprintjs/select/lib/css/blueprint-select.css';
+@import './styles/diff.css';
 
 .App {
-  background-color: #282c34;
+  background-color: #282a36;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   padding-top: 55px; /** HACKS **/
+}
+
+.app-navbar {
+  background-color: #282a36;
 }
 
 .container {
@@ -37,41 +42,11 @@
 }
 
 .historyItemEven {
-  background-color: #394b59;
+  background-color: #44475a;
 }
 
-/* .historyItemContent {
+.historyItemContent {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-} */
-
-.gitDiffCollapseButton {
-  width: 100%;
-}
-
-.diff-gutter-insert,
-.diff-gutter-delete,
-.diff-code-insert,
-.diff-code-delete {
-  color: #282c34;
-}
-.diff-code,
-.diff-code-normal,
-.diff-gutter {
-  background-color: #394b59;
-}
-
-/* These rules are not being applied */
-.diff-code-delete {
-  background-color: #f1c4c7;
-}
-
-.diff-gutter-delete {
-  background-color: #e89da5;
-}
-
-.diff-item-header {
-  background-color: aqua;
-  width: '100%';
 }

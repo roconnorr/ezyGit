@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import { Diff, Hunk, withSourceExpansion } from 'react-diff-view';
-import 'react-diff-view/style/index.css';
+// import 'react-diff-view/style/index.css';
 import tokenize from './Tokenize';
 import { UnfoldCollapsed } from './UnfoldCollapsed';
 

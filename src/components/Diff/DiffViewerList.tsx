@@ -27,6 +27,7 @@ const DiffViewerList = (gitDiff: Array<fileChanges>) => {
         itemRenderer={renderGitCommit}
         length={gitDiff.length}
         type="variable"
+        threshold={5000}
       />
     </Scrollbars>
   );
