@@ -12,9 +12,7 @@
   padding-top: 55px; /** HACKS **/
 }
 
-.bp3-navbar,
-.bp3-fixed-top,
-.app-navbar {
+.bp3-navbar {
   background-color: #44475a !important;
 }
 

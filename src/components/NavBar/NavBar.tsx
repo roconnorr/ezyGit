@@ -17,7 +17,7 @@ const NavBar = (props: INavBarProps) => {
   const { branch } = props;
 
   return (
-    <Navbar className="app-navbar" fixedToTop={true}>
+    <Navbar fixedToTop={true}>
       <NavbarGroup align={Alignment.LEFT}>
         <NavbarHeading>ezyGit</NavbarHeading>
         <NavbarDivider />
