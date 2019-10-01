@@ -40,11 +40,11 @@
   background-color: #394b59;
 }
 
-.historyItemContent {
+/* .historyItemContent {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-}
+} */
 
 .gitDiffCollapseButton {
   width: 100%;
@@ -69,4 +69,9 @@
 
 .diff-gutter-delete {
   background-color: #e89da5;
+}
+
+.diff-item-header {
+  background-color: aqua;
+  width: '100%';
 }

@@ -13,7 +13,7 @@ import {
 
 import { GitCommitList } from './components/SideList/GitCommitList';
 import { Intent, Spinner } from '@blueprintjs/core';
-import { DiffViewer } from './components/Diff/DiffViewer';
+import { DiffViewerList } from './components/Diff/DiffViewerList';
 
 interface IState {
   isLoaded: boolean;
@@ -76,7 +76,7 @@ class App extends Component<{}, IState> {
             )}
           </div>
           <div className="mainContent">
-            {gitDiff ? DiffViewer(gitDiff!) : null}
+            {gitDiff ? DiffViewerList(gitDiff!) : null}
           </div>
         </div>
       </div>
