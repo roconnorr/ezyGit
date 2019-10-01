@@ -12,10 +12,15 @@
   padding-top: 55px; /** HACKS **/
 }
 
+.bp3-navbar,
+.bp3-fixed-top,
 .app-navbar {
-  background-color: #282a36;
+  background-color: #44475a !important;
 }
 
+.bp3-button {
+  background-color: #6272a4 !important;
+}
 .container {
   display: flex; /* or inline-flex */
   flex-direction: row;
