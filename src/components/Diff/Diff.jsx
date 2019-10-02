@@ -75,7 +75,7 @@ const DiffView = ({
 
   return (
     <Diff
-      viewType={'unified' ? 'unified' : 'split'}
+      viewType={'unified' ? 'split' : 'split'}
       diffType={diffType}
       hunks={hunks || EMPTY_HUNKS}
       tokens={tokens}

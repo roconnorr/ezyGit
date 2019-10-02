@@ -1,6 +1,7 @@
 import * as git from 'isomorphic-git';
 import { CommitDescriptionWithOid } from 'isomorphic-git';
 import { startWatcher, addListener } from './watcher';
+import { workerData } from 'worker_threads';
 const fs = require('fs');
 const workingDir = './';
 
@@ -248,10 +249,73 @@ async function getFileStateChanges(
   return results;
 }
 
+/**
+ * Gets the last commit of the file
+ *
+ * @param files
+ */
+async function getCurrentCommitChanges(files: [string]): Promise<any> {
+  const commits = await git.log({ dir: workingDir });
+
+  const previousFileState = files.map(async filePath => {
+    let { object: blob } = await git.readObject({
+      dir: workingDir,
+      oid: commits[0].oid, // Only interested in the previous commit for now
+      filepath: filePath,
+    });
+
+    const currentContents = fs.readFileSync(filePath, 'utf8');
+
+    return {
+      lastCommit: blob.toString(),
+      currentContents,
+    };
+  });
+
+  const done = await Promise.all(previousFileState);
+  console.log(done);
+}
+
+async function findAllCommitsContainingfile() {
+  let commits = await git.log({ dir: '.' });
+  let lastSHA = null;
+  let lastCommit = null;
+  let commitsThatMatter = [];
+
+  for (let i = 0; i < commits.length; i += 1) {
+    let commit = commits[i];
+    try {
+      let o = await git.readObject({
+        dir: workingDir,
+        oid: commit.oid,
+        filepath: 'PathToFileGoesHere',
+      });
+      if (i === commits.length - 1) {
+        // file already existed in first commit
+        commitsThatMatter.push(commit);
+        break;
+      }
+      if (o.oid !== lastSHA) {
+        if (lastSHA !== null) {
+          commitsThatMatter.push(lastCommit);
+        }
+        lastSHA = o.oid;
+      }
+    } catch (err) {
+      // file no longer there
+      commitsThatMatter.push(lastCommit);
+      break;
+    }
+    lastCommit = commit;
+  }
+  console.log(commitsThatMatter);
+}
+
 export {
   getGitLog,
   getCurrentBranch,
   compareChanges,
   getModifiedFiles,
   onFileChange,
+  getCurrentCommitChanges,
 };
