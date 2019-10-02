@@ -1,9 +1,7 @@
 import React from 'react';
-import { Collapse, Button, Icon, Intent } from '@blueprintjs/core';
+import { Collapse, Icon } from '@blueprintjs/core';
 import Diff from './Diff';
 import { IconNames } from '@blueprintjs/icons';
-import { hashBlob } from 'isomorphic-git';
-var crypto = require('crypto');
 
 export default class DiffViewerListItem extends React.Component<
   {

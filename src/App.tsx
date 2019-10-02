@@ -3,7 +3,6 @@ import './App.css';
 import { NavBar } from './components/NavBar/NavBar';
 import { CommitDescriptionWithOid } from 'isomorphic-git';
 import {
-  getGitLog,
   getCommitFileDifferences,
   fileChanges,
   getCommitHashes,
@@ -14,12 +13,12 @@ import {
 import { GitCommitList } from './components/SideList/GitCommitList';
 import { Intent, Spinner } from '@blueprintjs/core';
 import { DiffViewerList } from './components/Diff/DiffViewerList';
-import { Git, GitStats } from './git/newGit';
+import { Git, GitStats, GitCommitLog } from './git/newGit';
 import { FileWatcher } from './git/watcher';
 
 interface IState {
   isLoaded: boolean;
-  gitLog: Array<CommitDescriptionWithOid> | null;
+  gitLog: Array<GitCommitLog> | null;
   gitCurrentBranch: string | undefined;
   gitDiff: Array<FileStatusChanges> | null;
   gitModifiedFiles: Array<fileChanges> | null;
@@ -58,14 +57,6 @@ class App extends Component<{}, IState> {
     console.log('New Git Stuff!');
 
     const gitLog = await git.getGitLog(100);
-    gitLog.unshift({
-      author: { name: '', email: '', timestamp: 0, timezoneOffset: 0 },
-      committer: { name: '', email: '', timestamp: 0, timezoneOffset: 0 },
-      message: '',
-      oid: '',
-      parent: [''],
-      tree: '',
-    });
 
     this.setState({
       gitDiff: getCurrentFileDifferences,

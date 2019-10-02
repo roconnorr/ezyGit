@@ -44,6 +44,11 @@ export interface GitFileStatus {
   ignored?: Array<object>;
 }
 
+export interface GitCommitLog {
+  isHistory: boolean;
+  commit?: CommitDescriptionWithOid;
+}
+
 class Git {
   //#region Properties
   directory: string;
@@ -136,7 +141,7 @@ class Git {
   async getGitLog(
     size: number = 20,
     timestamp: number = -1
-  ): Promise<Array<CommitDescriptionWithOid>> {
+  ): Promise<Array<GitCommitLog>> {
     let options = { dir: this.directory, depth: size };
 
     if (timestamp > -1) {
@@ -144,7 +149,16 @@ class Git {
     }
     let requestedLog = await git.log(options);
 
-    return requestedLog;
+    const modifiedLog: Array<GitCommitLog> = requestedLog.map(commitHistory => {
+      return {
+        isHistory: true,
+        commit: commitHistory,
+      };
+    });
+
+    // Insert blank commit at the start
+    modifiedLog.unshift({ isHistory: false });
+    return modifiedLog;
   }
 
   async getGitStatus(flags: GitStats = GitStats.ALL): Promise<GitFileStatus> {
