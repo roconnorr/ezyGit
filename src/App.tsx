@@ -15,6 +15,8 @@ import {
 import { GitCommitList } from './components/SideList/GitCommitList';
 import { Intent, Spinner } from '@blueprintjs/core';
 import { DiffViewerList } from './components/Diff/DiffViewerList';
+import { Git, GitStats } from './git/newGit';
+import { FileWatcher } from './git/watcher';
 
 interface IState {
   isLoaded: boolean;
@@ -57,6 +59,12 @@ class App extends Component<{}, IState> {
       const temp = await compareChanges();
       this.setState({ gitDiff: temp });
     });
+
+    let git = new Git('./', new FileWatcher());
+    console.log('New Git Stuff!');
+    console.log(await git.getCurrentBranch());
+    //console.log(await git.getGitLog());
+    console.log(await git.getGitStatus(GitStats.UNSTAGED));
   }
 
   render() {
