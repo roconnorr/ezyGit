@@ -9,6 +9,7 @@ import {
   fileChanges,
   getCommitHashes,
   FileStatusChanges,
+  onFileChange,
 } from './git/git';
 
 import { GitCommitList } from './components/SideList/GitCommitList';
@@ -59,8 +60,8 @@ class App extends Component<{}, IState> {
     //Listen for updates, break out into hooks or events?
     onFileChange(async () => {
       console.log('Update triggered');
-      const temp = await compareChanges();
-      this.setState({ gitDiff: temp });
+      // const temp = await compareChanges();
+      // this.setState({ gitDiff: temp });
     });
 
     let git = new Git('./', new FileWatcher());

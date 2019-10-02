@@ -27,12 +27,6 @@ const getCurrentBranch = async (): Promise<string | undefined> => {
   });
 };
 
-interface fileDiff {
-  fullpath: string;
-  A: string;
-  B: string;
-}
-
 export interface fileChanges {
   originalState: string;
   newState: string;
@@ -59,10 +53,14 @@ async function getChanges(
   const files = fileStatusChanges.map(async (diff: any) => {
     if (diff.hashA !== undefined) {
       diff.original = await readFile(diff.hashA);
+    } else {
+      diff.original = '';
     }
 
     if (diff.hashB !== undefined) {
       diff.modified = await readFile(diff.hashB);
+    } else {
+      diff.modified = '';
     }
     return diff;
   });
