@@ -258,18 +258,24 @@ async function getCurrentCommitChanges(files: [string]): Promise<any> {
   const commits = await git.log({ dir: workingDir });
 
   const previousFileState = files.map(async filePath => {
-    let { object: blob } = await git.readObject({
-      dir: workingDir,
-      oid: commits[0].oid, // Only interested in the previous commit for now
-      filepath: filePath,
-    });
+    try {
+      let { object: blob } = await git.readObject({
+        dir: workingDir,
+        oid: commits[0].oid, // Only interested in the previous commit for now
+        filepath: filePath,
+      });
 
-    const currentContents = fs.readFileSync(filePath, 'utf8');
+      const currentContents = fs.readFileSync(filePath, 'utf8');
 
-    return {
-      lastCommit: blob.toString(),
-      currentContents,
-    };
+      return {
+        lastCommit: blob.toString(),
+        currentContents,
+      };
+    } catch (error) {
+      console.log('New File');
+    }
+
+    return '';
   });
 
   const done = await Promise.all(previousFileState);
