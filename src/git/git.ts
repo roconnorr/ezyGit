@@ -69,7 +69,7 @@ async function getChanges(
 }
 
 async function onFileChange(callback: any) {
-  addListener(callback);
+  // addListener(callback);
 }
 
 async function getGitStatus(): Promise<any> {
@@ -221,7 +221,6 @@ async function getCurrentCommitChanges(files: [string]): Promise<any> {
   });
 
   const done = await Promise.all(previousFileState);
-  console.log(done);
 }
 
 async function findAllCommitsContainingfile() {

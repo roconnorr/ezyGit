@@ -98,8 +98,8 @@ class Git {
       ignoreInitial: true,
     };
 
-    this.watcher.start();
-    this.watcher.addEvent(FileWatcherEvent.ALL, this.onWatcherEvent.bind(this));
+    // this.watcher.start();
+    // this.watcher.addEvent(FileWatcherEvent.ALL, this.onWatcherEvent.bind(this));
     console.log('Watcher started');
   }
 

@@ -4,7 +4,6 @@ import { NavBar } from './components/NavBar/NavBar';
 import { CommitDescriptionWithOid } from 'isomorphic-git';
 import {
   getGitLog,
-  getCurrentBranch,
   getCommitFileDifferences,
   fileChanges,
   getCommitHashes,
@@ -40,21 +39,12 @@ class App extends Component<{}, IState> {
   }
 
   async componentDidMount() {
-    Promise.all([getGitLog(), getCurrentBranch()]).then(values => {
-      this.setState({
-        gitLog: values[0],
-        isLoaded: true,
-        gitCurrentBranch: values[1],
-      });
-    });
-
     const hashes = await getCommitHashes();
-    const temp = await getCommitFileDifferences(
+    const getCurrentFileDifferences = await getCommitFileDifferences(
       hashes.targetHash,
       hashes.previousHash
     );
 
-    this.setState({ gitDiff: temp });
     // console.log(await getCurrentCommitChanges(await getModifiedFiles()));
 
     //Listen for updates, break out into hooks or events?
@@ -66,9 +56,27 @@ class App extends Component<{}, IState> {
 
     let git = new Git('./', new FileWatcher());
     console.log('New Git Stuff!');
-    console.log(await git.getCurrentBranch());
-    //console.log(await git.getGitLog());
-    console.log(await git.getGitStatus(GitStats.UNSTAGED));
+
+    const gitLog = await git.getGitLog(100);
+    gitLog.unshift({
+      author: { name: '', email: '', timestamp: 0, timezoneOffset: 0 },
+      committer: { name: '', email: '', timestamp: 0, timezoneOffset: 0 },
+      message: '',
+      oid: '',
+      parent: [''],
+      tree: '',
+    });
+
+    this.setState({
+      gitDiff: getCurrentFileDifferences,
+      gitCurrentBranch: await git.getCurrentBranch(),
+      gitLog: gitLog,
+      isLoaded: true,
+    });
+
+    git.getGitStatus(GitStats.UNSTAGED).then(() => {
+      console.log('completed ');
+    });
   }
 
   render() {

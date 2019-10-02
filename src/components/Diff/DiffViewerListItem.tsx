@@ -31,7 +31,7 @@ export default class DiffViewerListItem extends React.Component<
           {this.state.isOpen ? (
             <Icon icon={IconNames.CHEVRON_DOWN} iconSize={Icon.SIZE_LARGE} />
           ) : (
-            <Icon icon={IconNames.CHEVRON_UP} iconSize={Icon.SIZE_LARGE} />
+            <Icon icon={IconNames.CHEVRON_RIGHT} iconSize={Icon.SIZE_LARGE} />
           )}
           {fileName}
         </div>
