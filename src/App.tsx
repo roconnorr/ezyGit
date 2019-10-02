@@ -5,11 +5,10 @@ import { CommitDescriptionWithOid } from 'isomorphic-git';
 import {
   getGitLog,
   getCurrentBranch,
-  compareChanges,
+  getCommitFileDifferences,
   fileChanges,
-  getModifiedFiles,
-  onFileChange,
-  getCurrentCommitChanges,
+  getCommitHashes,
+  FileStatusChanges,
 } from './git/git';
 
 import { GitCommitList } from './components/SideList/GitCommitList';
@@ -20,7 +19,7 @@ interface IState {
   isLoaded: boolean;
   gitLog: Array<CommitDescriptionWithOid> | null;
   gitCurrentBranch: string | undefined;
-  gitDiff: Array<fileChanges> | null;
+  gitDiff: Array<FileStatusChanges> | null;
   gitModifiedFiles: Array<fileChanges> | null;
 }
 // https://isomorphic-git.org/docs/en/log
@@ -46,17 +45,21 @@ class App extends Component<{}, IState> {
       });
     });
 
-    const temp = await compareChanges();
-    this.setState({ gitDiff: temp });
+    const hashes = await getCommitHashes();
+    const temp = await getCommitFileDifferences(
+      hashes.targetHash,
+      hashes.previousHash
+    );
 
-    // console.log(await getModifiedFiles());
-    console.log(await getCurrentCommitChanges(await getModifiedFiles()));
+    this.setState({ gitDiff: temp });
+    // console.log(await getCurrentCommitChanges(await getModifiedFiles()));
+
     //Listen for updates, break out into hooks or events?
-    onFileChange(async () => {
-      console.log('Update triggered');
-      const temp = await compareChanges();
-      this.setState({ gitDiff: temp });
-    });
+    // onFileChange(async () => {
+    //   console.log('Update triggered');
+    //   // const temp = await compareChanges();
+    //   // this.setState({ gitDiff: temp });
+    // });
   }
 
   render() {

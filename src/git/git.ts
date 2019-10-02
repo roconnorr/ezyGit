@@ -1,11 +1,20 @@
 import * as git from 'isomorphic-git';
 import { CommitDescriptionWithOid } from 'isomorphic-git';
 import { startWatcher, addListener } from './watcher';
-import { workerData } from 'worker_threads';
+
 const fs = require('fs');
 const workingDir = './';
 
 git.plugins.set('fs', fs);
+
+export interface FileStatusChanges {
+  path: string;
+  type: string;
+  original: string;
+  modified: string;
+  hashA: string;
+  hashB: string;
+}
 
 const getGitLog = async (): Promise<Array<CommitDescriptionWithOid>> => {
   return await git.log({ dir: workingDir, depth: 1000 });
@@ -28,6 +37,7 @@ export interface fileChanges {
   originalState: string;
   newState: string;
   fileName: string;
+  type: string;
 }
 
 async function readFile(
@@ -43,91 +53,22 @@ async function readFile(
   return blob.toString();
 }
 
-async function getChanges(diff: Array<fileDiff>): Promise<any> {
-  const files = diff.map(async (diff: fileDiff) => {
-    const result = {
-      originalState: '',
-      newState: '',
-      fileName: diff.fullpath,
-    };
-
-    if (diff.A !== undefined) {
-      result.originalState = await readFile(diff.A);
+async function getChanges(
+  fileStatusChanges: Array<FileStatusChanges>
+): Promise<any> {
+  const files = fileStatusChanges.map(async (diff: any) => {
+    if (diff.hashA !== undefined) {
+      diff.original = await readFile(diff.hashA);
     }
 
-    if (diff.B !== undefined) {
-      result.newState = await readFile(diff.B);
+    if (diff.hashB !== undefined) {
+      diff.modified = await readFile(diff.hashB);
     }
-
-    return result;
+    return diff;
   });
+
   return await Promise.all(files);
 }
-
-// This is potentially a worse implementation of the getFileStateChanges function
-const compareChanges = async (): Promise<Array<fileChanges>> => {
-  testNewMethod();
-
-  // Use git log to get the SHA-1 object ids of the previous two commits
-  const commits = await git.log({ dir: workingDir, depth: 2 });
-  const oids = commits.map(commit => commit.oid);
-
-  // Make TREE objects for the first and last commits
-  const A = git.TREE({ fs, gitdir: `${workingDir}/.git`, ref: oids[0] });
-  const B = git.TREE({
-    fs,
-    gitdir: `${workingDir}/.git`,
-    ref: oids[oids.length - 1],
-  });
-
-  // Get a list of the files that changed
-  let results = await git.walkBeta1<any, Array<fileDiff>>({
-    trees: [A, B],
-    map: async function([A, B]) {
-      // Ignore directories
-      if (A.fullpath === '.') {
-        return;
-      }
-
-      await A.populateStat();
-      if (A.type === 'tree') {
-        return;
-      }
-
-      await B.populateStat();
-      if (B.type === 'tree') {
-        return;
-      }
-
-      // Figure out the SHA-1 object ids.
-      await A.populateHash();
-      await B.populateHash();
-
-      // Skip pairs where the oids are the same
-      if (A.oid === B.oid) {
-        return;
-      }
-
-      // Otherwise return the oids
-      return {
-        fullpath: A.fullpath,
-        A: A.oid,
-        B: B.oid,
-      };
-    },
-  });
-
-  if (results == undefined || !results.length) {
-    return [
-      {
-        originalState: '',
-        newState: '',
-        fileName: '',
-      },
-    ];
-  }
-  return await getChanges(results!);
-};
 
 async function onFileChange(callback: any) {
   addListener(callback);
@@ -174,22 +115,28 @@ async function getModifiedFiles(): Promise<any> {
 //   }
 // }
 
-async function testNewMethod() {
-  // Use git log to get the SHA-1 object ids of the previous two commits
-  const commits = await git.log({ dir: workingDir, depth: 2 });
+// Needs safety checks added.
+// Defaults to getting the previous 2 commits.
+async function getCommitHashes(
+  depth: number = 2
+): Promise<{ targetHash: string; previousHash: string }> {
+  const commits = await git.log({ dir: workingDir, depth });
   const oids = commits.map(commit => commit.oid);
 
-  console.log(await getFileStateChanges(oids[0], oids[1]));
+  return {
+    targetHash: oids[depth],
+    previousHash: oids[oids.length - 1],
+  };
 }
 
 // Im happy with this will remove the other function and move it to be
 // the same as this.
-async function getFileStateChanges(
+async function getCommitFileDifferences(
   commitHash1: string,
   commitHash2: string,
   onlyShowChanges: boolean = true
-): Promise<any> {
-  const results = await git.walkBeta1({
+): Promise<FileStatusChanges[]> {
+  const results: FileStatusChanges[] | undefined = await git.walkBeta1({
     trees: [
       git.TREE({ fs, gitdir: workingDir + '.git', ref: commitHash1 }),
       git.TREE({ fs, gitdir: workingDir + '.git', ref: commitHash2 }),
@@ -211,7 +158,6 @@ async function getFileStateChanges(
       // generate ids
       await A.populateHash();
       await B.populateHash();
-
       // determine modification type
       let type = 'equal';
 
@@ -235,18 +181,16 @@ async function getFileStateChanges(
       }
 
       return {
-        path: `/${A.fullpath}`,
+        path: '/' + A.fullpath,
         type: type,
-        A: A.oid,
-        B: B.oid,
+        original: undefined,
+        modified: undefined,
+        hashA: A.oid,
+        hashB: B.oid,
       };
     },
   });
-  if (results === undefined) {
-    return undefined;
-  }
-
-  return results;
+  return await getChanges(results!);
 }
 
 /**
@@ -314,8 +258,9 @@ async function findAllCommitsContainingfile() {
 export {
   getGitLog,
   getCurrentBranch,
-  compareChanges,
+  getCommitFileDifferences,
   getModifiedFiles,
   onFileChange,
   getCurrentCommitChanges,
+  getCommitHashes,
 };
