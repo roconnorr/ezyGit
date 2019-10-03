@@ -11,7 +11,6 @@ interface ISideListProps {
 
 class GitCommitList extends React.Component<ISideListProps, {}> {
   handleListItemClick = (commitOid: number) => {
-    console.log(commitOid);
     AppToaster.show({ message: 'Loading ' + commitOid });
   };
 
