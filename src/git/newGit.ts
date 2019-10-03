@@ -2,7 +2,7 @@ import * as git from 'isomorphic-git';
 import { CommitDescriptionWithOid } from 'isomorphic-git';
 import * as chokidar from 'chokidar';
 import { FileWatcher, FileWatcherEvent } from './watcher';
-import { number } from 'prop-types';
+import { number, array } from 'prop-types';
 
 const fs = require('fs');
 
@@ -81,13 +81,16 @@ class Git {
     let lines = data.toString().split('\n');
     console.log('Parsed Ignore');
 
-    this.ignore = lines.filter((currentLine: string) => {
-      if (currentLine.startsWith('#') || !currentLine.trim()) {
-        return false;
-      }
-      return true;
-    });
+    this.ignore = lines
+      .filter((currentLine: string) => {
+        if (currentLine.startsWith('#') || !currentLine.trim()) {
+          return false;
+        }
+        return true;
+      })
+      .map(line => line.replace(/^\//, ''));
 
+    console.log(this.ignore);
     this.setupWatcher();
   }
 
@@ -101,10 +104,11 @@ class Git {
     this.watcher.options = {
       ignored: this.ignore,
       ignoreInitial: true,
+      persistent: true,
     };
 
-    // this.watcher.start();
-    // this.watcher.addEvent(FileWatcherEvent.ALL, this.onWatcherEvent.bind(this));
+    this.watcher.start();
+    this.watcher.addEvent(FileWatcherEvent.ALL, this.onWatcherEvent.bind(this));
     console.log('Watcher started');
   }
 
@@ -161,6 +165,10 @@ class Git {
     return modifiedLog;
   }
 
+  /**
+   * Super heavy function to get the status of the whole git.
+   * @param flags Customizable flags for filtering returned info
+   */
   async getGitStatus(flags: GitStats = GitStats.ALL): Promise<GitFileStatus> {
     const time = Date.now();
     console.log('Started GitStatus');

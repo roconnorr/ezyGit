@@ -68,7 +68,10 @@ class FileWatcher {
     if (this.agent) {
       this.agent.close();
     }
-    this.agent = chokidar.watch(home, this.options);
+    console.log(this.options);
+    this.agent = chokidar.watch(home, this.options).on('all', (event, path) => {
+      console.log(event + ' : ' + path);
+    });
   }
 
   stop() {
