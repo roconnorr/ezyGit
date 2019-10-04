@@ -1,6 +1,6 @@
-import { combineReducers } from 'redux';
-import profile from './commit';
+import { combineReducers } from 'redux'
+import commit from './commit'
 
 export default combineReducers({
-  profile,
-});
+  commit
+})

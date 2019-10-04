@@ -1,10 +1,11 @@
 import { EMAIL_CHANGED } from '../actions/commit';
 
-const INITIAL_STATE = {
-  email: 'test@redux.com',
-};
+const initialState = {
+  addedIds: [],
+  quantityById: {}
+}
 
-const profileReducer = (state = INITIAL_STATE, action: any) => {
+const getCommitLog = (state = initialState, action: any) => {
   switch (action.type) {
     case EMAIL_CHANGED:
       return { ...state, email: action.email };
@@ -14,4 +15,4 @@ const profileReducer = (state = INITIAL_STATE, action: any) => {
   }
 };
 
-export default profileReducer;
+export default getCommitLog;

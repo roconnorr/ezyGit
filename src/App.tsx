@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 import { NavBar } from './components/NavBar/NavBar';
-import { CommitDescriptionWithOid } from 'isomorphic-git';
 import {
   getCommitFileDifferences,
   fileChanges,
@@ -84,8 +83,8 @@ class App extends Component<{}, IState> {
             {isLoaded ? (
               <GitCommitList data={gitLog!} />
             ) : (
-              <Spinner intent={Intent.PRIMARY} size={Spinner.SIZE_STANDARD} />
-            )}
+                <Spinner intent={Intent.PRIMARY} size={Spinner.SIZE_STANDARD} />
+              )}
           </div>
           <div className="mainContent">
             {gitDiff ? DiffViewerList(gitDiff!) : null}
