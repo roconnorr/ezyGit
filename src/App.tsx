@@ -15,7 +15,7 @@ import { DiffViewerList } from './components/Diff/DiffViewerList';
 import { Git, GitStats, GitCommitLog } from './git/newGit';
 import { FileWatcher } from './git/watcher';
 
-interface IState {
+export interface IState {
   isLoaded: boolean;
   gitLog: Array<GitCommitLog> | null;
   gitCurrentBranch: string | undefined;
@@ -80,11 +80,10 @@ class App extends Component<{}, IState> {
         */}
         <div className="container">
           <div className="sideBar">
-            {isLoaded ? (
-              <GitCommitList data={gitLog!} />
-            ) : (
-              <Spinner intent={Intent.PRIMARY} size={Spinner.SIZE_STANDARD} />
-            )}
+            {isLoaded ?
+              GitCommitList(this.state.gitLog!) : (
+                <Spinner intent={Intent.PRIMARY} size={Spinner.SIZE_STANDARD} />
+              )}
           </div>
           <div className="mainContent">
             {gitDiff ? DiffViewerList(gitDiff!) : null}

@@ -1,8 +1,7 @@
 import React from 'react';
 import { CommitDescriptionWithOid } from 'isomorphic-git';
-import { connect } from 'react-redux';
 
-export const GitCommitDetails = (commit: any, callback: any) => {
+export const GitCommitDetails = (commit: CommitDescriptionWithOid, callback: any) => {
   const author = commit.author;
   const date = new Date(author.timestamp * 1000 + author.timezoneOffset * 1000);
 
@@ -27,4 +26,4 @@ export const GitCommitDetails = (commit: any, callback: any) => {
   );
 };
 
-export default connect()(GitCommitDetails);
+export default GitCommitDetails;
