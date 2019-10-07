@@ -1,13 +1,13 @@
 import React from 'react';
 import { CommitDescriptionWithOid } from 'isomorphic-git';
+import { connect } from 'react-redux';
 
-const GitCommitDetails = (temp: CommitDescriptionWithOid, callBack: any) => {
-  const commit = temp;
+export const GitCommitDetails = (commit: any, callback: any) => {
   const author = commit.author;
   const date = new Date(author.timestamp * 1000 + author.timezoneOffset * 1000);
 
   return (
-    <div onClick={() => callBack(commit.oid)}>
+    <div onClick={() => callback(commit.oid)}>
       <div className="historyItemContent">{commit.message}</div>
       <div className="historyItemContent">
         <span style={{ width: '50%', display: 'inline-block' }}>
@@ -27,4 +27,4 @@ const GitCommitDetails = (temp: CommitDescriptionWithOid, callBack: any) => {
   );
 };
 
-export { GitCommitDetails };
+export default connect()(GitCommitDetails);

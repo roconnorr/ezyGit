@@ -1,6 +1,6 @@
 import React from 'react';
 import { GitCommitLog } from '../../git/newGit';
-import { GitCommitDetails } from './GitCommitDetails';
+import GitCommitDetails from './GitCommitDetails';
 import { GitStatusDetails } from './GitStatusDetails';
 
 const GitCommitListItem = (
