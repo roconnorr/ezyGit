@@ -142,7 +142,6 @@ class Git {
     size: number = 20,
     timestamp: number = -1
   ): Promise<Array<GitCommitLog>> {
-    console.log(this)
     let options = { dir: this.directory, depth: size };
 
     if (timestamp > -1) {

@@ -8,11 +8,8 @@ export const getGitLogAction = (): BaseAction => ({
 
 export const getGitLogCompletedAction = (
   gitLog: Array<GitCommitLog>
-): BaseAction => {
-  console.log(gitLog)
-
-  return {
+): BaseAction =>
+  ({
     type: actionIds.GET_GIT_COMMIT_LOG_COMPLETED,
     payload: gitLog,
-  }
-};
+  });

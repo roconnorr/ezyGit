@@ -26,8 +26,8 @@ export interface IState {
 }
 // https://isomorphic-git.org/docs/en/log
 
-class App extends Component<{ testy: any }, IState> {
-  constructor(props: { testy: any }) {
+class App extends Component<{ loadSideListGitLog: any }, IState> {
+  constructor(props: { loadSideListGitLog: any }) {
     super(props);
     this.state = {
       isLoaded: false,
@@ -57,12 +57,9 @@ class App extends Component<{ testy: any }, IState> {
     let git = new Git(process.cwd() + '\\', new FileWatcher());
     console.log('New Git Stuff!');
 
-    const gitLog = await git.getGitLog(100);
-
     this.setState({
       gitDiff: getCurrentFileDifferences,
       gitCurrentBranch: await git.getCurrentBranch(),
-      gitLog: gitLog,
       isLoaded: true,
     });
 
@@ -70,7 +67,7 @@ class App extends Component<{ testy: any }, IState> {
       console.log('completed ');
     });
 
-    this.props.testy();
+    this.props.loadSideListGitLog();
   }
 
   render() {
@@ -100,7 +97,7 @@ class App extends Component<{ testy: any }, IState> {
 }
 
 const mapDispatchToProps = (dispatch: any) => ({
-  testy: () => dispatch(getGitCommitLogAction()),
+  loadSideListGitLog: () => dispatch(getGitCommitLogAction()),
 });
 
 export default connect(null, mapDispatchToProps)(App);
