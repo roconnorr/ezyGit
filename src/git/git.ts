@@ -1,6 +1,5 @@
 import * as git from 'isomorphic-git';
 import { CommitDescriptionWithOid } from 'isomorphic-git';
-import { startWatcher, addListener } from './watcher';
 
 const fs = require('fs');
 const workingDir = './';
@@ -91,8 +90,6 @@ async function getGitStatus(): Promise<any> {
   const modified = await status
     .filter(row => row[HEAD] !== row[WORKDIR])
     .map(row => row[FILE]);
-
-  startWatcher();
 
   return unstaged;
 }

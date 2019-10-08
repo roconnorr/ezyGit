@@ -1,6 +1,5 @@
 import * as git from 'isomorphic-git';
 import { CommitDescriptionWithOid } from 'isomorphic-git';
-import * as chokidar from 'chokidar';
 import { FileWatcher, FileWatcherEvent } from './watcher';
 import { number, array } from 'prop-types';
 
@@ -81,16 +80,15 @@ class Git {
     let lines = data.toString().split('\n');
     console.log('Parsed Ignore');
 
-    this.ignore = lines
-      .filter((currentLine: string) => {
-        if (currentLine.startsWith('#') || !currentLine.trim()) {
-          return false;
-        }
-        return true;
-      })
-      .map(line => line.replace(/^\//, ''));
+    this.ignore = lines.filter((currentLine: string) => {
+      if (currentLine.startsWith('#') || !currentLine.trim()) {
+        return false;
+      }
+      return true;
+    });
 
     console.log(this.ignore);
+
     this.setupWatcher();
   }
 
@@ -104,7 +102,18 @@ class Git {
     this.watcher.ignore = this.ignore;
 
     this.watcher.start();
-    this.watcher.addEvent(FileWatcherEvent.ALL, this.onWatcherEvent.bind(this));
+    this.watcher.addEvent(
+      FileWatcherEvent.CREATED,
+      this.onWatcherEvent.bind(this)
+    );
+    this.watcher.addEvent(
+      FileWatcherEvent.DIRADD,
+      this.onWatcherEvent.bind(this)
+    );
+    this.watcher.addEvent(
+      FileWatcherEvent.DIRDELETED,
+      this.onWatcherEvent.bind(this)
+    );
     console.log('Watcher started');
   }
 
