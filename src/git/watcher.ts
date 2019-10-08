@@ -32,8 +32,9 @@ class FileWatcher {
 
     this.agent = chokidar
       .watch(process.cwd(), {
-        ignored: [/(^|[\/\\])\../, this.buildIgnoreRegex()],
+        ignored: (path: any) => ["node_modules", "another_dir"].some(s => path.includes(s)),
         ignoreInitial: true,
+        cwd: this.directory,
         persistent: true,
       })
       .on('ready', () => console.log('Watcher Ready!'));
