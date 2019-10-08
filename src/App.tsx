@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import './styles/App.css';
 import { NavBar } from './components/NavBar/NavBar';
 import {
   getCommitFileDifferences,
@@ -83,8 +83,8 @@ class App extends Component<{}, IState> {
             {isLoaded ? (
               GitCommitList(this.state.gitLog!)
             ) : (
-              <Spinner intent={Intent.PRIMARY} size={Spinner.SIZE_STANDARD} />
-            )}
+                <Spinner intent={Intent.PRIMARY} size={Spinner.SIZE_STANDARD} />
+              )}
           </div>
           <div className="mainContent">
             {gitDiff ? DiffViewerList(gitDiff!) : null}
