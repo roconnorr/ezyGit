@@ -52,7 +52,7 @@ class App extends Component<{}, IState> {
       // this.setState({ gitDiff: temp });
     });
 
-    let git = new Git('./', new FileWatcher());
+    let git = new Git(process.cwd() + '\\', new FileWatcher());
     console.log('New Git Stuff!');
 
     const gitLog = await git.getGitLog(100);
@@ -80,10 +80,11 @@ class App extends Component<{}, IState> {
         */}
         <div className="container">
           <div className="sideBar">
-            {isLoaded ?
-              GitCommitList(this.state.gitLog!) : (
-                <Spinner intent={Intent.PRIMARY} size={Spinner.SIZE_STANDARD} />
-              )}
+            {isLoaded ? (
+              GitCommitList(this.state.gitLog!)
+            ) : (
+              <Spinner intent={Intent.PRIMARY} size={Spinner.SIZE_STANDARD} />
+            )}
           </div>
           <div className="mainContent">
             {gitDiff ? DiffViewerList(gitDiff!) : null}

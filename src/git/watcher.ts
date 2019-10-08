@@ -1,6 +1,6 @@
 import { AppToaster } from '../components/Toaster/Toaster';
 import * as chokidar from 'chokidar';
-import { identifier, Function } from '@babel/types';
+var newWatch = require('watch');
 
 const home = '.';
 const ignored = ['/(^|[/\\])../', 'node_modules', '.*'];
@@ -50,28 +50,58 @@ function setupEvents() {
 
 enum FileWatcherEvent {
   ALL = 'all',
-  READY = 'ready',
-  ADD = 'add',
-  CHANGE = 'change',
-  UNLINK = 'unlink',
-  DIRADD = 'addDir',
-  DIR_UNLINK = 'unlinkDir',
-  ERROR = 'error',
+  CREATED = 'created',
+  MODIFIED = 'changed',
+  REMOVED = 'removed',
 }
 
 class FileWatcher {
   directory: string | undefined;
-  options: chokidar.WatchOptions | undefined;
-  agent: chokidar.FSWatcher | undefined;
+  ignore: Array<string> = [];
+  agent: any;
 
   start() {
     if (this.agent) {
       this.agent.close();
     }
-    console.log(this.options);
-    this.agent = chokidar.watch(home, this.options).on('all', (event, path) => {
-      console.log(event + ' : ' + path);
-    });
+
+    this.agent = newWatch.createMonitor(
+      this.directory,
+      {
+        filter: this.gitIgnoreFilter.bind(this),
+        ignoreDotFiles: true,
+        interval: 3,
+      },
+
+      (monitor: any) => {
+        this.agent = monitor;
+        monitor.on('created', function(f: any, stat: any) {
+          // Handle new files
+          console.log('created : ' + f, stat);
+        });
+        monitor.on('changed', function(f: any, curr: any, prev: any) {
+          // Handle file changes
+          console.log('changed : ' + f, curr, prev);
+        });
+        monitor.on('removed', function(f: any, stat: any) {
+          // Handle removed files
+          console.log('removed : ' + f, stat);
+        });
+      }
+    );
+  }
+  /**
+   * Cheeky custom filter callback for watcher, helps map git ignore to file watcher filter
+   * @param file File currently being checked
+   * @param stat Current status of that file
+   */
+  gitIgnoreFilter(file: string, stat: any): boolean {
+    for (const ignore in this.ignore) {
+      if (file.includes(this.ignore[ignore])) {
+        return false;
+      }
+    }
+    return true;
   }
 
   stop() {
@@ -81,9 +111,10 @@ class FileWatcher {
   }
 
   addEvent(event: FileWatcherEvent, callback: any) {
-    if (this.agent) {
-      this.agent.on(event, callback);
-    }
+    //TODO:Re-write this
+    // if (this.agent) {
+    //   this.agent.on(event, callback);
+    // }
   }
 }
 

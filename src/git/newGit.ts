@@ -26,9 +26,9 @@ export enum GitStats {
 
   ALL = 2048,
   UNSTAGED = UNSTAGED_UNMODIFIED |
-  UNSTAGED_MODIFIED |
-  UNSTAGED_DELETED |
-  UNSTAGED_ADDED,
+    UNSTAGED_MODIFIED |
+    UNSTAGED_DELETED |
+    UNSTAGED_ADDED,
 }
 
 export interface StagedTypes {
@@ -101,14 +101,10 @@ class Git {
       );
 
     this.watcher.directory = this.directory;
-    this.watcher.options = {
-      ignored: this.ignore,
-      ignoreInitial: true,
-      persistent: true,
-    };
+    this.watcher.ignore = this.ignore;
 
-    // this.watcher.start();
-    // this.watcher.addEvent(FileWatcherEvent.ALL, this.onWatcherEvent.bind(this));
+    this.watcher.start();
+    this.watcher.addEvent(FileWatcherEvent.ALL, this.onWatcherEvent.bind(this));
     console.log('Watcher started');
   }
 

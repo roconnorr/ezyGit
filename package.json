@@ -45,7 +45,8 @@
     "redux-saga": "^1.1.1",
     "request": "^2.88.0",
     "tslint": "^5.20.0",
-    "unidiff": "^1.0.2"
+    "unidiff": "^1.0.2",
+    "watch": "^1.0.2"
   },
   "homepage": "./",
   "main": "public/electron.js",
