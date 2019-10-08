@@ -6,15 +6,17 @@ import { AppToaster } from '../Toaster/Toaster';
 import { GitCommitLog } from '../../git/newGit';
 import { connect } from 'react-redux';
 import { State } from '../../reducers';
-import { getGitCommitLogAction } from '../../actions/gitCommitList.action';
+import { getGitLogAction } from '../../actions/gitCommitList.action';
 
 interface ISideListProps {
   data: Array<GitCommitLog>;
+  loadCommitDiff: any;
 }
 
-export const GitCommitList: React.FunctionComponent<ISideListProps> = (props) => {
+export const GitCommitList: React.FunctionComponent<ISideListProps> = props => {
   const handleListItemClick = (commitOid: number) => {
     AppToaster.show({ message: 'Loading ' + commitOid });
+    props.loadCommitDiff(commitOid);
   };
 
   const renderGitCommit = (index: number, key: number | string) => {
@@ -38,7 +40,10 @@ const mapStateToProps = (state: State) => ({
 });
 
 const mapDispatchToProps = (dispatch: any) => ({
-  onRequestNewNumber: () => dispatch(getGitCommitLogAction()),
+  loadCommitDiff: () => dispatch(getGitLogAction()),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(GitCommitList);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(GitCommitList);

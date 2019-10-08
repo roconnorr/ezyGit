@@ -15,7 +15,7 @@ import { DiffViewerList } from './components/Diff/DiffViewerList';
 import { Git, GitStats, GitCommitLog } from './git/newGit';
 import { FileWatcher } from './git/watcher';
 import { connect } from 'react-redux';
-import { getGitCommitLogAction } from './actions/gitCommitList.action';
+import { getGitLogAction } from './actions/gitCommitList.action';
 
 export interface IState {
   isLoaded: boolean;
@@ -84,8 +84,8 @@ class App extends Component<{ loadSideListGitLog: any }, IState> {
             {isLoaded ? (
               <GitCommitList />
             ) : (
-                <Spinner intent={Intent.PRIMARY} size={Spinner.SIZE_STANDARD} />
-              )}
+              <Spinner intent={Intent.PRIMARY} size={Spinner.SIZE_STANDARD} />
+            )}
           </div>
           <div className="mainContent">
             {gitDiff ? DiffViewerList(gitDiff!) : null}
@@ -97,7 +97,10 @@ class App extends Component<{ loadSideListGitLog: any }, IState> {
 }
 
 const mapDispatchToProps = (dispatch: any) => ({
-  loadSideListGitLog: () => dispatch(getGitCommitLogAction()),
+  loadSideListGitLog: () => dispatch(getGitLogAction()),
 });
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(
+  null,
+  mapDispatchToProps
+)(App);
