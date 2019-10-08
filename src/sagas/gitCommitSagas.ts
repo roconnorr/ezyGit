@@ -1,10 +1,8 @@
-import { call, put, takeEvery } from 'redux-saga/effects';
+import { put, takeEvery } from 'redux-saga/effects';
+import * as git from 'isomorphic-git';
+import { GitCommitLog } from '../git/newGit';
+import { getGitLogCompletedAction } from '../actions/gitLog.action';
 import { actionIds } from '../actions';
-import { Git } from '../git/newGit';
-import { FileWatcher } from '../git/watcher';
-import { getGitCommitLogCompletedAction } from '../actions/gitCommitList.action';
-
-const git = new Git('./', new FileWatcher());
 
 export function* watchGetGitCommitLog() {
   console.log('Made it to the watcher');
@@ -12,7 +10,18 @@ export function* watchGetGitCommitLog() {
 }
 
 function* requestNewGitLog() {
-  console.log('made it to the action');
-  const gitLog = yield call(git.getGitLog);
-  yield put(getGitCommitLogCompletedAction(gitLog));
+  let options = { dir: "", depth: 20 };
+  const results = yield git.log(options);
+
+  const modifiedLog: Array<GitCommitLog> = results.map((commitHistory: any) => {
+    return {
+      isHistory: true,
+      commit: commitHistory,
+    };
+  });
+
+  // Insert blank commit at the start
+  modifiedLog.unshift({ isHistory: false });
+
+  yield put(getGitLogCompletedAction(modifiedLog));
 }

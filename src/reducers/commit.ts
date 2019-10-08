@@ -1,5 +1,5 @@
-import { GitCommitLog } from '../git/newGit';
 import { BaseAction, actionIds } from '../actions';
+import { GitCommitLog } from '../git/newGit';
 
 export const getCommitLog = (
   state: Array<GitCommitLog> = Array<GitCommitLog>(),
@@ -7,7 +7,7 @@ export const getCommitLog = (
 ) => {
   switch (action.type) {
     case actionIds.GET_GIT_COMMIT_LOG_COMPLETED:
-      return [...state, action.payload];
+      return [...state, ...action.payload];
   }
 
   return state;

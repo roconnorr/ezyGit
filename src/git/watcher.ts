@@ -65,30 +65,30 @@ class FileWatcher {
       this.agent.close();
     }
 
-    this.agent = newWatch.createMonitor(
-      this.directory,
-      {
-        filter: this.gitIgnoreFilter.bind(this),
-        ignoreDotFiles: true,
-        interval: 3,
-      },
+    // this.agent = newWatch.createMonitor(
+    //   this.directory,
+    //   {
+    //     filter: this.gitIgnoreFilter.bind(this),
+    //     ignoreDotFiles: true,
+    //     interval: 3,
+    //   },
 
-      (monitor: any) => {
-        this.agent = monitor;
-        monitor.on('created', function(f: any, stat: any) {
-          // Handle new files
-          console.log('created : ' + f, stat);
-        });
-        monitor.on('changed', function(f: any, curr: any, prev: any) {
-          // Handle file changes
-          console.log('changed : ' + f, curr, prev);
-        });
-        monitor.on('removed', function(f: any, stat: any) {
-          // Handle removed files
-          console.log('removed : ' + f, stat);
-        });
-      }
-    );
+    //   (monitor: any) => {
+    //     this.agent = monitor;
+    //     monitor.on('created', function (f: any, stat: any) {
+    //       // Handle new files
+    //       console.log('created : ' + f, stat);
+    //     });
+    //     monitor.on('changed', function (f: any, curr: any, prev: any) {
+    //       // Handle file changes
+    //       console.log('changed : ' + f, curr, prev);
+    //     });
+    //     monitor.on('removed', function (f: any, stat: any) {
+    //       // Handle removed files
+    //       // console.log('removed : ' + f, stat);
+    //     });
+    //   }
+    // );
   }
   /**
    * Cheeky custom filter callback for watcher, helps map git ignore to file watcher filter

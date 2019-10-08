@@ -9,11 +9,13 @@ import {
   onFileChange,
 } from './git/git';
 
-import { GitCommitList } from './components/SideList/GitCommitList';
+import GitCommitList from './components/SideList/GitCommitList';
 import { Intent, Spinner } from '@blueprintjs/core';
 import { DiffViewerList } from './components/Diff/DiffViewerList';
 import { Git, GitStats, GitCommitLog } from './git/newGit';
 import { FileWatcher } from './git/watcher';
+import { connect } from 'react-redux';
+import { getGitCommitLogAction } from './actions/gitCommitList.action';
 
 export interface IState {
   isLoaded: boolean;
@@ -24,8 +26,8 @@ export interface IState {
 }
 // https://isomorphic-git.org/docs/en/log
 
-class App extends Component<{}, IState> {
-  constructor(props: {}) {
+class App extends Component<{ testy: any }, IState> {
+  constructor(props: { testy: any }) {
     super(props);
     this.state = {
       isLoaded: false,
@@ -67,10 +69,12 @@ class App extends Component<{}, IState> {
     git.getGitStatus(GitStats.UNSTAGED).then(() => {
       console.log('completed ');
     });
+
+    this.props.testy();
   }
 
   render() {
-    const { isLoaded, gitLog, gitCurrentBranch, gitDiff } = this.state;
+    const { isLoaded, gitCurrentBranch, gitDiff } = this.state;
 
     return (
       <div className="App bp3-dark">
@@ -81,7 +85,7 @@ class App extends Component<{}, IState> {
         <div className="container">
           <div className="sideBar">
             {isLoaded ? (
-              GitCommitList(this.state.gitLog!)
+              <GitCommitList />
             ) : (
                 <Spinner intent={Intent.PRIMARY} size={Spinner.SIZE_STANDARD} />
               )}
@@ -95,4 +99,8 @@ class App extends Component<{}, IState> {
   }
 }
 
-export default App;
+const mapDispatchToProps = (dispatch: any) => ({
+  testy: () => dispatch(getGitCommitLogAction()),
+});
+
+export default connect(null, mapDispatchToProps)(App);
