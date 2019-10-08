@@ -25,9 +25,9 @@ export enum GitStats {
 
   ALL = 2048,
   UNSTAGED = UNSTAGED_UNMODIFIED |
-  UNSTAGED_MODIFIED |
-  UNSTAGED_DELETED |
-  UNSTAGED_ADDED,
+    UNSTAGED_MODIFIED |
+    UNSTAGED_DELETED |
+    UNSTAGED_ADDED,
 }
 
 export interface StagedTypes {
@@ -86,7 +86,7 @@ class Git {
       }
       return true;
     });
-
+    this.ignore.push('.git'); //dont need to follow git stuff
     console.log(this.ignore);
 
     this.setupWatcher();
@@ -114,7 +114,6 @@ class Git {
       FileWatcherEvent.DIRDELETED,
       this.onWatcherEvent.bind(this)
     );
-    console.log('Watcher started');
   }
 
   //#endregion

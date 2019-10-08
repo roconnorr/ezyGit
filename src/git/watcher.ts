@@ -15,15 +15,15 @@ class FileWatcher {
   ignore: Array<string> = [];
   agent: any;
 
-  buildIgnoreRegex(): RegExp {
-    let expression = '';
-    let template = '(\\w*{1}\\w*)|';
+  // buildIgnoreRegex(): RegExp {
+  //   let expression = '';
+  //   let template = '(\\w*{1}\\w*)|';
 
-    for (const ignore in this.ignore) {
-      expression += template.replace(/\{1}/, this.ignore[ignore]);
-    }
-    return new RegExp(expression.replace(/\//g, '\\/').replace(/\|$/, ''));
-  }
+  //   for (const ignore in this.ignore) {
+  //     expression += template.replace(/\{1}/, this.ignore[ignore]);
+  //   }
+  //   return new RegExp(expression.replace(/\//g, '\\/').replace(/\|$/, ''));
+  // }
 
   start() {
     if (this.agent) {
@@ -32,12 +32,12 @@ class FileWatcher {
 
     this.agent = chokidar
       .watch(process.cwd(), {
-        ignored: (path: any) => ["node_modules", "another_dir"].some(s => path.includes(s)),
-        ignoreInitial: true,
+        ignored: (path: any) => this.ignore.some(s => path.includes(s)),
         cwd: this.directory,
-        persistent: true,
       })
-      .on('ready', () => console.log('Watcher Ready!'));
+      .on('ready', () => {
+        'Watcher started!';
+      });
   }
 
   stop() {
