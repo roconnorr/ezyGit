@@ -25,9 +25,9 @@ export enum GitStats {
 
   ALL = 2048,
   UNSTAGED = UNSTAGED_UNMODIFIED |
-    UNSTAGED_MODIFIED |
-    UNSTAGED_DELETED |
-    UNSTAGED_ADDED,
+  UNSTAGED_MODIFIED |
+  UNSTAGED_DELETED |
+  UNSTAGED_ADDED,
 }
 
 export interface StagedTypes {
