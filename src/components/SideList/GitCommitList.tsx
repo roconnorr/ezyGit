@@ -5,7 +5,7 @@ import ReactList from 'react-list';
 import { AppToaster } from '../Toaster/Toaster';
 import { GitCommitLog } from '../../git/newGit';
 import { connect } from 'react-redux';
-import { IState } from '../../App';
+import { State } from '../../reducers';
 
 interface ISideListProps {
   data: Array<GitCommitLog>;
@@ -30,13 +30,12 @@ export const GitCommitList = (data: Array<GitCommitLog>) => {
       />
     </Scrollbars>
   );
+};
 
-}
+const mapStateToProps = (state: State) => ({
+  data: state.gitCommitLog,
+});
 
-const mapStateToProps = (state: IState) => {
-  return {
-    counter: state.gitLog
-  }
-}
+const mapDispatchToProps = (dispatch: any) => ({});
 
 export default connect(mapStateToProps)(GitCommitList);

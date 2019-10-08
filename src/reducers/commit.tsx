@@ -1,18 +1,16 @@
-import { EMAIL_CHANGED } from '../actions/commit';
+import { GitCommitLog } from '../git/newGit';
+import { BaseAction, actionIds } from '../actions';
 
-const initialState = {
-  addedIds: [],
-  quantityById: {}
-}
-
-const getCommitLog = (state = initialState, action: any) => {
+export const getCommitLog = (
+  state: Array<GitCommitLog> = Array<GitCommitLog>(),
+  action: BaseAction
+) => {
   switch (action.type) {
-    case EMAIL_CHANGED:
-      return { ...state, email: action.email };
-
-    default:
-      return state;
+    case actionIds.GET_GIT_COMMIT_LOG_COMPLETED:
+      return [...state, action.payload];
   }
+
+  return state;
 };
 
 export default getCommitLog;
