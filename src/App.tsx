@@ -54,7 +54,7 @@ class App extends Component<{ loadSideListGitLog: any }, IState> {
       // this.setState({ gitDiff: temp });
     });
 
-    let git = new Git(process.cwd() + '\\', new FileWatcher());
+    let git = new Git(process.cwd() + '/', new FileWatcher());
     console.log('New Git Stuff!');
 
     this.setState({
