@@ -3,6 +3,9 @@ import './styles/App.css';
 import { NavBar } from './components/NavBar/NavBar';
 import { fileChanges, onFileChange } from './git/git';
 
+import { getGitLogAction } from './actions/gitCommitList.action';
+import { getGitDiffAction } from './actions/gitDiff.action';
+
 // Cleaned
 import GitCommitList from './components/SideList/GitCommitList';
 import DiffViewerList from './components/Diff/DiffViewerList';
@@ -12,10 +15,15 @@ import DiffViewerList from './components/Diff/DiffViewerList';
 import { Intent, Spinner } from '@blueprintjs/core';
 
 // to remove
-import { Git, GitStats, GitCommitLog } from './git/newGit';
+import {
+  GitStats,
+  GitCommitLog,
+  getCurrentBranch,
+  getGitStatus,
+  getCommitHashes,
+} from './git/newGit';
 import { FileWatcher } from './git/watcher';
 import { connect } from 'react-redux';
-
 
 export interface IState {
   isLoaded: boolean;
@@ -30,6 +38,8 @@ class App extends Component<
   { loadSideListGitLog: any; loadDefaultCommit: any },
   IState
 > {
+  GitDir: string = process.cwd();
+
   constructor(props: { loadSideListGitLog: any; loadDefaultCommit: any }) {
     super(props);
     this.state = {
@@ -39,30 +49,29 @@ class App extends Component<
       gitModifiedFiles: null,
     };
   }
-
   async componentDidMount() {
     //Listen for updates, break out into hooks or events?
     onFileChange(async () => {
       console.log('Update triggered');
     });
 
-    let git = new Git(process.cwd() + '/', new FileWatcher());
+    // let git = new Git(process.cwd() + '/', new FileWatcher());/
 
     this.setState({
-      gitCurrentBranch: await git.getCurrentBranch(),
+      gitCurrentBranch: await getCurrentBranch(this.GitDir),
       isLoaded: true,
     });
 
-    git.getGitStatus(GitStats.UNSTAGED).then(() => {
+    getGitStatus(this.GitDir, GitStats.UNSTAGED).then(() => {
       console.log('completed getting the gitStatus');
     });
 
-    git
-      .getCommitHashes(4)
-      .then((hases: { targetHash: string; previousHash: Array<string> }) => {
+    getCommitHashes(this.GitDir).then(
+      (hases: { targetHash: string; previousHash: Array<string> }) => {
         console.log('Hash Target: ' + hases.targetHash);
         console.log('Otheres : ' + hases.previousHash);
-      });
+      }
+    );
 
     this.props.loadSideListGitLog();
     this.props.loadDefaultCommit();
