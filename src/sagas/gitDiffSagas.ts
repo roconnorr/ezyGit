@@ -11,9 +11,16 @@ function* requestNewGitDiff(action: BaseAction) {
   console.log(action);
 
   const hashes = yield getCommitHashes();
+
+  let previous = hashes.previousHash;
+
+  if (action.payload) {
+    previous = action.payload;
+  }
+
   const currentDifferences = yield getCommitFileDifferences(
     hashes.targetHash,
-    hashes.previousHash
+    previous
   );
   yield put(getGitDiffCompletedAction(currentDifferences));
 }
