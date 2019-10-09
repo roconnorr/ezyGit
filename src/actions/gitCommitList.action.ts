@@ -1,14 +1,14 @@
 import { BaseAction, actionIds } from '.';
 import { GitCommitLog } from '../git/newGit';
 
-export const getGitCommitLogAction = (): BaseAction => ({
+export const getGitLogAction = (commitHash: string = ''): BaseAction => ({
   type: actionIds.GET_GIT_COMMIT_LOG,
-  payload: null,
+  payload: commitHash,
 });
 
-export const getGitCommitLogCompletedAction = (
-  gitCommitLog: Array<GitCommitLog>
+export const getGitLogCompletedAction = (
+  gitLog: Array<GitCommitLog>
 ): BaseAction => ({
   type: actionIds.GET_GIT_COMMIT_LOG_COMPLETED,
-  payload: gitCommitLog,
+  payload: gitLog,
 });

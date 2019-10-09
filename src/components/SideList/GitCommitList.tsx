@@ -6,15 +6,17 @@ import { AppToaster } from '../Toaster/Toaster';
 import { GitCommitLog } from '../../git/newGit';
 import { connect } from 'react-redux';
 import { State } from '../../reducers';
-import { getGitCommitLogAction } from '../../actions/gitCommitList.action';
+import { getGitDiffAction } from '../../actions/gitDiff.action';
 
 interface ISideListProps {
   data: Array<GitCommitLog>;
+  loadCommitDiff: any;
 }
 
-export const GitCommitList: React.FunctionComponent<ISideListProps> = (props) => {
+export const GitCommitList: React.FunctionComponent<ISideListProps> = props => {
   const handleListItemClick = (commitOid: number) => {
     AppToaster.show({ message: 'Loading ' + commitOid });
+    props.loadCommitDiff(commitOid);
   };
 
   const renderGitCommit = (index: number, key: number | string) => {
@@ -33,12 +35,21 @@ export const GitCommitList: React.FunctionComponent<ISideListProps> = (props) =>
   );
 };
 
-const mapStateToProps = (state: State) => ({
-  data: state.gitCommitLog!,
-});
+const mapStateToProps = (state: State) => {
+  return {
+    data: state.gitCommitLog!,
+  };
+};
 
 const mapDispatchToProps = (dispatch: any) => ({
-  onRequestNewNumber: () => dispatch(getGitCommitLogAction()),
+  loadCommitDiff: (oid: string = '') => {
+    const action = getGitDiffAction();
+    action.payload = oid;
+    dispatch(action);
+  },
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(GitCommitList);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(GitCommitList);

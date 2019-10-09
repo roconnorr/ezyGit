@@ -4,10 +4,16 @@ import { FileStatusChanges } from '../../git/git';
 import { Scrollbars } from 'react-custom-scrollbars';
 import ReactList from 'react-list';
 import DiffViewerListItem from './DiffViewerListItem';
+import { connect } from 'react-redux';
+import { State } from '../../reducers';
 
-const DiffViewerList = (gitDiff: Array<FileStatusChanges>) => {
+interface IDiffViewerProps {
+  gitDiff: Array<FileStatusChanges>;
+}
+
+export const DiffViewerList: React.FunctionComponent<any> = props => {
   const renderGitCommit = (index: number, key: number | string) => {
-    const record = gitDiff[index];
+    const record = props.gitDiff[index];
     const [diff] = getGitDifference(record.modified, record.original);
 
     return (
@@ -20,17 +26,25 @@ const DiffViewerList = (gitDiff: Array<FileStatusChanges>) => {
       />
     );
   };
-
-  return (
+  return props.gitDiff ? (
     <Scrollbars>
       <ReactList
         itemRenderer={renderGitCommit}
-        length={gitDiff.length}
+        length={props.gitDiff.length}
         type="variable"
         threshold={5000}
       />
     </Scrollbars>
-  );
+  ) : null;
 };
 
-export { DiffViewerList };
+const mapStateToProps = (state: State) => {
+  return {
+    gitDiff: state.gitDiff,
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  null
+)(DiffViewerList);

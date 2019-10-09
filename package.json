@@ -29,7 +29,6 @@
     "chokidar": "^3.1.1",
     "cross-env": "^6.0.0",
     "electron-is-dev": "^1.0.1",
-    "electron-rebuild": "^1.8.6",
     "isomorphic-git": "^0.67.2",
     "lodash": "^4.17.15",
     "prop-types": "^15.7.2",
@@ -58,7 +57,7 @@
     "electron-dev": "concurrently \"cross-env BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electron .\"",
     "postinstall": "electron-builder install-app-deps",
     "preelectron-pack": "yarn build",
-    "electron-pack": "electron-build -mw",
+    "electron-pack": "electron-builder -mw",
     "rebuild": "electron-rebuild -f -b"
   },
   "eslintConfig": {
@@ -88,6 +87,7 @@
     "electron": "^4.0.6",
     "electron-builder": "^20.38.5",
     "typescript": "^3.3.3333",
-    "wait-on": "^3.2.0"
+    "wait-on": "^3.2.0",
+    "electron-rebuild": "^1.8.6"
   }
 }
