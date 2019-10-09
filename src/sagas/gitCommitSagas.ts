@@ -5,7 +5,6 @@ import { getGitLogCompletedAction } from '../actions/gitCommitList.action';
 import { actionIds } from '../actions';
 
 export function* watchGetGitCommitLog() {
-  console.log('Made it to the watcher');
   yield takeEvery(actionIds.GET_GIT_COMMIT_LOG, requestNewGitLog);
 }
 

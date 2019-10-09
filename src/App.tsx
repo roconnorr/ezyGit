@@ -1,77 +1,70 @@
 import React, { Component } from 'react';
 import './styles/App.css';
 import { NavBar } from './components/NavBar/NavBar';
-import {
-  getCommitFileDifferences,
-  fileChanges,
-  getCommitHashes,
-  FileStatusChanges,
-  onFileChange,
-} from './git/git';
+import { fileChanges, onFileChange } from './git/git';
 
+// Cleaned
 import GitCommitList from './components/SideList/GitCommitList';
+import DiffViewerList from './components/Diff/DiffViewerList';
+// Cleaned
+
+// Should move this into a loading HOC?
 import { Intent, Spinner } from '@blueprintjs/core';
-import { DiffViewerList } from './components/Diff/DiffViewerList';
+
+// to remove
 import { Git, GitStats, GitCommitLog } from './git/newGit';
 import { FileWatcher } from './git/watcher';
 import { connect } from 'react-redux';
 import { getGitLogAction } from './actions/gitCommitList.action';
+import { getGitDiffAction } from './actions/gitDiff.action';
 
 export interface IState {
   isLoaded: boolean;
   gitLog: Array<GitCommitLog> | null;
   gitCurrentBranch: string | undefined;
-  gitDiff: Array<FileStatusChanges> | null;
+  // gitDiff: Array<FileStatusChanges> | null;
   gitModifiedFiles: Array<fileChanges> | null;
 }
 // https://isomorphic-git.org/docs/en/log
 
-class App extends Component<{ loadSideListGitLog: any }, IState> {
-  constructor(props: { loadSideListGitLog: any }) {
+class App extends Component<
+  { loadSideListGitLog: any; loadDefaultCommit: any },
+  IState
+> {
+  constructor(props: { loadSideListGitLog: any; loadDefaultCommit: any }) {
     super(props);
     this.state = {
       isLoaded: false,
       gitLog: null,
       gitCurrentBranch: undefined,
-      gitDiff: null,
       gitModifiedFiles: null,
     };
   }
 
   async componentDidMount() {
-    const hashes = await getCommitHashes();
-    const getCurrentFileDifferences = await getCommitFileDifferences(
-      hashes.targetHash,
-      hashes.previousHash
-    );
-
-    // console.log(await getCurrentCommitChanges(await getModifiedFiles()));
-
     //Listen for updates, break out into hooks or events?
     onFileChange(async () => {
       console.log('Update triggered');
-      // const temp = await compareChanges();
-      // this.setState({ gitDiff: temp });
     });
 
     let git = new Git(process.cwd() + '/', new FileWatcher());
-    console.log('New Git Stuff!');
 
     this.setState({
-      gitDiff: getCurrentFileDifferences,
       gitCurrentBranch: await git.getCurrentBranch(),
       isLoaded: true,
     });
 
     git.getGitStatus(GitStats.UNSTAGED).then(() => {
-      console.log('completed ');
+      console.log('completed getting the gitStatus');
     });
 
+    // Calling default action
     this.props.loadSideListGitLog();
+    this.props.loadDefaultCommit();
   }
 
   render() {
-    const { isLoaded, gitCurrentBranch, gitDiff } = this.state;
+    const { isLoaded, gitCurrentBranch } = this.state;
 
     return (
       <div className="App bp3-dark">
@@ -88,7 +81,7 @@ class App extends Component<{ loadSideListGitLog: any }, IState> {
             )}
           </div>
           <div className="mainContent">
-            {gitDiff ? DiffViewerList(gitDiff!) : null}
+            <DiffViewerList />
           </div>
         </div>
       </div>
@@ -98,6 +91,7 @@ class App extends Component<{ loadSideListGitLog: any }, IState> {
 
 const mapDispatchToProps = (dispatch: any) => ({
   loadSideListGitLog: () => dispatch(getGitLogAction()),
+  loadDefaultCommit: () => dispatch(getGitDiffAction()),
 });
 
 export default connect(

@@ -6,7 +6,7 @@ import { AppToaster } from '../Toaster/Toaster';
 import { GitCommitLog } from '../../git/newGit';
 import { connect } from 'react-redux';
 import { State } from '../../reducers';
-import { getGitLogAction } from '../../actions/gitCommitList.action';
+import { getGitDiffAction } from '../../actions/gitDiff.action';
 
 interface ISideListProps {
   data: Array<GitCommitLog>;
@@ -35,12 +35,18 @@ export const GitCommitList: React.FunctionComponent<ISideListProps> = props => {
   );
 };
 
-const mapStateToProps = (state: State) => ({
-  data: state.gitCommitLog!,
-});
+const mapStateToProps = (state: State) => {
+  return {
+    data: state.gitCommitLog!,
+  };
+};
 
 const mapDispatchToProps = (dispatch: any) => ({
-  loadCommitDiff: () => dispatch(getGitLogAction()),
+  loadCommitDiff: (oid: string = '') => {
+    const action = getGitDiffAction();
+    action.payload = oid;
+    dispatch(action);
+  },
 });
 
 export default connect(
