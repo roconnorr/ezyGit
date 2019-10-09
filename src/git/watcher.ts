@@ -15,16 +15,6 @@ class FileWatcher {
   ignore: Array<string> = [];
   agent: any;
 
-  // buildIgnoreRegex(): RegExp {
-  //   let expression = '';
-  //   let template = '(\\w*{1}\\w*)|';
-
-  //   for (const ignore in this.ignore) {
-  //     expression += template.replace(/\{1}/, this.ignore[ignore]);
-  //   }
-  //   return new RegExp(expression.replace(/\//g, '\\/').replace(/\|$/, ''));
-  // }
-
   start() {
     if (this.agent) {
       this.agent.close();

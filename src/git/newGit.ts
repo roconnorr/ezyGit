@@ -262,6 +262,25 @@ class Git {
     return fileStatus;
   }
 
+  /**
+   * Returns depth as target hash and other in previous
+   * @param depth Defaults to getting the previous 2 commits.
+   */
+  async getCommitHashes(
+    depth: number = 2
+  ): Promise<{ targetHash: string; previousHash: Array<string> }> {
+    const commits = await git.log({ dir: this.directory, depth });
+    const oids = commits.map(commit => commit.oid);
+    const target = oids[oids.length - 1];
+
+    debugger;
+
+    return {
+      targetHash: target,
+      previousHash: oids.slice(0, oids.length - 1),
+    };
+  }
+
   async getCurrentCommitChanges(files: [string]): Promise<any> {
     const commits = await git.log({ dir: this.directory });
 

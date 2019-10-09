@@ -16,6 +16,7 @@ import { Git, GitStats, GitCommitLog } from './git/newGit';
 import { FileWatcher } from './git/watcher';
 import { connect } from 'react-redux';
 import { getGitCommitLogAction } from './actions/gitCommitList.action';
+import { object } from 'prop-types';
 
 export interface IState {
   isLoaded: boolean;
@@ -67,6 +68,13 @@ class App extends Component<{ loadSideListGitLog: any }, IState> {
       console.log('completed ');
     });
 
+    git
+      .getCommitHashes(4)
+      .then((hases: { targetHash: string; previousHash: Array<string> }) => {
+        console.log('Hash Target: ' + hases.targetHash);
+        console.log('Otheres : ' + hases.previousHash);
+      });
+
     this.props.loadSideListGitLog();
   }
 
@@ -84,8 +92,8 @@ class App extends Component<{ loadSideListGitLog: any }, IState> {
             {isLoaded ? (
               <GitCommitList />
             ) : (
-                <Spinner intent={Intent.PRIMARY} size={Spinner.SIZE_STANDARD} />
-              )}
+              <Spinner intent={Intent.PRIMARY} size={Spinner.SIZE_STANDARD} />
+            )}
           </div>
           <div className="mainContent">
             {gitDiff ? DiffViewerList(gitDiff!) : null}
@@ -100,4 +108,7 @@ const mapDispatchToProps = (dispatch: any) => ({
   loadSideListGitLog: () => dispatch(getGitCommitLogAction()),
 });
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(
+  null,
+  mapDispatchToProps
+)(App);
