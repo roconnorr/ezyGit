@@ -15,7 +15,7 @@ interface ISideListProps {
 
 export const GitCommitList: React.FunctionComponent<ISideListProps> = props => {
   const handleListItemClick = (commitOid: string, parent: string): void => {
-    AppToaster.show({ message: 'Loading ' + commitOid });
+    AppToaster.show({ message: 'GIT COMMIT OID:' + commitOid });
     props.loadCommitDiff(commitOid, parent);
   };
 

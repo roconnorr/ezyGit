@@ -3,18 +3,28 @@ import { Collapse, Icon } from '@blueprintjs/core';
 import Diff from './Diff';
 import { IconNames } from '@blueprintjs/icons';
 
+interface IDiffViewerProps {
+  oldSource: string;
+  diffType: string;
+  hunks: any;
+  fileName: string;
+  isOpen: boolean;
+}
+
+interface IDiffViewerState {
+  isOpen: boolean;
+}
+
 export default class DiffViewerListItem extends React.Component<
-  {
-    oldSource: string;
-    diffType: string;
-    hunks: any;
-    fileName: string;
-  },
-  { isOpen: boolean }
+  IDiffViewerProps,
+  IDiffViewerState
 > {
-  state = {
-    isOpen: true,
-  };
+  constructor(props: IDiffViewerProps) {
+    super(props);
+    this.state = {
+      isOpen: this.props.isOpen,
+    };
+  }
 
   onClickCollapse = () => {
     this.setState({ isOpen: !this.state.isOpen });
