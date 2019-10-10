@@ -7,7 +7,7 @@ const GitCommitListItem = (
   index: number,
   key: number | string,
   commit: GitCommitLog,
-  onClickCallback: any
+  onClickCallback: (oid: string, parent: string) => void
 ): any => {
   return (
     <div key={key} className={index % 2 ? 'historyItemEven' : 'historyItemOdd'}>

@@ -10,13 +10,13 @@ import { getGitDiffAction } from '../../actions/gitDiff.action';
 
 interface ISideListProps {
   data: Array<GitCommitLog>;
-  loadCommitDiff: any;
+  loadCommitDiff: (oid: string, parent: string) => void;
 }
 
 export const GitCommitList: React.FunctionComponent<ISideListProps> = props => {
-  const handleListItemClick = (commitOid: number) => {
+  const handleListItemClick = (commitOid: string, parent: string): void => {
     AppToaster.show({ message: 'Loading ' + commitOid });
-    props.loadCommitDiff(commitOid);
+    props.loadCommitDiff(commitOid, parent);
   };
 
   const renderGitCommit = (index: number, key: number | string) => {
@@ -42,9 +42,10 @@ const mapStateToProps = (state: State) => {
 };
 
 const mapDispatchToProps = (dispatch: any) => ({
-  loadCommitDiff: (oid: string = '') => {
+  loadCommitDiff: (oid: string = '', parent: string) => {
+    console.log('PARENT! ' + parent);
     const action = getGitDiffAction();
-    action.payload = oid;
+    action.payload = { target: oid, parent: parent };
     dispatch(action);
   },
 });

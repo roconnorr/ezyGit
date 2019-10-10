@@ -1,8 +1,10 @@
 import React from 'react';
 
-const GitStatusDetails = (callBack: any) => {
+const GitStatusDetails = (
+  onClickCallback: (oid: string, parent: string) => void
+) => {
   return (
-    <div onClick={() => callBack(false)}>
+    <div onClick={() => onClickCallback('', '')}>
       File changes are going to show here
       <div style={{ fontStyle: 'italic' }}>Commit Changes</div>
     </div>

@@ -7,7 +7,7 @@ export const getGitDiff = (
 ) => {
   switch (action.type) {
     case actionIds.LOAD_NEW_GIT_DIFF_COMPLETED: {
-      return [...action.payload];
+      return action.payload;
     }
   }
 
