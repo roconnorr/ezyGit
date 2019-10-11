@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { getGitDifference } from './GetGitDifference';
 import { FileStatusChanges } from '../../git/git';
 import { Scrollbars } from 'react-custom-scrollbars';
@@ -9,14 +9,50 @@ import { State } from '../../reducers';
 import { Button } from '@blueprintjs/core';
 
 interface IDiffViewerProps {
-  gitDiff: Array<FileStatusChanges>;
+  gitDiff: FileStatusChanges[];
 }
 
-export const DiffViewerList: React.FunctionComponent<any> = props => {
-  const [isOpenProp, isOpenHook] = useState(true);
+interface IState {
+  collapsedAll: boolean;
+  collapsedInt: Array<boolean>;
+}
 
-  const renderGitCommit = (index: number, key: number | string) => {
-    const record = props.gitDiff[index];
+export class DiffViewerList extends React.Component<IDiffViewerProps, IState> {
+  state = {
+    collapsedAll: false,
+    collapsedInt: Array<boolean>(),
+  };
+
+  componentDidUpdate() {
+    const { gitDiff } = this.props;
+
+    const tempLen = gitDiff.map(() => true);
+
+    // this.setState({ collapsedInt: tempLen });
+    console.log('YAYAYYAYA', this.state.collapsedInt, this.props.gitDiff);
+  }
+
+  // TODO CLEAN THIS UP
+  onClickCollapse = (key: number) => {
+    let temp = this.state.collapsedInt;
+    temp[key] = !temp[key];
+    this.setState({ collapsedInt: temp });
+  };
+
+  collapseAll = () => {
+    const { collapsedAll } = this.state;
+    console.log(collapsedAll);
+
+    this.setState({ collapsedAll: !collapsedAll });
+    const temp = this.state.collapsedInt.map(() => {
+      return this.state.collapsedAll;
+    });
+    this.setState({ collapsedInt: temp });
+  };
+  // END CLEAN
+
+  renderGitCommit = (index: number, key: number | string) => {
+    const record = this.props.gitDiff[index];
     const [diff] = getGitDifference(record.modified, record.original);
 
     return (
@@ -26,34 +62,34 @@ export const DiffViewerList: React.FunctionComponent<any> = props => {
         diffType={diff.type}
         oldSource={record.original}
         fileName={record.path}
-        isOpen={isOpenProp}
+        isOpen={this.state.collapsedInt[index]}
+        onClickCollapse={this.onClickCollapse}
+        index={index}
       />
     );
   };
 
-  return props.gitDiff ? (
-    <>
-      <Button
-        small
-        onClick={() => {
-          console.log(isOpenProp);
-          isOpenHook(!isOpenProp);
-        }}
-      >
-        Collapse All
-      </Button>
-      <Scrollbars>
-        {isOpenProp ? 'YUe' : 'noooo'}
-        <ReactList
-          itemRenderer={renderGitCommit}
-          length={props.gitDiff.length}
-          type="variable"
-          threshold={5000}
-        />
-      </Scrollbars>
-    </>
-  ) : null;
-};
+  render() {
+    const { collapsedAll } = this.state;
+    const { gitDiff } = this.props;
+
+    return (
+      <>
+        <Button small onClick={() => this.collapseAll()}>
+          {collapsedAll ? 'Open All' : 'Collapse All'}
+        </Button>
+        <Scrollbars>
+          <ReactList
+            itemRenderer={this.renderGitCommit}
+            length={gitDiff.length}
+            type="variable"
+            threshold={5000}
+          />
+        </Scrollbars>
+      </>
+    );
+  }
+}
 
 const mapStateToProps = (state: State) => {
   return {
@@ -61,7 +97,4 @@ const mapStateToProps = (state: State) => {
   };
 };
 
-export default connect(
-  mapStateToProps,
-  null
-)(DiffViewerList);
+export default connect(mapStateToProps)(DiffViewerList);
