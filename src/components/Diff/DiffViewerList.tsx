@@ -76,9 +76,10 @@ export class DiffViewerList extends React.Component<IDiffViewerProps, IState> {
 
     return (
       <Scrollbars>
-        <Button small onClick={() => this.collapseAll()}>
+        {gitDiff.length > 0 ? <Button small onClick={() => this.collapseAll()}>
           {collapsedAll ? 'Open All' : 'Collapse All'}
-        </Button>
+        </Button> : null}
+
         <ReactList
           itemRenderer={this.renderGitCommit}
           length={gitDiff.length}
