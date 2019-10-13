@@ -29,7 +29,7 @@ export class DiffViewerList extends React.Component<IDiffViewerProps, IState> {
 
     if (collapsedInt.length != gitDiff.length) {
       const defaultState = gitDiff.map(() => true);
-      this.setState({ collapsedInt: defaultState });
+      this.setState({ collapsedInt: defaultState, collapsedAll: false });
     }
   }
 
@@ -76,9 +76,11 @@ export class DiffViewerList extends React.Component<IDiffViewerProps, IState> {
 
     return (
       <Scrollbars>
-        {gitDiff.length > 0 ? <Button small onClick={() => this.collapseAll()}>
-          {collapsedAll ? 'Open All' : 'Collapse All'}
-        </Button> : null}
+        {gitDiff.length > 0 ? (
+          <Button small onClick={() => this.collapseAll()}>
+            {collapsedAll ? 'Open All' : 'Collapse All'}
+          </Button>
+        ) : null}
 
         <ReactList
           itemRenderer={this.renderGitCommit}
