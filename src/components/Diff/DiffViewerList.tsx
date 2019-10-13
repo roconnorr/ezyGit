@@ -24,32 +24,33 @@ export class DiffViewerList extends React.Component<IDiffViewerProps, IState> {
   };
 
   componentDidUpdate() {
+    const { collapsedInt } = this.state;
     const { gitDiff } = this.props;
 
-    const tempLen = gitDiff.map(() => true);
-
-    // this.setState({ collapsedInt: tempLen });
-    console.log('YAYAYYAYA', this.state.collapsedInt, this.props.gitDiff);
+    if (collapsedInt.length != gitDiff.length) {
+      const defaultState = gitDiff.map(() => true);
+      this.setState({ collapsedInt: defaultState });
+    }
   }
 
-  // TODO CLEAN THIS UP
   onClickCollapse = (key: number) => {
-    let temp = this.state.collapsedInt;
-    temp[key] = !temp[key];
-    this.setState({ collapsedInt: temp });
+    let currentCollapsedState = this.state.collapsedInt;
+    currentCollapsedState[key] = !currentCollapsedState[key];
+    this.setState({ collapsedInt: currentCollapsedState });
   };
 
+  /**
+   * Handles when the button is clicked to collapse or un-collapse
+   * the diffs.
+   */
   collapseAll = () => {
     const { collapsedAll } = this.state;
-    console.log(collapsedAll);
-
-    this.setState({ collapsedAll: !collapsedAll });
     const temp = this.state.collapsedInt.map(() => {
       return this.state.collapsedAll;
     });
-    this.setState({ collapsedInt: temp });
+
+    this.setState({ collapsedInt: temp, collapsedAll: !collapsedAll });
   };
-  // END CLEAN
 
   renderGitCommit = (index: number, key: number | string) => {
     const record = this.props.gitDiff[index];
