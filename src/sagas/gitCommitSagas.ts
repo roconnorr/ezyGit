@@ -9,7 +9,7 @@ export function* watchGetGitCommitLog() {
 }
 
 function* requestNewGitLog() {
-  let options = { dir: '', depth: 20 };
+  let options = { dir: '', depth: 50 };
   const results = yield git.log(options);
 
   const modifiedLog: Array<GitCommitLog> = results.map((commitHistory: any) => {
