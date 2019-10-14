@@ -7,11 +7,23 @@ import {
   NavbarGroup,
   NavbarHeading,
 } from '@blueprintjs/core';
-import { SearchBar } from '../Pallet/SearchBar';
+import { SearchBar, ISearchBarProps } from '../Pallet/SearchBar';
+import { filterFilm } from '../Pallet/SearchBarItemPredicate';
+import renderFilm from '../Pallet/SearchBarItemRenderer';
 
 interface INavBarProps {
   branch: string;
 }
+const searchBarProps: ISearchBarProps = {
+  itemPredicate: filterFilm,
+  itemRenderer: renderFilm,
+  items: [
+    { name: 'pop' },
+    { name: 'stash' },
+    { name: 'push' },
+    { name: 'pull' },
+  ],
+};
 
 const NavBar = (props: INavBarProps) => {
   const { branch } = props;
@@ -22,7 +34,7 @@ const NavBar = (props: INavBarProps) => {
         <NavbarHeading>ezyGit</NavbarHeading>
         <NavbarDivider />
         <NavbarHeading>Current: {branch ? branch : 'Loading...'}</NavbarHeading>
-        <SearchBar />
+        <SearchBar {...searchBarProps} />
       </NavbarGroup>
     </Navbar>
   );
