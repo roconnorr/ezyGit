@@ -2,9 +2,9 @@ import React from 'react';
 import { ItemRenderer } from '@blueprintjs/select';
 import { MenuItem } from '@blueprintjs/core';
 import highlightText from './TextHighter';
-import { ICommand } from './SearchBar';
+import { ISearchItem } from './SearchBar';
 
-const renderFilm: ItemRenderer<ICommand> = (
+const renderFilm: ItemRenderer<ISearchItem> = (
   command,
   { handleClick, modifiers, query }
 ) => {

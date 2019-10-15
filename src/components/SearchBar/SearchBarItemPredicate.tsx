@@ -1,7 +1,7 @@
 import { ItemPredicate } from '@blueprintjs/select';
-import { ICommand } from './SearchBar';
+import { ISearchItem } from './SearchBar';
 
-export const filterFilm: ItemPredicate<ICommand> = (
+export const filterFilm: ItemPredicate<ISearchItem> = (
   query,
   film,
   _index,

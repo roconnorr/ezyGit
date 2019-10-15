@@ -7,9 +7,9 @@ import {
   NavbarGroup,
   NavbarHeading,
 } from '@blueprintjs/core';
-import { SearchBar, ISearchBarProps } from '../Pallet/SearchBar';
-import { filterFilm } from '../Pallet/SearchBarItemPredicate';
-import renderFilm from '../Pallet/SearchBarItemRenderer';
+import SearchBar, { ISearchBarProps } from '../SearchBar/SearchBar';
+import { filterFilm } from '../SearchBar/SearchBarItemPredicate';
+import renderFilm from '../SearchBar/SearchBarItemRenderer';
 
 interface INavBarProps {
   branch: string;

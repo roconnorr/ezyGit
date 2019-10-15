@@ -10,12 +10,9 @@ import {
   Toaster,
 } from '@blueprintjs/core';
 import { Omnibar, ItemRenderer, ItemPredicate } from '@blueprintjs/select';
+import { connect } from 'react-redux';
 
-export interface ICommand {
-  name: string;
-}
-
-const FilmOmnibar = Omnibar.ofType<ICommand>();
+const SearchOmniBar = Omnibar.ofType<ISearchItem>();
 
 export interface ISearchBarState {
   isOpen: boolean;
@@ -26,16 +23,13 @@ export interface ISearchItem {
 }
 
 export interface ISearchBarProps {
-  itemPredicate: ItemPredicate<ICommand>;
-  itemRenderer: ItemRenderer<ICommand>;
+  itemPredicate: ItemPredicate<ISearchItem>;
+  itemRenderer: ItemRenderer<ISearchItem>;
   items: ISearchItem[];
 }
 
 @HotkeysTarget
-export class SearchBar extends React.PureComponent<
-  ISearchBarProps,
-  ISearchBarState
-> {
+class SearchBar extends React.PureComponent<ISearchBarProps, ISearchBarState> {
   public state: ISearchBarState = {
     isOpen: false,
   };
@@ -67,7 +61,7 @@ export class SearchBar extends React.PureComponent<
           <Button text="Show Omnibar" onClick={this.handleClick} />
         </span>
 
-        <FilmOmnibar
+        <SearchOmniBar
           {...this.props}
           {...this.state}
           noResults={<MenuItem disabled={true} text="No results." />}
@@ -83,7 +77,7 @@ export class SearchBar extends React.PureComponent<
     this.setState({ isOpen: true });
   };
 
-  private handleItemSelect = (film: ICommand) => {
+  private handleItemSelect = (film: ISearchItem) => {
     this.setState({ isOpen: false });
 
     this.toaster.show({
@@ -96,6 +90,7 @@ export class SearchBar extends React.PureComponent<
   };
 
   private handleClose = () => this.setState({ isOpen: false });
-
   private handleToggle = () => this.setState({ isOpen: !this.state.isOpen });
 }
+
+export default connect()(SearchBar);
