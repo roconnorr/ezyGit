@@ -3,7 +3,7 @@ import { GitCommitListItem } from './GitCommitListItem';
 import Scrollbars from 'react-custom-scrollbars';
 import ReactList from 'react-list';
 import { AppToaster } from '../Toaster/Toaster';
-import { GitCommitLog } from '../../git/newGit';
+import { GitCommitLog } from '../../git/git';
 import { connect } from 'react-redux';
 import { State } from '../../reducers';
 import { getGitDiffAction } from '../../actions/gitDiff.action';

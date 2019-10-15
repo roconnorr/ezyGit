@@ -1,11 +1,38 @@
 import * as git from 'isomorphic-git';
 import { CommitDescriptionWithOid } from 'isomorphic-git';
+import * as Watcher from './watcher';
+import * as log from '../tools/logger';
 
 const fs = require('fs');
-const workingDir = './';
-
 git.plugins.set('fs', fs);
 
+const MODULE_NAME = 'Git';
+log.registerModule(MODULE_NAME, log.Level.WARNING);
+
+export enum GitStats {
+  IGNORED = 1, //file ignored by a .gitignore rule
+
+  UNSTAGED_UNMODIFIED = 2, //working dir and HEAD commit match, but index differs
+  UNMODIFIED = 4, //file unchanged from HEAD commit
+
+  UNSTAGED_MODIFIED = 8, //file has modifications, not yet staged
+  MODIFIED = 16, //file has modifications, staged
+
+  UNSTAGED_DELETED = 32, //file has been removed, but the removal is not yet staged
+  DELETED = 64, //file has been removed, staged
+
+  UNSTAGED_ADDED = 128, //file is untracked, not yet staged
+  ADDED = 256, //previously untracked file, staged
+
+  UNSTAGED_ABSENT = 512, //file not present in working dir or HEAD commit, but present in the index
+  ABSENT = 1024, //file not present in HEAD commit, staging area, or working dir
+
+  ALL = 2048,
+  UNSTAGED = UNSTAGED_UNMODIFIED |
+    UNSTAGED_MODIFIED |
+    UNSTAGED_DELETED |
+    UNSTAGED_ADDED,
+}
 export interface FileStatusChanges {
   path: string;
   type: string;
@@ -14,108 +41,182 @@ export interface FileStatusChanges {
   hashA: string;
   hashB: string;
 }
-
-const getGitLog = async (): Promise<Array<CommitDescriptionWithOid>> => {
-  return await git.log({ dir: workingDir, depth: 1000 });
-};
-
-const getCurrentBranch = async (): Promise<string | undefined> => {
-  return await git.currentBranch({
-    dir: workingDir,
-    fullname: true,
-  });
-};
-
-export interface fileChanges {
+export interface FileChanges {
   originalState: string;
   newState: string;
   fileName: string;
   type: string;
 }
+export interface StagedTypes {
+  unmodified?: Array<object>; //change this..
+  modified?: Array<object>;
+  deleted?: Array<object>;
+  added?: Array<object>;
+}
+export interface GitFileStatus {
+  staged?: StagedTypes;
+  unstaged?: StagedTypes;
+  ignored?: Array<object>;
+}
+export interface GitCommitLog {
+  isHistory: boolean;
+  commit?: CommitDescriptionWithOid;
+}
 
-async function readFile(
-  oid: string,
-  encoding: string = 'utf8'
-): Promise<string> {
-  const { object: blob } = await git.readObject({
-    dir: workingDir,
-    oid,
-    encoding,
+//#region Events
+function onWatcherEvent(event: string, path: string) {
+  log.debug(MODULE_NAME, event + ' : ' + path);
+}
+//#endregion
+
+//#region  Methods
+
+/**
+ * Gets the current branch of the repository
+ */
+async function getCurrentBranch(gitDir: string): Promise<string | undefined> {
+  //Check if current branch is set, if not load it
+  // if (!this.currentBranch) {
+  return await git.currentBranch({
+    dir: gitDir,
+    fullname: true,
+  });
+  // }
+}
+
+/**
+ * Fetch commits from logged or repository
+ * @param size Amount to fetch
+ * @param timestamp Commits since time
+ */
+async function getGitLog(
+  gitDir: string,
+  size: number = 20,
+  timestamp: number = -1
+): Promise<Array<GitCommitLog>> {
+  let options = { dir: gitDir, depth: size };
+
+  if (timestamp > -1) {
+    Object.assign(options, { since: timestamp });
+  }
+  let requestedLog = await git.log(options);
+
+  const modifiedLog: Array<GitCommitLog> = requestedLog.map(commitHistory => {
+    return {
+      isHistory: true,
+      commit: commitHistory,
+    };
   });
 
-  return blob.toString();
+  // Insert blank commit at the start
+  modifiedLog.unshift({ isHistory: false });
+  return modifiedLog;
 }
 
-async function getChanges(
-  fileStatusChanges: Array<FileStatusChanges>
-): Promise<any> {
-  const files = fileStatusChanges.map(async (diff: any) => {
-    if (diff.hashA !== undefined) {
-      diff.original = await readFile(diff.hashA);
-    } else {
-      diff.original = '';
-    }
+/**
+ * Super heavy function to get the status of the whole git.
+ * @param flags Customizable flags for filtering returned info
+ */
+async function getGitStatus(
+  gitDir: string,
+  flags: GitStats = GitStats.ALL
+): Promise<GitFileStatus> {
+  const time = Date.now();
+  log.debug(MODULE_NAME, 'Started GitStatus');
+  let status = await git.statusMatrix({ dir: gitDir, pattern: '**' });
+  log.debug(MODULE_NAME, 'Done GitStatus : ' + (Date.now() - time) + 's');
 
-    if (diff.hashB !== undefined) {
-      diff.modified = await readFile(diff.hashB);
-    } else {
-      diff.modified = '';
-    }
-    return diff;
-  });
+  let fileStatus: GitFileStatus = {};
 
-  return await Promise.all(files);
-}
-
-async function onFileChange(callback: any) {
-  // addListener(callback);
-}
-
-async function getGitStatus(): Promise<any> {
-  let status = await git.statusMatrix({ dir: workingDir, pattern: '**' });
-
-  const FILE = 0,
-    HEAD = 1,
+  const HEAD = 1,
     WORKDIR = 2,
     STAGE = 3;
 
-  const deleted = await status
-    .filter(row => row[WORKDIR] === 0)
-    .map(row => row[FILE]);
+  if (
+    flags & GitStats.UNSTAGED_UNMODIFIED ||
+    GitStats.UNSTAGED_MODIFIED ||
+    GitStats.UNSTAGED_DELETED ||
+    GitStats.UNSTAGED_ABSENT ||
+    GitStats.UNSTAGED_ADDED
+  ) {
+    fileStatus.unstaged = {};
 
-  const unstaged = await status
-    .filter(row => row[WORKDIR] !== row[STAGE])
-    .map(row => row[FILE]);
+    if (flags & GitStats.UNSTAGED_DELETED) {
+      //file has been removed, but the removal is not yet staged
+      fileStatus.unstaged.deleted = await status.filter(
+        row => row[HEAD] === 1 && row[WORKDIR] === 0 && row[STAGE] === 1
+      );
+    }
 
-  const modified = await status
-    .filter(row => row[HEAD] !== row[WORKDIR])
-    .map(row => row[FILE]);
+    //file is untracked, not yet staged
+    if (flags & GitStats.UNSTAGED_ADDED) {
+      fileStatus.unstaged.added = await status.filter(
+        row => row[HEAD] === 0 && row[WORKDIR] === 2 && row[STAGE] === 0
+      );
+    }
 
-  return unstaged;
+    //file has modifications, not yet staged
+    if (flags & GitStats.UNSTAGED_MODIFIED) {
+      fileStatus.unstaged.modified = await status.filter(
+        row =>
+          row[HEAD] === 1 &&
+          row[WORKDIR] === 2 &&
+          (row[STAGE] === 1 || row[STAGE] === 3)
+      );
+    }
+  }
+
+  if (
+    flags & GitStats.UNMODIFIED ||
+    GitStats.MODIFIED ||
+    GitStats.DELETED ||
+    GitStats.ABSENT ||
+    GitStats.UNSTAGED_ADDED
+  ) {
+    fileStatus.staged = {};
+
+    if (flags & GitStats.DELETED) {
+      //file has been removed, but the removal is not yet staged
+      fileStatus.staged.deleted = await status.filter(
+        row => row[HEAD] === 1 && row[WORKDIR] === 0 && row[STAGE] === 0
+      );
+    }
+
+    //file is untracked, not yet staged
+    if (flags & GitStats.ADDED) {
+      fileStatus.staged.added = await status.filter(
+        row => row[HEAD] === 0 && row[WORKDIR] === 2 && row[STAGE] === 2
+      );
+    }
+
+    //file has modifications, not yet staged
+    if (flags & GitStats.MODIFIED) {
+      fileStatus.staged.modified = await status.filter(
+        row => row[HEAD] === 1 && row[WORKDIR] === 2 && row[STAGE] === 2
+      );
+    }
+
+    //file unchanged from HEAD commit
+    if (flags & GitStats.UNMODIFIED) {
+      fileStatus.staged.unmodified = await status.filter(
+        row => row[HEAD] === 1 && row[WORKDIR] === 1 && row[STAGE] === 1
+      );
+    }
+  }
+
+  log.debug(MODULE_NAME, 'Filtering done : ' + (Date.now() - time) + 's');
+  return fileStatus;
 }
 
-async function getModifiedFiles(): Promise<any> {
-  const filesEdited = await getGitStatus();
-
-  return filesEdited;
-}
-
-// async function addAllUntrackedFiles(): Promise<any> {
-//   const globby = require('globby');
-//   const paths = await globby([workingDir + '**', workingDir + '**/.*'], {
-//     gitignore: true,
-//   });
-//   for (const filepath of paths) {
-//     await git.add({ fs, dir: workingDir, filepath });
-//   }
-// }
-
-// Needs safety checks added.
-// Defaults to getting the previous 2 commits.
+/**
+ * Returns depth as target hash and other in previous
+ * @param depth Defaults to getting the previous 2 commits.
+ */
 async function getCommitHashes(
+  gitDir: string,
   depth: number = 2
 ): Promise<{ targetHash: string; previousHash: string }> {
-  const commits = await git.log({ dir: workingDir, depth });
+  const commits = await git.log({ dir: gitDir, depth });
   const oids = commits.map(commit => commit.oid);
 
   return {
@@ -124,17 +225,89 @@ async function getCommitHashes(
   };
 }
 
+async function getCurrentCommitChanges(
+  gitDir: string,
+  files: [string]
+): Promise<any> {
+  const commits = await git.log({ dir: gitDir });
+
+  const previousFileState = files.map(async filePath => {
+    try {
+      let { object: blob } = await git.readObject({
+        dir: gitDir,
+        oid: commits[0].oid, // Only interested in the previous commit for now
+        filepath: filePath,
+      });
+
+      const currentContents = fs.readFileSync(filePath, 'utf8');
+
+      return {
+        lastCommit: blob.toString(),
+        currentContents,
+      };
+    } catch (error) {
+      log.error(MODULE_NAME, 'New File');
+    }
+
+    return '';
+  });
+
+  log.debug(MODULE_NAME, 'Changes: ', await Promise.all(previousFileState));
+}
+
+async function startFileWatcher(dir: string): Promise<any> {
+  return await fetchIgnoreFile(dir)
+    .then((file: string[]) => {
+      if (file) {
+        log.debug(MODULE_NAME, 'Ignore File: ' + file);
+        file.map(line => Watcher.addToWatchIgnore(line));
+        log.debug(MODULE_NAME, 'Ignore List: ', Watcher.ignoreList);
+      }
+    })
+    .finally(() => {
+      Watcher.addToWatchList(dir);
+      Watcher.addEventListener(Watcher.FileWatcherEvent.ALL, onWatcherEvent);
+      return Watcher;
+    });
+}
+
+//Fetches the ignore file as array
+async function fetchIgnoreFile(dir: string): Promise<string[]> {
+  return new Promise<string[]>(resolve => {
+    fs.readFile(dir + '/.gitignore', (err: string, data: any) => {
+      //Bail out if file is not found. Can't see any reason for this to be so
+      if (err) {
+        throw log.error(MODULE_NAME, err);
+      }
+      let lines = data.toString().split('\n');
+
+      lines = lines.filter((currentLine: string) => {
+        if (currentLine.startsWith('#') || !currentLine.trim()) {
+          return false;
+        }
+        return true;
+      });
+
+      lines.push('.git'); //dont need to follow git stuff
+
+      resolve(lines);
+    });
+  });
+}
+
+//#region Rewrite all of these (Maybe)
 // Im happy with this will remove the other function and move it to be
 // the same as this.
 async function getCommitFileDifferences(
+  dir: string,
   commitHash1: string,
   commitHash2: string,
   onlyShowChanges: boolean = true
 ): Promise<FileStatusChanges[]> {
   const results: FileStatusChanges[] | undefined = await git.walkBeta1({
     trees: [
-      git.TREE({ fs, gitdir: workingDir + '.git', ref: commitHash1 }),
-      git.TREE({ fs, gitdir: workingDir + '.git', ref: commitHash2 }),
+      git.TREE({ fs, gitdir: dir + '.git', ref: commitHash1 }),
+      git.TREE({ fs, gitdir: dir + '.git', ref: commitHash2 }),
     ],
     map: async function([A, B]) {
       // ignore directories
@@ -188,79 +361,49 @@ async function getCommitFileDifferences(
   return await getChanges(results!);
 }
 
-/**
- * Gets the last commit of the file
- *
- * @param files
- */
-async function getCurrentCommitChanges(files: [string]): Promise<any> {
-  const commits = await git.log({ dir: workingDir });
-
-  const previousFileState = files.map(async filePath => {
-    try {
-      let { object: blob } = await git.readObject({
-        dir: workingDir,
-        oid: commits[0].oid, // Only interested in the previous commit for now
-        filepath: filePath,
-      });
-
-      const currentContents = fs.readFileSync(filePath, 'utf8');
-
-      return {
-        lastCommit: blob.toString(),
-        currentContents,
-      };
-    } catch (error) {
-      console.log('New File');
+async function getChanges(
+  fileStatusChanges: Array<FileStatusChanges>
+): Promise<any> {
+  const files = fileStatusChanges.map(async (diff: any) => {
+    if (diff.hashA !== undefined) {
+      diff.original = await readFile(diff.hashA);
+    } else {
+      diff.original = '';
     }
 
-    return '';
+    if (diff.hashB !== undefined) {
+      diff.modified = await readFile(diff.hashB);
+    } else {
+      diff.modified = '';
+    }
+    return diff;
   });
 
-  const done = await Promise.all(previousFileState);
+  return await Promise.all(files);
 }
 
-async function findAllCommitsContainingfile() {
-  let commits = await git.log({ dir: '.' });
-  let lastSHA = null;
-  let lastCommit = null;
-  let commitsThatMatter = [];
+async function readFile(
+  oid: string,
+  encoding: string = 'utf8'
+): Promise<string> {
+  const { object: blob } = await git.readObject({
+    dir: './',
+    oid,
+    encoding,
+  });
 
-  for (let i = 0; i < commits.length; i += 1) {
-    let commit = commits[i];
-    try {
-      let o = await git.readObject({
-        dir: workingDir,
-        oid: commit.oid,
-        filepath: 'PathToFileGoesHere',
-      });
-      if (i === commits.length - 1) {
-        // file already existed in first commit
-        commitsThatMatter.push(commit);
-        break;
-      }
-      if (o.oid !== lastSHA) {
-        if (lastSHA !== null) {
-          commitsThatMatter.push(lastCommit);
-        }
-        lastSHA = o.oid;
-      }
-    } catch (err) {
-      // file no longer there
-      commitsThatMatter.push(lastCommit);
-      break;
-    }
-    lastCommit = commit;
-  }
-  console.log(commitsThatMatter);
+  return blob.toString();
 }
+
+//#endregion
+//#endregion
 
 export {
+  getCommitHashes,
+  getCurrentCommitChanges,
+  getCommitFileDifferences,
+  getGitStatus,
   getGitLog,
   getCurrentBranch,
-  getCommitFileDifferences,
-  getModifiedFiles,
-  onFileChange,
-  getCurrentCommitChanges,
-  getCommitHashes,
+  startFileWatcher,
 };

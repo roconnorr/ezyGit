@@ -1,5 +1,5 @@
 import React from 'react';
-import { GitCommitLog } from '../../git/newGit';
+import { GitCommitLog } from '../../git/git';
 import GitCommitDetails from './GitCommitDetails';
 import { GitStatusDetails } from './GitStatusDetails';
 

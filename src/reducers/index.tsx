@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 import commit from './commit.reducer';
-import { GitCommitLog } from '../git/newGit';
+import { GitCommitLog } from '../git/git';
 import { FileStatusChanges } from '../git/git';
 import getGitDiff from './gitDiff.reducer';
 

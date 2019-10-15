@@ -11,7 +11,7 @@ function* requestNewGitDiff(action: BaseAction) {
   console.log(action);
 
   //Handles defaulting to the most recent change.
-  const hashes = yield getCommitHashes();
+  const hashes = yield getCommitHashes('./');
 
   let selected = hashes.targetHash;
   let previous = hashes.previousHash;
@@ -21,6 +21,10 @@ function* requestNewGitDiff(action: BaseAction) {
     previous = action.payload.parent;
   }
   console.log(hashes);
-  const currentDifferences = yield getCommitFileDifferences(selected, previous);
+  const currentDifferences = yield getCommitFileDifferences(
+    './',
+    selected,
+    previous
+  );
   yield put(getGitDiffCompletedAction(currentDifferences));
 }

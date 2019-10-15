@@ -7,35 +7,29 @@ interface ModuleOption {
 }
 
 enum Level {
-  OFF = -1,
-  DEBUG = 0,
-  INFO = 1,
-  WARNING = 2,
-  ERROR = 3,
-  VERBOSE = 4,
+  VERBOSE = 0,
+  DEBUG = 1,
+  INFO = 2,
+  WARNING = 3,
+  ERROR = 4,
+  OFF = 5,
 }
 
 function registerModule(id: string, level: Level, enabled: boolean = true) {
-  if (modules.some(m => m.id == id) == false) {
+  if (modules.some(m => m.id === id) === false) {
     modules.push({ id: id, level: level, enabled: enabled });
   }
 }
 function enableModule(id: string) {
-  modules.some(m => {
-    m.enabled = true;
-  });
+  modules.some(m => (m.enabled = true));
 }
 
 function disableModule(id: string) {
-  modules.some(m => {
-    m.enabled = false;
-  });
+  modules.some(m => (m.enabled = false));
 }
 
 function setLogLevel(id: string, level: Level) {
-  modules.some(m => {
-    m.level = level;
-  });
+  modules.some(m => (m.level = level));
 }
 
 function debug(id: string, msg: string, ...args: any[]) {
@@ -52,27 +46,28 @@ function warn(id: string, msg: string, ...args: any[]) {
 }
 
 function logEvent(event: string, id: string, msg: string, ...args: any[]) {
-  let mod = modules.find(m => m.id == id);
+  let mod = modules.find(m => m.id === id);
 
   if (mod && mod.enabled) {
+    msg = '[' + id + ']: ' + msg;
     switch (event) {
       case 'DEBUG':
-        if (mod.level >= Level.DEBUG) {
+        if (mod.level <= Level.DEBUG) {
           console.debug(msg, ...args);
         }
         break;
       case 'INFO':
-        if (mod.level >= Level.INFO) {
+        if (mod.level <= Level.INFO) {
           console.info(msg, ...args);
         }
         break;
       case 'ERROR':
-        if (mod.level >= Level.ERROR) {
+        if (mod.level <= Level.ERROR) {
           console.error(msg, ...args);
         }
         break;
       case 'WARNING':
-        if (mod.level >= Level.WARNING) {
+        if (mod.level <= Level.WARNING) {
           console.warn(msg, ...args);
         }
         break;
@@ -91,3 +86,10 @@ export {
   debug,
   Level,
 };
+
+//Testing logging levels
+registerModule('LOGGER', Level.OFF);
+debug('LOGGER', 'DEBUG TEST');
+info('LOGGER', 'INFO TEST');
+warn('LOGGER', 'WARN TEST');
+error('LOGGER', 'ERROR TEST');

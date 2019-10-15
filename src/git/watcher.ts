@@ -1,9 +1,8 @@
 import * as chokidar from 'chokidar';
 import * as log from '../tools/logger';
 
-const NODULE_NAME = 'Watcher';
-
-log.registerModule(NODULE_NAME, log.Level.INFO);
+const MODULE_NAME = 'Watcher';
+log.registerModule(MODULE_NAME, log.Level.INFO);
 
 enum FileWatcherEvent {
   ALL = 'all',
@@ -24,7 +23,7 @@ const fileWatcherAgent = new chokidar.FSWatcher({
 }).on(FileWatcherEvent.ALL, logger);
 
 function logger(event: string, path: string) {
-  log.info(NODULE_NAME, event + ' - ' + path);
+  log.info(MODULE_NAME, event + ' - ' + path);
 }
 
 /**
@@ -40,7 +39,7 @@ function ignoreFilter(path: string): boolean {
  */
 function addToWatchList(path: string): chokidar.FSWatcher {
   if (fileWatcherAgent) {
-    log.info(NODULE_NAME, 'Now watching: ' + path);
+    log.debug(MODULE_NAME, 'Now watching: ' + path);
     fileWatcherAgent.add(path);
   }
   return fileWatcherAgent;
@@ -52,7 +51,7 @@ function addToWatchList(path: string): chokidar.FSWatcher {
  */
 function addToWatchIgnore(path: string): chokidar.FSWatcher {
   if (ignoreList) {
-    log.debug(NODULE_NAME, 'Adding to ignore: ' + path);
+    log.debug(MODULE_NAME, 'Adding to ignore: ' + path);
     ignoreList.push(path);
   }
   return fileWatcherAgent;

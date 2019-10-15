@@ -1,5 +1,5 @@
 import { BaseAction, actionIds } from '.';
-import { GitCommitLog } from '../git/newGit';
+import { GitCommitLog } from '../git/git';
 
 export const getGitLogAction = (commitHash: string = ''): BaseAction => ({
   type: actionIds.GET_GIT_COMMIT_LOG,

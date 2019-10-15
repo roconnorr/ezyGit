@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './styles/App.css';
 import { NavBar } from './components/NavBar/NavBar';
-import { fileChanges, onFileChange } from './git/git';
 
 import { getGitLogAction } from './actions/gitCommitList.action';
 import { getGitDiffAction } from './actions/gitDiff.action';
@@ -17,12 +16,13 @@ import { Intent, Spinner } from '@blueprintjs/core';
 // to remove
 import {
   GitStats,
+  FileChanges,
   GitCommitLog,
   getCurrentBranch,
   getGitStatus,
   getCommitHashes,
   startFileWatcher,
-} from './git/newGit';
+} from './git/git';
 import { connect } from 'react-redux';
 
 export interface IState {
@@ -30,7 +30,7 @@ export interface IState {
   gitLog: Array<GitCommitLog> | null;
   gitCurrentBranch: string | undefined;
   // gitDiff: Array<FileStatusChanges> | null;
-  gitModifiedFiles: Array<fileChanges> | null;
+  gitModifiedFiles: Array<FileChanges> | null;
 }
 // https://isomorphic-git.org/docs/en/log
 
@@ -50,13 +50,6 @@ class App extends Component<
     };
   }
   async componentDidMount() {
-    //Listen for updates, break out into hooks or events?
-    onFileChange(async () => {
-      console.log('Update triggered');
-    });
-
-    // let git = new Git(process.cwd() + '/', new FileWatcher());/
-
     this.setState({
       gitCurrentBranch: await getCurrentBranch(this.GitDir),
       isLoaded: true,
@@ -67,7 +60,7 @@ class App extends Component<
     });
 
     getCommitHashes(this.GitDir).then(
-      (hases: { targetHash: string; previousHash: Array<string> }) => {
+      (hases: { targetHash: string; previousHash: string }) => {
         console.log('Hash Target: ' + hases.targetHash);
         console.log('Otheres : ' + hases.previousHash);
       }
@@ -104,7 +97,6 @@ class App extends Component<
     );
   }
 }
-
 const mapDispatchToProps = (dispatch: any) => ({
   loadSideListGitLog: () => dispatch(getGitLogAction()),
   loadDefaultCommit: () => dispatch(getGitDiffAction()),

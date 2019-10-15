@@ -1,6 +1,6 @@
 import { put, takeEvery } from 'redux-saga/effects';
 import * as git from 'isomorphic-git';
-import { GitCommitLog } from '../git/newGit';
+import { GitCommitLog } from '../git/git';
 import { getGitLogCompletedAction } from '../actions/gitCommitList.action';
 import { actionIds } from '../actions';
 

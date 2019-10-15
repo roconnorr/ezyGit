@@ -1,5 +1,5 @@
 import { BaseAction, actionIds } from '../actions';
-import { GitCommitLog } from '../git/newGit';
+import { GitCommitLog } from '../git/git';
 
 export const getCommitLog = (
   state: Array<GitCommitLog> = Array<GitCommitLog>(),
