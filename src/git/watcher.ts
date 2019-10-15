@@ -1,4 +1,9 @@
 import * as chokidar from 'chokidar';
+import * as log from '../tools/logger';
+
+const NODULE_NAME = 'Watcher';
+
+log.registerModule(NODULE_NAME, log.Level.INFO);
 
 enum FileWatcherEvent {
   ALL = 'all',
@@ -10,38 +15,73 @@ enum FileWatcherEvent {
   ERROR = 'error',
 }
 
-class FileWatcher {
-  directory: string | undefined;
-  ignore: Array<string> = [];
-  agent: any;
+var ignoreList = new Array<string>();
 
-  start() {
-    if (this.agent) {
-      this.agent.close();
-    }
+const fileWatcherAgent = new chokidar.FSWatcher({
+  persistent: true,
+  ignoreInitial: true,
+  ignored: ignoreFilter,
+}).on(FileWatcherEvent.ALL, logger);
 
-    this.agent = chokidar
-      .watch(process.cwd(), {
-        ignored: (path: any) => this.ignore.some(s => path.includes(s)),
-        cwd: this.directory,
-      })
-      .on('ready', () => {
-        'Watcher started!';
-      });
-  }
-
-  stop() {
-    if (this.agent) {
-      this.agent.close();
-    }
-  }
-
-  addEvent(event: FileWatcherEvent, callback: any) {
-    //TODO:Re-write this
-    if (this.agent) {
-      this.agent.on(event, callback);
-    }
-  }
+function logger(event: string, path: string) {
+  log.info(NODULE_NAME, event + ' - ' + path);
 }
 
-export { FileWatcher, FileWatcherEvent };
+/**
+ * Helper function for chokdir to filter files
+ */
+function ignoreFilter(path: string): boolean {
+  return ignoreList.some(s => path.includes(s));
+}
+
+/** Adds a file or directory to the watchl lits
+ * Need to rename this function
+ * @param path Dir or file to watch
+ */
+function addToWatchList(path: string): chokidar.FSWatcher {
+  if (fileWatcherAgent) {
+    log.info(NODULE_NAME, 'Now watching: ' + path);
+    fileWatcherAgent.add(path);
+  }
+  return fileWatcherAgent;
+}
+
+/** Adds a file or directory to the ignore list
+ * Need to rename this function
+ * @param path Dir or file to ignore
+ */
+function addToWatchIgnore(path: string): chokidar.FSWatcher {
+  if (ignoreList) {
+    log.debug(NODULE_NAME, 'Adding to ignore: ' + path);
+    ignoreList.push(path);
+  }
+  return fileWatcherAgent;
+}
+
+function stopWatcher(): chokidar.FSWatcher {
+  if (fileWatcherAgent) {
+    fileWatcherAgent.close();
+  }
+  return fileWatcherAgent;
+}
+
+function addEventListener(
+  event: FileWatcherEvent,
+  callback: any
+): chokidar.FSWatcher {
+  //TODO:Re-write this
+  if (fileWatcherAgent) {
+    fileWatcherAgent.on(event, callback);
+  }
+  return fileWatcherAgent;
+}
+
+export {
+  fileWatcherAgent,
+  addToWatchList,
+  stopWatcher,
+  addEventListener,
+  FileWatcherEvent,
+  addToWatchIgnore,
+  ignoreList,
+};

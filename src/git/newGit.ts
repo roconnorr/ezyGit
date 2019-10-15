@@ -1,7 +1,8 @@
 import * as git from 'isomorphic-git';
 import { CommitDescriptionWithOid } from 'isomorphic-git';
-import { FileWatcher, FileWatcherEvent } from './watcher';
+import * as Watcher from './watcher';
 import { number, array } from 'prop-types';
+import { promises } from 'fs';
 
 const fs = require('fs');
 
@@ -312,6 +313,46 @@ async function getCurrentCommitChanges(
   console.log(done);
 }
 
+async function startFileWatcher(dir: string): Promise<any> {
+  return await fetchIgnoreFile(dir)
+    .then((file: string[]) => {
+      if (file) {
+        console.log('ignore File: ' + file);
+        file.map(line => Watcher.addToWatchIgnore(line));
+        console.log(Watcher.ignoreList);
+      }
+    })
+    .finally(() => {
+      Watcher.addToWatchList(dir);
+      Watcher.addEventListener(Watcher.FileWatcherEvent.ALL, onWatcherEvent);
+      return Watcher;
+    });
+}
+
+//Fetches the ignore file as array
+async function fetchIgnoreFile(dir: string): Promise<string[]> {
+  return new Promise<string[]>(resolve => {
+    fs.readFile(dir + '/.gitignore', (err: string, data: any) => {
+      //Bail out if file is not found. Can't see any reason for this to be so
+      if (err) {
+        throw console.error(err);
+      }
+      let lines = data.toString().split('\n');
+
+      lines = lines.filter((currentLine: string) => {
+        if (currentLine.startsWith('#') || !currentLine.trim()) {
+          return false;
+        }
+        return true;
+      });
+
+      lines.push('.git'); //dont need to follow git stuff
+
+      resolve(lines);
+    });
+  });
+}
+
 //#endregion
 
 export {
@@ -320,4 +361,5 @@ export {
   getGitStatus,
   getGitLog,
   getCurrentBranch,
+  startFileWatcher,
 };

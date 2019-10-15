@@ -21,8 +21,8 @@ import {
   getCurrentBranch,
   getGitStatus,
   getCommitHashes,
+  startFileWatcher,
 } from './git/newGit';
-import { FileWatcher } from './git/watcher';
 import { connect } from 'react-redux';
 
 export interface IState {
@@ -72,6 +72,8 @@ class App extends Component<
         console.log('Otheres : ' + hases.previousHash);
       }
     );
+
+    startFileWatcher(this.GitDir);
 
     this.props.loadSideListGitLog();
     this.props.loadDefaultCommit();
