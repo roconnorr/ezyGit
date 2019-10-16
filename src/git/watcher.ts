@@ -33,7 +33,8 @@ function ignoreFilter(path: string): boolean {
   return ignoreList.some(s => path.includes(s));
 }
 
-/** Adds a file or directory to the watchl lits
+/**
+ * Adds a file or directory to the watchl lits
  * Need to rename this function
  * @param path Dir or file to watch
  */
@@ -45,7 +46,8 @@ function addToWatchList(path: string): chokidar.FSWatcher {
   return fileWatcherAgent;
 }
 
-/** Adds a file or directory to the ignore list
+/**
+ * Adds a file or directory to the ignore list
  * Need to rename this function
  * @param path Dir or file to ignore
  */

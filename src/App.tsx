@@ -51,20 +51,8 @@ class App extends Component<
   }
   async componentDidMount() {
     this.setState({
-      gitCurrentBranch: await getCurrentBranch(this.GitDir),
       isLoaded: true,
     });
-
-    getGitStatus(this.GitDir, GitStats.UNSTAGED).then(() => {
-      console.log('completed getting the gitStatus');
-    });
-
-    getCommitHashes(this.GitDir).then(
-      (hases: { targetHash: string; previousHash: string }) => {
-        console.log('Hash Target: ' + hases.targetHash);
-        console.log('Otheres : ' + hases.previousHash);
-      }
-    );
 
     startFileWatcher(this.GitDir);
 
