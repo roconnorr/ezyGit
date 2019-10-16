@@ -1,7 +1,7 @@
 import { ItemPredicate } from '@blueprintjs/select';
 import { ISearchItem } from './SearchBar';
 
-export const filterGitCommand: ItemPredicate<ICommand> = (
+export const filterGitCommand: ItemPredicate<ISearchItem> = (
   query,
   film,
   _index,

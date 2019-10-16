@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import './styles/App.css';
-import { NavBar } from './components/NavBar/NavBar';
-import { fileChanges, onFileChange } from './git/git';
-
+import NavBar from './components/NavBar/NavBar';
 import { getGitLogAction } from './actions/gitCommitList.action';
 import { getGitDiffAction } from './actions/gitDiff.action';
 
@@ -50,6 +48,13 @@ class App extends Component<
       gitModifiedFiles: null,
     };
   }
+
+  /**
+   * This function is called by the react framework once the
+   * component is first mounted into the DOM
+   *
+   * This is a good place to do setup
+   */
   async componentDidMount() {
     this.setState({
       isLoaded: true,
@@ -61,6 +66,10 @@ class App extends Component<
     this.props.loadDefaultCommit();
   }
 
+  /**
+   * This function is automatically called by the react framework
+   * when a "prop" or the "state" is updated.
+   */
   render() {
     const { isLoaded, gitCurrentBranch } = this.state;
 
@@ -86,6 +95,11 @@ class App extends Component<
     );
   }
 }
+
+/**
+ * This connecting the redux actions to the component as a prop
+ * so that the
+ */
 const mapDispatchToProps = (dispatch: any) => ({
   loadSideListGitLog: () => dispatch(getGitLogAction()),
   loadDefaultCommit: () => dispatch(getGitDiffAction()),

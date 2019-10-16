@@ -1,5 +1,5 @@
 import * as React from 'react';
-
+import { connect } from 'react-redux';
 import {
   Alignment,
   Navbar,
@@ -8,10 +8,9 @@ import {
   NavbarHeading,
 } from '@blueprintjs/core';
 import SearchBar, { ISearchBarProps } from '../SearchBar/SearchBar';
-import { filterFilm } from '../SearchBar/SearchBarItemPredicate';
-import renderFilm from '../SearchBar/SearchBarItemRenderer';
-import { connect } from 'react-redux';
+import filterGitCommand from '../SearchBar/SearchBarItemPredicate';
 import { getGitLogAction } from '../../actions/gitCommitList.action';
+import renderGitCommand from '../SearchBar/SearchBarItemRenderer';
 
 interface INavBarProps {
   branch: string;
