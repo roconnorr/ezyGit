@@ -63,11 +63,15 @@ class App extends Component<IProps, IState> {
     const gaze = new Gaze(['**/*', '!**/node_modules/**'], {
       cwd: process.cwd(),
     });
+
+    const time = Date.now();
+
     gaze.on('ready', (watcher: any) => {
       watcher.on('all', (event: any, filepath: any) => {
         console.log('Look mah! it happend' + filepath + ' was ' + event);
       });
-      console.log('ready to roll!');
+
+      console.log('ready to roll! ' + (Date.now() - time) + ' seconds');
     });
 
     // A file has been added/changed/deleted has occurred
