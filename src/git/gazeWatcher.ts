@@ -1,5 +1,6 @@
 import * as fs from 'fs';
 import { promisify } from 'util';
+import { tsParameterProperty } from '@babel/types';
 
 const readFileAsync = promisify(fs.readFile);
 
@@ -49,7 +50,7 @@ class FileWatcher {
 //   console.log('Temp');
 // });
 
-export const fetchIgnoreFile = async (
+export const fetchIgnoreFileContents = async (
   workingDir: string
 ): Promise<string[]> => {
   const filePath = process.cwd() + '/.gitignore';
@@ -63,9 +64,14 @@ export const fetchIgnoreFile = async (
     return true;
   });
 
-  lines.push('.git'); //dont need to follow git stuff
+  const temp = lines.map((content: string) => {
+    const tempString = content.replace(/^\//, '');
+    return '!**/' + tempString + '**';
+  });
 
-  return lines;
+  lines.push('!**/.git'); //dont need to follow git stuff
+
+  return temp;
 };
 
 export default FileWatcher;

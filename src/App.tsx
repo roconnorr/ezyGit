@@ -15,7 +15,7 @@ import { Intent, Spinner } from '@blueprintjs/core';
 // to remove
 import { FileChanges, GitCommitLog } from './git/git';
 import { connect } from 'react-redux';
-import FileWatcher, { fetchIgnoreFile } from './git/gazeWatcher';
+import FileWatcher, { fetchIgnoreFileContents } from './git/gazeWatcher';
 import { State } from './reducers';
 const Gaze = require('gaze').Gaze;
 
@@ -59,8 +59,10 @@ class App extends Component<IProps, IState> {
     });
 
     // startFileWatcher(this.GitDir);
-    const filesToIgnore = await fetchIgnoreFile(this.props.workingDir);
-    const gaze = new Gaze(['**/*', '!**/node_modules/**'], {
+    const filesToIgnore = await fetchIgnoreFileContents(this.props.workingDir);
+    console.log(filesToIgnore);
+    //['**.*', '!**/node_modules/**']
+    const gaze = new Gaze(filesToIgnore, {
       cwd: process.cwd(),
     });
 
