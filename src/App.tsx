@@ -13,16 +13,11 @@ import DiffViewerList from './components/Diff/DiffViewerList';
 import { Intent, Spinner } from '@blueprintjs/core';
 
 // to remove
-import {
-  GitStats,
-  FileChanges,
-  GitCommitLog,
-  getCurrentBranch,
-  getGitStatus,
-  getCommitHashes,
-  startFileWatcher,
-} from './git/git';
+import { FileChanges, GitCommitLog } from './git/git';
 import { connect } from 'react-redux';
+import FileWatcher, { fetchIgnoreFile } from './git/gazeWatcher';
+import { State } from './reducers';
+const Gaze = require('gaze').Gaze;
 
 export interface IState {
   isLoaded: boolean;
@@ -33,13 +28,16 @@ export interface IState {
 }
 // https://isomorphic-git.org/docs/en/log
 
-class App extends Component<
-  { loadSideListGitLog: any; loadDefaultCommit: any },
-  IState
-> {
+interface IProps {
+  loadSideListGitLog: any;
+  loadDefaultCommit: any;
+  workingDir: string;
+}
+
+class App extends Component<IProps, IState> {
   GitDir: string = process.cwd();
 
-  constructor(props: { loadSideListGitLog: any; loadDefaultCommit: any }) {
+  constructor(props: IProps) {
     super(props);
     this.state = {
       isLoaded: false,
@@ -60,7 +58,21 @@ class App extends Component<
       isLoaded: true,
     });
 
-    startFileWatcher(this.GitDir);
+    // startFileWatcher(this.GitDir);
+    const filesToIgnore = await fetchIgnoreFile(this.props.workingDir);
+    const gaze = new Gaze(['**/*', '!**/node_modules/**'], {
+      cwd: process.cwd(),
+    });
+    gaze.on('ready', (watcher: any) => {
+      watcher.on('all', (event: any, filepath: any) => {
+        console.log('Look mah! it happend' + filepath + ' was ' + event);
+      });
+      console.log('ready to roll!');
+    });
+
+    // A file has been added/changed/deleted has occurred
+
+    // const temp = new FileWatcher(gaze, '');
 
     this.props.loadSideListGitLog();
     this.props.loadDefaultCommit();
@@ -105,7 +117,13 @@ const mapDispatchToProps = (dispatch: any) => ({
   loadDefaultCommit: () => dispatch(getGitDiffAction()),
 });
 
+const mapStateToProps = (state: State) => {
+  return {
+    workingDir: state.workingDir,
+  };
+};
+
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(App);
