@@ -4,7 +4,7 @@ import { MenuItem } from '@blueprintjs/core';
 import highlightText from './TextHighter';
 import { ISearchItem } from './SearchBar';
 
-const renderFilm: ItemRenderer<ISearchItem> = (
+const renderGitCommand: ItemRenderer<ICommand> = (
   command,
   { handleClick, modifiers, query }
 ) => {
@@ -24,4 +24,4 @@ const renderFilm: ItemRenderer<ISearchItem> = (
   );
 };
 
-export default renderFilm;
+export default renderGitCommand;

@@ -10,22 +10,27 @@ import {
 import SearchBar, { ISearchBarProps } from '../SearchBar/SearchBar';
 import { filterFilm } from '../SearchBar/SearchBarItemPredicate';
 import renderFilm from '../SearchBar/SearchBarItemRenderer';
+import { connect } from 'react-redux';
+import { getGitLogAction } from '../../actions/gitCommitList.action';
 
 interface INavBarProps {
   branch: string;
+  fecthGitCommit: any;
 }
-const searchBarProps: ISearchBarProps = {
-  itemPredicate: filterFilm,
-  itemRenderer: renderFilm,
-  items: [
-    { name: 'pop' },
-    { name: 'stash' },
-    { name: 'push' },
-    { name: 'pull' },
-  ],
-};
 
-const NavBar = (props: INavBarProps) => {
+const NavBar: React.FunctionComponent<INavBarProps> = props => {
+  const searchBarProps: ISearchBarProps = {
+    itemPredicate: filterGitCommand,
+    itemRenderer: renderGitCommand,
+    items: [
+      { name: 'pop', action: '' },
+      { name: 'stash', action: '' },
+      { name: 'push', action: '' },
+      { name: 'pull', action: '' },
+      { name: 'fetch', action: props.fecthGitCommit() },
+    ],
+  };
+
   const { branch } = props;
 
   return (
@@ -40,4 +45,11 @@ const NavBar = (props: INavBarProps) => {
   );
 };
 
-export { NavBar };
+const mapDispatchToProps = (dispatch: any) => ({
+  fecthGitCommit: () => dispatch(getGitLogAction()),
+});
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(NavBar);

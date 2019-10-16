@@ -1,7 +1,7 @@
 import { ItemPredicate } from '@blueprintjs/select';
 import { ISearchItem } from './SearchBar';
 
-export const filterFilm: ItemPredicate<ISearchItem> = (
+export const filterGitCommand: ItemPredicate<ICommand> = (
   query,
   film,
   _index,
@@ -16,3 +16,5 @@ export const filterFilm: ItemPredicate<ISearchItem> = (
     return `${normalizedTitle}`.indexOf(normalizedQuery) >= 0;
   }
 };
+
+export default filterGitCommand;

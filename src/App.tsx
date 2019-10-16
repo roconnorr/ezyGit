@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './styles/App.css';
 import { NavBar } from './components/NavBar/NavBar';
+import { fileChanges, onFileChange } from './git/git';
 
 import { getGitLogAction } from './actions/gitCommitList.action';
 import { getGitDiffAction } from './actions/gitDiff.action';

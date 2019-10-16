@@ -20,6 +20,7 @@ export interface ISearchBarState {
 
 export interface ISearchItem {
   name: string;
+  action: any;
 }
 
 export interface ISearchBarProps {
