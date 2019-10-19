@@ -1,6 +1,6 @@
 import * as git from 'isomorphic-git';
 import { CommitDescriptionWithOid } from 'isomorphic-git';
-import * as Watcher from './watcher';
+// import * as Watcher from './watcher';
 import * as log from '../tools/logger';
 
 const fs = require('fs');
@@ -255,21 +255,21 @@ async function getCurrentCommitChanges(
   log.debug(MODULE_NAME, 'Changes: ', await Promise.all(previousFileState));
 }
 
-async function startFileWatcher(dir: string): Promise<any> {
-  return await fetchIgnoreFile(dir)
-    .then((file: string[]) => {
-      if (file) {
-        log.debug(MODULE_NAME, 'Ignore File: ' + file);
-        file.map(line => Watcher.addToWatchIgnore(line));
-        log.debug(MODULE_NAME, 'Ignore List: ', Watcher.ignoreList);
-      }
-    })
-    .finally(() => {
-      Watcher.addToWatchList(dir);
-      Watcher.addEventListener(Watcher.FileWatcherEvent.ALL, onWatcherEvent);
-      return Watcher;
-    });
-}
+// async function startFileWatcher(dir: string): Promise<any> {
+//   return await fetchIgnoreFile(dir)
+//     .then((file: string[]) => {
+//       if (file) {
+//         log.debug(MODULE_NAME, 'Ignore File: ' + file);
+//         file.map(line => Watcher.addToWatchIgnore(line));
+//         log.debug(MODULE_NAME, 'Ignore List: ', Watcher.ignoreList);
+//       }
+//     })
+//     .finally(() => {
+//       Watcher.addToWatchList(dir);
+//       Watcher.addEventListener(Watcher.FileWatcherEvent.ALL, onWatcherEvent);
+//       return Watcher;
+//     });
+// }
 
 //Fetches the ignore file as array
 async function fetchIgnoreFile(dir: string): Promise<string[]> {
@@ -405,5 +405,4 @@ export {
   getGitStatus,
   getGitLog,
   getCurrentBranch,
-  startFileWatcher,
 };

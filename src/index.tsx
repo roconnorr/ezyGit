@@ -6,6 +6,14 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { store } from './store/store';
 
+const nsfw = require('nsfw');
+
+const temp = nsfw(process.cwd(), function(events: any) {
+  console.log(events);
+});
+
+console.log(temp);
+
 ReactDOM.render(
   <Provider store={store}>
     <App />
