@@ -5,6 +5,7 @@
   "main": "public/electron.js",
   "homepage": "./",
   "dependencies": {
+    "@blueprintjs/core": "^3.19.1",
     "@storybook/react": "^5.2.4",
     "@types/node": "^12.11.1",
     "@types/react-redux": "^7.1.5",
