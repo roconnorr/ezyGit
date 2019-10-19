@@ -5,6 +5,7 @@
   "main": "public/electron.js",
   "homepage": "./",
   "dependencies": {
+    "@storybook/react": "^5.2.4",
     "@types/node": "^12.11.1",
     "@types/react-redux": "^7.1.5",
     "electron-is-dev": "^1.1.0",
@@ -23,7 +24,9 @@
     "test": "rescripts test",
     "eject": "react-scripts eject",
     "electron": "concurrently \"yarn start\" \"wait-on http://localhost:3000 && electron .\"",
-    "postinstall": "electron-builder install-app-deps"
+    "postinstall": "electron-builder install-app-deps",
+    "storybook": "start-storybook -p 9009 -s public",
+    "build-storybook": "build-storybook -s public"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -43,6 +46,9 @@
   "devDependencies": {
     "@rescripts/cli": "^0.0.13",
     "@rescripts/rescript-env": "^0.0.11",
+    "@storybook/addon-actions": "^5.2.4",
+    "@storybook/addon-links": "^5.2.4",
+    "@storybook/addons": "^5.2.4",
     "@types/react": "^16.9.9",
     "@types/react-dom": "^16.9.2",
     "concurrently": "^5.0.0",
