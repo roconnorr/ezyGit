@@ -1,93 +1,55 @@
 {
   "name": "ezygit",
-  "description": "Git client using electron typescript and react",
   "version": "0.1.0",
   "private": true,
-  "author": {
-    "name": "Scott Maunder",
-    "email": "maunderscott@gmail.com",
-    "url": "https://teamlemon.xyz"
-  },
-  "build": {
-    "appId": "com.my-website.my-app",
-    "productName": "ezyGit",
-    "copyright": "Copyright © 2019 ${author}",
-    "mac": {
-      "category": "public.app-category.utilities"
-    },
-    "files": [
-      "build/**/*",
-      "node_modules/**/*"
-    ],
-    "directories": {
-      "buildResources": "assets"
-    }
-  },
-  "dependencies": {
-    "@types/react-dom": "^16.9.1",
-    "@types/react-redux": "^7.1.4",
-    "cross-env": "^6.0.0",
-    "electron-is-dev": "^1.0.1",
-    "isomorphic-git": "^0.67.2",
-    "lodash": "^4.17.15",
-    "nsfw": "^1.2.5",
-    "prop-types": "^15.7.2",
-    "react": "^16.9.0",
-    "react-custom-scrollbars": "^4.2.1",
-    "react-diff-view": "^2.2.0",
-    "react-dom": "^16.9.0",
-    "react-list": "^0.8.13",
-    "react-redux": "^7.1.1",
-    "react-scripts": "^3.1.2",
-    "redux": "^4.0.4",
-    "redux-logger": "^3.0.6",
-    "redux-saga": "^1.1.1",
-    "request": "^2.88.0",
-    "tslint": "^5.20.0",
-    "unidiff": "^1.0.2",
-    "watch": "^1.0.2"
-  },
-  "homepage": "./",
   "main": "public/electron.js",
+  "homepage": "./",
+  "dependencies": {
+    "@types/node": "^12.11.1",
+    "@types/react-redux": "^7.1.5",
+    "electron-is-dev": "^1.1.0",
+    "isomorphic-git": "^0.67.5",
+    "nsfw": "^1.2.5",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
+    "react-redux": "^7.1.1",
+    "react-scripts": "3.2.0",
+    "redux": "^4.0.4",
+    "redux-saga": "^1.1.1"
+  },
   "scripts": {
-    "start": "rescripts start",
+    "start": "react-scripts start",
     "build": "rescripts build",
     "test": "rescripts test",
     "eject": "react-scripts eject",
-    "electron-dev": "concurrently \"cross-env BROWSER=none npm start\" \"wait-on http://localhost:3000 && electron .\"",
-    "postinstall": "electron-builder install-app-deps",
-    "preelectron-pack": "yarn build",
-    "electron-pack": "electron-builder -mw",
-    "rebuild": "electron-rebuild -f -b"
+    "electron": "concurrently \"yarn start\" \"wait-on http://localhost:3000 && electron .\"",
+    "postinstall": "electron-builder install-app-deps"
   },
   "eslintConfig": {
     "extends": "react-app"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ],
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
   "devDependencies": {
-    "@blueprintjs/core": "^3.18.1",
-    "@blueprintjs/docs-theme": "^3.3.0",
-    "@blueprintjs/select": "^3.10.0",
-    "@rescripts/cli": "^0.0.12",
-    "@rescripts/rescript-env": "^0.0.10",
-    "@types/lodash": "^4.14.138",
-    "@types/node": "^12.7.5",
-    "@types/react": "^16.9.2",
-    "@types/react-custom-scrollbars": "^4.0.6",
-    "@types/react-list": "^0.8.5",
-    "@types/react-virtualized": "^9.21.4",
-    "@types/react-virtualized-auto-sizer": "^1.0.0",
-    "@types/react-window": "^1.8.1",
-    "concurrently": "^4.1.0",
-    "electron": "^4.0.6",
-    "electron-builder": "^20.38.5",
-    "electron-rebuild": "^1.8.6",
-    "typescript": "^3.3.3333",
-    "wait-on": "^3.2.0"
+    "@rescripts/cli": "^0.0.13",
+    "@rescripts/rescript-env": "^0.0.11",
+    "@types/react": "^16.9.9",
+    "@types/react-dom": "^16.9.2",
+    "concurrently": "^5.0.0",
+    "electron": "^6.0.12",
+    "electron-builder": "^21.2.0",
+    "tslint": "^5.20.0",
+    "typescript": "^3.6.4",
+    "wait-on": "^3.3.0"
   }
 }

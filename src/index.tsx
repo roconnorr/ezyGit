@@ -2,21 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './styles/index.css';
 import { Provider } from 'react-redux';
-import App from './App';
+// import App from '../old_components/App';
 import * as serviceWorker from './serviceWorker';
 import { store } from './store/store';
 
-const nsfw = require('nsfw');
-
-const temp = nsfw(process.cwd(), function(events: any) {
-  console.log(events);
-});
-
-console.log(temp);
-
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <div>new component</div>
   </Provider>,
   document.getElementById('root')
 );
