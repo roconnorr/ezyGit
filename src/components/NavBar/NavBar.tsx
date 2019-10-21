@@ -7,7 +7,7 @@ import {
   NavbarHeading,
   Button,
 } from '@blueprintjs/core';
-import Selector from './BranchSelector/Selector';
+import BranchSelector, { IBranch } from './BranchSelector/BranchSelector';
 
 interface INavBarProps {
   branch: string;
@@ -17,16 +17,18 @@ interface INavBarProps {
 const NavBar: React.FunctionComponent<INavBarProps> = props => {
   const { branch } = props;
 
+  const demoBranches: IBranch[] = [
+    { name: 'master', oid: 'asdasd' },
+    { name: 'stable', oid: 'asdasd' },
+    { name: 'bleedingedge', oid: 'asdasd' },
+  ];
+
   return (
     <Navbar fixedToTop={true}>
-      <NavbarGroup align={Alignment.LEFT}>
+      <NavbarGroup align={Alignment.LEFT} style={{ width: '70%' }}>
         <NavbarHeading>ezyGit</NavbarHeading>
         <NavbarDivider />
-        <NavbarHeading>
-          Current Branch: {branch ? branch : 'Loading...'}
-        </NavbarHeading>
-        <NavbarDivider />
-        TODO SELECTOR
+        <BranchSelector branches={demoBranches} />
       </NavbarGroup>
       <NavbarGroup align={Alignment.RIGHT}>
         <Button>Settings</Button>
