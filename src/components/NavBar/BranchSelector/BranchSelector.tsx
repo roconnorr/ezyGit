@@ -3,6 +3,7 @@ import * as React from 'react';
 import { Button, MenuItem } from '@blueprintjs/core';
 import { MultiSelect } from '@blueprintjs/select';
 import renderBranchTag from './BranchTagRenderer';
+import filerBranchTag from './BranchTagFilterer';
 
 export interface IBranch {
   name: string;
@@ -13,12 +14,9 @@ export interface IBranchSelectorState {
   allowCreate: boolean;
   fill: boolean;
   selectedBranches: IBranch[];
-  hasInitialContent: boolean;
-  intent: boolean;
   openOnKeyDown: boolean;
   popoverMinimal: boolean;
   resetOnSelect: boolean;
-  tagMinimal: boolean;
 }
 
 const BranchMultiSelector = MultiSelect.ofType<IBranch>();
@@ -31,23 +29,13 @@ export class BranchSelector extends React.PureComponent<
     allowCreate: false,
     fill: false,
     selectedBranches: [],
-    hasInitialContent: false,
-    intent: false,
-    openOnKeyDown: false,
+    openOnKeyDown: true,
     popoverMinimal: true,
     resetOnSelect: true,
-    tagMinimal: false,
   };
 
   public render() {
-    const {
-      allowCreate,
-      selectedBranches,
-      hasInitialContent,
-      tagMinimal,
-      popoverMinimal,
-      ...flags
-    } = this.state;
+    const { selectedBranches, popoverMinimal, openOnKeyDown } = this.state;
 
     const { branches } = this.props;
     const clearButton =
@@ -57,17 +45,14 @@ export class BranchSelector extends React.PureComponent<
         undefined
       );
 
-    const branchesEqual = (branchA: IBranch, branchB: IBranch) => {
-      return branchA.name === branchB.name;
-    };
-
     return (
       <BranchMultiSelector
-        // {...filmSelectProps}
-        {...flags}
+        openOnKeyDown={openOnKeyDown}
+        placeholder={'Search Git Branch Name'}
+        resetOnSelect={true}
+        itemPredicate={filerBranchTag}
         itemRenderer={renderBranchTag}
-        itemsEqual={branchesEqual}
-        // we may customize the default filmSelectProps.items by
+        // we may customize the default branchSelectProps.items by
         // adding newly created items to the list, so pass our own
         items={branches}
         tagInputProps={{
@@ -75,8 +60,8 @@ export class BranchSelector extends React.PureComponent<
           onRemove: this.handleTagRemove,
         }}
         noResults={<MenuItem disabled={true} text="No results." />}
-        onItemSelect={this.handleFilmSelect}
-        onItemsPaste={this.handleFilmsPaste}
+        onItemSelect={this.handlebranchSelect}
+        onItemsPaste={this.handlebranchsPaste}
         popoverProps={{ minimal: popoverMinimal }}
         tagRenderer={this.renderTag}
         selectedItems={this.state.selectedBranches}
@@ -87,27 +72,29 @@ export class BranchSelector extends React.PureComponent<
   private renderTag = (branch: IBranch) => branch.name;
 
   private handleTagRemove = (_tag: string, index: number) => {
-    this.deselectFilm(index);
+    this.deselectbranch(index);
   };
 
-  private getSelectedFilmIndex(film: IBranch) {
-    return this.state.selectedBranches.indexOf(film);
+  private getSelectedbranchIndex(branch: IBranch) {
+    return this.state.selectedBranches.indexOf(branch);
   }
 
-  private isFilmSelected(film: IBranch) {
-    return this.getSelectedFilmIndex(film) !== -1;
+  private isbranchSelected(branch: IBranch) {
+    return this.getSelectedbranchIndex(branch) !== -1;
   }
 
-  private selectFilm(film: IBranch) {
-    this.selectFilms([film]);
+  private selectbranch(branch: IBranch) {
+    this.selectbranchs([branch]);
   }
 
-  private selectFilms(filmsToSelect: IBranch[]) {
+  private selectbranchs(branchsToSelect: IBranch[]) {
     const { selectedBranches } = this.state;
-    this.setState({ selectedBranches: selectedBranches.concat(filmsToSelect) });
+    this.setState({
+      selectedBranches: selectedBranches.concat(branchsToSelect),
+    });
   }
 
-  private deselectFilm(index: number) {
+  private deselectbranch(index: number) {
     const { selectedBranches } = this.state;
 
     const newSet = selectedBranches.filter(
@@ -117,18 +104,18 @@ export class BranchSelector extends React.PureComponent<
     this.setState({ selectedBranches: newSet });
   }
 
-  private handleFilmSelect = (film: IBranch) => {
-    if (!this.isFilmSelected(film)) {
-      this.selectFilm(film);
+  private handlebranchSelect = (branch: IBranch) => {
+    if (!this.isbranchSelected(branch)) {
+      this.selectbranch(branch);
     } else {
-      this.deselectFilm(this.getSelectedFilmIndex(film));
+      this.deselectbranch(this.getSelectedbranchIndex(branch));
     }
   };
 
-  private handleFilmsPaste = (films: IBranch[]) => {
+  private handlebranchsPaste = (branchs: IBranch[]) => {
     // On paste, don't bother with deselecting already selected values, just
     // add the new ones.
-    this.selectFilms(films);
+    this.selectbranchs(branchs);
   };
 
   private handleClear = () => this.setState({ selectedBranches: [] });
