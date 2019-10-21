@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { Button, MenuItem } from '@blueprintjs/core';
+import { Button, MenuItem, Intent, ITagInputProps } from '@blueprintjs/core';
 import { MultiSelect } from '@blueprintjs/select';
 import renderBranchTag from './BranchTagRenderer';
 import filerBranchTag from './BranchTagFilterer';
@@ -36,7 +36,6 @@ export class BranchSelector extends React.PureComponent<
 
   public render() {
     const { selectedBranches, popoverMinimal, openOnKeyDown } = this.state;
-
     const { branches } = this.props;
     const clearButton =
       selectedBranches.length > 0 ? (
@@ -47,17 +46,17 @@ export class BranchSelector extends React.PureComponent<
 
     return (
       <BranchMultiSelector
+        fill={true}
         openOnKeyDown={openOnKeyDown}
         placeholder={'Search Git Branch Name'}
         resetOnSelect={true}
         itemPredicate={filerBranchTag}
         itemRenderer={renderBranchTag}
-        // we may customize the default branchSelectProps.items by
-        // adding newly created items to the list, so pass our own
         items={branches}
         tagInputProps={{
           rightElement: clearButton,
           onRemove: this.handleTagRemove,
+          tagProps: { intent: Intent.PRIMARY },
         }}
         noResults={<MenuItem disabled={true} text="No results." />}
         onItemSelect={this.handlebranchSelect}
