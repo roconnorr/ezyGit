@@ -13,15 +13,7 @@ import DiffViewerList from './components/Diff/DiffViewerList';
 import { Intent, Spinner } from '@blueprintjs/core';
 
 // to remove
-import {
-  GitStats,
-  FileChanges,
-  GitCommitLog,
-  getCurrentBranch,
-  getGitStatus,
-  getCommitHashes,
-  startFileWatcher,
-} from './git/git';
+import { FileChanges, GitCommitLog } from './git/git';
 import { connect } from 'react-redux';
 
 export interface IState {
@@ -60,7 +52,7 @@ class App extends Component<
       isLoaded: true,
     });
 
-    startFileWatcher(this.GitDir);
+    // startFileWatcher(this.GitDir);
 
     this.props.loadSideListGitLog();
     this.props.loadDefaultCommit();

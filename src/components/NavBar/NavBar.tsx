@@ -1,16 +1,13 @@
 import * as React from 'react';
-import { connect } from 'react-redux';
 import {
   Alignment,
   Navbar,
   NavbarDivider,
   NavbarGroup,
   NavbarHeading,
+  Button,
 } from '@blueprintjs/core';
-import SearchBar, { ISearchBarProps } from '../SearchBar/SearchBar';
-import filterGitCommand from '../SearchBar/SearchBarItemPredicate';
-import { getGitLogAction } from '../../actions/gitCommitList.action';
-import renderGitCommand from '../SearchBar/SearchBarItemRenderer';
+import Selector from './BranchSelector/Selector';
 
 interface INavBarProps {
   branch: string;
@@ -18,18 +15,6 @@ interface INavBarProps {
 }
 
 const NavBar: React.FunctionComponent<INavBarProps> = props => {
-  const searchBarProps: ISearchBarProps = {
-    itemPredicate: filterGitCommand,
-    itemRenderer: renderGitCommand,
-    items: [
-      { name: 'pop', action: '' },
-      { name: 'stash', action: '' },
-      { name: 'push', action: '' },
-      { name: 'pull', action: '' },
-      { name: 'fetch', action: props.fecthGitCommit() },
-    ],
-  };
-
   const { branch } = props;
 
   return (
@@ -37,18 +22,18 @@ const NavBar: React.FunctionComponent<INavBarProps> = props => {
       <NavbarGroup align={Alignment.LEFT}>
         <NavbarHeading>ezyGit</NavbarHeading>
         <NavbarDivider />
-        <NavbarHeading>Current: {branch ? branch : 'Loading...'}</NavbarHeading>
-        <SearchBar {...searchBarProps} />
+        <NavbarHeading>
+          Current Branch: {branch ? branch : 'Loading...'}
+        </NavbarHeading>
+        <NavbarDivider />
+        TODO SELECTOR
+      </NavbarGroup>
+      <NavbarGroup align={Alignment.RIGHT}>
+        <Button>Settings</Button>
+        <Button>Commit</Button>
       </NavbarGroup>
     </Navbar>
   );
 };
 
-const mapDispatchToProps = (dispatch: any) => ({
-  fecthGitCommit: () => dispatch(getGitLogAction()),
-});
-
-export default connect(
-  null,
-  mapDispatchToProps
-)(NavBar);
+export default NavBar;
