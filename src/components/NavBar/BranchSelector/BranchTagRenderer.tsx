@@ -1,6 +1,6 @@
 import React from 'react';
 import { ItemRenderer } from '@blueprintjs/select';
-import { IBranch } from './Selector';
+import { IBranch } from './BranchSelector';
 import { MenuItem } from '@blueprintjs/core';
 
 export const renderBranchTag: ItemRenderer<IBranch> = (
@@ -10,7 +10,7 @@ export const renderBranchTag: ItemRenderer<IBranch> = (
   if (!modifiers.matchesPredicate) {
     return null;
   }
-  const text = `${branch.name}. ${branch.name}`;
+
   return (
     <MenuItem
       active={modifiers.active}
@@ -18,7 +18,7 @@ export const renderBranchTag: ItemRenderer<IBranch> = (
       label={'Label here'}
       key={branch.name}
       onClick={handleClick}
-      text={highlightText(text, query)}
+      text={highlightText(branch.name, query)}
     />
   );
 };

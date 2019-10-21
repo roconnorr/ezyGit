@@ -1,27 +1,16 @@
 import Selector, {
   IBranch,
-} from '../components/NavBar/BranchSelector/Selector';
+} from '../components/NavBar/BranchSelector/BranchSelector';
+import React from 'react';
 
 export default {
   title: 'Git Branch Selector',
 };
 
-const selectedBranches: IBranch[] = [
-  {
-    name: 'asd',
-    iod: 'asd',
-  },
+const demoBranches: IBranch[] = [
+  { name: 'master', oid: 'asdasd' },
+  { name: 'stable', oid: 'asdasd' },
+  { name: 'bleedingedge', oid: 'asdasd' },
 ];
 
-const branches: IBranch[] = [
-  {
-    name: 'Another Branch',
-    iod: 'asd',
-  },
-  {
-    name: 'asd',
-    iod: 'asd',
-  },
-];
-
-export const selector = () => Selector(branches, selectedBranches);
+export const selector = () => <Selector branches={demoBranches} />;
