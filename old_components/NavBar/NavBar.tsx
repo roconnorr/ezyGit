@@ -14,7 +14,7 @@ import renderGitCommand from '../SearchBar/SearchBarItemRenderer';
 
 interface INavBarProps {
   branch: string;
-  fecthGitCommit: any;
+  fetchGitCommit: any;
 }
 
 const NavBar: React.FunctionComponent<INavBarProps> = props => {
@@ -26,7 +26,7 @@ const NavBar: React.FunctionComponent<INavBarProps> = props => {
       { name: 'stash', action: '' },
       { name: 'push', action: '' },
       { name: 'pull', action: '' },
-      { name: 'fetch', action: props.fecthGitCommit() },
+      { name: 'fetch', action: props.fetchGitCommit() },
     ],
   };
 
@@ -45,7 +45,7 @@ const NavBar: React.FunctionComponent<INavBarProps> = props => {
 };
 
 const mapDispatchToProps = (dispatch: any) => ({
-  fecthGitCommit: () => dispatch(getGitLogAction()),
+  fetchGitCommit: () => dispatch(getGitLogAction()),
 });
 
 export default connect(

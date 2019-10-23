@@ -9,9 +9,9 @@ import {
 } from '@blueprintjs/core';
 import BranchSelector, { IBranch } from './BranchSelector/BranchSelector';
 
-interface INavBarProps {
+export interface INavBarProps {
   branch: string;
-  fecthGitCommit: any;
+  fetchGitCommit: any;
 }
 
 const NavBar: React.FunctionComponent<INavBarProps> = props => {

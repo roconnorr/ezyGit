@@ -1,8 +1,13 @@
 import React from 'react';
-import NavBar from '../components/NavBar/NavBar';
+import NavBar, {INavBarProps} from '../components/NavBar/NavBar';
 
 export default {
   title: 'NavBar',
 };
 
-export const bar = () => <NavBar />;
+const navBarProps: INavBarProps = {
+  branch: 'branchy branch',
+  fetchGitCommit: 'committy commit',
+};
+
+export const bar = () => <NavBar {...navBarProps} />;
