@@ -7,7 +7,7 @@ export default {
 };
 
 const gitGraphProps: IGitGraphProps = {
-  gitJson: gitdata,
+  gitJSON: gitdata,
 };
 
 export const thisRepo = () => <GitGraph {...gitGraphProps} />;

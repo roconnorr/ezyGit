@@ -2,6 +2,7 @@ import * as git from 'isomorphic-git';
 import { CommitDescriptionWithOid } from 'isomorphic-git';
 // import * as Watcher from './watcher';
 import * as log from '../tools/logger';
+import git2json from '@fabien0102/git2json';
 
 const fs = require('fs');
 git.plugins.set('fs', fs);
@@ -253,6 +254,10 @@ async function getCurrentCommitChanges(
   });
 
   log.debug(MODULE_NAME, 'Changes: ', await Promise.all(previousFileState));
+}
+
+export async function getGitJSON() {
+  return await git2json.run();
 }
 
 // async function startFileWatcher(dir: string): Promise<any> {
