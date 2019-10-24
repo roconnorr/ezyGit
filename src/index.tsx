@@ -5,10 +5,12 @@ import { Provider } from 'react-redux';
 // import App from '../old_components/App';
 import * as serviceWorker from './serviceWorker';
 import { store } from './store/store';
+import GitGraphContainer from './components/GitGraph/GitGraphContainer';
 
 ReactDOM.render(
   <Provider store={store}>
     <div>new component</div>
+    <GitGraphContainer />
   </Provider>,
   document.getElementById('root')
 );
