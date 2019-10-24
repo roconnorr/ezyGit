@@ -7,6 +7,8 @@
   "dependencies": {
     "@blueprintjs/core": "^3.19.1",
     "@blueprintjs/select": "^3.11.1",
+    "@fabien0102/git2json": "^1.4.0",
+    "@gitgraph/react": "^1.5.1",
     "@storybook/react": "^5.2.4",
     "@types/node": "^12.11.1",
     "@types/react-redux": "^7.1.5",

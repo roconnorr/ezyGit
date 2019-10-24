@@ -1150,6 +1150,23 @@
   resolved "https://registry.yarnpkg.com/@emotion/weak-memoize/-/weak-memoize-0.2.4.tgz#622a72bebd1e3f48d921563b4b60a762295a81fc"
   integrity sha512-6PYY5DVdAY1ifaQW6XYTnOMihmBVT27elqSjEoodchsGjzYlEsTQMcEhSud99kVawatyTZRTiVkJ/c6lwbQ7nA==
 
+"@fabien0102/git2json@^1.4.0":
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/@fabien0102/git2json/-/git2json-1.4.0.tgz#5a8e9e901b28d344a7a09acf3f3b77f4d84b374a"
+  integrity sha512-qxV229fHZoL+qS6BgCd7y2MrWR1RhPQNYLgtMl0ZIdzAV3ivlzbZG3hSxOFdf/H8/AMyAfsQypQPX7KS73eB9A==
+
+"@gitgraph/core@1.4.2":
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/@gitgraph/core/-/core-1.4.2.tgz#2632a088c4061b1b2fa4954ba9e0365e62e95ad5"
+  integrity sha512-pe08Z1c82ty8CdP7YgS2fEZRCVvQbCGXEp5lmFH/nVPKmrYV9ACV11GUhQJLpkYuEJ88rAyzlN9weyFu7hYGMQ==
+
+"@gitgraph/react@^1.5.1":
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/@gitgraph/react/-/react-1.5.1.tgz#7d62cca2ec57141797bf6855d530498161cabedb"
+  integrity sha512-Fbxs99kBI82gVVrK9Nn/4VpZ5edtC5ocfCWeti+4aDsheCYd1IxvANd9PZPeNpV0Ntunm0b+KfPpRFae5nvHXg==
+  dependencies:
+    "@gitgraph/core" "1.4.2"
+
 "@hapi/address@2.x.x":
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/@hapi/address/-/address-2.1.2.tgz#1c794cd6dbf2354d1eb1ef10e0303f573e1c7222"

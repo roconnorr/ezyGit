@@ -1,0 +1,6850 @@
+[
+  {
+    "refs": [
+      "HEAD",
+      "master-git-log-js"
+    ],
+    "hash": "c3bb84ae541b0f955c9703abb7c2dbc9ec6dfbce",
+    "hashAbbrev": "c3bb84a",
+    "tree": "35e68e9e6524009b06a53785f93128fcd4c272ff",
+    "treeAbbrev": "35e68e9",
+    "parents": [
+      "f63bb1e1489443fcf7ac5977c55a6fc3e07a5961"
+    ],
+    "parentsAbbrev": [
+      "f63bb1e"
+    ],
+    "author": {
+      "name": "roconnorr",
+      "email": "roryoconnor@outlook.co.nz",
+      "timestamp": 1571874788000
+    },
+    "committer": {
+      "name": "roconnorr",
+      "email": "roryoconnor@outlook.co.nz",
+      "timestamp": 1571874788000
+    },
+    "subject": "Fix navbar props and story",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 3,
+        "deletions": 3,
+        "file": "old_components/NavBar/NavBar.tsx"
+      },
+      {
+        "additions": 2,
+        "deletions": 2,
+        "file": "src/components/NavBar/NavBar.tsx"
+      },
+      {
+        "additions": 7,
+        "deletions": 2,
+        "file": "src/stories/NavBar.stories.tsx"
+      }
+    ]
+  },
+  {
+    "refs": [
+      "origin/master",
+      "origin/HEAD",
+      "master"
+    ],
+    "hash": "f63bb1e1489443fcf7ac5977c55a6fc3e07a5961",
+    "hashAbbrev": "f63bb1e",
+    "tree": "8185a44afd0ae8919bb279f5876ec0a9fab15c1e",
+    "treeAbbrev": "8185a44",
+    "parents": [
+      "f0e229e91b7f928472d613c8396d8e5610df2ab2"
+    ],
+    "parentsAbbrev": [
+      "f0e229e"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1571640750000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1571640750000
+    },
+    "subject": "Adding example to header",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 9,
+        "deletions": 7,
+        "file": "src/components/NavBar/NavBar.tsx"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "f0e229e91b7f928472d613c8396d8e5610df2ab2",
+    "hashAbbrev": "f0e229e",
+    "tree": "359509e2942570ca29b2cdbe5c5237c74c853762",
+    "treeAbbrev": "359509e",
+    "parents": [
+      "adfc49b239556119ace4e6b6397eeab27539e00f"
+    ],
+    "parentsAbbrev": [
+      "adfc49b"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1571640428000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1571640428000
+    },
+    "subject": "Removing comment. Adding color to the tagProps function",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 3,
+        "deletions": 4,
+        "file": "src/components/NavBar/BranchSelector/BranchSelector.tsx"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "adfc49b239556119ace4e6b6397eeab27539e00f",
+    "hashAbbrev": "adfc49b",
+    "tree": "42a79b20a6b13506a1dbe152e4baf428503263c1",
+    "treeAbbrev": "42a79b2",
+    "parents": [
+      "402236a2d2670553f9151e550586c05ba90e3491"
+    ],
+    "parentsAbbrev": [
+      "402236a"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1571630604000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1571630604000
+    },
+    "subject": "Working better",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 28,
+        "deletions": 41,
+        "file": "src/components/NavBar/BranchSelector/BranchSelector.tsx"
+      },
+      {
+        "additions": 20,
+        "deletions": 0,
+        "file": "src/components/NavBar/BranchSelector/BranchTagFilterer.tsx"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "402236a2d2670553f9151e550586c05ba90e3491",
+    "hashAbbrev": "402236a",
+    "tree": "6678050b6c62c0dee038185e69d2bc0eceaae850",
+    "treeAbbrev": "6678050",
+    "parents": [
+      "2c691d72a1059337d743cc787d0200e7875796b9",
+      "0caa35f495cde8f94c459f4a9b9270ab84bcc143"
+    ],
+    "parentsAbbrev": [
+      "2c691d7",
+      "0caa35f"
+    ],
+    "author": {
+      "name": "Kysumi",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1571616750000
+    },
+    "committer": {
+      "name": "GitHub",
+      "email": "noreply@github.com",
+      "timestamp": 1571616750000
+    },
+    "subject": "Merge pull request #2 from Kysumi/master-nsfw-testing",
+    "body": "Merging in the restructure.",
+    "notes": "",
+    "stats": []
+  },
+  {
+    "refs": [],
+    "hash": "0caa35f495cde8f94c459f4a9b9270ab84bcc143",
+    "hashAbbrev": "0caa35f",
+    "tree": "8e25512d85be86f47271bad8cdb5a5a983bed8ff",
+    "treeAbbrev": "8e25512",
+    "parents": [
+      "1746bbbdff58175895584790f31104d06c961393"
+    ],
+    "parentsAbbrev": [
+      "1746bbb"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "scott.maunder@ezyvet.com",
+      "timestamp": 1571616566000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "scott.maunder@ezyvet.com",
+      "timestamp": 1571616566000
+    },
+    "subject": "Branch multiselect is working. Need to continue to improve it and refactor",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 137,
+        "deletions": 0,
+        "file": "src/components/NavBar/BranchSelector/BranchSelector.tsx"
+      },
+      {
+        "additions": 3,
+        "deletions": 3,
+        "file": "src/components/NavBar/BranchSelector/BranchTagRenderer.tsx"
+      },
+      {
+        "additions": 0,
+        "deletions": 62,
+        "file": "src/components/NavBar/BranchSelector/Selector.tsx"
+      },
+      {
+        "additions": 7,
+        "deletions": 18,
+        "file": "src/stories/BranchSelector.stories.tsx"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "1746bbbdff58175895584790f31104d06c961393",
+    "hashAbbrev": "1746bbb",
+    "tree": "bfec858e4d37f2e3c188d949fb0a2fb7f6a54537",
+    "treeAbbrev": "bfec858",
+    "parents": [
+      "9119c2903313a9d97a55f28b0469d1b161a764b9"
+    ],
+    "parentsAbbrev": [
+      "9119c29"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1571542815000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1571542815000
+    },
+    "subject": "Started implementing the branch selector.",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 1,
+        "deletions": 2,
+        "file": ".storybook/config.js"
+      },
+      {
+        "additions": 1,
+        "deletions": 0,
+        "file": "package.json"
+      },
+      {
+        "additions": 61,
+        "deletions": 0,
+        "file": "src/components/NavBar/BranchSelector/BranchTagRenderer.tsx"
+      },
+      {
+        "additions": 62,
+        "deletions": 0,
+        "file": "src/components/NavBar/BranchSelector/Selector.tsx"
+      },
+      {
+        "additions": 11,
+        "deletions": 1,
+        "file": "src/components/NavBar/NavBar.tsx"
+      },
+      {
+        "additions": 0,
+        "deletions": 13,
+        "file": "src/stories/0-Welcome.stories.js"
+      },
+      {
+        "additions": 0,
+        "deletions": 17,
+        "file": "src/stories/1-Button.stories.js"
+      },
+      {
+        "additions": 27,
+        "deletions": 0,
+        "file": "src/stories/BranchSelector.stories.tsx"
+      },
+      {
+        "additions": 0,
+        "deletions": 0,
+        "file": "src/stories/{NavBar.stories.js => NavBar.stories.tsx}"
+      },
+      {
+        "additions": 10,
+        "deletions": 1,
+        "file": "yarn.lock"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "9119c2903313a9d97a55f28b0469d1b161a764b9",
+    "hashAbbrev": "9119c29",
+    "tree": "263b3f6e25cde7b616b944aa6ff5af2ff406fb45",
+    "treeAbbrev": "263b3f6",
+    "parents": [
+      "8db68f00fb0ef1e1d350bec9a28b32cc87710bec",
+      "a1f9b4fdabe018aef84dc46139d4de939e8568fe"
+    ],
+    "parentsAbbrev": [
+      "8db68f0",
+      "a1f9b4f"
+    ],
+    "author": {
+      "name": "Kysumi",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1571533090000
+    },
+    "committer": {
+      "name": "GitHub",
+      "email": "noreply@github.com",
+      "timestamp": 1571533090000
+    },
+    "subject": "Merge pull request #1 from roconnorr/master-nsfw-testing-blueprint-storybook",
+    "body": "Configure storybook to work with @blueprintjs and add an example",
+    "notes": "",
+    "stats": []
+  },
+  {
+    "refs": [],
+    "hash": "2c691d72a1059337d743cc787d0200e7875796b9",
+    "hashAbbrev": "2c691d7",
+    "tree": "ad0f36429992610d9588aa9fc36828a52f4779fd",
+    "treeAbbrev": "ad0f364",
+    "parents": [
+      "11ae4b5798ac26bcce7628348730918f679583fa"
+    ],
+    "parentsAbbrev": [
+      "11ae4b5"
+    ],
+    "author": {
+      "name": "Kysumi",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1571529390000
+    },
+    "committer": {
+      "name": "GitHub",
+      "email": "noreply@github.com",
+      "timestamp": 1571529390000
+    },
+    "subject": "Create LICENSE",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 21,
+        "deletions": 0,
+        "file": "LICENSE"
+      }
+    ]
+  },
+  {
+    "refs": [
+      "origin/master-nsfw-testing-blueprint-storybook",
+      "master-nsfw-testing-blueprint-storybook"
+    ],
+    "hash": "a1f9b4fdabe018aef84dc46139d4de939e8568fe",
+    "hashAbbrev": "a1f9b4f",
+    "tree": "263b3f6e25cde7b616b944aa6ff5af2ff406fb45",
+    "treeAbbrev": "263b3f6",
+    "parents": [
+      "3437bf353818c90282b513751cb92faa5067688e"
+    ],
+    "parentsAbbrev": [
+      "3437bf3"
+    ],
+    "author": {
+      "name": "Rory O'Connor",
+      "email": "rory.oconnor@ezyvet.com",
+      "timestamp": 1571527155000
+    },
+    "committer": {
+      "name": "Rory O'Connor",
+      "email": "rory.oconnor@ezyvet.com",
+      "timestamp": 1571527155000
+    },
+    "subject": "Add example NavBar component and NavBar story",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 29,
+        "deletions": 0,
+        "file": "src/components/NavBar/NavBar.tsx"
+      },
+      {
+        "additions": 8,
+        "deletions": 0,
+        "file": "src/stories/NavBar.stories.js"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "3437bf353818c90282b513751cb92faa5067688e",
+    "hashAbbrev": "3437bf3",
+    "tree": "7f108798abbe977a46fd82dac5972c5c63a9ee51",
+    "treeAbbrev": "7f10879",
+    "parents": [
+      "5f49a0f28eb8888e2d6a4d49b3e4adc027432914"
+    ],
+    "parentsAbbrev": [
+      "5f49a0f"
+    ],
+    "author": {
+      "name": "Rory O'Connor",
+      "email": "rory.oconnor@ezyvet.com",
+      "timestamp": 1571527016000
+    },
+    "committer": {
+      "name": "Rory O'Connor",
+      "email": "rory.oconnor@ezyvet.com",
+      "timestamp": 1571527016000
+    },
+    "subject": "Configure storybook to use blueprint's css file",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 1,
+        "deletions": 0,
+        "file": ".storybook/config.js"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "5f49a0f28eb8888e2d6a4d49b3e4adc027432914",
+    "hashAbbrev": "5f49a0f",
+    "tree": "d21aab8c00623f516f7b97679c6dc3779154f5b6",
+    "treeAbbrev": "d21aab8",
+    "parents": [
+      "8db68f00fb0ef1e1d350bec9a28b32cc87710bec"
+    ],
+    "parentsAbbrev": [
+      "8db68f0"
+    ],
+    "author": {
+      "name": "Rory O'Connor",
+      "email": "rory.oconnor@ezyvet.com",
+      "timestamp": 1571526982000
+    },
+    "committer": {
+      "name": "Rory O'Connor",
+      "email": "rory.oconnor@ezyvet.com",
+      "timestamp": 1571526982000
+    },
+    "subject": "Add @blueprintjs/core package",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 1,
+        "deletions": 0,
+        "file": "package.json"
+      },
+      {
+        "additions": 65,
+        "deletions": 3,
+        "file": "yarn.lock"
+      }
+    ]
+  },
+  {
+    "refs": [
+      "origin/master-nsfw-testing",
+      "master-nsfw-testing"
+    ],
+    "hash": "8db68f00fb0ef1e1d350bec9a28b32cc87710bec",
+    "hashAbbrev": "8db68f0",
+    "tree": "f15d4d65a871612dacf6859133bf56f0b77f456d",
+    "treeAbbrev": "f15d4d6",
+    "parents": [
+      "d4356c8ded2e36f7825a327a15566713a9582252"
+    ],
+    "parentsAbbrev": [
+      "d4356c8"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1571469087000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1571469087000
+    },
+    "subject": "Adding story book config.",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 2,
+        "deletions": 0,
+        "file": ".storybook/addons.js"
+      },
+      {
+        "additions": 4,
+        "deletions": 0,
+        "file": ".storybook/config.js"
+      },
+      {
+        "additions": 7,
+        "deletions": 1,
+        "file": "package.json"
+      },
+      {
+        "additions": 13,
+        "deletions": 0,
+        "file": "src/stories/0-Welcome.stories.js"
+      },
+      {
+        "additions": 17,
+        "deletions": 0,
+        "file": "src/stories/1-Button.stories.js"
+      },
+      {
+        "additions": 2077,
+        "deletions": 60,
+        "file": "yarn.lock"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "d4356c8ded2e36f7825a327a15566713a9582252",
+    "hashAbbrev": "d4356c8",
+    "tree": "11c7168288eb9f1dc26fe30b9ddf909c62f281ea",
+    "treeAbbrev": "11c7168",
+    "parents": [
+      "c5fb05c78549e7d54437679f89c855397fb44525"
+    ],
+    "parentsAbbrev": [
+      "c5fb05c"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1571460943000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1571460943000
+    },
+    "subject": "Got the FS system working. Fixing up the loading speed Need to add storybook",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 1,
+        "deletions": 2,
+        "file": ".rescriptsrc.js"
+      },
+      {
+        "additions": 1,
+        "deletions": 2,
+        "file": ".webpack.config.js"
+      },
+      {
+        "additions": 1,
+        "deletions": 1,
+        "file": "package.json"
+      },
+      {
+        "additions": 21,
+        "deletions": 15,
+        "file": "public/electron.js"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "c5fb05c78549e7d54437679f89c855397fb44525",
+    "hashAbbrev": "c5fb05c",
+    "tree": "771d4a35662e419b61e56d1b232e6b4704ef2a3f",
+    "treeAbbrev": "771d4a3",
+    "parents": [
+      "74d971b9e72681ab5afe869f757eafb0b40804cb"
+    ],
+    "parentsAbbrev": [
+      "74d971b"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1571459077000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1571459077000
+    },
+    "subject": "moved all components out of the project for now. Will implement them through story book to redefined the structure.",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 1,
+        "deletions": 0,
+        "file": ".env"
+      },
+      {
+        "additions": 0,
+        "deletions": 3,
+        "file": ".gitignore"
+      },
+      {
+        "additions": 2,
+        "deletions": 1,
+        "file": ".rescriptsrc.js"
+      },
+      {
+        "additions": 0,
+        "deletions": 0,
+        "file": "{src => old_components}/App.tsx"
+      },
+      {
+        "additions": 0,
+        "deletions": 0,
+        "file": "{src/components => old_components}/Diff/Diff.jsx"
+      },
+      {
+        "additions": 0,
+        "deletions": 0,
+        "file": "{src/components => old_components}/Diff/DiffViewerList.tsx"
+      },
+      {
+        "additions": 0,
+        "deletions": 0,
+        "file": "{src/components => old_components}/Diff/DiffViewerListItem.tsx"
+      },
+      {
+        "additions": 0,
+        "deletions": 0,
+        "file": "{src/components => old_components}/Diff/GetGitDifference.js"
+      },
+      {
+        "additions": 0,
+        "deletions": 0,
+        "file": "{src/components => old_components}/Diff/Tokenize.js"
+      },
+      {
+        "additions": 0,
+        "deletions": 0,
+        "file": "{src/components => old_components}/Diff/Unfold.jsx"
+      },
+      {
+        "additions": 0,
+        "deletions": 0,
+        "file": "{src/components => old_components}/Diff/UnfoldCollapsed.jsx"
+      },
+      {
+        "additions": 0,
+        "deletions": 0,
+        "file": "{src/components => old_components}/NavBar/NavBar.tsx"
+      },
+      {
+        "additions": 0,
+        "deletions": 0,
+        "file": "{src/components => old_components}/SearchBar/SearchBar.tsx"
+      },
+      {
+        "additions": 0,
+        "deletions": 0,
+        "file": "{src/components => old_components}/SearchBar/SearchBarItemPredicate.tsx"
+      },
+      {
+        "additions": 0,
+        "deletions": 0,
+        "file": "{src/components => old_components}/SearchBar/SearchBarItemRenderer.tsx"
+      },
+      {
+        "additions": 0,
+        "deletions": 0,
+        "file": "{src/components => old_components}/SearchBar/TextHighter.tsx"
+      },
+      {
+        "additions": 0,
+        "deletions": 0,
+        "file": "{src/components => old_components}/SideList/GitCommitDetails.tsx"
+      },
+      {
+        "additions": 0,
+        "deletions": 0,
+        "file": "{src/components => old_components}/SideList/GitCommitList.tsx"
+      },
+      {
+        "additions": 0,
+        "deletions": 0,
+        "file": "{src/components => old_components}/SideList/GitCommitListItem.tsx"
+      },
+      {
+        "additions": 0,
+        "deletions": 0,
+        "file": "{src/components => old_components}/SideList/GitStatusDetails.tsx"
+      },
+      {
+        "additions": 0,
+        "deletions": 0,
+        "file": "{src/components => old_components}/Toaster/Toaster.ts"
+      },
+      {
+        "additions": 0,
+        "deletions": 16871,
+        "file": "package-lock.json"
+      },
+      {
+        "additions": 35,
+        "deletions": 73,
+        "file": "package.json"
+      },
+      {
+        "additions": 29,
+        "deletions": 11,
+        "file": "public/electron.js"
+      },
+      {
+        "additions": null,
+        "deletions": null,
+        "file": "public/favicon.ico"
+      },
+      {
+        "additions": 4,
+        "deletions": 5,
+        "file": "public/index.html"
+      },
+      {
+        "additions": 10,
+        "deletions": 0,
+        "file": "public/manifest.json"
+      },
+      {
+        "additions": 0,
+        "deletions": 53,
+        "file": "src/git/index.d.ts"
+      },
+      {
+        "additions": 0,
+        "deletions": 11,
+        "file": "src/git/nsfw.js"
+      },
+      {
+        "additions": 0,
+        "deletions": 90,
+        "file": "src/git/watcher.ts"
+      },
+      {
+        "additions": 2,
+        "deletions": 10,
+        "file": "src/index.tsx"
+      },
+      {
+        "additions": 11733,
+        "deletions": 0,
+        "file": "yarn.lock"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "74d971b9e72681ab5afe869f757eafb0b40804cb",
+    "hashAbbrev": "74d971b",
+    "tree": "d033b17249b495f256f4ce670f15e474e1cc3e1e",
+    "treeAbbrev": "d033b17",
+    "parents": [
+      "11ae4b5798ac26bcce7628348730918f679583fa"
+    ],
+    "parentsAbbrev": [
+      "11ae4b5"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1571444351000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1571444351000
+    },
+    "subject": "Testing NSFW. Can't seem to get it to work",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 16871,
+        "deletions": 0,
+        "file": "package-lock.json"
+      },
+      {
+        "additions": 4,
+        "deletions": 4,
+        "file": "package.json"
+      },
+      {
+        "additions": 21,
+        "deletions": 0,
+        "file": "setup/windows_setup.md"
+      },
+      {
+        "additions": 2,
+        "deletions": 10,
+        "file": "src/App.tsx"
+      },
+      {
+        "additions": 16,
+        "deletions": 17,
+        "file": "src/git/git.ts"
+      },
+      {
+        "additions": 53,
+        "deletions": 0,
+        "file": "src/git/index.d.ts"
+      },
+      {
+        "additions": 11,
+        "deletions": 0,
+        "file": "src/git/nsfw.js"
+      },
+      {
+        "additions": 79,
+        "deletions": 77,
+        "file": "src/git/watcher.ts"
+      },
+      {
+        "additions": 8,
+        "deletions": 0,
+        "file": "src/index.tsx"
+      },
+      {
+        "additions": 0,
+        "deletions": 12356,
+        "file": "yarn.lock"
+      }
+    ]
+  },
+  {
+    "refs": [
+      "origin/master-testing-gaze"
+    ],
+    "hash": "0b883e9c80a34fd046ba385884978b3d5061884f",
+    "hashAbbrev": "0b883e9",
+    "tree": "96c155ba8ecf413142802708924c96b1da353f06",
+    "treeAbbrev": "96c155b",
+    "parents": [
+      "79dccb5eb8aab413cac7823795b1e5d8849a381f"
+    ],
+    "parentsAbbrev": [
+      "79dccb5"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1571214956000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1571214956000
+    },
+    "subject": "Testing editing the file paths",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 5,
+        "deletions": 3,
+        "file": "src/App.tsx"
+      },
+      {
+        "additions": 9,
+        "deletions": 3,
+        "file": "src/git/gazeWatcher.ts"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "79dccb5eb8aab413cac7823795b1e5d8849a381f",
+    "hashAbbrev": "79dccb5",
+    "tree": "54e50777edbb8b29e035bcf236b29534f2124a5c",
+    "treeAbbrev": "54e5077",
+    "parents": [
+      "79abcc8c0e59c674597fea4bf7cd66a90c716bfb"
+    ],
+    "parentsAbbrev": [
+      "79abcc8"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1571212729000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1571212729000
+    },
+    "subject": "Added timer for debuggin.",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 5,
+        "deletions": 1,
+        "file": "src/App.tsx"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "79abcc8c0e59c674597fea4bf7cd66a90c716bfb",
+    "hashAbbrev": "79abcc8",
+    "tree": "2edefc3bef790612a2d2d3bea2f15b698e8d1f49",
+    "treeAbbrev": "2edefc3",
+    "parents": [
+      "11ae4b5798ac26bcce7628348730918f679583fa"
+    ],
+    "parentsAbbrev": [
+      "11ae4b5"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1571212503000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1571212503000
+    },
+    "subject": "Testing gaze performance VS chokidar",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 3,
+        "deletions": 3,
+        "file": "package.json"
+      },
+      {
+        "additions": 34,
+        "deletions": 16,
+        "file": "src/App.tsx"
+      },
+      {
+        "additions": 71,
+        "deletions": 0,
+        "file": "src/git/gazeWatcher.ts"
+      },
+      {
+        "additions": 17,
+        "deletions": 17,
+        "file": "src/git/git.ts"
+      },
+      {
+        "additions": 95,
+        "deletions": 77,
+        "file": "src/git/watcher.ts"
+      },
+      {
+        "additions": 22,
+        "deletions": 84,
+        "file": "yarn.lock"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "11ae4b5798ac26bcce7628348730918f679583fa",
+    "hashAbbrev": "11ae4b5",
+    "tree": "9a705b8098e3eee086448e1ba9680794e8ade5a8",
+    "treeAbbrev": "9a705b8",
+    "parents": [
+      "cd44be93b4d040eb134edd4b22c3212ad79ff8bc"
+    ],
+    "parentsAbbrev": [
+      "cd44be9"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1571204360000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1571204360000
+    },
+    "subject": "Adding some doc blocks with info.",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 17,
+        "deletions": 3,
+        "file": "src/App.tsx"
+      },
+      {
+        "additions": 3,
+        "deletions": 4,
+        "file": "src/components/NavBar/NavBar.tsx"
+      },
+      {
+        "additions": 1,
+        "deletions": 1,
+        "file": "src/components/SearchBar/SearchBarItemPredicate.tsx"
+      },
+      {
+        "additions": 1,
+        "deletions": 1,
+        "file": "src/components/SearchBar/SearchBarItemRenderer.tsx"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "cd44be93b4d040eb134edd4b22c3212ad79ff8bc",
+    "hashAbbrev": "cd44be9",
+    "tree": "d2a3b0680493f6a1261f2d85eb7223016d135e25",
+    "treeAbbrev": "d2a3b06",
+    "parents": [
+      "366db9efb6f3efce56f8bf676bbdef818ecb8fdf"
+    ],
+    "parentsAbbrev": [
+      "366db9e"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1571195123000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1571203350000
+    },
+    "subject": "Remapping functions.",
+    "body": "Sorting out file changes.",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 1,
+        "deletions": 0,
+        "file": "src/App.tsx"
+      },
+      {
+        "additions": 24,
+        "deletions": 12,
+        "file": "src/components/NavBar/NavBar.tsx"
+      },
+      {
+        "additions": 1,
+        "deletions": 0,
+        "file": "src/components/SearchBar/SearchBar.tsx"
+      },
+      {
+        "additions": 3,
+        "deletions": 1,
+        "file": "src/components/SearchBar/SearchBarItemPredicate.tsx"
+      },
+      {
+        "additions": 2,
+        "deletions": 2,
+        "file": "src/components/SearchBar/SearchBarItemRenderer.tsx"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "366db9efb6f3efce56f8bf676bbdef818ecb8fdf",
+    "hashAbbrev": "366db9e",
+    "tree": "0f5300517e7e252cef32860cd167e011ebb43bc3",
+    "treeAbbrev": "0f53005",
+    "parents": [
+      "9ec6240e5632045e08227c2e00366098191be6d7"
+    ],
+    "parentsAbbrev": [
+      "9ec6240"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "scott.maunder@ezyvet.com",
+      "timestamp": 1571185873000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "scott.maunder@ezyvet.com",
+      "timestamp": 1571185873000
+    },
+    "subject": "Adding the workingDir to the redux store.",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 0,
+        "deletions": 12,
+        "file": "src/App.tsx"
+      },
+      {
+        "additions": 2,
+        "deletions": 1,
+        "file": "src/actions/index.ts"
+      },
+      {
+        "additions": 4,
+        "deletions": 2,
+        "file": "src/git/watcher.ts"
+      },
+      {
+        "additions": 3,
+        "deletions": 0,
+        "file": "src/reducers/index.tsx"
+      },
+      {
+        "additions": 16,
+        "deletions": 0,
+        "file": "src/reducers/working.reducer.ts"
+      },
+      {
+        "additions": 1,
+        "deletions": 1,
+        "file": "src/sagas/gitCommitSagas.ts"
+      },
+      {
+        "additions": 7,
+        "deletions": 3,
+        "file": "src/sagas/gitDiffSagas.ts"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "9ec6240e5632045e08227c2e00366098191be6d7",
+    "hashAbbrev": "9ec6240",
+    "tree": "96e32ca31b353d28ea35c561acfa01738fd92fa0",
+    "treeAbbrev": "96e32ca",
+    "parents": [
+      "dbafb87d8ef3cf690d6fe2f24f245ddd819b3371"
+    ],
+    "parentsAbbrev": [
+      "dbafb87"
+    ],
+    "author": {
+      "name": "Abomy",
+      "email": "abomyy@gmail.com",
+      "timestamp": 1571178814000
+    },
+    "committer": {
+      "name": "Abomy",
+      "email": "abomyy@gmail.com",
+      "timestamp": 1571178814000
+    },
+    "subject": "Migrated everything used from old git to new git Renamed newGit (We made it boys)",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 4,
+        "deletions": 12,
+        "file": "src/App.tsx"
+      },
+      {
+        "additions": 1,
+        "deletions": 1,
+        "file": "src/actions/gitCommitList.action.ts"
+      },
+      {
+        "additions": 1,
+        "deletions": 1,
+        "file": "src/components/SideList/GitCommitList.tsx"
+      },
+      {
+        "additions": 1,
+        "deletions": 1,
+        "file": "src/components/SideList/GitCommitListItem.tsx"
+      },
+      {
+        "additions": 285,
+        "deletions": 142,
+        "file": "src/git/git.ts"
+      },
+      {
+        "additions": 0,
+        "deletions": 365,
+        "file": "src/git/newGit.ts"
+      },
+      {
+        "additions": 266,
+        "deletions": 0,
+        "file": "src/git/old_git.ts"
+      },
+      {
+        "additions": 5,
+        "deletions": 6,
+        "file": "src/git/watcher.ts"
+      },
+      {
+        "additions": 1,
+        "deletions": 1,
+        "file": "src/reducers/commit.reducer.ts"
+      },
+      {
+        "additions": 1,
+        "deletions": 1,
+        "file": "src/reducers/index.tsx"
+      },
+      {
+        "additions": 1,
+        "deletions": 1,
+        "file": "src/sagas/gitCommitSagas.ts"
+      },
+      {
+        "additions": 6,
+        "deletions": 2,
+        "file": "src/sagas/gitDiffSagas.ts"
+      },
+      {
+        "additions": 23,
+        "deletions": 21,
+        "file": "src/tools/logger.ts"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "dbafb87d8ef3cf690d6fe2f24f245ddd819b3371",
+    "hashAbbrev": "dbafb87",
+    "tree": "0c59306ad29b60575bc3acc322352238f092efb3",
+    "treeAbbrev": "0c59306",
+    "parents": [
+      "d5b12131189b56a2471fbca4bc76e86370b5950b"
+    ],
+    "parentsAbbrev": [
+      "d5b1213"
+    ],
+    "author": {
+      "name": "Abomy",
+      "email": "abomyy@gmail.com",
+      "timestamp": 1571127126000
+    },
+    "committer": {
+      "name": "Abomy",
+      "email": "abomyy@gmail.com",
+      "timestamp": 1571127126000
+    },
+    "subject": "Rewrite to git and watcher, Fully working now without being a class. (Still need to tweak) Started work on the logger",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 3,
+        "deletions": 1,
+        "file": "src/App.tsx"
+      },
+      {
+        "additions": 43,
+        "deletions": 1,
+        "file": "src/git/newGit.ts"
+      },
+      {
+        "additions": 68,
+        "deletions": 28,
+        "file": "src/git/watcher.ts"
+      },
+      {
+        "additions": 93,
+        "deletions": 0,
+        "file": "src/tools/logger.ts"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "d5b12131189b56a2471fbca4bc76e86370b5950b",
+    "hashAbbrev": "d5b1213",
+    "tree": "942121c98b6e82f6a508a0111a60b4cf2d2bd212",
+    "treeAbbrev": "942121c",
+    "parents": [
+      "9af5d45d308321bfc2a298d705714f030927aac2"
+    ],
+    "parentsAbbrev": [
+      "9af5d45"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "scott.maunder@ezyvet.com",
+      "timestamp": 1571099421000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "scott.maunder@ezyvet.com",
+      "timestamp": 1571099421000
+    },
+    "subject": "Renaming exports and setting up file",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 3,
+        "deletions": 3,
+        "file": "src/components/NavBar/NavBar.tsx"
+      },
+      {
+        "additions": 9,
+        "deletions": 14,
+        "file": "src/components/SearchBar/SearchBar.tsx"
+      },
+      {
+        "additions": 2,
+        "deletions": 2,
+        "file": "src/components/SearchBar/SearchBarItemPredicate.tsx"
+      },
+      {
+        "additions": 2,
+        "deletions": 2,
+        "file": "src/components/SearchBar/SearchBarItemRenderer.tsx"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "9af5d45d308321bfc2a298d705714f030927aac2",
+    "hashAbbrev": "9af5d45",
+    "tree": "c339e9e3e600bb99bc3826a8b4b859760af84639",
+    "treeAbbrev": "c339e9e",
+    "parents": [
+      "1b0af018ec8609ab5aee8d5ee1290c592e075a6e"
+    ],
+    "parentsAbbrev": [
+      "1b0af01"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "scott.maunder@ezyvet.com",
+      "timestamp": 1571096304000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "scott.maunder@ezyvet.com",
+      "timestamp": 1571096304000
+    },
+    "subject": "Renaming structure to be more clear.",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 0,
+        "deletions": 0,
+        "file": "src/components/{Pallet => SearchBar}/SearchBar.tsx"
+      },
+      {
+        "additions": 0,
+        "deletions": 0,
+        "file": "src/components/{Pallet => SearchBar}/SearchBarItemPredicate.tsx"
+      },
+      {
+        "additions": 0,
+        "deletions": 0,
+        "file": "src/components/{Pallet => SearchBar}/SearchBarItemRenderer.tsx"
+      },
+      {
+        "additions": 0,
+        "deletions": 0,
+        "file": "src/components/{Pallet => SearchBar}/TextHighter.tsx"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "1b0af018ec8609ab5aee8d5ee1290c592e075a6e",
+    "hashAbbrev": "1b0af01",
+    "tree": "7823d2ee0cf5cc54d2e8c3451c3b2f8271fa1f26",
+    "treeAbbrev": "7823d2e",
+    "parents": [
+      "093603f6e47314646d83d0ece31d35f7a59f7225"
+    ],
+    "parentsAbbrev": [
+      "093603f"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "scott.maunder@ezyvet.com",
+      "timestamp": 1571014465000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "scott.maunder@ezyvet.com",
+      "timestamp": 1571014465000
+    },
+    "subject": "Split up the SearchBar Component into separate responsibilities. To refactor and make it more closer to what is required for project.",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 14,
+        "deletions": 2,
+        "file": "src/components/NavBar/NavBar.tsx"
+      },
+      {
+        "additions": 21,
+        "deletions": 89,
+        "file": "src/components/Pallet/SearchBar.tsx"
+      },
+      {
+        "additions": 18,
+        "deletions": 0,
+        "file": "src/components/Pallet/SearchBarItemPredicate.tsx"
+      },
+      {
+        "additions": 27,
+        "deletions": 0,
+        "file": "src/components/Pallet/SearchBarItemRenderer.tsx"
+      },
+      {
+        "additions": 38,
+        "deletions": 0,
+        "file": "src/components/Pallet/TextHighter.tsx"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "093603f6e47314646d83d0ece31d35f7a59f7225",
+    "hashAbbrev": "093603f",
+    "tree": "b5dcbd530f3445322c92fdea1f4bd1794bce6357",
+    "treeAbbrev": "b5dcbd5",
+    "parents": [
+      "9d4bfc4a63f41f32af10c808719677868f312ada"
+    ],
+    "parentsAbbrev": [
+      "9d4bfc4"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "scott.maunder@ezyvet.com",
+      "timestamp": 1571010175000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "scott.maunder@ezyvet.com",
+      "timestamp": 1571010175000
+    },
+    "subject": "Updating button state when new props passed.",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 6,
+        "deletions": 4,
+        "file": "src/components/Diff/DiffViewerList.tsx"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "9d4bfc4a63f41f32af10c808719677868f312ada",
+    "hashAbbrev": "9d4bfc4",
+    "tree": "67acc3ab1f665feac3c394ac6711b5b1f9e84773",
+    "treeAbbrev": "67acc3a",
+    "parents": [
+      "a90fedff3bf5ed155736d7271e3eee13343cec88"
+    ],
+    "parentsAbbrev": [
+      "a90fedf"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1570959138000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1570959138000
+    },
+    "subject": "Making the button only show when there is a diff",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 3,
+        "deletions": 2,
+        "file": "src/components/Diff/DiffViewerList.tsx"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "a90fedff3bf5ed155736d7271e3eee13343cec88",
+    "hashAbbrev": "a90fedf",
+    "tree": "77487114fd7a7b6f4208a113c76c48a0eca99d17",
+    "treeAbbrev": "7748711",
+    "parents": [
+      "4027cf2117e05550bff654b5a07c6fce8dd706ec"
+    ],
+    "parentsAbbrev": [
+      "4027cf2"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1570958528000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1570958528000
+    },
+    "subject": "Upping sidelist limt",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 1,
+        "deletions": 1,
+        "file": "src/sagas/gitCommitSagas.ts"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "4027cf2117e05550bff654b5a07c6fce8dd706ec",
+    "hashAbbrev": "4027cf2",
+    "tree": "be4a67ec06f24941fcb2683c6971928f2cde73b2",
+    "treeAbbrev": "be4a67e",
+    "parents": [
+      "5c997bfe22804b7352b7236ef875cd76896ff4ce"
+    ],
+    "parentsAbbrev": [
+      "5c997bf"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1570948207000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1570948207000
+    },
+    "subject": "Fixed up the window scrolling",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 8,
+        "deletions": 10,
+        "file": "src/components/Diff/DiffViewerList.tsx"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "5c997bfe22804b7352b7236ef875cd76896ff4ce",
+    "hashAbbrev": "5c997bf",
+    "tree": "6eedb1d44421dae856e90a58d87d9bb414456fc6",
+    "treeAbbrev": "6eedb1d",
+    "parents": [
+      "356be6bfa9cac0841439e5dba6b277052b6edfc2"
+    ],
+    "parentsAbbrev": [
+      "356be6b"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1570947024000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1570947024000
+    },
+    "subject": "fixed up the collapse all button and cleaned up the code",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 14,
+        "deletions": 13,
+        "file": "src/components/Diff/DiffViewerList.tsx"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "356be6bfa9cac0841439e5dba6b277052b6edfc2",
+    "hashAbbrev": "356be6b",
+    "tree": "eedb588d779d26df1b9949d03f06791ac15bcc39",
+    "treeAbbrev": "eedb588",
+    "parents": [
+      "7a88f3b8eab29ad9696cce0550e1d2c4efad0cc8"
+    ],
+    "parentsAbbrev": [
+      "7a88f3b"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1570939331000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1570939331000
+    },
+    "subject": "Removing unnecessary file.",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 0,
+        "deletions": 1,
+        "file": "src/constants/ActionTypes.tsx"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "7a88f3b8eab29ad9696cce0550e1d2c4efad0cc8",
+    "hashAbbrev": "7a88f3b",
+    "tree": "6eb1ed4fab44b2a1b79854a73655855eb4495e3c",
+    "treeAbbrev": "6eb1ed4",
+    "parents": [
+      "b5032997b74afc32c15e05c5722bf5ae92c4768c"
+    ],
+    "parentsAbbrev": [
+      "b503299"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "scott.maunder@ezyvet.com",
+      "timestamp": 1570755347000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "scott.maunder@ezyvet.com",
+      "timestamp": 1570755347000
+    },
+    "subject": "Collapse all button working Need to make the DiffViewerListItem functional Need to clean up the DiffViewerList Need to fix componentDidUpdate function",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 67,
+        "deletions": 34,
+        "file": "src/components/Diff/DiffViewerList.tsx"
+      },
+      {
+        "additions": 19,
+        "deletions": 18,
+        "file": "src/components/Diff/DiffViewerListItem.tsx"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "b5032997b74afc32c15e05c5722bf5ae92c4768c",
+    "hashAbbrev": "b503299",
+    "tree": "cac71a7ec707053661c818102063622092e86618",
+    "treeAbbrev": "cac71a7",
+    "parents": [
+      "558eb7aa865d704f567ac2c903e65bd9885714c2"
+    ],
+    "parentsAbbrev": [
+      "558eb7a"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "scott.maunder@ezyvet.com",
+      "timestamp": 1570668403000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "scott.maunder@ezyvet.com",
+      "timestamp": 1570668403000
+    },
+    "subject": "Adding hooks to attempt to get the components to collapse.",
+    "body": "It is not causing a rerender -  will need to add some info to the gitDiff\nto cause this.",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 26,
+        "deletions": 9,
+        "file": "src/components/Diff/DiffViewerList.tsx"
+      },
+      {
+        "additions": 20,
+        "deletions": 10,
+        "file": "src/components/Diff/DiffViewerListItem.tsx"
+      },
+      {
+        "additions": 1,
+        "deletions": 1,
+        "file": "src/components/SideList/GitCommitList.tsx"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "558eb7aa865d704f567ac2c903e65bd9885714c2",
+    "hashAbbrev": "558eb7a",
+    "tree": "12907273e27a4323cea6beb1eb68ff1a9f0e19dc",
+    "treeAbbrev": "1290727",
+    "parents": [
+      "852ad70f0d4c9a153392cf60715fcf07bc49fb15"
+    ],
+    "parentsAbbrev": [
+      "852ad70"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "scott.maunder@ezyvet.com",
+      "timestamp": 1570665678000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "scott.maunder@ezyvet.com",
+      "timestamp": 1570665678000
+    },
+    "subject": "Selecting diffs in the side list will now show more correct information, with the exceptions of file additions which are not showing currently",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 10,
+        "deletions": 2,
+        "file": "src/components/SideList/GitCommitDetails.tsx"
+      },
+      {
+        "additions": 6,
+        "deletions": 5,
+        "file": "src/components/SideList/GitCommitList.tsx"
+      },
+      {
+        "additions": 1,
+        "deletions": 1,
+        "file": "src/components/SideList/GitCommitListItem.tsx"
+      },
+      {
+        "additions": 4,
+        "deletions": 2,
+        "file": "src/components/SideList/GitStatusDetails.tsx"
+      },
+      {
+        "additions": 0,
+        "deletions": 2,
+        "file": "src/git/newGit.ts"
+      },
+      {
+        "additions": 1,
+        "deletions": 1,
+        "file": "src/reducers/gitDiff.reducer.ts"
+      },
+      {
+        "additions": 6,
+        "deletions": 6,
+        "file": "src/sagas/gitDiffSagas.ts"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "852ad70f0d4c9a153392cf60715fcf07bc49fb15",
+    "hashAbbrev": "852ad70",
+    "tree": "754feba4463868e5b9b55affd572316fefb77f46",
+    "treeAbbrev": "754feba",
+    "parents": [
+      "ccc453801e9c962584a2d0b78ef62f3f913bed22"
+    ],
+    "parentsAbbrev": [
+      "ccc4538"
+    ],
+    "author": {
+      "name": "Abomy",
+      "email": "abomyy@gmail.com",
+      "timestamp": 1570602383000
+    },
+    "committer": {
+      "name": "Abomy",
+      "email": "abomyy@gmail.com",
+      "timestamp": 1570602383000
+    },
+    "subject": "New git is no longer a class (better for sagas)",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 19,
+        "deletions": 10,
+        "file": "src/App.tsx"
+      },
+      {
+        "additions": 249,
+        "deletions": 239,
+        "file": "src/git/newGit.ts"
+      },
+      {
+        "additions": 1,
+        "deletions": 1,
+        "file": "src/reducers/index.tsx"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "ccc453801e9c962584a2d0b78ef62f3f913bed22",
+    "hashAbbrev": "ccc4538",
+    "tree": "79351e26a8fb72b5f21eb5217319152b84b85c40",
+    "treeAbbrev": "79351e2",
+    "parents": [
+      "dbe444f3b5e23ea0e9445b97f4e54a4f82c031ca",
+      "22114e95c44dd6ed05421c035aa6a6f3c954e1f8"
+    ],
+    "parentsAbbrev": [
+      "dbe444f",
+      "22114e9"
+    ],
+    "author": {
+      "name": "Abomy",
+      "email": "abomyy@gmail.com",
+      "timestamp": 1570591719000
+    },
+    "committer": {
+      "name": "Abomy",
+      "email": "abomyy@gmail.com",
+      "timestamp": 1570591719000
+    },
+    "subject": "Merge remote-tracking branch 'origin/master'",
+    "body": "",
+    "notes": "",
+    "stats": []
+  },
+  {
+    "refs": [],
+    "hash": "dbe444f3b5e23ea0e9445b97f4e54a4f82c031ca",
+    "hashAbbrev": "dbe444f",
+    "tree": "c157beeaa7a27e6ba2e327bbc6c2160aad7c38b2",
+    "treeAbbrev": "c157bee",
+    "parents": [
+      "47f25b9b36b8a5b5adc840d3eb918b68e9ddb835"
+    ],
+    "parentsAbbrev": [
+      "47f25b9"
+    ],
+    "author": {
+      "name": "Abomy",
+      "email": "abomyy@gmail.com",
+      "timestamp": 1570590924000
+    },
+    "committer": {
+      "name": "Abomy",
+      "email": "abomyy@gmail.com",
+      "timestamp": 1570590924000
+    },
+    "subject": "More new git work",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 14,
+        "deletions": 3,
+        "file": "src/App.tsx"
+      },
+      {
+        "additions": 19,
+        "deletions": 0,
+        "file": "src/git/newGit.ts"
+      },
+      {
+        "additions": 0,
+        "deletions": 10,
+        "file": "src/git/watcher.ts"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "22114e95c44dd6ed05421c035aa6a6f3c954e1f8",
+    "hashAbbrev": "22114e9",
+    "tree": "b6a054cfc19a7aae834ac539cf567e9b254c43d4",
+    "treeAbbrev": "b6a054c",
+    "parents": [
+      "a15dfe886fcb330f32140a711f3360687dfb67d4"
+    ],
+    "parentsAbbrev": [
+      "a15dfe8"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "scott.maunder@ezyvet.com",
+      "timestamp": 1570588576000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "scott.maunder@ezyvet.com",
+      "timestamp": 1570588576000
+    },
+    "subject": "Can now select items in the side list and it will change the diff being shown.",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 8,
+        "deletions": 1,
+        "file": "src/sagas/gitDiffSagas.ts"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "a15dfe886fcb330f32140a711f3360687dfb67d4",
+    "hashAbbrev": "a15dfe8",
+    "tree": "217cfd90c2c63c20cae48f73a9f7cec99c95ba32",
+    "treeAbbrev": "217cfd9",
+    "parents": [
+      "4240a968dea66ed2bf441491a2d7f26c6029f43e"
+    ],
+    "parentsAbbrev": [
+      "4240a96"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "scott.maunder@ezyvet.com",
+      "timestamp": 1570587608000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "scott.maunder@ezyvet.com",
+      "timestamp": 1570587608000
+    },
+    "subject": "Main git diff content now rendering from the saga / redux store.",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 21,
+        "deletions": 27,
+        "file": "src/App.tsx"
+      },
+      {
+        "additions": 6,
+        "deletions": 7,
+        "file": "src/actions/gitCommitList.action.ts"
+      },
+      {
+        "additions": 14,
+        "deletions": 0,
+        "file": "src/actions/gitDiff.action.ts"
+      },
+      {
+        "additions": 21,
+        "deletions": 7,
+        "file": "src/components/Diff/DiffViewerList.tsx"
+      },
+      {
+        "additions": 11,
+        "deletions": 5,
+        "file": "src/components/SideList/GitCommitList.tsx"
+      },
+      {
+        "additions": 17,
+        "deletions": 0,
+        "file": "src/reducers/gitDiff.reducer.ts"
+      },
+      {
+        "additions": 5,
+        "deletions": 1,
+        "file": "src/reducers/index.tsx"
+      },
+      {
+        "additions": 0,
+        "deletions": 1,
+        "file": "src/sagas/gitCommitSagas.ts"
+      },
+      {
+        "additions": 19,
+        "deletions": 0,
+        "file": "src/sagas/gitDiffSagas.ts"
+      },
+      {
+        "additions": 2,
+        "deletions": 1,
+        "file": "src/sagas/index.ts"
+      },
+      {
+        "additions": 1,
+        "deletions": 1,
+        "file": "tsconfig.json"
+      },
+      {
+        "additions": 19,
+        "deletions": 0,
+        "file": "tslint.json"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "4240a968dea66ed2bf441491a2d7f26c6029f43e",
+    "hashAbbrev": "4240a96",
+    "tree": "41a429cf786c04284676838f392055c949b92582",
+    "treeAbbrev": "41a429c",
+    "parents": [
+      "4e738db6adc2032b98960f788bd0729699d0ab83"
+    ],
+    "parentsAbbrev": [
+      "4e738db"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "scott.maunder@ezyvet.com",
+      "timestamp": 1570576909000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "scott.maunder@ezyvet.com",
+      "timestamp": 1570576909000
+    },
+    "subject": "Fixing up and removing unnecessary duplication of logic from testing.",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 8,
+        "deletions": 5,
+        "file": "src/App.tsx"
+      },
+      {
+        "additions": 8,
+        "deletions": 7,
+        "file": "src/actions/gitCommitList.action.ts"
+      },
+      {
+        "additions": 0,
+        "deletions": 15,
+        "file": "src/actions/gitLog.action.ts"
+      },
+      {
+        "additions": 2,
+        "deletions": 0,
+        "file": "src/actions/index.ts"
+      },
+      {
+        "additions": 9,
+        "deletions": 4,
+        "file": "src/components/SideList/GitCommitList.tsx"
+      },
+      {
+        "additions": 2,
+        "deletions": 2,
+        "file": "src/sagas/gitCommitSagas.ts"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "4e738db6adc2032b98960f788bd0729699d0ab83",
+    "hashAbbrev": "4e738db",
+    "tree": "7852217ccf5d6246d2940fba680c2bfb8fb6b4e0",
+    "treeAbbrev": "7852217",
+    "parents": [
+      "c220df26a851a707ef73c7666cd2941ebf423841",
+      "47f25b9b36b8a5b5adc840d3eb918b68e9ddb835"
+    ],
+    "parentsAbbrev": [
+      "c220df2",
+      "47f25b9"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "scott.maunder@ezyvet.com",
+      "timestamp": 1570575082000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "scott.maunder@ezyvet.com",
+      "timestamp": 1570575082000
+    },
+    "subject": "Merge remote-tracking branch 'origin/master'",
+    "body": "",
+    "notes": "",
+    "stats": []
+  },
+  {
+    "refs": [],
+    "hash": "c220df26a851a707ef73c7666cd2941ebf423841",
+    "hashAbbrev": "c220df2",
+    "tree": "6bfb41b877eef0423137305322bd31c0baa81503",
+    "treeAbbrev": "6bfb41b",
+    "parents": [
+      "e9d1a19d4e2b65a5f9acf37f847edd8a9e060981"
+    ],
+    "parentsAbbrev": [
+      "e9d1a19"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "scott.maunder@ezyvet.com",
+      "timestamp": 1570575031000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "scott.maunder@ezyvet.com",
+      "timestamp": 1570575031000
+    },
+    "subject": "Swapping the file path to back slash",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 3,
+        "deletions": 3,
+        "file": "package.json"
+      },
+      {
+        "additions": 1,
+        "deletions": 1,
+        "file": "src/App.tsx"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "47f25b9b36b8a5b5adc840d3eb918b68e9ddb835",
+    "hashAbbrev": "47f25b9",
+    "tree": "4273fc4b14873d3ce33b471c688ff9d6035709be",
+    "treeAbbrev": "4273fc4",
+    "parents": [
+      "e9d1a19d4e2b65a5f9acf37f847edd8a9e060981"
+    ],
+    "parentsAbbrev": [
+      "e9d1a19"
+    ],
+    "author": {
+      "name": "Abomy",
+      "email": "abomyy@gmail.com",
+      "timestamp": 1570568872000
+    },
+    "committer": {
+      "name": "Abomy",
+      "email": "abomyy@gmail.com",
+      "timestamp": 1570568872000
+    },
+    "subject": "Quick push for Scott to test the filter function This is it! Honest",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 4,
+        "deletions": 5,
+        "file": "src/git/newGit.ts"
+      },
+      {
+        "additions": 12,
+        "deletions": 12,
+        "file": "src/git/watcher.ts"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "e9d1a19d4e2b65a5f9acf37f847edd8a9e060981",
+    "hashAbbrev": "e9d1a19",
+    "tree": "d60fb9fe5b10c35654402e5b22bdc0def6fbc747",
+    "treeAbbrev": "d60fb9f",
+    "parents": [
+      "08c2e9a8e7337359bd491e33f39d8d4e5d60a57e"
+    ],
+    "parentsAbbrev": [
+      "08c2e9a"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1570526332000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1570526332000
+    },
+    "subject": "Adding different ignore method.",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 2,
+        "deletions": 1,
+        "file": "src/git/watcher.ts"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "08c2e9a8e7337359bd491e33f39d8d4e5d60a57e",
+    "hashAbbrev": "08c2e9a",
+    "tree": "f8a25e3107823df4487291979ee525e77b7f2ac4",
+    "treeAbbrev": "f8a25e3",
+    "parents": [
+      "aa8e24375039f2ebf874da5efae4f53e82701fcd",
+      "2dcc3eec9d8923931eb68e0c5f244eed0088273b"
+    ],
+    "parentsAbbrev": [
+      "aa8e243",
+      "2dcc3ee"
+    ],
+    "author": {
+      "name": "Abomy",
+      "email": "abomyy@gmail.com",
+      "timestamp": 1570524654000
+    },
+    "committer": {
+      "name": "Abomy",
+      "email": "abomyy@gmail.com",
+      "timestamp": 1570524654000
+    },
+    "subject": "Merge remote-tracking branch 'origin/master'",
+    "body": "",
+    "notes": "",
+    "stats": []
+  },
+  {
+    "refs": [],
+    "hash": "aa8e24375039f2ebf874da5efae4f53e82701fcd",
+    "hashAbbrev": "aa8e243",
+    "tree": "4dbf91507ac3c047d3f4cc25fbfc557caa915241",
+    "treeAbbrev": "4dbf915",
+    "parents": [
+      "980e354573f063e3f6412c2efcdb3716f99dae65"
+    ],
+    "parentsAbbrev": [
+      "980e354"
+    ],
+    "author": {
+      "name": "Abomy",
+      "email": "abomyy@gmail.com",
+      "timestamp": 1570524596000
+    },
+    "committer": {
+      "name": "Abomy",
+      "email": "abomyy@gmail.com",
+      "timestamp": 1570524596000
+    },
+    "subject": "Switched back to chokidar and using regex to filter git ignore (way faster)",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 0,
+        "deletions": 3,
+        "file": "src/git/git.ts"
+      },
+      {
+        "additions": 19,
+        "deletions": 10,
+        "file": "src/git/newGit.ts"
+      },
+      {
+        "additions": 27,
+        "deletions": 92,
+        "file": "src/git/watcher.ts"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "2dcc3eec9d8923931eb68e0c5f244eed0088273b",
+    "hashAbbrev": "2dcc3ee",
+    "tree": "77663aa4e4343ac9b67f1e42d4d592ad939e0939",
+    "treeAbbrev": "77663aa",
+    "parents": [
+      "1a23c3008763a5a705154150d2325f4c8b7a7708"
+    ],
+    "parentsAbbrev": [
+      "1a23c30"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1570524525000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1570524525000
+    },
+    "subject": "Removing unnecessary console.logs Cleaning up implementation Renaming files to be more clear.",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 4,
+        "deletions": 7,
+        "file": "src/App.tsx"
+      },
+      {
+        "additions": 3,
+        "deletions": 6,
+        "file": "src/actions/gitLog.action.ts"
+      },
+      {
+        "additions": 0,
+        "deletions": 1,
+        "file": "src/git/newGit.ts"
+      },
+      {
+        "additions": 0,
+        "deletions": 0,
+        "file": "src/reducers/{commit.ts => commit.reducer.ts}"
+      },
+      {
+        "additions": 1,
+        "deletions": 1,
+        "file": "src/reducers/index.tsx"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "1a23c3008763a5a705154150d2325f4c8b7a7708",
+    "hashAbbrev": "1a23c30",
+    "tree": "caa914468663ad3a21636945483995e57d109002",
+    "treeAbbrev": "caa9144",
+    "parents": [
+      "2aaa13fedf8ac1b7b89fa99639d06725d7d2018c"
+    ],
+    "parentsAbbrev": [
+      "2aaa13f"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1570524101000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1570524101000
+    },
+    "subject": "Side list is now rendering from saga/redux. Time to start adding mutations.",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 14,
+        "deletions": 6,
+        "file": "src/App.tsx"
+      },
+      {
+        "additions": 18,
+        "deletions": 0,
+        "file": "src/actions/gitLog.action.ts"
+      },
+      {
+        "additions": 9,
+        "deletions": 6,
+        "file": "src/components/SideList/GitCommitList.tsx"
+      },
+      {
+        "additions": 4,
+        "deletions": 3,
+        "file": "src/git/newGit.ts"
+      },
+      {
+        "additions": 23,
+        "deletions": 23,
+        "file": "src/git/watcher.ts"
+      },
+      {
+        "additions": 1,
+        "deletions": 1,
+        "file": "src/index.tsx"
+      },
+      {
+        "additions": 1,
+        "deletions": 0,
+        "file": "src/react-app-env.d.ts"
+      },
+      {
+        "additions": 2,
+        "deletions": 2,
+        "file": "src/reducers/{commit.tsx => commit.ts}"
+      },
+      {
+        "additions": 2,
+        "deletions": 2,
+        "file": "src/reducers/index.tsx"
+      },
+      {
+        "additions": 18,
+        "deletions": 9,
+        "file": "src/sagas/gitCommitSagas.ts"
+      },
+      {
+        "additions": 3,
+        "deletions": 4,
+        "file": "src/{ => store}/store.ts"
+      },
+      {
+        "additions": 0,
+        "deletions": 6,
+        "file": "src/store/store.tsx"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "2aaa13fedf8ac1b7b89fa99639d06725d7d2018c",
+    "hashAbbrev": "2aaa13f",
+    "tree": "71eb96842660e2e2c0a4b8739f6e5bf8506a2da3",
+    "treeAbbrev": "71eb968",
+    "parents": [
+      "980e354573f063e3f6412c2efcdb3716f99dae65"
+    ],
+    "parentsAbbrev": [
+      "980e354"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1570517039000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1570517039000
+    },
+    "subject": "Cleaning up the repo.",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 3,
+        "deletions": 3,
+        "file": "src/App.tsx"
+      },
+      {
+        "additions": 1,
+        "deletions": 1,
+        "file": "src/index.tsx"
+      },
+      {
+        "additions": 0,
+        "deletions": 7,
+        "file": "src/logo.svg"
+      },
+      {
+        "additions": 0,
+        "deletions": 1,
+        "file": "src/react-app-env.d.ts"
+      },
+      {
+        "additions": 2,
+        "deletions": 2,
+        "file": "src/{ => styles}/App.css"
+      },
+      {
+        "additions": 0,
+        "deletions": 0,
+        "file": "src/{ => styles}/index.css"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "980e354573f063e3f6412c2efcdb3716f99dae65",
+    "hashAbbrev": "980e354",
+    "tree": "b16984210184bc36eab9308496ee90d9a7202824",
+    "treeAbbrev": "b169842",
+    "parents": [
+      "a16214332df8ae327a7d9708903fe3485eb5553a"
+    ],
+    "parentsAbbrev": [
+      "a162143"
+    ],
+    "author": {
+      "name": "Abomy",
+      "email": "abomyy@gmail.com",
+      "timestamp": 1570511377000
+    },
+    "committer": {
+      "name": "Abomy",
+      "email": "abomyy@gmail.com",
+      "timestamp": 1570511377000
+    },
+    "subject": "Replaced watcher with another package and added custom filter for git ignore, HOPEFULLY this one works on all platforms",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 2,
+        "deletions": 1,
+        "file": "package.json"
+      },
+      {
+        "additions": 6,
+        "deletions": 5,
+        "file": "src/App.tsx"
+      },
+      {
+        "additions": 7,
+        "deletions": 11,
+        "file": "src/git/newGit.ts"
+      },
+      {
+        "additions": 48,
+        "deletions": 17,
+        "file": "src/git/watcher.ts"
+      },
+      {
+        "additions": 20,
+        "deletions": 0,
+        "file": "yarn.lock"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "a16214332df8ae327a7d9708903fe3485eb5553a",
+    "hashAbbrev": "a162143",
+    "tree": "4f644fce94cda2366f1a45dbc20c739d5dbf25cb",
+    "treeAbbrev": "4f644fc",
+    "parents": [
+      "0e9f9377411f98ec13182f0887e8c16704659c2d"
+    ],
+    "parentsAbbrev": [
+      "0e9f937"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "scott.maunder@ezyvet.com",
+      "timestamp": 1570494079000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "scott.maunder@ezyvet.com",
+      "timestamp": 1570494079000
+    },
+    "subject": "Adding Saga boiler plate.",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 0,
+        "deletions": 6,
+        "file": "src/actions/commit.tsx"
+      },
+      {
+        "additions": 14,
+        "deletions": 0,
+        "file": "src/actions/gitCommitList.action.ts"
+      },
+      {
+        "additions": 9,
+        "deletions": 0,
+        "file": "src/actions/index.ts"
+      },
+      {
+        "additions": 6,
+        "deletions": 7,
+        "file": "src/components/SideList/GitCommitList.tsx"
+      },
+      {
+        "additions": 1,
+        "deletions": 18,
+        "file": "src/index.tsx"
+      },
+      {
+        "additions": 10,
+        "deletions": 12,
+        "file": "src/reducers/commit.tsx"
+      },
+      {
+        "additions": 10,
+        "deletions": 5,
+        "file": "src/reducers/index.tsx"
+      },
+      {
+        "additions": 0,
+        "deletions": 22,
+        "file": "src/saga.js"
+      },
+      {
+        "additions": 18,
+        "deletions": 0,
+        "file": "src/sagas/gitCommitSagas.ts"
+      },
+      {
+        "additions": 6,
+        "deletions": 0,
+        "file": "src/sagas/index.ts"
+      },
+      {
+        "additions": 14,
+        "deletions": 0,
+        "file": "src/store.ts"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "0e9f9377411f98ec13182f0887e8c16704659c2d",
+    "hashAbbrev": "0e9f937",
+    "tree": "7e19f40bd7bcf597a3e7fa41d48fde31e0396b07",
+    "treeAbbrev": "7e19f40",
+    "parents": [
+      "9c7281db661804579af5cd9a8d205067ab8f6bc8"
+    ],
+    "parentsAbbrev": [
+      "9c7281d"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1570419360000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1570419360000
+    },
+    "subject": "Fixing the broken commit.",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 5,
+        "deletions": 6,
+        "file": "src/App.tsx"
+      },
+      {
+        "additions": 2,
+        "deletions": 3,
+        "file": "src/components/SideList/GitCommitDetails.tsx"
+      },
+      {
+        "additions": 23,
+        "deletions": 17,
+        "file": "src/components/SideList/GitCommitList.tsx"
+      },
+      {
+        "additions": 5,
+        "deletions": 5,
+        "file": "src/git/newGit.ts"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "9c7281db661804579af5cd9a8d205067ab8f6bc8",
+    "hashAbbrev": "9c7281d",
+    "tree": "c11bd312fe0cfffb891e94ddd200307ce00740d7",
+    "treeAbbrev": "c11bd31",
+    "parents": [
+      "a7a7f2c5d7d51deb323e3fb89ecd2aa1615325f5"
+    ],
+    "parentsAbbrev": [
+      "a7a7f2c"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "scott.maunder@ezyvet.com",
+      "timestamp": 1570410152000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "scott.maunder@ezyvet.com",
+      "timestamp": 1570410152000
+    },
+    "subject": "Adding redux/saga for testing.",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 2,
+        "deletions": 1,
+        "file": "package.json"
+      },
+      {
+        "additions": 2,
+        "deletions": 2,
+        "file": "src/App.tsx"
+      },
+      {
+        "additions": 4,
+        "deletions": 4,
+        "file": "src/components/SideList/GitCommitDetails.tsx"
+      },
+      {
+        "additions": 1,
+        "deletions": 1,
+        "file": "src/components/SideList/GitCommitListItem.tsx"
+      },
+      {
+        "additions": 14,
+        "deletions": 8,
+        "file": "src/index.tsx"
+      },
+      {
+        "additions": 22,
+        "deletions": 0,
+        "file": "src/saga.js"
+      },
+      {
+        "additions": 71,
+        "deletions": 1,
+        "file": "yarn.lock"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "a7a7f2c5d7d51deb323e3fb89ecd2aa1615325f5",
+    "hashAbbrev": "a7a7f2c",
+    "tree": "7352e5030f900f408a242e52845650ca23b364e2",
+    "treeAbbrev": "7352e50",
+    "parents": [
+      "9843347446bf7888deff8ea04eb8e0c504b7c1fe"
+    ],
+    "parentsAbbrev": [
+      "9843347"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1570181068000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1570181068000
+    },
+    "subject": "Updating lock file",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 5,
+        "deletions": 38,
+        "file": "yarn.lock"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "9843347446bf7888deff8ea04eb8e0c504b7c1fe",
+    "hashAbbrev": "9843347",
+    "tree": "a710f9b1ed631cf98de676ec30ca9cf3d7507aaf",
+    "treeAbbrev": "a710f9b",
+    "parents": [
+      "33085196ca38569a88daf0e3264d90df6e9ebd96"
+    ],
+    "parentsAbbrev": [
+      "3308519"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1570165992000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1570165992000
+    },
+    "subject": "Removing eslint. Refactoring app.tsx started adding reducers",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 0,
+        "deletions": 14,
+        "file": ".eslintrc"
+      },
+      {
+        "additions": 3,
+        "deletions": 7,
+        "file": "package.json"
+      },
+      {
+        "additions": 2,
+        "deletions": 3,
+        "file": "src/App.tsx"
+      },
+      {
+        "additions": 1,
+        "deletions": 0,
+        "file": "src/constants/ActionTypes.tsx"
+      },
+      {
+        "additions": 0,
+        "deletions": 12,
+        "file": "src/index.js"
+      },
+      {
+        "additions": 30,
+        "deletions": 0,
+        "file": "src/index.tsx"
+      },
+      {
+        "additions": 6,
+        "deletions": 5,
+        "file": "src/reducers/commit.tsx"
+      },
+      {
+        "additions": 4,
+        "deletions": 4,
+        "file": "src/reducers/index.tsx"
+      },
+      {
+        "additions": 26,
+        "deletions": 1,
+        "file": "yarn.lock"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "33085196ca38569a88daf0e3264d90df6e9ebd96",
+    "hashAbbrev": "3308519",
+    "tree": "6846e11547dfcb3f77a28e4da2cdbd5c64ca2361",
+    "treeAbbrev": "6846e11",
+    "parents": [
+      "48fb80ed44f3b43e42514308769ae3e4dad052be"
+    ],
+    "parentsAbbrev": [
+      "48fb80e"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1570164744000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1570164744000
+    },
+    "subject": "Adding eslint and fixing some issues with warnings from yarn",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 14,
+        "deletions": 0,
+        "file": ".eslintrc"
+      },
+      {
+        "additions": 10,
+        "deletions": 2,
+        "file": "package.json"
+      },
+      {
+        "additions": 448,
+        "deletions": 328,
+        "file": "yarn.lock"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "48fb80ed44f3b43e42514308769ae3e4dad052be",
+    "hashAbbrev": "48fb80e",
+    "tree": "4fbaecf7825a807eefd1d6519d94e842838cdcac",
+    "treeAbbrev": "4fbaecf",
+    "parents": [
+      "3b3106b8ea716cd82cf35ce191465e0b44a3482d"
+    ],
+    "parentsAbbrev": [
+      "3b3106b"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1570162161000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1570162161000
+    },
+    "subject": "Updating read me",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 5,
+        "deletions": 62,
+        "file": "README.md"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "3b3106b8ea716cd82cf35ce191465e0b44a3482d",
+    "hashAbbrev": "3b3106b",
+    "tree": "d8a2e1a6b5406a8f42e9b4030d770c4121497704",
+    "treeAbbrev": "d8a2e1a",
+    "parents": [
+      "5592b1e44a5e36c6d99ebaac51f4a9cd5f0e5a87"
+    ],
+    "parentsAbbrev": [
+      "5592b1e"
+    ],
+    "author": {
+      "name": "Abomy",
+      "email": "abomyy@gmail.com",
+      "timestamp": 1570095422000
+    },
+    "committer": {
+      "name": "Abomy",
+      "email": "abomyy@gmail.com",
+      "timestamp": 1570095422000
+    },
+    "subject": "Patch to watcher, still runs and actually ignores the files",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 17,
+        "deletions": 9,
+        "file": "src/git/newGit.ts"
+      },
+      {
+        "additions": 4,
+        "deletions": 1,
+        "file": "src/git/watcher.ts"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "5592b1e44a5e36c6d99ebaac51f4a9cd5f0e5a87",
+    "hashAbbrev": "5592b1e",
+    "tree": "135e455a25e3ddacada2fb32453309b4cd5d3fe7",
+    "treeAbbrev": "135e455",
+    "parents": [
+      "a33da226b8aeae0db441b63357a0a32b2bdaa442"
+    ],
+    "parentsAbbrev": [
+      "a33da22"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "scott.maunder@ezyvet.com",
+      "timestamp": 1570065623000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "scott.maunder@ezyvet.com",
+      "timestamp": 1570065623000
+    },
+    "subject": "Adding redux and redux-react",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 2,
+        "deletions": 0,
+        "file": "package.json"
+      },
+      {
+        "additions": 6,
+        "deletions": 0,
+        "file": "src/actions/commit.tsx"
+      },
+      {
+        "additions": 0,
+        "deletions": 1,
+        "file": "src/components/SideList/GitCommitList.tsx"
+      },
+      {
+        "additions": 17,
+        "deletions": 0,
+        "file": "src/reducers/commit.tsx"
+      },
+      {
+        "additions": 6,
+        "deletions": 0,
+        "file": "src/reducers/index.tsx"
+      },
+      {
+        "additions": 6,
+        "deletions": 0,
+        "file": "src/store/store.tsx"
+      },
+      {
+        "additions": 40,
+        "deletions": 1,
+        "file": "yarn.lock"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "a33da226b8aeae0db441b63357a0a32b2bdaa442",
+    "hashAbbrev": "a33da22",
+    "tree": "8bee18b78e387298b2387662517685af6f3b0492",
+    "treeAbbrev": "8bee18b",
+    "parents": [
+      "c98c1360a55d4ab8b3bbc955053d143d924d2551"
+    ],
+    "parentsAbbrev": [
+      "c98c136"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "scott.maunder@ezyvet.com",
+      "timestamp": 1570060329000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "scott.maunder@ezyvet.com",
+      "timestamp": 1570060329000
+    },
+    "subject": "Side list now able to render commits that don't exist.",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 2,
+        "deletions": 11,
+        "file": "src/App.tsx"
+      },
+      {
+        "additions": 1,
+        "deletions": 3,
+        "file": "src/components/Diff/DiffViewerListItem.tsx"
+      },
+      {
+        "additions": 30,
+        "deletions": 0,
+        "file": "src/components/SideList/GitCommitDetails.tsx"
+      },
+      {
+        "additions": 8,
+        "deletions": 8,
+        "file": "src/components/SideList/GitCommitList.tsx"
+      },
+      {
+        "additions": 8,
+        "deletions": 24,
+        "file": "src/components/SideList/GitCommitListItem.tsx"
+      },
+      {
+        "additions": 12,
+        "deletions": 0,
+        "file": "src/components/SideList/GitStatusDetails.tsx"
+      },
+      {
+        "additions": 16,
+        "deletions": 2,
+        "file": "src/git/newGit.ts"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "c98c1360a55d4ab8b3bbc955053d143d924d2551",
+    "hashAbbrev": "c98c136",
+    "tree": "55893065f9b2f49aaab0e32aecdc1c53b9e8174e",
+    "treeAbbrev": "5589306",
+    "parents": [
+      "53c82e80c9dba374e29f1a2290823505790ec10d"
+    ],
+    "parentsAbbrev": [
+      "53c82e8"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569998186000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569998186000
+    },
+    "subject": "Commented out watcher as it is causing loading issues. Added new empty commit to the side list. Removed unnecessary logging Made chevron point to right instead of up.",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 22,
+        "deletions": 14,
+        "file": "src/App.tsx"
+      },
+      {
+        "additions": 1,
+        "deletions": 1,
+        "file": "src/components/Diff/DiffViewerListItem.tsx"
+      },
+      {
+        "additions": 0,
+        "deletions": 1,
+        "file": "src/components/Diff/GetGitDifference.js"
+      },
+      {
+        "additions": 1,
+        "deletions": 2,
+        "file": "src/git/git.ts"
+      },
+      {
+        "additions": 2,
+        "deletions": 2,
+        "file": "src/git/newGit.ts"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "53c82e80c9dba374e29f1a2290823505790ec10d",
+    "hashAbbrev": "53c82e8",
+    "tree": "ade9e2e71b4a20cec8425f4e077214bb87fa9a08",
+    "treeAbbrev": "ade9e2e",
+    "parents": [
+      "24ef1ef707773bf84157520c72dc5adc569804a2"
+    ],
+    "parentsAbbrev": [
+      "24ef1ef"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569995670000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569995670000
+    },
+    "subject": "Adding some safety and removing redundant code.",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 3,
+        "deletions": 2,
+        "file": "src/App.tsx"
+      },
+      {
+        "additions": 1,
+        "deletions": 0,
+        "file": "src/components/Diff/GetGitDifference.js"
+      },
+      {
+        "additions": 4,
+        "deletions": 6,
+        "file": "src/git/git.ts"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "24ef1ef707773bf84157520c72dc5adc569804a2",
+    "hashAbbrev": "24ef1ef",
+    "tree": "d93a992bea8f434ac6efb4748c370a35d539402b",
+    "treeAbbrev": "d93a992",
+    "parents": [
+      "b4ea0f1040f40cb6feee4202592a689adc7e2b20",
+      "33f8d428d8a3cd1fd7bf3d5a657c616cf743b08e"
+    ],
+    "parentsAbbrev": [
+      "b4ea0f1",
+      "33f8d42"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569995347000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569995347000
+    },
+    "subject": "Merge remote-tracking branch 'origin/master'",
+    "body": "",
+    "notes": "",
+    "stats": []
+  },
+  {
+    "refs": [],
+    "hash": "b4ea0f1040f40cb6feee4202592a689adc7e2b20",
+    "hashAbbrev": "b4ea0f1",
+    "tree": "70b62a9fc9c150a89517f87af87906d1c0fe3886",
+    "treeAbbrev": "70b62a9",
+    "parents": [
+      "ac223a1f032668fc05a32695a414eff926a5f737"
+    ],
+    "parentsAbbrev": [
+      "ac223a1"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569995288000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569995288000
+    },
+    "subject": "Swapping to new structure for the file status changes. This should be flexible.",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 16,
+        "deletions": 13,
+        "file": "src/App.tsx"
+      },
+      {
+        "additions": 5,
+        "deletions": 5,
+        "file": "src/components/Diff/DiffViewerList.tsx"
+      },
+      {
+        "additions": 42,
+        "deletions": 97,
+        "file": "src/git/git.ts"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "33f8d428d8a3cd1fd7bf3d5a657c616cf743b08e",
+    "hashAbbrev": "33f8d42",
+    "tree": "67db3f8e9dc7c75f92da3893913f0642215b8316",
+    "treeAbbrev": "67db3f8",
+    "parents": [
+      "57d1080e3159bc6f3e0473116d041bea32696f79"
+    ],
+    "parentsAbbrev": [
+      "57d1080"
+    ],
+    "author": {
+      "name": "Abomy",
+      "email": "abomyy@gmail.com",
+      "timestamp": 1569994769000
+    },
+    "committer": {
+      "name": "Abomy",
+      "email": "abomyy@gmail.com",
+      "timestamp": 1569994769000
+    },
+    "subject": "Added git status function with flags for custom filtering Super heavy, but shouldnt need to be used much",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 8,
+        "deletions": 0,
+        "file": "src/App.tsx"
+      },
+      {
+        "additions": 155,
+        "deletions": 0,
+        "file": "src/git/newGit.ts"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "57d1080e3159bc6f3e0473116d041bea32696f79",
+    "hashAbbrev": "57d1080",
+    "tree": "3fb5c0f1fd37af45bc070a3717f0c5edde62c499",
+    "treeAbbrev": "3fb5c0f",
+    "parents": [
+      "ac223a1f032668fc05a32695a414eff926a5f737"
+    ],
+    "parentsAbbrev": [
+      "ac223a1"
+    ],
+    "author": {
+      "name": "Abomy",
+      "email": "abomyy@gmail.com",
+      "timestamp": 1569990085000
+    },
+    "committer": {
+      "name": "Abomy",
+      "email": "abomyy@gmail.com",
+      "timestamp": 1569990085000
+    },
+    "subject": "Fixed new git stuffs / Scott's hacky function <3",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 16,
+        "deletions": 10,
+        "file": "src/git/git.ts"
+      },
+      {
+        "additions": 115,
+        "deletions": 0,
+        "file": "src/git/newGit.ts"
+      },
+      {
+        "additions": 69,
+        "deletions": 21,
+        "file": "src/git/watcher.ts"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "ac223a1f032668fc05a32695a414eff926a5f737",
+    "hashAbbrev": "ac223a1",
+    "tree": "6f6015ed023f3cb8e50f6cc26dab8ee703704f73",
+    "treeAbbrev": "6f6015e",
+    "parents": [
+      "d4415e59788dec454a06aacf8e21ab5e5a412244"
+    ],
+    "parentsAbbrev": [
+      "d4415e5"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "scott.maunder@ezyvet.com",
+      "timestamp": 1569978925000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "scott.maunder@ezyvet.com",
+      "timestamp": 1569978925000
+    },
+    "subject": "Adding function to get current state of the repo.",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 3,
+        "deletions": 2,
+        "file": "src/App.tsx"
+      },
+      {
+        "additions": 1,
+        "deletions": 1,
+        "file": "src/components/Diff/Diff.jsx"
+      },
+      {
+        "additions": 64,
+        "deletions": 0,
+        "file": "src/git/git.ts"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "d4415e59788dec454a06aacf8e21ab5e5a412244",
+    "hashAbbrev": "d4415e5",
+    "tree": "110f31829153ee6dbeb061f07decf743db4d5a28",
+    "treeAbbrev": "110f318",
+    "parents": [
+      "7231b7d2e7413d68ebc4cbabdf6b5ab1301c3585"
+    ],
+    "parentsAbbrev": [
+      "7231b7d"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "scott.maunder@ezyvet.com",
+      "timestamp": 1569960656000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "scott.maunder@ezyvet.com",
+      "timestamp": 1569960656000
+    },
+    "subject": "Removing dependencies.",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 6,
+        "deletions": 6,
+        "file": "src/components/Diff/DiffViewerListItem.tsx"
+      },
+      {
+        "additions": 4,
+        "deletions": 121,
+        "file": "yarn.lock"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "7231b7d2e7413d68ebc4cbabdf6b5ab1301c3585",
+    "hashAbbrev": "7231b7d",
+    "tree": "047a95f666624f2dd547e2247c2ac4bad6630a7c",
+    "treeAbbrev": "047a95f",
+    "parents": [
+      "3c775b64e5c9aec36d645d06cedad38a7c19a50b"
+    ],
+    "parentsAbbrev": [
+      "3c775b6"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569914305000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569914305000
+    },
+    "subject": "Happy with styling with now",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 3,
+        "deletions": 0,
+        "file": "src/App.css"
+      },
+      {
+        "additions": 1,
+        "deletions": 1,
+        "file": "src/components/Diff/Diff.jsx"
+      },
+      {
+        "additions": 1,
+        "deletions": 1,
+        "file": "src/components/Diff/DiffViewerListItem.tsx"
+      },
+      {
+        "additions": 7,
+        "deletions": 0,
+        "file": "src/styles/diffListItem.css"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "3c775b64e5c9aec36d645d06cedad38a7c19a50b",
+    "hashAbbrev": "3c775b6",
+    "tree": "d687cb936cc8397b909526448c7aa29c09b4f9bb",
+    "treeAbbrev": "d687cb9",
+    "parents": [
+      "309f5193e2b0b352d36269ad8ef8f1c5c475714f"
+    ],
+    "parentsAbbrev": [
+      "309f519"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569909039000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569909039000
+    },
+    "subject": "Fixing only adding necessary class to CSS",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 1,
+        "deletions": 3,
+        "file": "src/App.css"
+      },
+      {
+        "additions": 1,
+        "deletions": 1,
+        "file": "src/components/NavBar/NavBar.tsx"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "309f5193e2b0b352d36269ad8ef8f1c5c475714f",
+    "hashAbbrev": "309f519",
+    "tree": "0bff2b86dcd4a0f693686062d9495d472449a12e",
+    "treeAbbrev": "0bff2b8",
+    "parents": [
+      "07266d9c9f3702de873acde8dbff02d63397d234"
+    ],
+    "parentsAbbrev": [
+      "07266d9"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569908995000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569908995000
+    },
+    "subject": "Adding placeholder color for button",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 6,
+        "deletions": 1,
+        "file": "src/App.css"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "07266d9c9f3702de873acde8dbff02d63397d234",
+    "hashAbbrev": "07266d9",
+    "tree": "38c0ab351997d6d2ee141d2a0573a11252ea7ae3",
+    "treeAbbrev": "38c0ab3",
+    "parents": [
+      "9a449f0e56da20d248e7f0985f8d642a199415a4"
+    ],
+    "parentsAbbrev": [
+      "9a449f0"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569908449000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569908449000
+    },
+    "subject": "Applying new styling from Dracula.",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 8,
+        "deletions": 33,
+        "file": "src/App.css"
+      },
+      {
+        "additions": 1,
+        "deletions": 1,
+        "file": "src/components/Diff/Diff.jsx"
+      },
+      {
+        "additions": 1,
+        "deletions": 0,
+        "file": "src/components/Diff/DiffViewerList.tsx"
+      },
+      {
+        "additions": 6,
+        "deletions": 6,
+        "file": "src/components/NavBar/NavBar.tsx"
+      },
+      {
+        "additions": 8,
+        "deletions": 8,
+        "file": "src/components/SideList/GitCommitListItem.tsx"
+      },
+      {
+        "additions": 103,
+        "deletions": 0,
+        "file": "src/styles/diff.css"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "9a449f0e56da20d248e7f0985f8d642a199415a4",
+    "hashAbbrev": "9a449f0",
+    "tree": "0f00815a4db33b8b829f0dfa14af0dfa7b4ed647",
+    "treeAbbrev": "0f00815",
+    "parents": [
+      "f6547699056f22ccb3aaa286b7c8aeac69632da4"
+    ],
+    "parentsAbbrev": [
+      "f654769"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569902828000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569902828000
+    },
+    "subject": "Implemented testing ui for new diff viewer.",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 7,
+        "deletions": 2,
+        "file": "src/App.css"
+      },
+      {
+        "additions": 2,
+        "deletions": 2,
+        "file": "src/App.tsx"
+      },
+      {
+        "additions": 1,
+        "deletions": 1,
+        "file": "src/components/Diff/Diff.jsx"
+      },
+      {
+        "additions": 10,
+        "deletions": 12,
+        "file": "src/components/Diff/{DiffViewer.tsx => DiffViewerList.tsx}"
+      },
+      {
+        "additions": 44,
+        "deletions": 0,
+        "file": "src/components/Diff/DiffViewerListItem.tsx"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "f6547699056f22ccb3aaa286b7c8aeac69632da4",
+    "hashAbbrev": "f654769",
+    "tree": "fdfec1670d47da8fcd4d417ecbb257cb9510f738",
+    "treeAbbrev": "fdfec16",
+    "parents": [
+      "b99a3627bc6be80fe306a4b21edaa9ecadb3c5a6"
+    ],
+    "parentsAbbrev": [
+      "b99a362"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569887317000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569887317000
+    },
+    "subject": "Diffs now rendered in a list.",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 18,
+        "deletions": 6,
+        "file": "src/components/Diff/DiffViewer.tsx"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "b99a3627bc6be80fe306a4b21edaa9ecadb3c5a6",
+    "hashAbbrev": "b99a362",
+    "tree": "1b78f0891fd5601aa7f4087f7f2c698c29f64841",
+    "treeAbbrev": "1b78f08",
+    "parents": [
+      "0c6011de822dae4db5fcb708a518c4b3a71d9d08"
+    ],
+    "parentsAbbrev": [
+      "0c6011d"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569886716000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569886716000
+    },
+    "subject": "Wrapped the Diff inside the main list component",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 9,
+        "deletions": 0,
+        "file": "src/App.css"
+      },
+      {
+        "additions": 3,
+        "deletions": 23,
+        "file": "src/App.tsx"
+      },
+      {
+        "additions": 25,
+        "deletions": 0,
+        "file": "src/components/Diff/DiffViewer.tsx"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "0c6011de822dae4db5fcb708a518c4b3a71d9d08",
+    "hashAbbrev": "0c6011d",
+    "tree": "002d5e8f1db9e6950be6641d19ad86595cdf90d0",
+    "treeAbbrev": "002d5e8",
+    "parents": [
+      "040aecb1d44c440ff3706a2c59d3ea78dc2ed9a3"
+    ],
+    "parentsAbbrev": [
+      "040aecb"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569885904000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569885904000
+    },
+    "subject": "Removing redundant code from old library",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 0,
+        "deletions": 1,
+        "file": "package.json"
+      },
+      {
+        "additions": 0,
+        "deletions": 50,
+        "file": "src/components/Diff/DiffViewer.tsx"
+      },
+      {
+        "additions": 0,
+        "deletions": 55,
+        "file": "src/components/Diff/FileDiffListItem.tsx"
+      },
+      {
+        "additions": 0,
+        "deletions": 33,
+        "file": "src/components/Diff/MainContentList.tsx"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "040aecb1d44c440ff3706a2c59d3ea78dc2ed9a3",
+    "hashAbbrev": "040aecb",
+    "tree": "9539124a5019628fe413cf181a94478db7800535",
+    "treeAbbrev": "9539124",
+    "parents": [
+      "279e9c9d8ca76874cb285ef1684d05c3305a56bc"
+    ],
+    "parentsAbbrev": [
+      "279e9c9"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569884675000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569884675000
+    },
+    "subject": "Cleaning up redundant code.",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 0,
+        "deletions": 3,
+        "file": "src/components/Diff/Diff.jsx"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "279e9c9d8ca76874cb285ef1684d05c3305a56bc",
+    "hashAbbrev": "279e9c9",
+    "tree": "05746cf25d90b2d5927ff75bf88f320d1e02b959",
+    "treeAbbrev": "05746cf",
+    "parents": [
+      "6aee85d273d40c154218547b1683e5339ff8eb8b"
+    ],
+    "parentsAbbrev": [
+      "6aee85d"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569884341000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569884341000
+    },
+    "subject": "Implemented the example from react-diff-view",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 37,
+        "deletions": 6,
+        "file": "src/components/Diff/Diff.jsx"
+      },
+      {
+        "additions": 30,
+        "deletions": 0,
+        "file": "src/components/Diff/Unfold.jsx"
+      },
+      {
+        "additions": 105,
+        "deletions": 8,
+        "file": "src/components/Diff/UnfoldCollapsed.jsx"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "6aee85d273d40c154218547b1683e5339ff8eb8b",
+    "hashAbbrev": "6aee85d",
+    "tree": "8fb6460ca4f454829f154acd9f588abc5a0e7535",
+    "treeAbbrev": "8fb6460",
+    "parents": [
+      "b137288f2cc190137e9cf8a60bd1474a591f0936"
+    ],
+    "parentsAbbrev": [
+      "b137288"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569883366000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569883366000
+    },
+    "subject": "Split unfoldcallapsed into own file.",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 1,
+        "deletions": 9,
+        "file": "src/components/Diff/Diff.jsx"
+      },
+      {
+        "additions": 13,
+        "deletions": 0,
+        "file": "src/components/Diff/UnfoldCollapsed.jsx"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "b137288f2cc190137e9cf8a60bd1474a591f0936",
+    "hashAbbrev": "b137288",
+    "tree": "423e0c5cb512c7c43a2f1d4773395b1147a19d48",
+    "treeAbbrev": "423e0c5",
+    "parents": [
+      "af53dd65258ef9bb617b2fdeeb03d777dbd03517"
+    ],
+    "parentsAbbrev": [
+      "af53dd6"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569879690000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569879690000
+    },
+    "subject": "Adding index for key to fix react error",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 2,
+        "deletions": 2,
+        "file": "src/App.tsx"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "af53dd65258ef9bb617b2fdeeb03d777dbd03517",
+    "hashAbbrev": "af53dd6",
+    "tree": "3c982f8151ec422d69fafc9d55ae49b7e7de2395",
+    "treeAbbrev": "3c982f8",
+    "parents": [
+      "6ae4cba1711d642bded89223dad329d4d43bee65"
+    ],
+    "parentsAbbrev": [
+      "6ae4cba"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569879082000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569879082000
+    },
+    "subject": "Super basic uncollapse implemented",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 11,
+        "deletions": 4,
+        "file": "src/App.tsx"
+      },
+      {
+        "additions": 32,
+        "deletions": 13,
+        "file": "src/components/Diff/Diff.jsx"
+      },
+      {
+        "additions": 11,
+        "deletions": 0,
+        "file": "src/components/Diff/GetGitDifference.js"
+      }
+    ]
+  },
+  {
+    "refs": [
+      "origin/unstable"
+    ],
+    "hash": "f1f1c3c5729b28972d2201970510d0f0bb566934",
+    "hashAbbrev": "f1f1c3c",
+    "tree": "3f4d405e3ffbb1a9477aa7a3dbe4b774a656d3d2",
+    "treeAbbrev": "3f4d405",
+    "parents": [
+      "0ef0d9763bb256d3b96d7c96610f4f0aa916a69e"
+    ],
+    "parentsAbbrev": [
+      "0ef0d97"
+    ],
+    "author": {
+      "name": "Abomy",
+      "email": "abomyy@gmail.com",
+      "timestamp": 1569820060000
+    },
+    "committer": {
+      "name": "Abomy",
+      "email": "abomyy@gmail.com",
+      "timestamp": 1569820060000
+    },
+    "subject": "More work on watcher and new git controller -untested",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 5,
+        "deletions": 3,
+        "file": "src/App.tsx"
+      },
+      {
+        "additions": 1,
+        "deletions": 0,
+        "file": "src/components/SideList/GitCommitList.tsx"
+      },
+      {
+        "additions": 84,
+        "deletions": 4,
+        "file": "src/git/newGit.ts"
+      },
+      {
+        "additions": 2,
+        "deletions": 7,
+        "file": "src/git/watcher.ts"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "6ae4cba1711d642bded89223dad329d4d43bee65",
+    "hashAbbrev": "6ae4cba",
+    "tree": "49e511151214014e118f6ceea91a53da0f77e021",
+    "treeAbbrev": "49e5111",
+    "parents": [
+      "005d3534dee907a0e49e6358055ae225d56cac7a"
+    ],
+    "parentsAbbrev": [
+      "005d353"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569814718000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569814718000
+    },
+    "subject": "Changing the application name.",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 1,
+        "deletions": 1,
+        "file": "public/index.html"
+      },
+      {
+        "additions": 2,
+        "deletions": 2,
+        "file": "public/manifest.json"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "0ef0d9763bb256d3b96d7c96610f4f0aa916a69e",
+    "hashAbbrev": "0ef0d97",
+    "tree": "dd4de39df925aac987af5a49725a0c24fd1f6fe4",
+    "treeAbbrev": "dd4de39",
+    "parents": [
+      "005d3534dee907a0e49e6358055ae225d56cac7a"
+    ],
+    "parentsAbbrev": [
+      "005d353"
+    ],
+    "author": {
+      "name": "Abomy",
+      "email": "abomyy@gmail.com",
+      "timestamp": 1569750423000
+    },
+    "committer": {
+      "name": "Abomy",
+      "email": "abomyy@gmail.com",
+      "timestamp": 1569750423000
+    },
+    "subject": "Fixed line endings Start of git rework  - incomplete so branched.",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 2,
+        "deletions": 1,
+        "file": ".vscode/settings.json"
+      },
+      {
+        "additions": 1,
+        "deletions": 1,
+        "file": ".webpack.config.js"
+      },
+      {
+        "additions": 8,
+        "deletions": 4,
+        "file": "public/electron.js"
+      },
+      {
+        "additions": 3,
+        "deletions": 0,
+        "file": "src/App.tsx"
+      },
+      {
+        "additions": 19,
+        "deletions": 19,
+        "file": "src/components/Diff/DiffViewer.tsx"
+      },
+      {
+        "additions": 11,
+        "deletions": 11,
+        "file": "src/components/Diff/FileDiffListItem.tsx"
+      },
+      {
+        "additions": 6,
+        "deletions": 6,
+        "file": "src/components/Diff/MainContentList.tsx"
+      },
+      {
+        "additions": 26,
+        "deletions": 26,
+        "file": "src/components/Diff/Tokenize.js"
+      },
+      {
+        "additions": 5,
+        "deletions": 5,
+        "file": "src/components/NavBar/NavBar.tsx"
+      },
+      {
+        "additions": 14,
+        "deletions": 14,
+        "file": "src/components/Pallet/SearchBar.tsx"
+      },
+      {
+        "additions": 7,
+        "deletions": 7,
+        "file": "src/components/SideList/GitCommitList.tsx"
+      },
+      {
+        "additions": 8,
+        "deletions": 8,
+        "file": "src/components/SideList/GitCommitListItem.tsx"
+      },
+      {
+        "additions": 3,
+        "deletions": 3,
+        "file": "src/components/Toaster/Toaster.ts"
+      },
+      {
+        "additions": 35,
+        "deletions": 0,
+        "file": "src/git/newGit.ts"
+      },
+      {
+        "additions": 68,
+        "deletions": 21,
+        "file": "src/git/watcher.ts"
+      },
+      {
+        "additions": 3,
+        "deletions": 3,
+        "file": "src/index.css"
+      },
+      {
+        "additions": 6,
+        "deletions": 6,
+        "file": "src/index.js"
+      },
+      {
+        "additions": 15,
+        "deletions": 15,
+        "file": "src/serviceWorker.js"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "005d3534dee907a0e49e6358055ae225d56cac7a",
+    "hashAbbrev": "005d353",
+    "tree": "09b551b3c5c64441145258891a7e00847f232fbb",
+    "treeAbbrev": "09b551b",
+    "parents": [
+      "fc82eb8a0cb65f9b0757f78406ccb95fa58c63f1"
+    ],
+    "parentsAbbrev": [
+      "fc82eb8"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "scott.maunder@ezyvet.com",
+      "timestamp": 1569714550000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "scott.maunder@ezyvet.com",
+      "timestamp": 1569714550000
+    },
+    "subject": "Tested new function that isomorphic git has on the FAQ",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 16,
+        "deletions": 18,
+        "file": "src/App.tsx"
+      },
+      {
+        "additions": 1,
+        "deletions": 1,
+        "file": "src/components/Diff/Diff.jsx"
+      },
+      {
+        "additions": 38,
+        "deletions": 20,
+        "file": "src/git/git.ts"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "fc82eb8a0cb65f9b0757f78406ccb95fa58c63f1",
+    "hashAbbrev": "fc82eb8",
+    "tree": "b1aef1464ab1ca5a726857ada4ba5d9f92a4708b",
+    "treeAbbrev": "b1aef14",
+    "parents": [
+      "2918e8435f227d6defa287c229f3e10686611dcb"
+    ],
+    "parentsAbbrev": [
+      "2918e84"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "scott.maunder@ezyvet.com",
+      "timestamp": 1569711239000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "scott.maunder@ezyvet.com",
+      "timestamp": 1569711239000
+    },
+    "subject": "Fixing workingDir name i missed.",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 13,
+        "deletions": 5,
+        "file": "src/git/git.ts"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "2918e8435f227d6defa287c229f3e10686611dcb",
+    "hashAbbrev": "2918e84",
+    "tree": "a0914e11d3ca84638cf8c592bf64bc8436ab7153",
+    "treeAbbrev": "a0914e1",
+    "parents": [
+      "65b1c4bdf0c013f1241a73c9274186fbd7984bac",
+      "27a0cfefd48ff4afab190625cd5e242c75309d84"
+    ],
+    "parentsAbbrev": [
+      "65b1c4b",
+      "27a0cfe"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "scott.maunder@ezyvet.com",
+      "timestamp": 1569711064000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "scott.maunder@ezyvet.com",
+      "timestamp": 1569711064000
+    },
+    "subject": "Merge branch 'master' of https://github.com/Kysumi/ezyGit",
+    "body": "",
+    "notes": "",
+    "stats": []
+  },
+  {
+    "refs": [],
+    "hash": "65b1c4bdf0c013f1241a73c9274186fbd7984bac",
+    "hashAbbrev": "65b1c4b",
+    "tree": "e81fee6ad7e4b4179e2defaca811d169ec4278d1",
+    "treeAbbrev": "e81fee6",
+    "parents": [
+      "6139281e5080e323a019a8f798109bd3b47e73e7"
+    ],
+    "parentsAbbrev": [
+      "6139281"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "scott.maunder@ezyvet.com",
+      "timestamp": 1569710761000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "scott.maunder@ezyvet.com",
+      "timestamp": 1569710761000
+    },
+    "subject": "Formatted file. renamed and ensured all functions are now using the workingDir const.",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 46,
+        "deletions": 46,
+        "file": "src/git/git.ts"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "27a0cfefd48ff4afab190625cd5e242c75309d84",
+    "hashAbbrev": "27a0cfe",
+    "tree": "3da206f09cf3da2f34956d9cf031c2fdb59cdf2a",
+    "treeAbbrev": "3da206f",
+    "parents": [
+      "6139281e5080e323a019a8f798109bd3b47e73e7"
+    ],
+    "parentsAbbrev": [
+      "6139281"
+    ],
+    "author": {
+      "name": "Abomy",
+      "email": "abomyy@gmail.com",
+      "timestamp": 1569710613000
+    },
+    "committer": {
+      "name": "Abomy",
+      "email": "abomyy@gmail.com",
+      "timestamp": 1569710613000
+    },
+    "subject": "Simple update trigger for file changes, Need to show unstaged",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 21,
+        "deletions": 13,
+        "file": "src/App.tsx"
+      },
+      {
+        "additions": 10,
+        "deletions": 6,
+        "file": "src/git/git.ts"
+      },
+      {
+        "additions": 27,
+        "deletions": 22,
+        "file": "src/git/watcher.ts"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "6139281e5080e323a019a8f798109bd3b47e73e7",
+    "hashAbbrev": "6139281",
+    "tree": "093a9284f117f27b55d9746015654cb9d638a420",
+    "treeAbbrev": "093a928",
+    "parents": [
+      "9d1a61198d234826639e247de2de5f5cbd00635d"
+    ],
+    "parentsAbbrev": [
+      "9d1a611"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569665354000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569665354000
+    },
+    "subject": "Example of new library",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 14,
+        "deletions": 7,
+        "file": "src/App.tsx"
+      },
+      {
+        "additions": 0,
+        "deletions": 1,
+        "file": "src/components/Diff/Diff.jsx"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "9d1a61198d234826639e247de2de5f5cbd00635d",
+    "hashAbbrev": "9d1a611",
+    "tree": "e9c8cbc9825bc8fb29ddf0f57ab2992de672d08e",
+    "treeAbbrev": "e9c8cbc",
+    "parents": [
+      "c4a357395794520217c096fb9db37b59e3ab4288"
+    ],
+    "parentsAbbrev": [
+      "c4a3573"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569662998000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569662998000
+    },
+    "subject": "Added commas",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 26,
+        "deletions": 26,
+        "file": "src/App.tsx"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "c4a357395794520217c096fb9db37b59e3ab4288",
+    "hashAbbrev": "c4a3573",
+    "tree": "46492d33bebe043dfcc77a9ef9de5a53db51104c",
+    "treeAbbrev": "46492d3",
+    "parents": [
+      "0755db31fb386e0a3ffb440a314edf1d82744d5f"
+    ],
+    "parentsAbbrev": [
+      "0755db3"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569662731000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569662731000
+    },
+    "subject": "Adding more changes.",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 4,
+        "deletions": 4,
+        "file": "src/App.css"
+      },
+      {
+        "additions": 20,
+        "deletions": 19,
+        "file": "src/components/Diff/Diff.jsx"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "0755db31fb386e0a3ffb440a314edf1d82744d5f",
+    "hashAbbrev": "0755db3",
+    "tree": "ef6669ae8f7da2f4f0e2309a006ac98dd192d80f",
+    "treeAbbrev": "ef6669a",
+    "parents": [
+      "72d414db5f72641dbf2775f7a41ac156049bad95"
+    ],
+    "parentsAbbrev": [
+      "72d414d"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569661971000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569661971000
+    },
+    "subject": "Added new diff tool example. Seems promising except it does not support typescript :(",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 4,
+        "deletions": 2,
+        "file": "package.json"
+      },
+      {
+        "additions": 16,
+        "deletions": 4,
+        "file": "src/App.css"
+      },
+      {
+        "additions": 34,
+        "deletions": 27,
+        "file": "src/App.tsx"
+      },
+      {
+        "additions": 50,
+        "deletions": 0,
+        "file": "src/components/Diff/Diff.jsx"
+      },
+      {
+        "additions": 75,
+        "deletions": 0,
+        "file": "src/components/Diff/Tokenize.js"
+      },
+      {
+        "additions": 121,
+        "deletions": 7,
+        "file": "yarn.lock"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "72d414db5f72641dbf2775f7a41ac156049bad95",
+    "hashAbbrev": "72d414d",
+    "tree": "33e434982b39dfb917feed04dce389ced9df1d88",
+    "treeAbbrev": "33e4349",
+    "parents": [
+      "528e788a3f1fe36e793dfb4ca61eedb15ac67b44"
+    ],
+    "parentsAbbrev": [
+      "528e788"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569661519000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569661519000
+    },
+    "subject": "Adding comma rule back in.",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 3,
+        "deletions": 14,
+        "file": ".vscode/settings.json"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "528e788a3f1fe36e793dfb4ca61eedb15ac67b44",
+    "hashAbbrev": "528e788",
+    "tree": "1222281256c7b48b76b890617cb03987d8a19169",
+    "treeAbbrev": "1222281",
+    "parents": [
+      "b0e32870d83ea9b595eccf23d0f4f7935b14ff9d",
+      "735d84cb30fc2537ad0741881ee3f47ce3dce5fa"
+    ],
+    "parentsAbbrev": [
+      "b0e3287",
+      "735d84c"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "scott.maunder@ezyvet.com",
+      "timestamp": 1569641585000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "scott.maunder@ezyvet.com",
+      "timestamp": 1569641585000
+    },
+    "subject": "Merge branch 'master' of https://github.com/Kysumi/ezyGit",
+    "body": "",
+    "notes": "",
+    "stats": []
+  },
+  {
+    "refs": [],
+    "hash": "b0e32870d83ea9b595eccf23d0f4f7935b14ff9d",
+    "hashAbbrev": "b0e3287",
+    "tree": "5b2f2c0c5754b3b18dee3a0aa59007a081faf353",
+    "treeAbbrev": "5b2f2c0",
+    "parents": [
+      "f3fcc7b1538476fa30f79b6af6597ad57e691e02"
+    ],
+    "parentsAbbrev": [
+      "f3fcc7b"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "scott.maunder@ezyvet.com",
+      "timestamp": 1569641563000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "scott.maunder@ezyvet.com",
+      "timestamp": 1569641563000
+    },
+    "subject": "Adding settings",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 29,
+        "deletions": 0,
+        "file": ".vscode/settings.json"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "735d84cb30fc2537ad0741881ee3f47ce3dce5fa",
+    "hashAbbrev": "735d84c",
+    "tree": "15a5266118883cb86df8f06c5b0f54c9afddc043",
+    "treeAbbrev": "15a5266",
+    "parents": [
+      "161a52fe688a1fd872408a519c74be980f6e322f"
+    ],
+    "parentsAbbrev": [
+      "161a52f"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569565382000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569565382000
+    },
+    "subject": "Adding comments and swapping around the getStatus call to debug.",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 10,
+        "deletions": 11,
+        "file": "src/App.tsx"
+      },
+      {
+        "additions": 1,
+        "deletions": 1,
+        "file": "src/components/Diff/FileDiffListItem.tsx"
+      },
+      {
+        "additions": 8,
+        "deletions": 5,
+        "file": "src/git/git.ts"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "161a52fe688a1fd872408a519c74be980f6e322f",
+    "hashAbbrev": "161a52f",
+    "tree": "3d9713e43fc90ecd12b4cb30e503412a4c71b100",
+    "treeAbbrev": "3d9713e",
+    "parents": [
+      "37306be9435b9070888d1459d07c555c3fd51283",
+      "7322dbbd841f7e6e51ea9304c007cf1c1ad92b8c"
+    ],
+    "parentsAbbrev": [
+      "37306be",
+      "7322dbb"
+    ],
+    "author": {
+      "name": "Abomy",
+      "email": "abomyy@gmail.com",
+      "timestamp": 1569564697000
+    },
+    "committer": {
+      "name": "Abomy",
+      "email": "abomyy@gmail.com",
+      "timestamp": 1569564697000
+    },
+    "subject": "Merge remote-tracking branch 'origin/master'",
+    "body": "",
+    "notes": "",
+    "stats": []
+  },
+  {
+    "refs": [],
+    "hash": "37306be9435b9070888d1459d07c555c3fd51283",
+    "hashAbbrev": "37306be",
+    "tree": "b2c0f23164c103aabecb137bed12e5cc46c495f8",
+    "treeAbbrev": "b2c0f23",
+    "parents": [
+      "63c28244221b5aa10ee20630718f7dd7fd97e357"
+    ],
+    "parentsAbbrev": [
+      "63c2824"
+    ],
+    "author": {
+      "name": "Abomy",
+      "email": "abomyy@gmail.com",
+      "timestamp": 1569564675000
+    },
+    "committer": {
+      "name": "Abomy",
+      "email": "abomyy@gmail.com",
+      "timestamp": 1569564675000
+    },
+    "subject": "Added file watching and notifications. Isolated from git.ts just for clarity",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 1,
+        "deletions": 0,
+        "file": "src/App.tsx"
+      },
+      {
+        "additions": 8,
+        "deletions": 22,
+        "file": "src/git/git.ts"
+      },
+      {
+        "additions": 34,
+        "deletions": 0,
+        "file": "src/git/watcher.ts"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "63c28244221b5aa10ee20630718f7dd7fd97e357",
+    "hashAbbrev": "63c2824",
+    "tree": "93a2e11b7f92dd9f661159a7c8de844b657ea1ff",
+    "treeAbbrev": "93a2e11",
+    "parents": [
+      "f3fcc7b1538476fa30f79b6af6597ad57e691e02",
+      "b066523c4ba407d0624e376b77ff27553e33f6ba"
+    ],
+    "parentsAbbrev": [
+      "f3fcc7b",
+      "b066523"
+    ],
+    "author": {
+      "name": "Abomy",
+      "email": "abomyy@gmail.com",
+      "timestamp": 1569561497000
+    },
+    "committer": {
+      "name": "Abomy",
+      "email": "abomyy@gmail.com",
+      "timestamp": 1569561497000
+    },
+    "subject": "Merge branch 'file_watch'",
+    "body": "",
+    "notes": "",
+    "stats": []
+  },
+  {
+    "refs": [],
+    "hash": "7322dbbd841f7e6e51ea9304c007cf1c1ad92b8c",
+    "hashAbbrev": "7322dbb",
+    "tree": "bf88afc9221df4cf646eab5e061175888aa317fb",
+    "treeAbbrev": "bf88afc",
+    "parents": [
+      "f3fcc7b1538476fa30f79b6af6597ad57e691e02"
+    ],
+    "parentsAbbrev": [
+      "f3fcc7b"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569559595000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569559595000
+    },
+    "subject": "Upped threshold to support lists that may have bigger items than 500px",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 1,
+        "deletions": 1,
+        "file": "src/components/Diff/MainContentList.tsx"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "f3fcc7b1538476fa30f79b6af6597ad57e691e02",
+    "hashAbbrev": "f3fcc7b",
+    "tree": "9d83a854be811b82b05fdae2844d72270533f324",
+    "treeAbbrev": "9d83a85",
+    "parents": [
+      "4dc4e1fcb3c8c7859ad0230289e8209b75cbccd7"
+    ],
+    "parentsAbbrev": [
+      "4dc4e1f"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "scott.maunder@ezyvet.com",
+      "timestamp": 1569549165000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "scott.maunder@ezyvet.com",
+      "timestamp": 1569549165000
+    },
+    "subject": "Refactored some haxy logic. Need to spend some time going over this and restructuring this code.",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 22,
+        "deletions": 17,
+        "file": "src/git/git.ts"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "4dc4e1fcb3c8c7859ad0230289e8209b75cbccd7",
+    "hashAbbrev": "4dc4e1f",
+    "tree": "9e7004c4ad0155d0723e24522f5f38249c1bdff3",
+    "treeAbbrev": "9e7004c",
+    "parents": [
+      "8589702eaf339fbd0e8cfb712fad673411ea1b6f"
+    ],
+    "parentsAbbrev": [
+      "8589702"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "scott.maunder@ezyvet.com",
+      "timestamp": 1569548652000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "scott.maunder@ezyvet.com",
+      "timestamp": 1569548652000
+    },
+    "subject": "Added git status functions from looking at isomorphic-git examples.",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 15,
+        "deletions": 9,
+        "file": "src/App.tsx"
+      },
+      {
+        "additions": 97,
+        "deletions": 1,
+        "file": "src/git/git.ts"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "8589702eaf339fbd0e8cfb712fad673411ea1b6f",
+    "hashAbbrev": "8589702",
+    "tree": "b3d23c006fe8cfc274a12974a2feb5bd9a6e2b86",
+    "treeAbbrev": "b3d23c0",
+    "parents": [
+      "454ed84c41bc085a5321487e4e4a1cce4e2a1792"
+    ],
+    "parentsAbbrev": [
+      "454ed84"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "scott.maunder@ezyvet.com",
+      "timestamp": 1569546157000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "scott.maunder@ezyvet.com",
+      "timestamp": 1569546157000
+    },
+    "subject": "Changed bound functions into arrow so i don't need to bind them Added threshold for scroll",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 4,
+        "deletions": 3,
+        "file": "src/components/Diff/MainContentList.tsx"
+      },
+      {
+        "additions": 3,
+        "deletions": 3,
+        "file": "src/components/SideList/GitCommitList.tsx"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "b066523c4ba407d0624e376b77ff27553e33f6ba",
+    "hashAbbrev": "b066523",
+    "tree": "307d2c26d2980060fddac041258cea80850a799f",
+    "treeAbbrev": "307d2c2",
+    "parents": [
+      "f61945c93ddbb61551fac7ff3bd35cb1be4ae546"
+    ],
+    "parentsAbbrev": [
+      "f61945c"
+    ],
+    "author": {
+      "name": "Abomy",
+      "email": "abomyy@gmail.com",
+      "timestamp": 1569498940000
+    },
+    "committer": {
+      "name": "Abomy",
+      "email": "abomyy@gmail.com",
+      "timestamp": 1569498940000
+    },
+    "subject": "Initial test for file watching",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 1,
+        "deletions": 0,
+        "file": "package.json"
+      },
+      {
+        "additions": 3,
+        "deletions": 2,
+        "file": "src/App.tsx"
+      },
+      {
+        "additions": 1,
+        "deletions": 1,
+        "file": "src/components/Diff/MainContentList.tsx"
+      },
+      {
+        "additions": 25,
+        "deletions": 6,
+        "file": "src/git/git.ts"
+      },
+      {
+        "additions": 74,
+        "deletions": 1,
+        "file": "yarn.lock"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "454ed84c41bc085a5321487e4e4a1cce4e2a1792",
+    "hashAbbrev": "454ed84",
+    "tree": "4a818407135256fde9a7370b77e909726343658d",
+    "treeAbbrev": "4a81840",
+    "parents": [
+      "6790c8df2ae360251355874f4ae9569e22c8dadc"
+    ],
+    "parentsAbbrev": [
+      "6790c8d"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569491682000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569491682000
+    },
+    "subject": "Added toaster",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 7,
+        "deletions": 1,
+        "file": "src/components/SideList/GitCommitList.tsx"
+      },
+      {
+        "additions": 8,
+        "deletions": 3,
+        "file": "src/components/SideList/GitCommitListItem.tsx"
+      },
+      {
+        "additions": 7,
+        "deletions": 0,
+        "file": "src/components/Toaster/Toaster.ts"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "6790c8df2ae360251355874f4ae9569e22c8dadc",
+    "hashAbbrev": "6790c8d",
+    "tree": "05348a03805de55d0db90e4656cb1ed5f5676952",
+    "treeAbbrev": "05348a0",
+    "parents": [
+      "e8928f28819df84772effd2d2c2335801e492513"
+    ],
+    "parentsAbbrev": [
+      "e8928f2"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569491063000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569491063000
+    },
+    "subject": "Adding chevron to the drop down item. Made the button span the full width.",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 4,
+        "deletions": 0,
+        "file": "src/App.css"
+      },
+      {
+        "additions": 16,
+        "deletions": 2,
+        "file": "src/components/Diff/FileDiffListItem.tsx"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "e8928f28819df84772effd2d2c2335801e492513",
+    "hashAbbrev": "e8928f2",
+    "tree": "dc4d2ab37e1f1eb68108bfbc3d2f3585b75f050e",
+    "treeAbbrev": "dc4d2ab",
+    "parents": [
+      "366d684b4f81576e54ba53715ccbcb54ca7eaead"
+    ],
+    "parentsAbbrev": [
+      "366d684"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569490334000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569490334000
+    },
+    "subject": "Collapseable lists working. Requires working on styling.",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 41,
+        "deletions": 0,
+        "file": "src/components/Diff/FileDiffListItem.tsx"
+      },
+      {
+        "additions": 3,
+        "deletions": 9,
+        "file": "src/components/Diff/MainContentList.tsx"
+      },
+      {
+        "additions": 6,
+        "deletions": 3,
+        "file": "src/git/git.ts"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "366d684b4f81576e54ba53715ccbcb54ca7eaead",
+    "hashAbbrev": "366d684",
+    "tree": "7d32fb5aad80d898490c3d7c545fc0757c7b2fa2",
+    "treeAbbrev": "7d32fb5",
+    "parents": [
+      "516c99b1c714a582e78791599f3af2177a3730be"
+    ],
+    "parentsAbbrev": [
+      "516c99b"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569488660000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569488660000
+    },
+    "subject": "Renaming and restructuring",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 0,
+        "deletions": 16,
+        "file": "src/components/Diff/DiffItem.tsx"
+      },
+      {
+        "additions": 1,
+        "deletions": 1,
+        "file": "src/components/{Editor => Diff}/DiffViewer.tsx"
+      },
+      {
+        "additions": 2,
+        "deletions": 2,
+        "file": "src/components/Diff/MainContentList.tsx"
+      },
+      {
+        "additions": 1,
+        "deletions": 1,
+        "file": "src/components/Pallet/SearchBar.tsx"
+      },
+      {
+        "additions": 2,
+        "deletions": 2,
+        "file": "src/components/SideList/GitCommitList.tsx"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "516c99b1c714a582e78791599f3af2177a3730be",
+    "hashAbbrev": "516c99b",
+    "tree": "8de2626b7245ed9fe28c7bf425d19b19b32448f3",
+    "treeAbbrev": "8de2626",
+    "parents": [
+      "2844215df84d995ac6c5bfe5c8bc1adec4d1df4b"
+    ],
+    "parentsAbbrev": [
+      "2844215"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569488183000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569488183000
+    },
+    "subject": "Renamed the SideList to be GitCommitList",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 2,
+        "deletions": 2,
+        "file": "src/App.tsx"
+      },
+      {
+        "additions": 2,
+        "deletions": 2,
+        "file": "src/components/SideList/{SideList.tsx => GitCommitList.tsx}"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "2844215df84d995ac6c5bfe5c8bc1adec4d1df4b",
+    "hashAbbrev": "2844215",
+    "tree": "5afe65f6439057f86356fff4a60eb2d97029746a",
+    "treeAbbrev": "5afe65f",
+    "parents": [
+      "65e2ef3fce72d32fff836d70b0ab02e63bee55a7"
+    ],
+    "parentsAbbrev": [
+      "65e2ef3"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569488080000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569488080000
+    },
+    "subject": "Renamed and split up logic for GitCommitListItem",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 1,
+        "deletions": 1,
+        "file": "src/components/Diff/MainContentList.tsx"
+      },
+      {
+        "additions": 32,
+        "deletions": 0,
+        "file": "src/components/SideList/GitCommitListItem.tsx"
+      },
+      {
+        "additions": 0,
+        "deletions": 35,
+        "file": "src/components/SideList/HistoryItem.tsx"
+      },
+      {
+        "additions": 4,
+        "deletions": 26,
+        "file": "src/components/SideList/SideList.tsx"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "65e2ef3fce72d32fff836d70b0ab02e63bee55a7",
+    "hashAbbrev": "65e2ef3",
+    "tree": "399e962cd3953ec442aab2358e44be8e6fc30a13",
+    "treeAbbrev": "399e962",
+    "parents": [
+      "f61945c93ddbb61551fac7ff3bd35cb1be4ae546"
+    ],
+    "parentsAbbrev": [
+      "f61945c"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569479179000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569479179000
+    },
+    "subject": "Removed alot of testing code.",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 12,
+        "deletions": 16,
+        "file": "package.json"
+      },
+      {
+        "additions": 16,
+        "deletions": 55,
+        "file": "src/components/Diff/MainContentList.tsx"
+      },
+      {
+        "additions": 0,
+        "deletions": 17,
+        "file": "src/components/Editor/Editor.tsx"
+      },
+      {
+        "additions": 0,
+        "deletions": 4,
+        "file": "src/components/Pallet/SearchBar.tsx"
+      },
+      {
+        "additions": 1,
+        "deletions": 0,
+        "file": "src/components/SideList/HistoryItem.tsx"
+      },
+      {
+        "additions": 0,
+        "deletions": 42,
+        "file": "src/components/SideList/ScrollBar.tsx"
+      },
+      {
+        "additions": 43,
+        "deletions": 22,
+        "file": "src/components/SideList/SideList.tsx"
+      },
+      {
+        "additions": 0,
+        "deletions": 2,
+        "file": "src/git/git.ts"
+      },
+      {
+        "additions": 15,
+        "deletions": 15,
+        "file": "src/serviceWorker.js"
+      },
+      {
+        "additions": 16,
+        "deletions": 63,
+        "file": "yarn.lock"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "f61945c93ddbb61551fac7ff3bd35cb1be4ae546",
+    "hashAbbrev": "f61945c",
+    "tree": "78edebbe8147774e39cd2ced5454ca9d506f8b5b",
+    "treeAbbrev": "78edebb",
+    "parents": [
+      "d62ff698ef49a825281a84ff8327dda7c004d51f"
+    ],
+    "parentsAbbrev": [
+      "d62ff69"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "scott.maunder@ezyvet.com",
+      "timestamp": 1569462115000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "scott.maunder@ezyvet.com",
+      "timestamp": 1569462115000
+    },
+    "subject": "Fixed scrollbar bouncing around.",
+    "body": "Looks like support for different sized components in the list is working OK",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 2,
+        "deletions": 0,
+        "file": "package.json"
+      },
+      {
+        "additions": 69,
+        "deletions": 23,
+        "file": "src/components/Diff/MainContentList.tsx"
+      },
+      {
+        "additions": 1,
+        "deletions": 1,
+        "file": "src/git/git.ts"
+      },
+      {
+        "additions": 34,
+        "deletions": 3,
+        "file": "yarn.lock"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "d62ff698ef49a825281a84ff8327dda7c004d51f",
+    "hashAbbrev": "d62ff69",
+    "tree": "8490b5f59bf072718864c2ecfaca1ee0446d4d29",
+    "treeAbbrev": "8490b5f",
+    "parents": [
+      "d40592c46d19d45b07245cc5ef4c519dca227e26"
+    ],
+    "parentsAbbrev": [
+      "d40592c"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569405946000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569405946000
+    },
+    "subject": "More changes",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 3,
+        "deletions": 3,
+        "file": "src/App.tsx"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "d40592c46d19d45b07245cc5ef4c519dca227e26",
+    "hashAbbrev": "d40592c",
+    "tree": "6686b1fca42ed0086f74652200ef2d9da2793a36",
+    "treeAbbrev": "6686b1f",
+    "parents": [
+      "8ad42ab8e598bf038161e396a25a4019d490e29f"
+    ],
+    "parentsAbbrev": [
+      "8ad42ab"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569405736000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569405736000
+    },
+    "subject": "Cleaning up docs",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 1,
+        "deletions": 0,
+        "file": "src/App.css"
+      },
+      {
+        "additions": 0,
+        "deletions": 11,
+        "file": "src/App.tsx"
+      },
+      {
+        "additions": 30,
+        "deletions": 17,
+        "file": "src/git/git.ts"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "8ad42ab8e598bf038161e396a25a4019d490e29f",
+    "hashAbbrev": "8ad42ab",
+    "tree": "cd3ac9f3a75ed3685dc70b29c08256eeb03d0f9c",
+    "treeAbbrev": "cd3ac9f",
+    "parents": [
+      "61939e136ad62280a4fa73390d5a8de70018886f"
+    ],
+    "parentsAbbrev": [
+      "61939e1"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569402924000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569402924000
+    },
+    "subject": "Making diff list scrollable. Need to refactor the mess",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 4,
+        "deletions": 2,
+        "file": "src/App.tsx"
+      },
+      {
+        "additions": 16,
+        "deletions": 0,
+        "file": "src/components/Diff/DiffItem.tsx"
+      },
+      {
+        "additions": 31,
+        "deletions": 0,
+        "file": "src/components/Diff/MainContentList.tsx"
+      },
+      {
+        "additions": 1,
+        "deletions": 1,
+        "file": "src/components/NavBar/NavBar.tsx"
+      },
+      {
+        "additions": 0,
+        "deletions": 4,
+        "file": "src/git/git.ts"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "61939e136ad62280a4fa73390d5a8de70018886f",
+    "hashAbbrev": "61939e1",
+    "tree": "88f594475550b68cf3fe0cb8803d1694d53ffdbd",
+    "treeAbbrev": "88f5944",
+    "parents": [
+      "31be15084db3dbc21ed9e56355eef67f55dcc99d"
+    ],
+    "parentsAbbrev": [
+      "31be150"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569399673000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569399673000
+    },
+    "subject": "Rendering multiple changes now",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 9,
+        "deletions": 4,
+        "file": "src/App.tsx"
+      },
+      {
+        "additions": 35,
+        "deletions": 17,
+        "file": "src/git/git.ts"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "31be15084db3dbc21ed9e56355eef67f55dcc99d",
+    "hashAbbrev": "31be150",
+    "tree": "68837e9f8b738c08375f113ed6ae5335f8f3f88a",
+    "treeAbbrev": "68837e9",
+    "parents": [
+      "720eb26d8ab096854f15771e6f8cad1f43556913"
+    ],
+    "parentsAbbrev": [
+      "720eb26"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "scott.maunder@ezyvet.com",
+      "timestamp": 1569382351000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "scott.maunder@ezyvet.com",
+      "timestamp": 1569382351000
+    },
+    "subject": "Swapping to monaco colors.",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 3,
+        "deletions": 3,
+        "file": "src/components/Editor/DiffViewer.tsx"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "720eb26d8ab096854f15771e6f8cad1f43556913",
+    "hashAbbrev": "720eb26",
+    "tree": "4f9e981e1aeb5e300ca3ce8c8162af81377eb119",
+    "treeAbbrev": "4f9e981",
+    "parents": [
+      "42efcd22ea0819aafa1d3f6c398819b615880a47"
+    ],
+    "parentsAbbrev": [
+      "42efcd2"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "scott.maunder@ezyvet.com",
+      "timestamp": 1569368395000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "scott.maunder@ezyvet.com",
+      "timestamp": 1569368395000
+    },
+    "subject": "Playing around with CSS for diffing lines. Removed monaco",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 1,
+        "deletions": 0,
+        "file": "package.json"
+      },
+      {
+        "additions": 5,
+        "deletions": 2,
+        "file": "src/App.tsx"
+      },
+      {
+        "additions": 50,
+        "deletions": 0,
+        "file": "src/components/Editor/DiffViewer.tsx"
+      },
+      {
+        "additions": 2,
+        "deletions": 2,
+        "file": "src/git/git.ts"
+      },
+      {
+        "additions": 118,
+        "deletions": 6,
+        "file": "yarn.lock"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "42efcd22ea0819aafa1d3f6c398819b615880a47",
+    "hashAbbrev": "42efcd2",
+    "tree": "0f38c5e29cae5c7c360aab47e61028f1d5b3cd6b",
+    "treeAbbrev": "0f38c5e",
+    "parents": [
+      "0fcd9b7f1f04850ba1f1159fa34a0c45278823a8"
+    ],
+    "parentsAbbrev": [
+      "0fcd9b7"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "scott.maunder@ezyvet.com",
+      "timestamp": 1569364787000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "scott.maunder@ezyvet.com",
+      "timestamp": 1569364787000
+    },
+    "subject": "Split component",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 2,
+        "deletions": 15,
+        "file": "src/App.tsx"
+      },
+      {
+        "additions": 17,
+        "deletions": 0,
+        "file": "src/components/Editor/Editor.tsx"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "0fcd9b7f1f04850ba1f1159fa34a0c45278823a8",
+    "hashAbbrev": "0fcd9b7",
+    "tree": "e5cb1b84f4a89571060b8857787076364c082037",
+    "treeAbbrev": "e5cb1b8",
+    "parents": [
+      "524f0b8664a2175287b771c950fb928651bb46c3"
+    ],
+    "parentsAbbrev": [
+      "524f0b8"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "scott.maunder@ezyvet.com",
+      "timestamp": 1569364435000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "scott.maunder@ezyvet.com",
+      "timestamp": 1569364435000
+    },
+    "subject": "Allow for all changes in side list",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 1,
+        "deletions": 1,
+        "file": "src/git/git.ts"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "524f0b8664a2175287b771c950fb928651bb46c3",
+    "hashAbbrev": "524f0b8",
+    "tree": "51a85a765002eb886125ebad8469a5e2ad502501",
+    "treeAbbrev": "51a85a7",
+    "parents": [
+      "0a5e490430231b76465e2c440234c06b1fa00e3e"
+    ],
+    "parentsAbbrev": [
+      "0a5e490"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "scott.maunder@ezyvet.com",
+      "timestamp": 1569364314000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "scott.maunder@ezyvet.com",
+      "timestamp": 1569364314000
+    },
+    "subject": "Git diff with monaco working",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 25,
+        "deletions": 3,
+        "file": "src/App.tsx"
+      },
+      {
+        "additions": 3,
+        "deletions": 3,
+        "file": "src/git/git.ts"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "0a5e490430231b76465e2c440234c06b1fa00e3e",
+    "hashAbbrev": "0a5e490",
+    "tree": "ceec9dbddcf9563a5a23c6c036f8ae93d651a766",
+    "treeAbbrev": "ceec9db",
+    "parents": [
+      "19f18d6349df3ca5cf2884cfaf6002e672cf6677"
+    ],
+    "parentsAbbrev": [
+      "19f18d6"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "scott.maunder@ezyvet.com",
+      "timestamp": 1569361959000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "scott.maunder@ezyvet.com",
+      "timestamp": 1569361959000
+    },
+    "subject": "Adding Monaco and got git DIFF working.",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 3,
+        "deletions": 0,
+        "file": "package.json"
+      },
+      {
+        "additions": 20,
+        "deletions": 7,
+        "file": "src/App.tsx"
+      },
+      {
+        "additions": 76,
+        "deletions": 1,
+        "file": "src/git/git.ts"
+      },
+      {
+        "additions": 25,
+        "deletions": 0,
+        "file": "yarn.lock"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "19f18d6349df3ca5cf2884cfaf6002e672cf6677",
+    "hashAbbrev": "19f18d6",
+    "tree": "550b1c8d31054b9819c2e17b65e7c93f6a8c7ae8",
+    "treeAbbrev": "550b1c8",
+    "parents": [
+      "56c810a27dc554d8d3972ca9796afcc1e49e5ddd"
+    ],
+    "parentsAbbrev": [
+      "56c810a"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569319783000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569319783000
+    },
+    "subject": "Added padding to the history items to make it look nicer",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 2,
+        "deletions": 1,
+        "file": "src/App.css"
+      },
+      {
+        "additions": 4,
+        "deletions": 1,
+        "file": "src/components/SideList/HistoryItem.tsx"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "56c810a27dc554d8d3972ca9796afcc1e49e5ddd",
+    "hashAbbrev": "56c810a",
+    "tree": "4acf3466c611e2986efc60331c65661d59121e4b",
+    "treeAbbrev": "4acf346",
+    "parents": [
+      "c01b470fe32cdaf0f45184c008a63671f6aba7fe"
+    ],
+    "parentsAbbrev": [
+      "c01b470"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569319542000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569319542000
+    },
+    "subject": "Added components to handle rendering commits.",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 13,
+        "deletions": 7,
+        "file": "src/App.css"
+      },
+      {
+        "additions": 7,
+        "deletions": 3,
+        "file": "src/App.tsx"
+      },
+      {
+        "additions": 31,
+        "deletions": 0,
+        "file": "src/components/SideList/HistoryItem.tsx"
+      },
+      {
+        "additions": 0,
+        "deletions": 37,
+        "file": "src/components/SideList/List.tsx"
+      },
+      {
+        "additions": 32,
+        "deletions": 0,
+        "file": "src/components/SideList/SideList.tsx"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "c01b470fe32cdaf0f45184c008a63671f6aba7fe",
+    "hashAbbrev": "c01b470",
+    "tree": "cc4dc9b87b07131939471db043c7cb45e31005a1",
+    "treeAbbrev": "cc4dc9b",
+    "parents": [
+      "54346f55cdb5b20c30a5057403d97d42939ef82d"
+    ],
+    "parentsAbbrev": [
+      "54346f5"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569303754000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569303754000
+    },
+    "subject": "Adding custom scroll bar renderer. Adding example infinite side list scroller.",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 6,
+        "deletions": 0,
+        "file": "package.json"
+      },
+      {
+        "additions": 21,
+        "deletions": 34,
+        "file": "src/App.css"
+      },
+      {
+        "additions": 4,
+        "deletions": 3,
+        "file": "src/App.tsx"
+      },
+      {
+        "additions": 2,
+        "deletions": 0,
+        "file": "src/components/NavBar/NavBar.tsx"
+      },
+      {
+        "additions": 1,
+        "deletions": 1,
+        "file": "src/components/Pallet/SearchBar.tsx"
+      },
+      {
+        "additions": 37,
+        "deletions": 0,
+        "file": "src/components/SideList/List.tsx"
+      },
+      {
+        "additions": 42,
+        "deletions": 0,
+        "file": "src/components/SideList/ScrollBar.tsx"
+      },
+      {
+        "additions": 89,
+        "deletions": 3,
+        "file": "yarn.lock"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "54346f55cdb5b20c30a5057403d97d42939ef82d",
+    "hashAbbrev": "54346f5",
+    "tree": "631eb8a0d7b7e37e00faf29e218891cc360d9de9",
+    "treeAbbrev": "631eb8a",
+    "parents": [
+      "73b542c51dc01b842f2074b8874206d6f7776f01"
+    ],
+    "parentsAbbrev": [
+      "73b542c"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569300365000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569300365000
+    },
+    "subject": "Swapped to dark theme. Added CSS for splitting window.",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 9,
+        "deletions": 0,
+        "file": "src/App.css"
+      },
+      {
+        "additions": 4,
+        "deletions": 6,
+        "file": "src/App.tsx"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "73b542c51dc01b842f2074b8874206d6f7776f01",
+    "hashAbbrev": "73b542c",
+    "tree": "bfbb2941c1adb4c9f358b2d9e9ceb2ab53c17256",
+    "treeAbbrev": "bfbb294",
+    "parents": [
+      "954ca3819196d45296ef129734a14e9856ba516a"
+    ],
+    "parentsAbbrev": [
+      "954ca38"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569299448000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569299448000
+    },
+    "subject": "Adding git branch to navbar",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 9,
+        "deletions": 6,
+        "file": "src/App.tsx"
+      },
+      {
+        "additions": 15,
+        "deletions": 33,
+        "file": "src/components/NavBar/NavBar.tsx"
+      },
+      {
+        "additions": 1,
+        "deletions": 1,
+        "file": "src/components/Pallet/SearchBar.tsx"
+      },
+      {
+        "additions": 8,
+        "deletions": 2,
+        "file": "src/git/git.ts"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "954ca3819196d45296ef129734a14e9856ba516a",
+    "hashAbbrev": "954ca38",
+    "tree": "9aac04a9bece99d2472cab8e2f8397cfa07731d7",
+    "treeAbbrev": "9aac04a",
+    "parents": [
+      "05e094312282768be27cd960ebaac13a0f910449"
+    ],
+    "parentsAbbrev": [
+      "05e0943"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "scott.maunder@ezyvet.com",
+      "timestamp": 1569288588000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "scott.maunder@ezyvet.com",
+      "timestamp": 1569288588000
+    },
+    "subject": "Working out flexbox",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 5,
+        "deletions": 0,
+        "file": "src/App.css"
+      },
+      {
+        "additions": 11,
+        "deletions": 5,
+        "file": "src/App.tsx"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "05e094312282768be27cd960ebaac13a0f910449",
+    "hashAbbrev": "05e0943",
+    "tree": "6281fa0c9604a305b8da59c072b5f310aa9f6f4e",
+    "treeAbbrev": "6281fa0",
+    "parents": [
+      "46e93d39cdef05d6ffedf347b51e72b843e72d1b"
+    ],
+    "parentsAbbrev": [
+      "46e93d3"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "scott.maunder@ezyvet.com",
+      "timestamp": 1569287816000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "scott.maunder@ezyvet.com",
+      "timestamp": 1569287816000
+    },
+    "subject": "Swapped to isomorphic-git. MUCH BETTER",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 4,
+        "deletions": 3,
+        "file": "package.json"
+      },
+      {
+        "additions": 11,
+        "deletions": 3,
+        "file": "src/App.tsx"
+      },
+      {
+        "additions": 0,
+        "deletions": 71,
+        "file": "src/git/git.js"
+      },
+      {
+        "additions": 11,
+        "deletions": 0,
+        "file": "src/git/git.ts"
+      },
+      {
+        "additions": 150,
+        "deletions": 136,
+        "file": "yarn.lock"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "46e93d39cdef05d6ffedf347b51e72b843e72d1b",
+    "hashAbbrev": "46e93d3",
+    "tree": "b79cbb2966d345a8389514bd2aa68fff6ee3c788",
+    "treeAbbrev": "b79cbb2",
+    "parents": [
+      "c6d662e954c5296b8d81fcf7d084a11cbb14f7e6"
+    ],
+    "parentsAbbrev": [
+      "c6d662e"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569226523000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569226523000
+    },
+    "subject": "Boiler",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 2,
+        "deletions": 2,
+        "file": ".webpack.config.js"
+      },
+      {
+        "additions": 1,
+        "deletions": 0,
+        "file": "package.json"
+      },
+      {
+        "additions": 4,
+        "deletions": 1,
+        "file": "src/App.tsx"
+      },
+      {
+        "additions": 71,
+        "deletions": 0,
+        "file": "src/git/git.js"
+      },
+      {
+        "additions": 104,
+        "deletions": 3,
+        "file": "yarn.lock"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "c6d662e954c5296b8d81fcf7d084a11cbb14f7e6",
+    "hashAbbrev": "c6d662e",
+    "tree": "92939c5fab2bf5ce47a71f195ff107ba2ec02354",
+    "treeAbbrev": "92939c5",
+    "parents": [
+      "139ae0db51c542569ce833bf4467266d9871c572"
+    ],
+    "parentsAbbrev": [
+      "139ae0d"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569220172000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569220172000
+    },
+    "subject": "Adding example nav bar",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 2,
+        "deletions": 0,
+        "file": "src/App.tsx"
+      },
+      {
+        "additions": 47,
+        "deletions": 0,
+        "file": "src/components/NavBar/NavBar.tsx"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "139ae0db51c542569ce833bf4467266d9871c572",
+    "hashAbbrev": "139ae0d",
+    "tree": "3017ee53be86237c35e95d320c605376af595636",
+    "treeAbbrev": "3017ee5",
+    "parents": [
+      "0c8a437679cc9ba3982e1eab5ad832870436f8ae"
+    ],
+    "parentsAbbrev": [
+      "0c8a437"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569217670000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569217670000
+    },
+    "subject": "Renamed omnibar and cut down example",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 2,
+        "deletions": 2,
+        "file": "src/App.tsx"
+      },
+      {
+        "additions": 173,
+        "deletions": 0,
+        "file": "src/components/Pallet/SearchBar.tsx"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "0c8a437679cc9ba3982e1eab5ad832870436f8ae",
+    "hashAbbrev": "0c8a437",
+    "tree": "6e07ac4693076ab2877005884b70e59da1c80db1",
+    "treeAbbrev": "6e07ac4",
+    "parents": [
+      "eadee66f42daaadb059666e26e7a4e1f03f0f927"
+    ],
+    "parentsAbbrev": [
+      "eadee66"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569217301000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569217301000
+    },
+    "subject": "Cut down example. Removed Semantic and simple-git Adding Blueprint and nodegit",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 0,
+        "deletions": 15906,
+        "file": "package-lock.json"
+      },
+      {
+        "additions": 9,
+        "deletions": 8,
+        "file": "package.json"
+      },
+      {
+        "additions": 5,
+        "deletions": 0,
+        "file": "src/App.css"
+      },
+      {
+        "additions": 0,
+        "deletions": 9,
+        "file": "src/App.test.js"
+      },
+      {
+        "additions": 5,
+        "deletions": 24,
+        "file": "src/App.tsx"
+      },
+      {
+        "additions": 0,
+        "deletions": 48,
+        "file": "src/PopOver.tsx"
+      },
+      {
+        "additions": 0,
+        "deletions": 66,
+        "file": "src/Search.tsx"
+      },
+      {
+        "additions": 0,
+        "deletions": 16,
+        "file": "src/components/header.tsx"
+      },
+      {
+        "additions": 0,
+        "deletions": 26,
+        "file": "src/git/git.ts"
+      },
+      {
+        "additions": 0,
+        "deletions": 1,
+        "file": "src/index.js"
+      },
+      {
+        "additions": 4,
+        "deletions": 9,
+        "file": "tsconfig.json"
+      },
+      {
+        "additions": 11723,
+        "deletions": 0,
+        "file": "yarn.lock"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "eadee66f42daaadb059666e26e7a4e1f03f0f927",
+    "hashAbbrev": "eadee66",
+    "tree": "fb83f223c8cd7f871fd7edcec4bcaa1e169ff74d",
+    "treeAbbrev": "fb83f22",
+    "parents": [
+      "2944c143279db398127bf11cc4e8e733e5a7db27"
+    ],
+    "parentsAbbrev": [
+      "2944c14"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "scott.maunder@ezyvet.com",
+      "timestamp": 1569206307000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "scott.maunder@ezyvet.com",
+      "timestamp": 1569206307000
+    },
+    "subject": "Adding details to package.json",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 6,
+        "deletions": 6,
+        "file": "package.json"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "2944c143279db398127bf11cc4e8e733e5a7db27",
+    "hashAbbrev": "2944c14",
+    "tree": "ed1318d6d193511ec2be7b5118fb0827fec3692a",
+    "treeAbbrev": "ed1318d",
+    "parents": [
+      "3857adcc80c98e0e7dfbda18a27cf02752958b8a"
+    ],
+    "parentsAbbrev": [
+      "3857adc"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "scott.maunder@ezyvet.com",
+      "timestamp": 1569205117000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "scott.maunder@ezyvet.com",
+      "timestamp": 1569205117000
+    },
+    "subject": "Button testing.",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 8,
+        "deletions": 8,
+        "file": "src/App.tsx"
+      },
+      {
+        "additions": 16,
+        "deletions": 0,
+        "file": "src/components/header.tsx"
+      },
+      {
+        "additions": 10,
+        "deletions": 11,
+        "file": "src/git/git.ts"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "3857adcc80c98e0e7dfbda18a27cf02752958b8a",
+    "hashAbbrev": "3857adc",
+    "tree": "d0c4fda2ae0ae27014c89a694bde110ad709baed",
+    "treeAbbrev": "d0c4fda",
+    "parents": [
+      "8b857bb0a6c452462e8532b8c39c201e4cb1fc43"
+    ],
+    "parentsAbbrev": [
+      "8b857bb"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "scott.maunder@ezyvet.com",
+      "timestamp": 1569201581000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "scott.maunder@ezyvet.com",
+      "timestamp": 1569201581000
+    },
+    "subject": "Loader working. Shows the current working branch",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 2,
+        "deletions": 0,
+        "file": ".gitignore"
+      },
+      {
+        "additions": 60,
+        "deletions": 22,
+        "file": "package-lock.json"
+      },
+      {
+        "additions": 32,
+        "deletions": 5,
+        "file": "src/App.tsx"
+      },
+      {
+        "additions": 2,
+        "deletions": 2,
+        "file": "src/git/git.ts"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "8b857bb0a6c452462e8532b8c39c201e4cb1fc43",
+    "hashAbbrev": "8b857bb",
+    "tree": "b0d9e84e6d91e225fb6d7795193f0be707b00a13",
+    "treeAbbrev": "b0d9e84",
+    "parents": [
+      "6ed8dfc322e0295e2e147d2cdb0d7e7623231623"
+    ],
+    "parentsAbbrev": [
+      "6ed8dfc"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569149347000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569149347000
+    },
+    "subject": "Attempting to get data.",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 13,
+        "deletions": 0,
+        "file": "package-lock.json"
+      },
+      {
+        "additions": 2,
+        "deletions": 0,
+        "file": "package.json"
+      },
+      {
+        "additions": 2,
+        "deletions": 2,
+        "file": "src/App.css"
+      },
+      {
+        "additions": 4,
+        "deletions": 1,
+        "file": "src/App.tsx"
+      },
+      {
+        "additions": 8,
+        "deletions": 2,
+        "file": "src/PopOver.tsx"
+      },
+      {
+        "additions": 8,
+        "deletions": 19,
+        "file": "src/Search.tsx"
+      },
+      {
+        "additions": 27,
+        "deletions": 0,
+        "file": "src/git/git.ts"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "6ed8dfc322e0295e2e147d2cdb0d7e7623231623",
+    "hashAbbrev": "6ed8dfc",
+    "tree": "2f36ef3fa1c6843f2c5cdb156bbd60cb5892372d",
+    "treeAbbrev": "2f36ef3",
+    "parents": [
+      "fb6716d5ccbff333744393f1b8ed6a8ae8af127a"
+    ],
+    "parentsAbbrev": [
+      "fb6716d"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569119484000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569119484000
+    },
+    "subject": "swapped to semantic ui. Added example search tool",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 156,
+        "deletions": 357,
+        "file": "package-lock.json"
+      },
+      {
+        "additions": 7,
+        "deletions": 2,
+        "file": "package.json"
+      },
+      {
+        "additions": 2,
+        "deletions": 5,
+        "file": "src/{App.js => App.tsx}"
+      },
+      {
+        "additions": 1,
+        "deletions": 1,
+        "file": "src/PopOver.tsx"
+      },
+      {
+        "additions": 77,
+        "deletions": 0,
+        "file": "src/Search.tsx"
+      },
+      {
+        "additions": 7,
+        "deletions": 6,
+        "file": "src/index.js"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "fb6716d5ccbff333744393f1b8ed6a8ae8af127a",
+    "hashAbbrev": "fb6716d",
+    "tree": "a4bf526c334bf699fe487c74ff89fee3b843c2c9",
+    "treeAbbrev": "a4bf526",
+    "parents": [
+      "9938d10430f5264232b7c98a40cde390bdb40a0e"
+    ],
+    "parentsAbbrev": [
+      "9938d10"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569118409000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569118409000
+    },
+    "subject": "Swapped to use a more simple configuration. Was not able to work out the magic of electron-forge.",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 0,
+        "deletions": 3,
+        "file": ".babelrc"
+      },
+      {
+        "additions": 24,
+        "deletions": 3,
+        "file": ".gitignore"
+      },
+      {
+        "additions": 1,
+        "deletions": 0,
+        "file": ".rescriptsrc.js"
+      },
+      {
+        "additions": 5,
+        "deletions": 0,
+        "file": ".webpack.config.js"
+      },
+      {
+        "additions": 68,
+        "deletions": 0,
+        "file": "README.md"
+      },
+      {
+        "additions": 11326,
+        "deletions": 4364,
+        "file": "package-lock.json"
+      },
+      {
+        "additions": 55,
+        "deletions": 75,
+        "file": "package.json"
+      },
+      {
+        "additions": 33,
+        "deletions": 0,
+        "file": "public/electron.js"
+      },
+      {
+        "additions": null,
+        "deletions": null,
+        "file": "public/favicon.ico"
+      },
+      {
+        "additions": 41,
+        "deletions": 0,
+        "file": "public/index.html"
+      },
+      {
+        "additions": 15,
+        "deletions": 0,
+        "file": "public/manifest.json"
+      },
+      {
+        "additions": 33,
+        "deletions": 0,
+        "file": "src/App.css"
+      },
+      {
+        "additions": 20,
+        "deletions": 0,
+        "file": "src/App.js"
+      },
+      {
+        "additions": 9,
+        "deletions": 0,
+        "file": "src/App.test.js"
+      },
+      {
+        "additions": 42,
+        "deletions": 0,
+        "file": "src/PopOver.tsx"
+      },
+      {
+        "additions": 0,
+        "deletions": 18,
+        "file": "src/app.tsx"
+      },
+      {
+        "additions": 0,
+        "deletions": 84,
+        "file": "src/components/popOver.tsx"
+      },
+      {
+        "additions": 14,
+        "deletions": 0,
+        "file": "src/index.css"
+      },
+      {
+        "additions": 0,
+        "deletions": 1,
+        "file": "src/index.html"
+      },
+      {
+        "additions": 12,
+        "deletions": 59,
+        "file": "src/index.js"
+      },
+      {
+        "additions": 7,
+        "deletions": 0,
+        "file": "src/logo.svg"
+      },
+      {
+        "additions": 1,
+        "deletions": 0,
+        "file": "src/react-app-env.d.ts"
+      },
+      {
+        "additions": 135,
+        "deletions": 0,
+        "file": "src/serviceWorker.js"
+      },
+      {
+        "additions": 25,
+        "deletions": 0,
+        "file": "tsconfig.json"
+      },
+      {
+        "additions": 0,
+        "deletions": 3,
+        "file": "webpack.main.config.js"
+      },
+      {
+        "additions": 0,
+        "deletions": 14,
+        "file": "webpack.renderer.config.js"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "9938d10430f5264232b7c98a40cde390bdb40a0e",
+    "hashAbbrev": "9938d10",
+    "tree": "5408852900d138cb8efdc479920d63fc733e467d",
+    "treeAbbrev": "5408852",
+    "parents": [
+      "41085c4618fa686aecf0827e3032f1416b3492ac"
+    ],
+    "parentsAbbrev": [
+      "41085c4"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569116525000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1569116525000
+    },
+    "subject": "Adding some test UI",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 8,
+        "deletions": 3,
+        "file": "src/app.tsx"
+      },
+      {
+        "additions": 84,
+        "deletions": 0,
+        "file": "src/components/popOver.tsx"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "41085c4618fa686aecf0827e3032f1416b3492ac",
+    "hashAbbrev": "41085c4",
+    "tree": "f4c1aa5a1cbbd98ea9a4432927acd33713d97327",
+    "treeAbbrev": "f4c1aa5",
+    "parents": [
+      "7be0ede5585f9e60f7cd65f3b7d6a3f4630da3a6"
+    ],
+    "parentsAbbrev": [
+      "7be0ede"
+    ],
+    "author": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1568957533000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "maunderscott@gmail.com",
+      "timestamp": 1568957533000
+    },
+    "subject": "Removing yarn",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 0,
+        "deletions": 111,
+        "file": "yarn-error.log"
+      }
+    ]
+  },
+  {
+    "refs": [],
+    "hash": "7be0ede5585f9e60f7cd65f3b7d6a3f4630da3a6",
+    "hashAbbrev": "7be0ede",
+    "tree": "323f1391d009f83c943708751802b299d138a73e",
+    "treeAbbrev": "323f139",
+    "parents": [],
+    "parentsAbbrev": [],
+    "author": {
+      "name": "Maunder",
+      "email": "scott.maunder@ezyvet.com",
+      "timestamp": 1568943335000
+    },
+    "committer": {
+      "name": "Maunder",
+      "email": "scott.maunder@ezyvet.com",
+      "timestamp": 1568943335000
+    },
+    "subject": "Init.",
+    "body": "",
+    "notes": "",
+    "stats": [
+      {
+        "additions": 3,
+        "deletions": 0,
+        "file": ".babelrc"
+      },
+      {
+        "additions": 3,
+        "deletions": 0,
+        "file": ".gitignore"
+      },
+      {
+        "additions": 20,
+        "deletions": 0,
+        "file": ".vscode/launch.json"
+      },
+      {
+        "additions": 9094,
+        "deletions": 0,
+        "file": "package-lock.json"
+      },
+      {
+        "additions": 85,
+        "deletions": 0,
+        "file": "package.json"
+      },
+      {
+        "additions": 13,
+        "deletions": 0,
+        "file": "src/app.tsx"
+      },
+      {
+        "additions": 1,
+        "deletions": 0,
+        "file": "src/index.html"
+      },
+      {
+        "additions": 59,
+        "deletions": 0,
+        "file": "src/index.js"
+      },
+      {
+        "additions": 3,
+        "deletions": 0,
+        "file": "webpack.main.config.js"
+      },
+      {
+        "additions": 14,
+        "deletions": 0,
+        "file": "webpack.renderer.config.js"
+      },
+      {
+        "additions": 111,
+        "deletions": 0,
+        "file": "yarn-error.log"
+      }
+    ]
+  }
+]
